@@ -1,0 +1,174 @@
+{
+  "@context" : {
+    "Level" : {
+      "@id" : "https://w3id.org/timebank#Level"
+    },
+    "isAvailableOn" : {
+      "@id" : "https://w3id.org/timebank#isAvailableOn",
+      "@type" : "@id"
+    },
+    "hasEnvironment" : {
+      "@id" : "https://w3id.org/timebank#hasEnvironment",
+      "@type" : "@id"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "created" : {
+      "@id" : "http://purl.org/dc/terms/created"
+    },
+    "Request" : {
+      "@id" : "https://w3id.org/timebank#Request"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license"
+    },
+    "DayOfWeek" : {
+      "@id" : "http://www.w3.org/2006/time#DayOfWeek"
+    },
+    "DurationDescription" : {
+      "@id" : "http://www.w3.org/2006/time#DurationDescription"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "hasAccreditedDuration" : {
+      "@id" : "https://w3id.org/timebank#hasAccreditedDuration",
+      "@type" : "@id"
+    },
+    "hasSkillLevel" : {
+      "@id" : "https://w3id.org/timebank#hasSkillLevel",
+      "@type" : "@id"
+    },
+    "isAcceptedBy" : {
+      "@id" : "https://w3id.org/timebank#isAcceptedBy",
+      "@type" : "@id"
+    },
+    "hasSkill" : {
+      "@id" : "https://w3id.org/timebank#hasSkill",
+      "@type" : "@id"
+    },
+    "Instant" : {
+      "@id" : "http://www.w3.org/2006/time#Instant"
+    },
+    "requiresSkill" : {
+      "@id" : "https://w3id.org/timebank#requiresSkill",
+      "@type" : "@id"
+    },
+    "hasAddress" : {
+      "@id" : "https://w3id.org/timebank#hasAddress",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "isOriginatorOf" : {
+      "@id" : "https://w3id.org/timebank#isOriginatorOf",
+      "@type" : "@id"
+    },
+    "User" : {
+      "@id" : "https://w3id.org/timebank#User"
+    },
+    "accepts" : {
+      "@id" : "https://w3id.org/timebank#accepts",
+      "@type" : "@id"
+    },
+    "isPublishedOn" : {
+      "@id" : "https://w3id.org/timebank#isPublishedOn",
+      "@type" : "@id"
+    },
+    "endsRepeatingOn" : {
+      "@id" : "https://w3id.org/timebank#endsRepeatingOn",
+      "@type" : "@id"
+    },
+    "Status" : {
+      "@id" : "https://w3id.org/timebank#Status"
+    },
+    "Person" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Person"
+    },
+    "Limitation" : {
+      "@id" : "https://w3id.org/timebank#Limitation"
+    },
+    "excludesByLimitation" : {
+      "@id" : "https://w3id.org/timebank#excludesByLimitation",
+      "@type" : "@id"
+    },
+    "hasLimitation" : {
+      "@id" : "https://w3id.org/timebank#hasLimitation",
+      "@type" : "@id"
+    },
+    "isCompletedOn" : {
+      "@id" : "https://w3id.org/timebank#isCompletedOn",
+      "@type" : "@id"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "hasStatus" : {
+      "@id" : "https://w3id.org/timebank#hasStatus",
+      "@type" : "@id"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "ProperInterval" : {
+      "@id" : "http://www.w3.org/2006/time#ProperInterval"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "isAcceptedOn" : {
+      "@id" : "https://w3id.org/timebank#isAcceptedOn",
+      "@type" : "@id"
+    },
+    "hasOriginator" : {
+      "@id" : "https://w3id.org/timebank#hasOriginator",
+      "@type" : "@id"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "repeatsOn" : {
+      "@id" : "https://w3id.org/timebank#repeatsOn",
+      "@type" : "@id"
+    },
+    "Environment" : {
+      "@id" : "https://w3id.org/timebank#Environment"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "hasSeverity" : {
+      "@id" : "https://w3id.org/timebank#hasSeverity",
+      "@type" : "@id"
+    },
+    "Skill" : {
+      "@id" : "https://w3id.org/timebank#Skill"
+    },
+    "hasExpectedDuration" : {
+      "@id" : "https://w3id.org/timebank#hasExpectedDuration",
+      "@type" : "@id"
+    },
+    "rating1to5" : {
+      "@id" : "https://w3id.org/timebank#rating1to5"
+    },
+    "hasTimeBalance" : {
+      "@id" : "https://w3id.org/timebank#hasTimeBalance",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "rating" : {
+      "@id" : "https://w3id.org/timebank#rating",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "VCard" : {
+      "@id" : "http://www.w3.org/2006/vcard/ns#VCard"
+    }
+  }
+}

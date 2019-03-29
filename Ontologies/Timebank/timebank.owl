@@ -1,0 +1,419 @@
+@prefix : <https://w3id.org/timebank#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@base <https://w3id.org/timebank> .
+
+<https://w3id.org/timebank> rdf:type owl:Ontology ;
+                             owl:versionIRI <https://w3id.org/timebank/0.1> ;
+                             owl:imports <http://www.w3.org/2006/time#2016> ,
+                                         <http://www.w3.org/2006/vcard/ns> ,
+                                         foaf: ;
+                             <http://purl.org/dc/elements/1.1/title> "Timebank Ontology" ;
+                             <http://purl.org/dc/terms/created> "2019-03-14"^^xsd:date ;
+                             <http://purl.org/dc/terms/creator> "Ankit Tibrewal" ,
+                                                                "Subhayan Roy" ,
+                                                                "Tobias Grubenmann" ,
+                                                                "Xueer Li" ;
+                             <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                             <http://purl.org/dc/terms/rights> "Copyright © 2019 The University of Hong Kong" ;
+                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "tb"^^xsd:string ;
+                             <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/timebank"^^xsd:string ;
+                             rdfs:comment "An ontology to describe poeple and requests for timebanks. This includes the poeple's skills, limitations, and environment." ;
+                             owl:versionInfo "0.1" ;
+                             <https://creativecommons.org/ns#license> <https://creativecommons.org/licenses/by/4.0/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  https://creativecommons.org/ns#license
+<https://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/timebank#accepts
+:accepts rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isAcceptedBy ;
+         rdfs:domain :User ;
+         rdfs:range :Request ;
+         rdfs:comment "Indicates that a user who is willing to help accepted the request." ;
+         rdfs:isDefinedBy <https://w3id.org/timebank> ;
+         rdfs:label "accepts" .
+
+
+###  https://w3id.org/timebank#endsRepeatingOn
+:endsRepeatingOn rdf:type owl:ObjectProperty ;
+                 rdfs:domain time:ProperInterval ;
+                 rdfs:range time:Instant ;
+                 rdfs:comment "Indicates that a time-interval is repeating until this time and date." ;
+                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                 rdfs:label "end repeating on" .
+
+
+###  https://w3id.org/timebank#excludesByLimitation
+:excludesByLimitation rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Request ;
+                      rdfs:range :Limitation ;
+                      rdfs:comment "This predicate is used to describe that a request exludes helpers having a certain limitation." ;
+                      rdfs:label "excludes by limitation" .
+
+
+###  https://w3id.org/timebank#hasAccreditedDuration
+:hasAccreditedDuration rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Request ;
+                       rdfs:range time:DurationDescription ;
+                       rdfs:comment "The accredited duration of the request. This is the amount of time which will be transferred from the originator the the assigned helper of the request. Do not use this property to indicate the estimated duration of the task. Use hasExpectedDuration instead." ;
+                       rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                       rdfs:label "has accredited duration" .
+
+
+###  https://w3id.org/timebank#hasAddress
+:hasAddress rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( foaf:Person
+                                        :Request
+                                      )
+                        ] ;
+            rdfs:range <http://www.w3.org/2006/vcard/ns#VCard> ;
+            rdfs:comment "Indicates the address of a person or request. The address is specified as a vcard." ;
+            rdfs:label "has address" .
+
+
+###  https://w3id.org/timebank#hasEnvironment
+:hasEnvironment rdf:type owl:ObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Request
+                                            :User
+                                          )
+                            ] ;
+                rdfs:range :Environment ;
+                rdfs:comment "The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location." ;
+                rdfs:label "has environment" .
+
+
+###  https://w3id.org/timebank#hasExpectedDuration
+:hasExpectedDuration rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Request ;
+                     rdfs:range time:DurationDescription ;
+                     rdfs:comment "The expected duration indicates the duraction of the request estimated by the originator of the request. Do not use this property to assert the actual time credits associated to this request. Use hasAccreditedDuration instead." ;
+                     rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                     rdfs:label "has expected duration" .
+
+
+###  https://w3id.org/timebank#hasLimitation
+:hasLimitation rdf:type owl:ObjectProperty ;
+               rdfs:domain :User ;
+               rdfs:range :Limitation ;
+               rdfs:comment "Indicates that a Timebank user suffers from a certain limitation." ;
+               rdfs:isDefinedBy <https://w3id.org/timebank> ;
+               rdfs:label "has limitation" .
+
+
+###  https://w3id.org/timebank#hasOriginator
+:hasOriginator rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isOriginatorOf ;
+               rdfs:domain :Request ;
+               rdfs:range :User ;
+               rdfs:comment "Indicates that the request has the specific originator." ;
+               rdfs:isDefinedBy <https://w3id.org/timebank> ;
+               rdfs:label "has originator" .
+
+
+###  https://w3id.org/timebank#hasSeverity
+:hasSeverity rdf:type owl:ObjectProperty ;
+             rdfs:domain :Limitation ;
+             rdfs:range :Level ;
+             rdfs:comment "Indicates the severity of a limitation." ;
+             rdfs:isDefinedBy <https://w3id.org/timebank> ;
+             rdfs:label "has severity" .
+
+
+###  https://w3id.org/timebank#hasSkill
+:hasSkill rdf:type owl:ObjectProperty ;
+          rdfs:domain :User ;
+          rdfs:range :Skill ;
+          rdfs:comment "Describes the Skill of a certain Timebank user." ;
+          rdfs:isDefinedBy <https://w3id.org/timebank> ;
+          rdfs:label "has skill" .
+
+
+###  https://w3id.org/timebank#hasSkillLevel
+:hasSkillLevel rdf:type owl:ObjectProperty ;
+               rdfs:domain :Skill ;
+               rdfs:range :Level ;
+               rdfs:comment "Describes the proficiency level of a skill." ;
+               rdfs:isDefinedBy <https://w3id.org/timebank> ;
+               rdfs:label "has skill level" .
+
+
+###  https://w3id.org/timebank#hasStatus
+:hasStatus rdf:type owl:ObjectProperty ;
+           rdfs:domain :Request ;
+           rdfs:range :Status ;
+           rdfs:comment "Every request can have at most one status assigned to it." ;
+           rdfs:isDefinedBy <https://w3id.org/timebank> ;
+           rdfs:label "has status" .
+
+
+###  https://w3id.org/timebank#hasTimeBalance
+:hasTimeBalance rdf:type owl:ObjectProperty ;
+                rdfs:domain :User ;
+                rdfs:range time:DurationDescription ;
+                rdfs:comment "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used when the time-balance cannot be inferred from the individual requests using the hasAccreditedDuration property." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "has time-balance" .
+
+
+###  https://w3id.org/timebank#isAcceptedBy
+:isAcceptedBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Request ;
+              rdfs:range :User ;
+              rdfs:comment "Indicates that a request is accepted by a user who is willing to help completing the request." ;
+              rdfs:isDefinedBy <https://w3id.org/timebank> ;
+              rdfs:label "is accepted by" .
+
+
+###  https://w3id.org/timebank#isAcceptedOn
+:isAcceptedOn rdf:type owl:ObjectProperty ;
+              rdfs:domain :Request ;
+              rdfs:range time:Instant ;
+              rdfs:comment "Indicates the time and date when the Timebank request was accepted by the assigned helper." ;
+              rdfs:isDefinedBy <https://w3id.org/timebank> ;
+              rdfs:label "is accepted on" .
+
+
+###  https://w3id.org/timebank#isAvailableOn
+:isAvailableOn rdf:type owl:ObjectProperty ;
+               rdfs:domain :User ;
+               rdfs:range time:ProperInterval ;
+               rdfs:comment "Indicates the availability of a Timebank user to act as a helper for a Timebank request." ;
+               rdfs:isDefinedBy <https://w3id.org/timebank> ;
+               rdfs:label "is available on" .
+
+
+###  https://w3id.org/timebank#isCompletedOn
+:isCompletedOn rdf:type owl:ObjectProperty ;
+               rdfs:domain :Request ;
+               rdfs:range time:Instant ;
+               rdfs:comment "Indicates the time and date of the completion of a Timebank request." ;
+               rdfs:isDefinedBy <https://w3id.org/timebank> ;
+               rdfs:label "is completed on" .
+
+
+###  https://w3id.org/timebank#isOriginatorOf
+:isOriginatorOf rdf:type owl:ObjectProperty ;
+                rdfs:domain :User ;
+                rdfs:range :Request ;
+                rdfs:comment "Indicates that the user is the originator of the request." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "is originator of" .
+
+
+###  https://w3id.org/timebank#isPublishedOn
+:isPublishedOn rdf:type owl:ObjectProperty ;
+               rdfs:domain :Request ;
+               rdfs:range time:Instant ;
+               rdfs:comment "Indicates the time and date of the publication of a Timebank request." ;
+               rdfs:isDefinedBy <https://w3id.org/timebank> ;
+               rdfs:label "is published on" .
+
+
+###  https://w3id.org/timebank#repeatsOn
+:repeatsOn rdf:type owl:ObjectProperty ;
+           rdfs:domain time:ProperInterval ;
+           rdfs:range time:DayOfWeek ;
+           rdfs:comment "Indicates that a time interval repeats on the specified weekdays." ;
+           rdfs:isDefinedBy <https://w3id.org/timebank> ;
+           rdfs:label "repeats on" .
+
+
+###  https://w3id.org/timebank#requiresSkill
+:requiresSkill rdf:type owl:ObjectProperty ;
+               rdfs:domain :Request ;
+               rdfs:range :Skill ;
+               rdfs:comment "The skill associated with a Timebank request." ;
+               rdfs:isDefinedBy <https://w3id.org/timebank> ;
+               rdfs:label "requires skill" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/timebank#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Request ;
+        rdfs:range xsd:decimal ;
+        rdfs:comment <https://w3id.org/timebank> ,
+                     "The rating given by the originator of a request to the assigned helper for completing the specific request." ;
+        rdfs:label "rating" .
+
+
+###  https://w3id.org/timebank#rating1to5
+:rating1to5 rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :rating ;
+            rdfs:domain :Request ;
+            rdfs:range [ rdf:type rdfs:Datatype ;
+                         owl:onDatatype xsd:decimal ;
+                         owl:withRestrictions ( [ xsd:minInclusive 1
+                                                ]
+                                                [ xsd:maxInclusive 5
+                                                ]
+                                              )
+                       ] ;
+            rdfs:comment "The rating given by the originator of a request to the assigned helper for completing the specific request. Ratings can be a decimal in the range of 1 (star) and 5 (stars)." ;
+            rdfs:label "rating: 1 to 5" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/timebank#Environment
+:Environment rdf:type owl:Class ;
+             rdfs:comment "The environment describes relevant factors for matching requesters and helpers which are not described by Skill or Limitation." ;
+             rdfs:isDefinedBy <https://w3id.org/timebank> ;
+             rdfs:label "Environment" .
+
+
+###  https://w3id.org/timebank#Level
+:Level rdf:type owl:Class ;
+       rdfs:comment "The level can be low, medium, or high." ;
+       rdfs:isDefinedBy <https://w3id.org/timebank> ;
+       rdfs:label "Level" .
+
+
+###  https://w3id.org/timebank#Limitation
+:Limitation rdf:type owl:Class ;
+            rdfs:comment "Limitations can be anything which prevents or limits the extent to which a user can help somebody else." ;
+            rdfs:isDefinedBy <https://w3id.org/timebank> ;
+            rdfs:label "Limitation" .
+
+
+###  https://w3id.org/timebank#Request
+:Request rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAccreditedDuration ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasOriginator ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStatus ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isOriginatorOf ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rating ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "A request for help from a Timebank user." ;
+         rdfs:isDefinedBy <https://w3id.org/timebank> ;
+         rdfs:label "Request" .
+
+
+###  https://w3id.org/timebank#Skill
+:Skill rdf:type owl:Class ;
+       rdfs:comment "Skills define the capabilities of a user. Users and Timebank requests can be associated to a certain skill (or multiple skills) to facilitate the matching of helper and requester." ;
+       rdfs:isDefinedBy <https://w3id.org/timebank> ;
+       rdfs:label "Skill" .
+
+
+###  https://w3id.org/timebank#Status
+:Status rdf:type owl:Class ;
+        rdfs:comment "The status of a request." ;
+        rdfs:isDefinedBy <https://w3id.org/timebank> ;
+        rdfs:label "Status" .
+
+
+###  https://w3id.org/timebank#User
+:User rdf:type owl:Class ;
+      rdfs:subClassOf foaf:Person ;
+      rdfs:comment "A user of the Timebank." ;
+      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+      rdfs:label "User" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/timebank#LevelHigh
+:LevelHigh rdf:type owl:NamedIndividual ,
+                    :Level ;
+           rdfs:comment "Used if a Limitation has a high severity or a Skill is on a high level." ;
+           rdfs:isDefinedBy <https://w3id.org/timebank> ;
+           rdfs:label "Level: High" .
+
+
+###  https://w3id.org/timebank#LevelLow
+:LevelLow rdf:type owl:NamedIndividual ,
+                   :Level ;
+          rdfs:comment "Used if a Limitation only has a low severity or a Skill is on a low level." ;
+          rdfs:isDefinedBy <https://w3id.org/timebank> ;
+          rdfs:label "Level: Low" .
+
+
+###  https://w3id.org/timebank#LevelMedium
+:LevelMedium rdf:type owl:NamedIndividual ,
+                      :Level ;
+             rdfs:comment "Used if a Limitation has a medium severity or a Skill is on a medium level" ;
+             rdfs:isDefinedBy <https://w3id.org/timebank> ;
+             rdfs:label "Level: Medium" .
+
+
+###  https://w3id.org/timebank#StatusAssigned
+:StatusAssigned rdf:type owl:NamedIndividual ,
+                         :Status ;
+                rdfs:comment "Indicates that a request is assigned to a helper but not yet completed." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "Status: Assigned" .
+
+
+###  https://w3id.org/timebank#StatusCancelled
+:StatusCancelled rdf:type owl:NamedIndividual ,
+                          :Status ;
+                 rdfs:comment "Indicates that a request is cancelled and no helper is needed anymore." ;
+                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                 rdfs:label "Status: Cancelled" .
+
+
+###  https://w3id.org/timebank#StatusClosed
+:StatusClosed rdf:type owl:NamedIndividual ,
+                       :Status ;
+              rdfs:comment "Indicates that a request is closed and that no helper is needed anymore." ;
+              rdfs:isDefinedBy <https://w3id.org/timebank> ;
+              rdfs:label "Status: Closed" .
+
+
+###  https://w3id.org/timebank#StatusOpen
+:StatusOpen rdf:type owl:NamedIndividual ,
+                     :Status ;
+            rdfs:comment "Indicates that a request is open and no helper is assigned to it." ;
+            rdfs:isDefinedBy <https://w3id.org/timebank> ;
+            rdfs:label "Status: Open" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

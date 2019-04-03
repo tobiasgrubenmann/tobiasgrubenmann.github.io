@@ -2,23 +2,16 @@
 <rdf:RDF xmlns="https://w3id.org/timebank#"
      xml:base="https://w3id.org/timebank"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
-     xmlns:ns1="https://creativecommons.org/ns#"
+     xmlns:ns="https://creativecommons.org/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:wot="http://xmlns.com/wot/0.1/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/timebank">
         <owl:versionIRI rdf:resource="https://w3id.org/timebank/0.1"/>
-        <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
-        <owl:imports rdf:resource="http://www.w3.org/2006/vcard/ns"/>
-        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
         <dc:title>Timebank Ontology</dc:title>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-03-14</terms:created>
         <terms:creator>Ankit Tibrewal</terms:creator>
@@ -31,7 +24,7 @@
         <vann:preferredNamespaceUri>https://w3id.org/timebank</vann:preferredNamespaceUri>
         <rdfs:comment>An ontology to describe poeple and requests for timebanks. This includes the poeple&apos;s skills, limitations, and environment.</rdfs:comment>
         <owl:versionInfo>0.1</owl:versionInfo>
-        <ns1:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <ns:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
     </owl:Ontology>
     
 
@@ -45,6 +38,41 @@
      -->
 
 
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/rights -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
     
 
 
@@ -115,6 +143,7 @@
         <rdfs:domain rdf:resource="https://w3id.org/timebank#Request"/>
         <rdfs:range rdf:resource="https://w3id.org/timebank#Limitation"/>
         <rdfs:comment>This predicate is used to describe that a request exludes helpers having a certain limitation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>excludes by limitation</rdfs:label>
     </owl:ObjectProperty>
     
@@ -147,6 +176,7 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2006/vcard/ns#VCard"/>
         <rdfs:comment>Indicates the address of a person or request. The address is specified as a vcard.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>has address</rdfs:label>
     </owl:ObjectProperty>
     
@@ -156,16 +186,10 @@
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/timebank#hasEnvironment">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://w3id.org/timebank#Request"/>
-                    <rdf:Description rdf:about="https://w3id.org/timebank#User"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#Request"/>
         <rdfs:range rdf:resource="https://w3id.org/timebank#Environment"/>
         <rdfs:comment>The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>has environment</rdfs:label>
     </owl:ObjectProperty>
     
@@ -425,6 +449,7 @@
             </rdfs:Datatype>
         </rdfs:range>
         <rdfs:comment>The rating given by the originator of a request to the assigned helper for completing the specific request. Ratings can be a decimal in the range of 1 (star) and 5 (stars).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>rating: 1 to 5</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -442,6 +467,588 @@
     
 
 
+    <!-- http://www.w3.org/2006/time#DayOfWeek -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#DayOfWeek"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#DurationDescription -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#DurationDescription"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Instant"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#ProperInterval -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#ProperInterval"/>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#VCard -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2006/vcard/ns#VCard"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- https://w3id.org/timebank#AccessibleByPublicTransport -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#AccessibleByPublicTransport">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Surroundings"/>
+        <rdfs:comment>The location is accessible by public transport.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Accessible by Public Transport</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Advice -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Advice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>Skills to provide particular services which requires some sort of education or training.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Advice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Allergy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Allergy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Limitation"/>
+        <rdfs:comment>A collection of allergies, which is caused by hypersensitivity of the immune system.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Allergy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Assembling -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Assembling">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Crafting"/>
+        <rdfs:comment>The skill to assemble items like furniture and other things.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Assembling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#AutomobileRepair -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#AutomobileRepair">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Repair"/>
+        <rdfs:comment>The skill to repair automobiles.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Automobile Repair</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Baking -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Baking">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodService"/>
+        <rdfs:comment>The skill to assist with baking.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Baking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#CareAndSupport -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#CareAndSupport">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>The skill to provide care and support.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Care and Support</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Carpeting -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Carpeting">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#WoodCrafting"/>
+        <rdfs:comment>The skill to do carpenting.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Carpenting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#CatInvolved -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#CatInvolved">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PetInvolved"/>
+        <rdfs:comment>A cat is involved.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Cat Involved</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Catering -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Catering">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodService"/>
+        <rdfs:comment>The skill to assist with catering requirements.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Catering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ChildCare -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ChildCare">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CareAndSupport"/>
+        <rdfs:comment>The skill to provide care for children.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Child Care</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Cleaning -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Cleaning">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Maintenance"/>
+        <rdfs:comment>The skill to assist with general cleaning tasks.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Cleaning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#CleaningUtensilsAvailable -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#CleaningUtensilsAvailable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
+        <rdfs:comment>Cleaning utensils can be provided.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Cleaning Utensils Available</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ClimbingStairsDifficulty -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ClimbingStairsDifficulty">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#MobilityProblems"/>
+        <rdfs:comment>The person has difficulty in climbing up stairs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Difficulty in Climbing Stairs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ClothesWashing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ClothesWashing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Cleaning"/>
+        <rdfs:comment>The skill to assist with washing clothes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Clothes Washing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#CognitiveImpairment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#CognitiveImpairment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#MentalDisorder"/>
+        <rdfs:comment>A person with cognitive impairment can&apos;t think and remember things clearly.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Cognitive Impairment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#CommonDisease -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#CommonDisease">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Limitation"/>
+        <rdfs:comment>A collection of diseases that are common, especially for elderly people</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Common Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ComputerProcessing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ComputerProcessing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#OfficeWork"/>
+        <rdfs:comment>The skill to assist with processing data computers.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Computer Processing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ComputerRepair -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ComputerRepair">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Repair"/>
+        <rdfs:comment>The skill to fix problems with computers.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Computer Repair</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Cooking -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Cooking">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodService"/>
+        <rdfs:comment>The skill to assist with cooking in general.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Cooking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Counseling -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Counseling">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Advice"/>
+        <rdfs:comment>The skill to advice people on psychological matters.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Counseling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Crafting -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Crafting">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>Crafting skills.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Crafting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#CraftingClothes -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#CraftingClothes">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Crafting"/>
+        <rdfs:comment>The ability to craft any kind of clothes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Crafting Clothes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DancingCompanion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DancingCompanion">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <rdfs:comment>The ability to act as a dancing companion.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Dancing Companion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DarkPlace -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DarkPlace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Surroundings"/>
+        <rdfs:comment>Place with limited lighting.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Dark Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Depression -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Depression">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#MentalDisorder"/>
+        <rdfs:comment>A person with depression has a depressed mood over a long period and may even have thoughts of suicide.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Depression</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Diabetes -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Diabetes">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <rdfs:comment>A disorder characterized by high blood sugar levels during a long period.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Diabetes Mellitus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DifficultToAccess -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DifficultToAccess">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Surroundings"/>
+        <rdfs:comment>The place is difficult to access.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Difficult to Access</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Dishwashing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Dishwashing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodService"/>
+        <rdfs:comment>The skill to assist with washing dishes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Dishwashing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DogInvolved -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DogInvolved">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PetInvolved"/>
+        <rdfs:comment>Dogs are involved.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Dog Involved</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DressingAssistance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DressingAssistance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PersonalServices"/>
+        <rdfs:comment>The skill to assist someone with dressing.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Dressing Assistance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DressingProblem -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DressingProblem">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#MobilityProblems"/>
+        <rdfs:comment>The person has difficulties dressing himself.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Dressing Problems</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DrivingCars -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DrivingCars">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DrivingLightVehicles"/>
+        <rdfs:comment>Experience in driving cars.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Driving Cars</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DrivingHeavyVehicles -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DrivingHeavyVehicles">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Transportation"/>
+        <rdfs:comment>Experience in driving heavy vehicles.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Driving Heavy Vehicles</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DrivingLightVehicles -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DrivingLightVehicles">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Transportation"/>
+        <rdfs:comment>Experience in driving light vehicles.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Driving Light Vehicles</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DrivingTractors -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DrivingTractors">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DrivingHeavyVehicles"/>
+        <rdfs:comment>Experience in driving tractors.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Driving Tractors</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DrivingTrucks -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DrivingTrucks">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DrivingHeavyVehicles"/>
+        <rdfs:comment>Experience in driving with trucks.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Driving Trucks</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DrivingVans -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DrivingVans">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DrivingLightVehicles"/>
+        <rdfs:comment>Experience in driving vans.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Driving Vans</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DrivingWithTrailers -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DrivingWithTrailers">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DrivingHeavyVehicles"/>
+        <rdfs:comment>Experience in driving with trailers.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Driving with Trailers</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#DrugAllergies -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#DrugAllergies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Allergy"/>
+        <rdfs:comment>An allergy to drugs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Drug Allergies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#EggAllergy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#EggAllergy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodAllergies"/>
+        <rdfs:comment>Allergy to egg.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Allergy to Egg</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ElderlyCare -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ElderlyCare">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CareAndSupport"/>
+        <rdfs:comment>The skill to provide care and support for the elderly.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Care for Elderly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ElectricityAvailable -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ElectricityAvailable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
+        <rdfs:comment>Electric outlet available.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Electricity Available</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ElectronicRepair -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ElectronicRepair">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Repair"/>
+        <rdfs:comment>The skill to repair electronic devices.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Electronic Repair</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ElevatedPlace -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ElevatedPlace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Surroundings"/>
+        <rdfs:comment>Some high/elevated place is involved. This might trigger fear of heights for some people.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Elevated Place</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/timebank#Environment -->
 
 
@@ -449,6 +1056,305 @@
         <rdfs:comment>The environment describes relevant factors for matching requesters and helpers which are not described by Skill or Limitation.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Environment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#EnvironmentalAllergies -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#EnvironmentalAllergies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Allergy"/>
+        <rdfs:comment>An allergy to something in environment such as dust mites, pollen, pet hair and cigarette smoke.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Environmental Allergies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#EventPlanning -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#EventPlanning">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <rdfs:comment>The skill to assist in planning and hosting events.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Event Planning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#FearOfAnimals -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#FearOfAnimals">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SpecificPhobia"/>
+        <rdfs:comment>Fear of animals. This can include dogs, cats, snakes, insects, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Fear of Animals</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#FearOfCat -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#FearOfCat">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FearOfAnimals"/>
+        <rdfs:comment>Fear of cats.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Fear of Cats</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#FearOfDark -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#FearOfDark">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SpecificPhobia"/>
+        <rdfs:comment>Fear of dark places.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Fear of Dark</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#FearOfDogs -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#FearOfDogs">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FearOfAnimals"/>
+        <rdfs:comment>Fear of dogs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Fear of Dogs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#FearOfHeights -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#FearOfHeights">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SpecificPhobia"/>
+        <rdfs:comment>Fear or phobia of heights.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Fear of Heights</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#FinancialAdvice -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#FinancialAdvice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Advice"/>
+        <rdfs:comment>Specialized in providing assistance with financial services. This can include helping with taxes and book keeping.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Financial Advice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#FoodAllergies -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#FoodAllergies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Allergy"/>
+        <rdfs:comment>An allergy to food such as milk, peanuts, eggs, fish, tree nuts, and fruit.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Food Allergies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#FoodPreparation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#FoodPreparation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodService"/>
+        <rdfs:comment>The skill to assist with food preparation like meat cutting, washing of food, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Food Preparation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#FoodService -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#FoodService">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>The skill to provide services related to food products.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Food Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Games -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Games">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <rdfs:comment>The skill to participate in board games, card games, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Games</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#GlutenAllergy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#GlutenAllergy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodAllergies"/>
+        <rdfs:comment>Allergies to grains with gluten such as wheat, barley, rye, and oats.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Allergy to Gluten</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Groceries -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Groceries">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SalesServices"/>
+        <rdfs:comment>The skill to help buying groceries.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Groceries</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#HairCutting -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#HairCutting">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PersonalServices"/>
+        <rdfs:comment>Ability to cut someone else&apos;s hair.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Hair Cutting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#HeartDisease -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#HeartDisease">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <rdfs:comment>A condition of diseases that negatively affect one&apos;s heart such as blood vessel diseases and heart rhythm problems.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Heart Diseases</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#HouseholdEquipmentRepair -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#HouseholdEquipmentRepair">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Repair"/>
+        <rdfs:comment>The skill to repair household equipment.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Houseshold Equipment Repair</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#HygieneAssitance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#HygieneAssitance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PersonalServices"/>
+        <rdfs:comment>The skill to assist someone on hygienical matters.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Hygiene Assitance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Hypertension -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Hypertension">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <rdfs:comment>The blood pressure is high in a long period.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Hypertension</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Hypotension -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Hypotension">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <rdfs:comment>The blood pressure is low in a long period.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Hypotension</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#IngredientsAvailable -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#IngredientsAvailable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
+        <rdfs:comment>Ingredients (like food) can be provided.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#InternetAvailable -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#InternetAvailable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
+        <rdfs:comment>Internet is available.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Internet Available</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#InventoryManagement -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#InventoryManagement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#OfficeWork"/>
+        <rdfs:comment>The skill to assist with inventory management.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Inventory Management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Knitting -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Knitting">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CraftingClothes"/>
+        <rdfs:comment>Specialized in knitting clothes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Knitting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#LegalAdvice -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#LegalAdvice">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Advice"/>
+        <rdfs:comment>Specialized in providing legal assistance.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Legal Advice</rdfs:label>
     </owl:Class>
     
 
@@ -471,6 +1377,306 @@
         <rdfs:comment>Limitations can be anything which prevents or limits the extent to which a user can help somebody else.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Limitation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Maintenance -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Maintenance">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>The skill to help with maintenance of equipment.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Maintenance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#MentalDisorder -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#MentalDisorder">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Limitation"/>
+        <rdfs:comment>Disorders that affect the mental states of a person.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Mental Disorder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#MentallyIllCare -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#MentallyIllCare">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CareAndSupport"/>
+        <rdfs:comment>The skill to provide care for the mentally ill.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Care Mentally Ill People</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#MilkAllergy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#MilkAllergy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodAllergies"/>
+        <rdfs:comment>Allergy to milk.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Allergy to Milk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#MobilityProblems -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#MobilityProblems">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <rdfs:comment>Difficulties with moving around physically such as having difficulties using toliet, dressing, walking and so on.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Mobility Problems</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Mopping -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Mopping">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Cleaning"/>
+        <rdfs:comment>The skill to assist with mopping floors, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Mopping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Mowing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Mowing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Maintenance"/>
+        <rdfs:comment>The skill to assist with mowing the grass.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Mowing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#NutsAllergy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#NutsAllergy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodAllergies"/>
+        <rdfs:comment>Allergy to nuts such as almonds, walnuts and pecans.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Allergy to Nuts</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#OfficeWork -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#OfficeWork">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>The skill to provide help with office related work.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Office Work</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#OnlineShopping -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#OnlineShopping">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SalesServices"/>
+        <rdfs:comment>The skill to assist in buying things online.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Online Shopping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PeanutsAllergy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PeanutsAllergy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#FoodAllergies"/>
+        <rdfs:comment>Allergy to peanuts</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Allergy to Peanuts</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PerformingMusic -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PerformingMusic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <rdfs:comment>The skill to entertain others by performing music.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Performing Music</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PersonalServices -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PersonalServices">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>Personal services which include hygiene and daily care.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Personal Services</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PetInvolved -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PetInvolved">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Surroundings"/>
+        <rdfs:comment>Pets may be encountered when helping for the request.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Pet Involved</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PhoneCalls -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PhoneCalls">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#OfficeWork"/>
+        <rdfs:comment>The skill to perform phone calls.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Phone Calls</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PhysicalInconvenience -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PhysicalInconvenience">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Limitation"/>
+        <rdfs:comment>This is a collection of physical disorders that negatively affect a person&apos;s daily life.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Physical Inconvenience</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PhysicallyDisabledCare -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PhysicallyDisabledCare">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CareAndSupport"/>
+        <rdfs:comment>The skill to provide care for the physically disabled.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Care for Physically Disabled</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Plumbing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Plumbing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Repair"/>
+        <rdfs:comment>Skill to perform plumbing and repairs on pipe installation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Plumbing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PoorEyesight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PoorEyesight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <rdfs:comment>Having difficulties seeing objects clearly.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Poor Eyesight</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PoorHearing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PoorHearing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <rdfs:comment>Having difficulties hearing voices clearly.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Poor Hearing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Pruning -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Pruning">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Maintenance"/>
+        <rdfs:comment>The skill to assist with pruning shrubs and twigs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Pruning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#PsychoticEpisode -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PsychoticEpisode">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#MentalDisorder"/>
+        <rdfs:comment>A person with psychotic episode can not tell the difference between the reality and unreality and may have difficulty with social activities in daily life.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Psychotic Episode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#RecordingNotes -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#RecordingNotes">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#OfficeWork"/>
+        <rdfs:comment>The skill to assist with recording notes and entries.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Recording Notes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Recreation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Recreation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>The skill to provide services related to recreation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Recreation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Repair -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Repair">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>The Skill to repair equipment and facilities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Repair</rdfs:label>
     </owl:Class>
     
 
@@ -516,6 +1722,54 @@
     
 
 
+    <!-- https://w3id.org/timebank#Rheumatism -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Rheumatism">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <rdfs:comment>Diseases that causes chronic pain in joints and muscles such as back, shoulder and neck.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Rheumatism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#SalesServices -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#SalesServices">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>The skill to help with selling and buying products.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Sales Services</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#SensitiveSkin -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#SensitiveSkin">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <rdfs:comment>Skins are too sensitive to a wide variety of factors such as weather, pets, stress and dust.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Sensitive Skin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Sewing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Sewing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CraftingClothes"/>
+        <rdfs:comment>Specialized in sewing clothes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Sewing</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/timebank#Skill -->
 
 
@@ -523,6 +1777,66 @@
         <rdfs:comment>Skills define the capabilities of a user. Users and Timebank requests can be associated to a certain skill (or multiple skills) to facilitate the matching of helper and requester.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Skill</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#SlipperyFloor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#SlipperyFloor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DifficultToAccess"/>
+        <rdfs:comment>The person needs to be aware of slippery floor.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Splippery Floor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#SpeakingProblem -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#SpeakingProblem">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <rdfs:comment>The person has difficulties speaking clearly due to body function problems such as injuries to the brain, mouth or throat.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Speaking Problems</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#SpecificPhobia -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#SpecificPhobia">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#MentalDisorder"/>
+        <rdfs:comment>Fear of specific objects such as dogs, cats, water, lightning, dark and so on.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Specific Phobia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Sports -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Sports">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <rdfs:comment>The skill to participate in sport activities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Sports</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Stairs -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Stairs">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DifficultToAccess"/>
+        <rdfs:comment>The person has to climb stairs to complete the task.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Stairs</rdfs:label>
     </owl:Class>
     
 
@@ -538,6 +1852,126 @@
     
 
 
+    <!-- https://w3id.org/timebank#StrokeHistory -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#StrokeHistory">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <rdfs:comment>It indicates a person once had a storke. A stroke happens when blood flow to the brain is blocked and oxygen for the brain cells is insufficient, which could leads to cell death.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>History of Strokes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#SuppliesAvailable -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#SuppliesAvailable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Environment"/>
+        <rdfs:comment>Availability of specific supplies to complete a task.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Supplies Available</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Surroundings -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Surroundings">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Environment"/>
+        <rdfs:comment>Surroundings of a request.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Surroundings</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Tailoring -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Tailoring">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CraftingClothes"/>
+        <rdfs:comment>Specialized in providing tailoring services.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Tailoring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ToiletUsingProblem -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ToiletUsingProblem">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#MobilityProblems"/>
+        <rdfs:comment>The person has difficulties using toilet.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Toilet Using Problems</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#ToolsAvailable -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#ToolsAvailable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
+        <rdfs:comment>Tools can be provided.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Tools Available</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Transportation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Transportation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>The skill to provide services related to transportation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>TransportationServices</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#TransportationAvailable -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#TransportationAvailable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Surroundings"/>
+        <rdfs:comment>Transportation necessary to complete the task can be provided.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Transportation Available</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#TravelCompanion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#TravelCompanion">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <rdfs:comment>The ability to act as a travel companion.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Travel Companion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#UnevenTerrain -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#UnevenTerrain">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DifficultToAccess"/>
+        <rdfs:comment>The person needs equipment (e.g. shoes) suitable for uneven terrain.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Uneven Terrain</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/timebank#User -->
 
 
@@ -546,6 +1980,78 @@
         <rdfs:comment>A user of the Timebank.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#WalkingProblem -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#WalkingProblem">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#MobilityProblems"/>
+        <rdfs:comment>The person has difficulties walking.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Walking Problems</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#WeatherConstraint -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#WeatherConstraint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DifficultToAccess"/>
+        <rdfs:comment>The place is difficult to access during bad weather (e.g. snow).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Weather Constraint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#WoodCarving -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#WoodCarving">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#WoodCrafting"/>
+        <rdfs:comment>The skill to Carve items out of wood.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Wood Carving</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#WoodCrafting -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#WoodCrafting">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Crafting"/>
+        <rdfs:comment>Crafting skill with wood as base material.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Wood Crafting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#Writing -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Writing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#OfficeWork"/>
+        <rdfs:comment>The skill to assist with written work, like writing or reading a letter.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Writing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#sickness -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#sickness">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#CareAndSupport"/>
+        <rdfs:comment>The skill to provide care for sick people.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Care for Sick People</rdfs:label>
     </owl:Class>
     
 

@@ -1,8 +1,5 @@
 <https://w3id.org/timebank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/timebank/0.1> .
-<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time#2016> .
-<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/vcard/ns> .
-<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://xmlns.com/foaf/0.1/> .
 <https://w3id.org/timebank> <http://purl.org/dc/elements/1.1/title> "Timebank Ontology" .
 <https://w3id.org/timebank> <http://purl.org/dc/terms/created> "2019-03-14"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Ankit Tibrewal" .
@@ -24,6 +21,21 @@
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/vocab/vann/preferredNamespacePrefix
 <http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -65,6 +77,7 @@
 <https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
 <https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Limitation> .
 <https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/2000/01/rdf-schema#comment> "This predicate is used to describe that a request exludes helpers having a certain limitation." .
+<https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/2000/01/rdf-schema#label> "excludes by limitation" .
 # 
 # https://w3id.org/timebank#hasAccreditedDuration
@@ -88,21 +101,15 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/ti
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/timebank#hasAddress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/vcard/ns#VCard> .
 <https://w3id.org/timebank#hasAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the address of a person or request. The address is specified as a vcard." .
+<https://w3id.org/timebank#hasAddress> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#hasAddress> <http://www.w3.org/2000/01/rdf-schema#label> "has address" .
 # 
 # https://w3id.org/timebank#hasEnvironment
 <https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Request> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#User> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
 <https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Environment> .
 <https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#comment> "The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location." .
+<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#label> "has environment" .
 # 
 # https://w3id.org/timebank#hasExpectedDuration
@@ -255,19 +262,20 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#rating1to5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/timebank#rating> .
 <https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
-<https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#range> _:genid7 .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-_:genid7 <http://www.w3.org/2002/07/owl#onDatatype> <http://www.w3.org/2001/XMLSchema#decimal> .
-_:genid7 <http://www.w3.org/2002/07/owl#withRestrictions> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid11 .
-_:genid11 <http://www.w3.org/2001/XMLSchema#minInclusive> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid9 .
-_:genid9 <http://www.w3.org/2001/XMLSchema#maxInclusive> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#range> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid4 <http://www.w3.org/2002/07/owl#onDatatype> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid4 <http://www.w3.org/2002/07/owl#withRestrictions> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid8 .
+_:genid8 <http://www.w3.org/2001/XMLSchema#minInclusive> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid6 .
+_:genid6 <http://www.w3.org/2001/XMLSchema#maxInclusive> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 <https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#comment> "The rating given by the originator of a request to the assigned helper for completing the specific request. Ratings can be a decimal in the range of 1 (star) and 5 (stars)." .
+<https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#label> "rating: 1 to 5" .
 # 
 # 
@@ -279,11 +287,518 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # #################################################################
 # 
 # 
+# http://www.w3.org/2006/time#DayOfWeek
+<http://www.w3.org/2006/time#DayOfWeek> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2006/time#DurationDescription
+<http://www.w3.org/2006/time#DurationDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2006/time#Instant
+<http://www.w3.org/2006/time#Instant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2006/time#ProperInterval
+<http://www.w3.org/2006/time#ProperInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2006/vcard/ns#VCard
+<http://www.w3.org/2006/vcard/ns#VCard> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/timebank#AccessibleByPublicTransport
+<https://w3id.org/timebank#AccessibleByPublicTransport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#AccessibleByPublicTransport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Surroundings> .
+<https://w3id.org/timebank#AccessibleByPublicTransport> <http://www.w3.org/2000/01/rdf-schema#comment> "The location is accessible by public transport." .
+<https://w3id.org/timebank#AccessibleByPublicTransport> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#AccessibleByPublicTransport> <http://www.w3.org/2000/01/rdf-schema#label> "Accessible by Public Transport" .
+# 
+# https://w3id.org/timebank#Advice
+<https://w3id.org/timebank#Advice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Advice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#Advice> <http://www.w3.org/2000/01/rdf-schema#comment> "Skills to provide particular services which requires some sort of education or training." .
+<https://w3id.org/timebank#Advice> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Advice> <http://www.w3.org/2000/01/rdf-schema#label> "Advice" .
+# 
+# https://w3id.org/timebank#Allergy
+<https://w3id.org/timebank#Allergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Allergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Limitation> .
+<https://w3id.org/timebank#Allergy> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of allergies, which is caused by hypersensitivity of the immune system." .
+<https://w3id.org/timebank#Allergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Allergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy" .
+# 
+# https://w3id.org/timebank#Assembling
+<https://w3id.org/timebank#Assembling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Assembling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Crafting> .
+<https://w3id.org/timebank#Assembling> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assemble items like furniture and other things." .
+<https://w3id.org/timebank#Assembling> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Assembling> <http://www.w3.org/2000/01/rdf-schema#label> "Assembling" .
+# 
+# https://w3id.org/timebank#AutomobileRepair
+<https://w3id.org/timebank#AutomobileRepair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#AutomobileRepair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Repair> .
+<https://w3id.org/timebank#AutomobileRepair> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to repair automobiles." .
+<https://w3id.org/timebank#AutomobileRepair> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#AutomobileRepair> <http://www.w3.org/2000/01/rdf-schema#label> "Automobile Repair" .
+# 
+# https://w3id.org/timebank#Baking
+<https://w3id.org/timebank#Baking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Baking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodService> .
+<https://w3id.org/timebank#Baking> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with baking." .
+<https://w3id.org/timebank#Baking> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Baking> <http://www.w3.org/2000/01/rdf-schema#label> "Baking" .
+# 
+# https://w3id.org/timebank#CareAndSupport
+<https://w3id.org/timebank#CareAndSupport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#CareAndSupport> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#CareAndSupport> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care and support." .
+<https://w3id.org/timebank#CareAndSupport> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#CareAndSupport> <http://www.w3.org/2000/01/rdf-schema#label> "Care and Support" .
+# 
+# https://w3id.org/timebank#Carpeting
+<https://w3id.org/timebank#Carpeting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Carpeting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#WoodCrafting> .
+<https://w3id.org/timebank#Carpeting> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to do carpenting." .
+<https://w3id.org/timebank#Carpeting> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Carpeting> <http://www.w3.org/2000/01/rdf-schema#label> "Carpenting" .
+# 
+# https://w3id.org/timebank#CatInvolved
+<https://w3id.org/timebank#CatInvolved> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#CatInvolved> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PetInvolved> .
+<https://w3id.org/timebank#CatInvolved> <http://www.w3.org/2000/01/rdf-schema#comment> "A cat is involved." .
+<https://w3id.org/timebank#CatInvolved> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#CatInvolved> <http://www.w3.org/2000/01/rdf-schema#label> "Cat Involved" .
+# 
+# https://w3id.org/timebank#Catering
+<https://w3id.org/timebank#Catering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Catering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodService> .
+<https://w3id.org/timebank#Catering> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with catering requirements." .
+<https://w3id.org/timebank#Catering> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Catering> <http://www.w3.org/2000/01/rdf-schema#label> "Catering" .
+# 
+# https://w3id.org/timebank#ChildCare
+<https://w3id.org/timebank#ChildCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ChildCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CareAndSupport> .
+<https://w3id.org/timebank#ChildCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for children." .
+<https://w3id.org/timebank#ChildCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ChildCare> <http://www.w3.org/2000/01/rdf-schema#label> "Child Care" .
+# 
+# https://w3id.org/timebank#Cleaning
+<https://w3id.org/timebank#Cleaning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Cleaning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Maintenance> .
+<https://w3id.org/timebank#Cleaning> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with general cleaning tasks." .
+<https://w3id.org/timebank#Cleaning> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Cleaning> <http://www.w3.org/2000/01/rdf-schema#label> "Cleaning" .
+# 
+# https://w3id.org/timebank#CleaningUtensilsAvailable
+<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
+<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Cleaning utensils can be provided." .
+<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Cleaning Utensils Available" .
+# 
+# https://w3id.org/timebank#ClimbingStairsDifficulty
+<https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblems> .
+<https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulty in climbing up stairs." .
+<https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#label> "Difficulty in Climbing Stairs" .
+# 
+# https://w3id.org/timebank#ClothesWashing
+<https://w3id.org/timebank#ClothesWashing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ClothesWashing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Cleaning> .
+<https://w3id.org/timebank#ClothesWashing> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with washing clothes." .
+<https://w3id.org/timebank#ClothesWashing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ClothesWashing> <http://www.w3.org/2000/01/rdf-schema#label> "Clothes Washing" .
+# 
+# https://w3id.org/timebank#CognitiveImpairment
+<https://w3id.org/timebank#CognitiveImpairment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#CognitiveImpairment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MentalDisorder> .
+<https://w3id.org/timebank#CognitiveImpairment> <http://www.w3.org/2000/01/rdf-schema#comment> "A person with cognitive impairment can't think and remember things clearly." .
+<https://w3id.org/timebank#CognitiveImpairment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#CognitiveImpairment> <http://www.w3.org/2000/01/rdf-schema#label> "Cognitive Impairment" .
+# 
+# https://w3id.org/timebank#CommonDisease
+<https://w3id.org/timebank#CommonDisease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#CommonDisease> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Limitation> .
+<https://w3id.org/timebank#CommonDisease> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of diseases that are common, especially for elderly people" .
+<https://w3id.org/timebank#CommonDisease> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#CommonDisease> <http://www.w3.org/2000/01/rdf-schema#label> "Common Disease" .
+# 
+# https://w3id.org/timebank#ComputerProcessing
+<https://w3id.org/timebank#ComputerProcessing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ComputerProcessing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#OfficeWork> .
+<https://w3id.org/timebank#ComputerProcessing> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with processing data computers." .
+<https://w3id.org/timebank#ComputerProcessing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ComputerProcessing> <http://www.w3.org/2000/01/rdf-schema#label> "Computer Processing" .
+# 
+# https://w3id.org/timebank#ComputerRepair
+<https://w3id.org/timebank#ComputerRepair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ComputerRepair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Repair> .
+<https://w3id.org/timebank#ComputerRepair> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to fix problems with computers." .
+<https://w3id.org/timebank#ComputerRepair> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ComputerRepair> <http://www.w3.org/2000/01/rdf-schema#label> "Computer Repair" .
+# 
+# https://w3id.org/timebank#Cooking
+<https://w3id.org/timebank#Cooking> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Cooking> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodService> .
+<https://w3id.org/timebank#Cooking> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with cooking in general." .
+<https://w3id.org/timebank#Cooking> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Cooking> <http://www.w3.org/2000/01/rdf-schema#label> "Cooking" .
+# 
+# https://w3id.org/timebank#Counseling
+<https://w3id.org/timebank#Counseling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Counseling> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Advice> .
+<https://w3id.org/timebank#Counseling> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to advice people on psychological matters." .
+<https://w3id.org/timebank#Counseling> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Counseling> <http://www.w3.org/2000/01/rdf-schema#label> "Counseling" .
+# 
+# https://w3id.org/timebank#Crafting
+<https://w3id.org/timebank#Crafting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Crafting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#Crafting> <http://www.w3.org/2000/01/rdf-schema#comment> "Crafting skills." .
+<https://w3id.org/timebank#Crafting> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Crafting> <http://www.w3.org/2000/01/rdf-schema#label> "Crafting" .
+# 
+# https://w3id.org/timebank#CraftingClothes
+<https://w3id.org/timebank#CraftingClothes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#CraftingClothes> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Crafting> .
+<https://w3id.org/timebank#CraftingClothes> <http://www.w3.org/2000/01/rdf-schema#comment> "The ability to craft any kind of clothes." .
+<https://w3id.org/timebank#CraftingClothes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#CraftingClothes> <http://www.w3.org/2000/01/rdf-schema#label> "Crafting Clothes" .
+# 
+# https://w3id.org/timebank#DancingCompanion
+<https://w3id.org/timebank#DancingCompanion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DancingCompanion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Recreation> .
+<https://w3id.org/timebank#DancingCompanion> <http://www.w3.org/2000/01/rdf-schema#comment> "The ability to act as a dancing companion." .
+<https://w3id.org/timebank#DancingCompanion> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DancingCompanion> <http://www.w3.org/2000/01/rdf-schema#label> "Dancing Companion" .
+# 
+# https://w3id.org/timebank#DarkPlace
+<https://w3id.org/timebank#DarkPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DarkPlace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Surroundings> .
+<https://w3id.org/timebank#DarkPlace> <http://www.w3.org/2000/01/rdf-schema#comment> "Place with limited lighting." .
+<https://w3id.org/timebank#DarkPlace> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DarkPlace> <http://www.w3.org/2000/01/rdf-schema#label> "Dark Place" .
+# 
+# https://w3id.org/timebank#Depression
+<https://w3id.org/timebank#Depression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Depression> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MentalDisorder> .
+<https://w3id.org/timebank#Depression> <http://www.w3.org/2000/01/rdf-schema#comment> "A person with depression has a depressed mood over a long period and may even have thoughts of suicide." .
+<https://w3id.org/timebank#Depression> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Depression> <http://www.w3.org/2000/01/rdf-schema#label> "Depression" .
+# 
+# https://w3id.org/timebank#Diabetes
+<https://w3id.org/timebank#Diabetes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Diabetes> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CommonDisease> .
+<https://w3id.org/timebank#Diabetes> <http://www.w3.org/2000/01/rdf-schema#comment> "A disorder characterized by high blood sugar levels during a long period." .
+<https://w3id.org/timebank#Diabetes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Diabetes> <http://www.w3.org/2000/01/rdf-schema#label> "Diabetes Mellitus" .
+# 
+# https://w3id.org/timebank#DifficultToAccess
+<https://w3id.org/timebank#DifficultToAccess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DifficultToAccess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Surroundings> .
+<https://w3id.org/timebank#DifficultToAccess> <http://www.w3.org/2000/01/rdf-schema#comment> "The place is difficult to access." .
+<https://w3id.org/timebank#DifficultToAccess> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DifficultToAccess> <http://www.w3.org/2000/01/rdf-schema#label> "Difficult to Access" .
+# 
+# https://w3id.org/timebank#Dishwashing
+<https://w3id.org/timebank#Dishwashing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Dishwashing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodService> .
+<https://w3id.org/timebank#Dishwashing> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with washing dishes." .
+<https://w3id.org/timebank#Dishwashing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Dishwashing> <http://www.w3.org/2000/01/rdf-schema#label> "Dishwashing" .
+# 
+# https://w3id.org/timebank#DogInvolved
+<https://w3id.org/timebank#DogInvolved> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DogInvolved> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PetInvolved> .
+<https://w3id.org/timebank#DogInvolved> <http://www.w3.org/2000/01/rdf-schema#comment> "Dogs are involved." .
+<https://w3id.org/timebank#DogInvolved> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DogInvolved> <http://www.w3.org/2000/01/rdf-schema#label> "Dog Involved" .
+# 
+# https://w3id.org/timebank#DressingAssistance
+<https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PersonalServices> .
+<https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist someone with dressing." .
+<https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/2000/01/rdf-schema#label> "Dressing Assistance" .
+# 
+# https://w3id.org/timebank#DressingProblem
+<https://w3id.org/timebank#DressingProblem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblems> .
+<https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulties dressing himself." .
+<https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Dressing Problems" .
+# 
+# https://w3id.org/timebank#DrivingCars
+<https://w3id.org/timebank#DrivingCars> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DrivingCars> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#DrivingLightVehicles> .
+<https://w3id.org/timebank#DrivingCars> <http://www.w3.org/2000/01/rdf-schema#comment> "Experience in driving cars." .
+<https://w3id.org/timebank#DrivingCars> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DrivingCars> <http://www.w3.org/2000/01/rdf-schema#label> "Driving Cars" .
+# 
+# https://w3id.org/timebank#DrivingHeavyVehicles
+<https://w3id.org/timebank#DrivingHeavyVehicles> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DrivingHeavyVehicles> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Transportation> .
+<https://w3id.org/timebank#DrivingHeavyVehicles> <http://www.w3.org/2000/01/rdf-schema#comment> "Experience in driving heavy vehicles." .
+<https://w3id.org/timebank#DrivingHeavyVehicles> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DrivingHeavyVehicles> <http://www.w3.org/2000/01/rdf-schema#label> "Driving Heavy Vehicles" .
+# 
+# https://w3id.org/timebank#DrivingLightVehicles
+<https://w3id.org/timebank#DrivingLightVehicles> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DrivingLightVehicles> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Transportation> .
+<https://w3id.org/timebank#DrivingLightVehicles> <http://www.w3.org/2000/01/rdf-schema#comment> "Experience in driving light vehicles." .
+<https://w3id.org/timebank#DrivingLightVehicles> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DrivingLightVehicles> <http://www.w3.org/2000/01/rdf-schema#label> "Driving Light Vehicles" .
+# 
+# https://w3id.org/timebank#DrivingTractors
+<https://w3id.org/timebank#DrivingTractors> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DrivingTractors> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#DrivingHeavyVehicles> .
+<https://w3id.org/timebank#DrivingTractors> <http://www.w3.org/2000/01/rdf-schema#comment> "Experience in driving tractors." .
+<https://w3id.org/timebank#DrivingTractors> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DrivingTractors> <http://www.w3.org/2000/01/rdf-schema#label> "Driving Tractors" .
+# 
+# https://w3id.org/timebank#DrivingTrucks
+<https://w3id.org/timebank#DrivingTrucks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DrivingTrucks> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#DrivingHeavyVehicles> .
+<https://w3id.org/timebank#DrivingTrucks> <http://www.w3.org/2000/01/rdf-schema#comment> "Experience in driving with trucks." .
+<https://w3id.org/timebank#DrivingTrucks> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DrivingTrucks> <http://www.w3.org/2000/01/rdf-schema#label> "Driving Trucks" .
+# 
+# https://w3id.org/timebank#DrivingVans
+<https://w3id.org/timebank#DrivingVans> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DrivingVans> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#DrivingLightVehicles> .
+<https://w3id.org/timebank#DrivingVans> <http://www.w3.org/2000/01/rdf-schema#comment> "Experience in driving vans." .
+<https://w3id.org/timebank#DrivingVans> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DrivingVans> <http://www.w3.org/2000/01/rdf-schema#label> "Driving Vans" .
+# 
+# https://w3id.org/timebank#DrivingWithTrailers
+<https://w3id.org/timebank#DrivingWithTrailers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DrivingWithTrailers> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#DrivingHeavyVehicles> .
+<https://w3id.org/timebank#DrivingWithTrailers> <http://www.w3.org/2000/01/rdf-schema#comment> "Experience in driving with trailers." .
+<https://w3id.org/timebank#DrivingWithTrailers> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DrivingWithTrailers> <http://www.w3.org/2000/01/rdf-schema#label> "Driving with Trailers" .
+# 
+# https://w3id.org/timebank#DrugAllergies
+<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Allergy> .
+<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/2000/01/rdf-schema#comment> "An allergy to drugs." .
+<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/2000/01/rdf-schema#label> "Drug Allergies" .
+# 
+# https://w3id.org/timebank#EggAllergy
+<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergies> .
+<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergy to egg." .
+<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy to Egg" .
+# 
+# https://w3id.org/timebank#ElderlyCare
+<https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CareAndSupport> .
+<https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care and support for the elderly." .
+<https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care for Elderly" .
+# 
+# https://w3id.org/timebank#ElectricityAvailable
+<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
+<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Electric outlet available." .
+<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Electricity Available" .
+# 
+# https://w3id.org/timebank#ElectronicRepair
+<https://w3id.org/timebank#ElectronicRepair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ElectronicRepair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Repair> .
+<https://w3id.org/timebank#ElectronicRepair> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to repair electronic devices." .
+<https://w3id.org/timebank#ElectronicRepair> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ElectronicRepair> <http://www.w3.org/2000/01/rdf-schema#label> "Electronic Repair" .
+# 
+# https://w3id.org/timebank#ElevatedPlace
+<https://w3id.org/timebank#ElevatedPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ElevatedPlace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Surroundings> .
+<https://w3id.org/timebank#ElevatedPlace> <http://www.w3.org/2000/01/rdf-schema#comment> "Some high/elevated place is involved. This might trigger fear of heights for some people." .
+<https://w3id.org/timebank#ElevatedPlace> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ElevatedPlace> <http://www.w3.org/2000/01/rdf-schema#label> "Elevated Place" .
+# 
 # https://w3id.org/timebank#Environment
 <https://w3id.org/timebank#Environment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#comment> "The environment describes relevant factors for matching requesters and helpers which are not described by Skill or Limitation." .
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#label> "Environment" .
+# 
+# https://w3id.org/timebank#EnvironmentalAllergies
+<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Allergy> .
+<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/2000/01/rdf-schema#comment> "An allergy to something in environment such as dust mites, pollen, pet hair and cigarette smoke." .
+<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Allergies" .
+# 
+# https://w3id.org/timebank#EventPlanning
+<https://w3id.org/timebank#EventPlanning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#EventPlanning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Recreation> .
+<https://w3id.org/timebank#EventPlanning> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist in planning and hosting events." .
+<https://w3id.org/timebank#EventPlanning> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#EventPlanning> <http://www.w3.org/2000/01/rdf-schema#label> "Event Planning" .
+# 
+# https://w3id.org/timebank#FearOfAnimals
+<https://w3id.org/timebank#FearOfAnimals> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FearOfAnimals> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SpecificPhobia> .
+<https://w3id.org/timebank#FearOfAnimals> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear of animals. This can include dogs, cats, snakes, insects, etc." .
+<https://w3id.org/timebank#FearOfAnimals> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FearOfAnimals> <http://www.w3.org/2000/01/rdf-schema#label> "Fear of Animals" .
+# 
+# https://w3id.org/timebank#FearOfCat
+<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FearOfAnimals> .
+<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear of cats." .
+<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/2000/01/rdf-schema#label> "Fear of Cats" .
+# 
+# https://w3id.org/timebank#FearOfDark
+<https://w3id.org/timebank#FearOfDark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FearOfDark> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SpecificPhobia> .
+<https://w3id.org/timebank#FearOfDark> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear of dark places." .
+<https://w3id.org/timebank#FearOfDark> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FearOfDark> <http://www.w3.org/2000/01/rdf-schema#label> "Fear of Dark" .
+# 
+# https://w3id.org/timebank#FearOfDogs
+<https://w3id.org/timebank#FearOfDogs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FearOfDogs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FearOfAnimals> .
+<https://w3id.org/timebank#FearOfDogs> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear of dogs." .
+<https://w3id.org/timebank#FearOfDogs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FearOfDogs> <http://www.w3.org/2000/01/rdf-schema#label> "Fear of Dogs" .
+# 
+# https://w3id.org/timebank#FearOfHeights
+<https://w3id.org/timebank#FearOfHeights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FearOfHeights> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SpecificPhobia> .
+<https://w3id.org/timebank#FearOfHeights> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear or phobia of heights." .
+<https://w3id.org/timebank#FearOfHeights> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FearOfHeights> <http://www.w3.org/2000/01/rdf-schema#label> "Fear of Heights" .
+# 
+# https://w3id.org/timebank#FinancialAdvice
+<https://w3id.org/timebank#FinancialAdvice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FinancialAdvice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Advice> .
+<https://w3id.org/timebank#FinancialAdvice> <http://www.w3.org/2000/01/rdf-schema#comment> "Specialized in providing assistance with financial services. This can include helping with taxes and book keeping." .
+<https://w3id.org/timebank#FinancialAdvice> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FinancialAdvice> <http://www.w3.org/2000/01/rdf-schema#label> "Financial Advice" .
+# 
+# https://w3id.org/timebank#FoodAllergies
+<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Allergy> .
+<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/2000/01/rdf-schema#comment> "An allergy to food such as milk, peanuts, eggs, fish, tree nuts, and fruit." .
+<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/2000/01/rdf-schema#label> "Food Allergies" .
+# 
+# https://w3id.org/timebank#FoodPreparation
+<https://w3id.org/timebank#FoodPreparation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FoodPreparation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodService> .
+<https://w3id.org/timebank#FoodPreparation> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with food preparation like meat cutting, washing of food, etc." .
+<https://w3id.org/timebank#FoodPreparation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FoodPreparation> <http://www.w3.org/2000/01/rdf-schema#label> "Food Preparation" .
+# 
+# https://w3id.org/timebank#FoodService
+<https://w3id.org/timebank#FoodService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FoodService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#FoodService> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide services related to food products." .
+<https://w3id.org/timebank#FoodService> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FoodService> <http://www.w3.org/2000/01/rdf-schema#label> "Food Service" .
+# 
+# https://w3id.org/timebank#Games
+<https://w3id.org/timebank#Games> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Games> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Recreation> .
+<https://w3id.org/timebank#Games> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to participate in board games, card games, etc." .
+<https://w3id.org/timebank#Games> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Games> <http://www.w3.org/2000/01/rdf-schema#label> "Games" .
+# 
+# https://w3id.org/timebank#GlutenAllergy
+<https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergies> .
+<https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergies to grains with gluten such as wheat, barley, rye, and oats." .
+<https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy to Gluten" .
+# 
+# https://w3id.org/timebank#Groceries
+<https://w3id.org/timebank#Groceries> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Groceries> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SalesServices> .
+<https://w3id.org/timebank#Groceries> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to help buying groceries." .
+<https://w3id.org/timebank#Groceries> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Groceries> <http://www.w3.org/2000/01/rdf-schema#label> "Groceries" .
+# 
+# https://w3id.org/timebank#HairCutting
+<https://w3id.org/timebank#HairCutting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#HairCutting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PersonalServices> .
+<https://w3id.org/timebank#HairCutting> <http://www.w3.org/2000/01/rdf-schema#comment> "Ability to cut someone else's hair." .
+<https://w3id.org/timebank#HairCutting> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#HairCutting> <http://www.w3.org/2000/01/rdf-schema#label> "Hair Cutting" .
+# 
+# https://w3id.org/timebank#HeartDisease
+<https://w3id.org/timebank#HeartDisease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#HeartDisease> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CommonDisease> .
+<https://w3id.org/timebank#HeartDisease> <http://www.w3.org/2000/01/rdf-schema#comment> "A condition of diseases that negatively affect one's heart such as blood vessel diseases and heart rhythm problems." .
+<https://w3id.org/timebank#HeartDisease> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#HeartDisease> <http://www.w3.org/2000/01/rdf-schema#label> "Heart Diseases" .
+# 
+# https://w3id.org/timebank#HouseholdEquipmentRepair
+<https://w3id.org/timebank#HouseholdEquipmentRepair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#HouseholdEquipmentRepair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Repair> .
+<https://w3id.org/timebank#HouseholdEquipmentRepair> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to repair household equipment." .
+<https://w3id.org/timebank#HouseholdEquipmentRepair> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#HouseholdEquipmentRepair> <http://www.w3.org/2000/01/rdf-schema#label> "Houseshold Equipment Repair" .
+# 
+# https://w3id.org/timebank#HygieneAssitance
+<https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PersonalServices> .
+<https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist someone on hygienical matters." .
+<https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/2000/01/rdf-schema#label> "Hygiene Assitance" .
+# 
+# https://w3id.org/timebank#Hypertension
+<https://w3id.org/timebank#Hypertension> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Hypertension> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CommonDisease> .
+<https://w3id.org/timebank#Hypertension> <http://www.w3.org/2000/01/rdf-schema#comment> "The blood pressure is high in a long period." .
+<https://w3id.org/timebank#Hypertension> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Hypertension> <http://www.w3.org/2000/01/rdf-schema#label> "Hypertension" .
+# 
+# https://w3id.org/timebank#Hypotension
+<https://w3id.org/timebank#Hypotension> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Hypotension> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CommonDisease> .
+<https://w3id.org/timebank#Hypotension> <http://www.w3.org/2000/01/rdf-schema#comment> "The blood pressure is low in a long period." .
+<https://w3id.org/timebank#Hypotension> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Hypotension> <http://www.w3.org/2000/01/rdf-schema#label> "Hypotension" .
+# 
+# https://w3id.org/timebank#IngredientsAvailable
+<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
+<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Ingredients (like food) can be provided." .
+<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+# 
+# https://w3id.org/timebank#InternetAvailable
+<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
+<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Internet is available." .
+<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Internet Available" .
+# 
+# https://w3id.org/timebank#InventoryManagement
+<https://w3id.org/timebank#InventoryManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#InventoryManagement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#OfficeWork> .
+<https://w3id.org/timebank#InventoryManagement> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with inventory management." .
+<https://w3id.org/timebank#InventoryManagement> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#InventoryManagement> <http://www.w3.org/2000/01/rdf-schema#label> "Inventory Management" .
+# 
+# https://w3id.org/timebank#Knitting
+<https://w3id.org/timebank#Knitting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Knitting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CraftingClothes> .
+<https://w3id.org/timebank#Knitting> <http://www.w3.org/2000/01/rdf-schema#comment> "Specialized in knitting clothes." .
+<https://w3id.org/timebank#Knitting> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Knitting> <http://www.w3.org/2000/01/rdf-schema#label> "Knitting" .
+# 
+# https://w3id.org/timebank#LegalAdvice
+<https://w3id.org/timebank#LegalAdvice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#LegalAdvice> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Advice> .
+<https://w3id.org/timebank#LegalAdvice> <http://www.w3.org/2000/01/rdf-schema#comment> "Specialized in providing legal assistance." .
+<https://w3id.org/timebank#LegalAdvice> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#LegalAdvice> <http://www.w3.org/2000/01/rdf-schema#label> "Legal Advice" .
 # 
 # https://w3id.org/timebank#Level
 <https://w3id.org/timebank#Level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -297,31 +812,234 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#Limitation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Limitation> <http://www.w3.org/2000/01/rdf-schema#label> "Limitation" .
 # 
+# https://w3id.org/timebank#Maintenance
+<https://w3id.org/timebank#Maintenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Maintenance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#Maintenance> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to help with maintenance of equipment." .
+<https://w3id.org/timebank#Maintenance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Maintenance> <http://www.w3.org/2000/01/rdf-schema#label> "Maintenance" .
+# 
+# https://w3id.org/timebank#MentalDisorder
+<https://w3id.org/timebank#MentalDisorder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#MentalDisorder> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Limitation> .
+<https://w3id.org/timebank#MentalDisorder> <http://www.w3.org/2000/01/rdf-schema#comment> "Disorders that affect the mental states of a person." .
+<https://w3id.org/timebank#MentalDisorder> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#MentalDisorder> <http://www.w3.org/2000/01/rdf-schema#label> "Mental Disorder" .
+# 
+# https://w3id.org/timebank#MentallyIllCare
+<https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CareAndSupport> .
+<https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for the mentally ill." .
+<https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care Mentally Ill People" .
+# 
+# https://w3id.org/timebank#MilkAllergy
+<https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergies> .
+<https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergy to milk." .
+<https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy to Milk" .
+# 
+# https://w3id.org/timebank#MobilityProblems
+<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PhysicalInconvenience> .
+<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/2000/01/rdf-schema#comment> "Difficulties with moving around physically such as having difficulties using toliet, dressing, walking and so on." .
+<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/2000/01/rdf-schema#label> "Mobility Problems" .
+# 
+# https://w3id.org/timebank#Mopping
+<https://w3id.org/timebank#Mopping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Mopping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Cleaning> .
+<https://w3id.org/timebank#Mopping> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with mopping floors, etc." .
+<https://w3id.org/timebank#Mopping> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Mopping> <http://www.w3.org/2000/01/rdf-schema#label> "Mopping" .
+# 
+# https://w3id.org/timebank#Mowing
+<https://w3id.org/timebank#Mowing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Mowing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Maintenance> .
+<https://w3id.org/timebank#Mowing> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with mowing the grass." .
+<https://w3id.org/timebank#Mowing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Mowing> <http://www.w3.org/2000/01/rdf-schema#label> "Mowing" .
+# 
+# https://w3id.org/timebank#NutsAllergy
+<https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergies> .
+<https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergy to nuts such as almonds, walnuts and pecans." .
+<https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy to Nuts" .
+# 
+# https://w3id.org/timebank#OfficeWork
+<https://w3id.org/timebank#OfficeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#OfficeWork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#OfficeWork> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide help with office related work." .
+<https://w3id.org/timebank#OfficeWork> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#OfficeWork> <http://www.w3.org/2000/01/rdf-schema#label> "Office Work" .
+# 
+# https://w3id.org/timebank#OnlineShopping
+<https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SalesServices> .
+<https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist in buying things online." .
+<https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#label> "Online Shopping" .
+# 
+# https://w3id.org/timebank#PeanutsAllergy
+<https://w3id.org/timebank#PeanutsAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PeanutsAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergies> .
+<https://w3id.org/timebank#PeanutsAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergy to peanuts" .
+<https://w3id.org/timebank#PeanutsAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PeanutsAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy to Peanuts" .
+# 
+# https://w3id.org/timebank#PerformingMusic
+<https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Recreation> .
+<https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to entertain others by performing music." .
+<https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/2000/01/rdf-schema#label> "Performing Music" .
+# 
+# https://w3id.org/timebank#PersonalServices
+<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/2000/01/rdf-schema#comment> "Personal services which include hygiene and daily care." .
+<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/2000/01/rdf-schema#label> "Personal Services" .
+# 
+# https://w3id.org/timebank#PetInvolved
+<https://w3id.org/timebank#PetInvolved> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PetInvolved> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Surroundings> .
+<https://w3id.org/timebank#PetInvolved> <http://www.w3.org/2000/01/rdf-schema#comment> "Pets may be encountered when helping for the request." .
+<https://w3id.org/timebank#PetInvolved> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PetInvolved> <http://www.w3.org/2000/01/rdf-schema#label> "Pet Involved" .
+# 
+# https://w3id.org/timebank#PhoneCalls
+<https://w3id.org/timebank#PhoneCalls> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PhoneCalls> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#OfficeWork> .
+<https://w3id.org/timebank#PhoneCalls> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to perform phone calls." .
+<https://w3id.org/timebank#PhoneCalls> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PhoneCalls> <http://www.w3.org/2000/01/rdf-schema#label> "Phone Calls" .
+# 
+# https://w3id.org/timebank#PhysicalInconvenience
+<https://w3id.org/timebank#PhysicalInconvenience> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PhysicalInconvenience> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Limitation> .
+<https://w3id.org/timebank#PhysicalInconvenience> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a collection of physical disorders that negatively affect a person's daily life." .
+<https://w3id.org/timebank#PhysicalInconvenience> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PhysicalInconvenience> <http://www.w3.org/2000/01/rdf-schema#label> "Physical Inconvenience" .
+# 
+# https://w3id.org/timebank#PhysicallyDisabledCare
+<https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CareAndSupport> .
+<https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for the physically disabled." .
+<https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care for Physically Disabled" .
+# 
+# https://w3id.org/timebank#Plumbing
+<https://w3id.org/timebank#Plumbing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Plumbing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Repair> .
+<https://w3id.org/timebank#Plumbing> <http://www.w3.org/2000/01/rdf-schema#comment> "Skill to perform plumbing and repairs on pipe installation." .
+<https://w3id.org/timebank#Plumbing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Plumbing> <http://www.w3.org/2000/01/rdf-schema#label> "Plumbing" .
+# 
+# https://w3id.org/timebank#PoorEyesight
+<https://w3id.org/timebank#PoorEyesight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PoorEyesight> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PhysicalInconvenience> .
+<https://w3id.org/timebank#PoorEyesight> <http://www.w3.org/2000/01/rdf-schema#comment> "Having difficulties seeing objects clearly." .
+<https://w3id.org/timebank#PoorEyesight> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PoorEyesight> <http://www.w3.org/2000/01/rdf-schema#label> "Poor Eyesight" .
+# 
+# https://w3id.org/timebank#PoorHearing
+<https://w3id.org/timebank#PoorHearing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PoorHearing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PhysicalInconvenience> .
+<https://w3id.org/timebank#PoorHearing> <http://www.w3.org/2000/01/rdf-schema#comment> "Having difficulties hearing voices clearly." .
+<https://w3id.org/timebank#PoorHearing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PoorHearing> <http://www.w3.org/2000/01/rdf-schema#label> "Poor Hearing" .
+# 
+# https://w3id.org/timebank#Pruning
+<https://w3id.org/timebank#Pruning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Pruning> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Maintenance> .
+<https://w3id.org/timebank#Pruning> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with pruning shrubs and twigs." .
+<https://w3id.org/timebank#Pruning> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Pruning> <http://www.w3.org/2000/01/rdf-schema#label> "Pruning" .
+# 
+# https://w3id.org/timebank#PsychoticEpisode
+<https://w3id.org/timebank#PsychoticEpisode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PsychoticEpisode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MentalDisorder> .
+<https://w3id.org/timebank#PsychoticEpisode> <http://www.w3.org/2000/01/rdf-schema#comment> "A person with psychotic episode can not tell the difference between the reality and unreality and may have difficulty with social activities in daily life." .
+<https://w3id.org/timebank#PsychoticEpisode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PsychoticEpisode> <http://www.w3.org/2000/01/rdf-schema#label> "Psychotic Episode" .
+# 
+# https://w3id.org/timebank#RecordingNotes
+<https://w3id.org/timebank#RecordingNotes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#RecordingNotes> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#OfficeWork> .
+<https://w3id.org/timebank#RecordingNotes> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with recording notes and entries." .
+<https://w3id.org/timebank#RecordingNotes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#RecordingNotes> <http://www.w3.org/2000/01/rdf-schema#label> "Recording Notes" .
+# 
+# https://w3id.org/timebank#Recreation
+<https://w3id.org/timebank#Recreation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Recreation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#Recreation> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide services related to recreation." .
+<https://w3id.org/timebank#Recreation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Recreation> <http://www.w3.org/2000/01/rdf-schema#label> "Recreation" .
+# 
+# https://w3id.org/timebank#Repair
+<https://w3id.org/timebank#Repair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Repair> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#Repair> <http://www.w3.org/2000/01/rdf-schema#comment> "The Skill to repair equipment and facilities." .
+<https://w3id.org/timebank#Repair> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Repair> <http://www.w3.org/2000/01/rdf-schema#label> "Repair" .
+# 
 # https://w3id.org/timebank#Request
 <https://w3id.org/timebank#Request> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasAccreditedDuration> .
+_:genid9 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasOriginator> .
+_:genid10 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasStatus> .
+_:genid11 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 <https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
 _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasAccreditedDuration> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#isOriginatorOf> .
 _:genid12 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 <https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
 _:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasOriginator> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#rating> .
 _:genid13 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasStatus> .
-_:genid14 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#isOriginatorOf> .
-_:genid15 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#rating> .
-_:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 <https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#comment> "A request for help from a Timebank user." .
 <https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#label> "Request" .
+# 
+# https://w3id.org/timebank#Rheumatism
+<https://w3id.org/timebank#Rheumatism> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Rheumatism> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CommonDisease> .
+<https://w3id.org/timebank#Rheumatism> <http://www.w3.org/2000/01/rdf-schema#comment> "Diseases that causes chronic pain in joints and muscles such as back, shoulder and neck." .
+<https://w3id.org/timebank#Rheumatism> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Rheumatism> <http://www.w3.org/2000/01/rdf-schema#label> "Rheumatism" .
+# 
+# https://w3id.org/timebank#SalesServices
+<https://w3id.org/timebank#SalesServices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to help with selling and buying products." .
+<https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#label> "Sales Services" .
+# 
+# https://w3id.org/timebank#SensitiveSkin
+<https://w3id.org/timebank#SensitiveSkin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#SensitiveSkin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PhysicalInconvenience> .
+<https://w3id.org/timebank#SensitiveSkin> <http://www.w3.org/2000/01/rdf-schema#comment> "Skins are too sensitive to a wide variety of factors such as weather, pets, stress and dust." .
+<https://w3id.org/timebank#SensitiveSkin> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#SensitiveSkin> <http://www.w3.org/2000/01/rdf-schema#label> "Sensitive Skin" .
+# 
+# https://w3id.org/timebank#Sewing
+<https://w3id.org/timebank#Sewing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Sewing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CraftingClothes> .
+<https://w3id.org/timebank#Sewing> <http://www.w3.org/2000/01/rdf-schema#comment> "Specialized in sewing clothes." .
+<https://w3id.org/timebank#Sewing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Sewing> <http://www.w3.org/2000/01/rdf-schema#label> "Sewing" .
 # 
 # https://w3id.org/timebank#Skill
 <https://w3id.org/timebank#Skill> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -329,11 +1047,116 @@ _:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 <https://w3id.org/timebank#Skill> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Skill> <http://www.w3.org/2000/01/rdf-schema#label> "Skill" .
 # 
+# https://w3id.org/timebank#SlipperyFloor
+<https://w3id.org/timebank#SlipperyFloor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#SlipperyFloor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#DifficultToAccess> .
+<https://w3id.org/timebank#SlipperyFloor> <http://www.w3.org/2000/01/rdf-schema#comment> "The person needs to be aware of slippery floor." .
+<https://w3id.org/timebank#SlipperyFloor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#SlipperyFloor> <http://www.w3.org/2000/01/rdf-schema#label> "Splippery Floor" .
+# 
+# https://w3id.org/timebank#SpeakingProblem
+<https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PhysicalInconvenience> .
+<https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulties speaking clearly due to body function problems such as injuries to the brain, mouth or throat." .
+<https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Speaking Problems" .
+# 
+# https://w3id.org/timebank#SpecificPhobia
+<https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MentalDisorder> .
+<https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear of specific objects such as dogs, cats, water, lightning, dark and so on." .
+<https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/2000/01/rdf-schema#label> "Specific Phobia" .
+# 
+# https://w3id.org/timebank#Sports
+<https://w3id.org/timebank#Sports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Sports> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Recreation> .
+<https://w3id.org/timebank#Sports> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to participate in sport activities." .
+<https://w3id.org/timebank#Sports> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Sports> <http://www.w3.org/2000/01/rdf-schema#label> "Sports" .
+# 
+# https://w3id.org/timebank#Stairs
+<https://w3id.org/timebank#Stairs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Stairs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#DifficultToAccess> .
+<https://w3id.org/timebank#Stairs> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has to climb stairs to complete the task." .
+<https://w3id.org/timebank#Stairs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Stairs> <http://www.w3.org/2000/01/rdf-schema#label> "Stairs" .
+# 
 # https://w3id.org/timebank#Status
 <https://w3id.org/timebank#Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/timebank#Status> <http://www.w3.org/2000/01/rdf-schema#comment> "The status of a request." .
 <https://w3id.org/timebank#Status> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Status> <http://www.w3.org/2000/01/rdf-schema#label> "Status" .
+# 
+# https://w3id.org/timebank#StrokeHistory
+<https://w3id.org/timebank#StrokeHistory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#StrokeHistory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CommonDisease> .
+<https://w3id.org/timebank#StrokeHistory> <http://www.w3.org/2000/01/rdf-schema#comment> "It indicates a person once had a storke. A stroke happens when blood flow to the brain is blocked and oxygen for the brain cells is insufficient, which could leads to cell death." .
+<https://w3id.org/timebank#StrokeHistory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#StrokeHistory> <http://www.w3.org/2000/01/rdf-schema#label> "History of Strokes" .
+# 
+# https://w3id.org/timebank#SuppliesAvailable
+<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Environment> .
+<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Availability of specific supplies to complete a task." .
+<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Supplies Available" .
+# 
+# https://w3id.org/timebank#Surroundings
+<https://w3id.org/timebank#Surroundings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Surroundings> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Environment> .
+<https://w3id.org/timebank#Surroundings> <http://www.w3.org/2000/01/rdf-schema#comment> "Surroundings of a request." .
+<https://w3id.org/timebank#Surroundings> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Surroundings> <http://www.w3.org/2000/01/rdf-schema#label> "Surroundings" .
+# 
+# https://w3id.org/timebank#Tailoring
+<https://w3id.org/timebank#Tailoring> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Tailoring> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CraftingClothes> .
+<https://w3id.org/timebank#Tailoring> <http://www.w3.org/2000/01/rdf-schema#comment> "Specialized in providing tailoring services." .
+<https://w3id.org/timebank#Tailoring> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Tailoring> <http://www.w3.org/2000/01/rdf-schema#label> "Tailoring" .
+# 
+# https://w3id.org/timebank#ToiletUsingProblem
+<https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblems> .
+<https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulties using toilet." .
+<https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Toilet Using Problems" .
+# 
+# https://w3id.org/timebank#ToolsAvailable
+<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
+<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Tools can be provided." .
+<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Tools Available" .
+# 
+# https://w3id.org/timebank#Transportation
+<https://w3id.org/timebank#Transportation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Transportation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#Transportation> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide services related to transportation." .
+<https://w3id.org/timebank#Transportation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Transportation> <http://www.w3.org/2000/01/rdf-schema#label> "TransportationServices" .
+# 
+# https://w3id.org/timebank#TransportationAvailable
+<https://w3id.org/timebank#TransportationAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#TransportationAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Surroundings> .
+<https://w3id.org/timebank#TransportationAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Transportation necessary to complete the task can be provided." .
+<https://w3id.org/timebank#TransportationAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#TransportationAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Transportation Available" .
+# 
+# https://w3id.org/timebank#TravelCompanion
+<https://w3id.org/timebank#TravelCompanion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#TravelCompanion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Recreation> .
+<https://w3id.org/timebank#TravelCompanion> <http://www.w3.org/2000/01/rdf-schema#comment> "The ability to act as a travel companion." .
+<https://w3id.org/timebank#TravelCompanion> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#TravelCompanion> <http://www.w3.org/2000/01/rdf-schema#label> "Travel Companion" .
+# 
+# https://w3id.org/timebank#UnevenTerrain
+<https://w3id.org/timebank#UnevenTerrain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#UnevenTerrain> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#DifficultToAccess> .
+<https://w3id.org/timebank#UnevenTerrain> <http://www.w3.org/2000/01/rdf-schema#comment> "The person needs equipment (e.g. shoes) suitable for uneven terrain." .
+<https://w3id.org/timebank#UnevenTerrain> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#UnevenTerrain> <http://www.w3.org/2000/01/rdf-schema#label> "Uneven Terrain" .
 # 
 # https://w3id.org/timebank#User
 <https://w3id.org/timebank#User> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -341,6 +1164,48 @@ _:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 <https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#comment> "A user of the Timebank." .
 <https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#label> "User" .
+# 
+# https://w3id.org/timebank#WalkingProblem
+<https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblems> .
+<https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulties walking." .
+<https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Walking Problems" .
+# 
+# https://w3id.org/timebank#WeatherConstraint
+<https://w3id.org/timebank#WeatherConstraint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#WeatherConstraint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#DifficultToAccess> .
+<https://w3id.org/timebank#WeatherConstraint> <http://www.w3.org/2000/01/rdf-schema#comment> "The place is difficult to access during bad weather (e.g. snow)." .
+<https://w3id.org/timebank#WeatherConstraint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#WeatherConstraint> <http://www.w3.org/2000/01/rdf-schema#label> "Weather Constraint" .
+# 
+# https://w3id.org/timebank#WoodCarving
+<https://w3id.org/timebank#WoodCarving> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#WoodCarving> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#WoodCrafting> .
+<https://w3id.org/timebank#WoodCarving> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to Carve items out of wood." .
+<https://w3id.org/timebank#WoodCarving> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#WoodCarving> <http://www.w3.org/2000/01/rdf-schema#label> "Wood Carving" .
+# 
+# https://w3id.org/timebank#WoodCrafting
+<https://w3id.org/timebank#WoodCrafting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#WoodCrafting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Crafting> .
+<https://w3id.org/timebank#WoodCrafting> <http://www.w3.org/2000/01/rdf-schema#comment> "Crafting skill with wood as base material." .
+<https://w3id.org/timebank#WoodCrafting> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#WoodCrafting> <http://www.w3.org/2000/01/rdf-schema#label> "Wood Crafting" .
+# 
+# https://w3id.org/timebank#Writing
+<https://w3id.org/timebank#Writing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Writing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#OfficeWork> .
+<https://w3id.org/timebank#Writing> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist with written work, like writing or reading a letter." .
+<https://w3id.org/timebank#Writing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Writing> <http://www.w3.org/2000/01/rdf-schema#label> "Writing" .
+# 
+# https://w3id.org/timebank#sickness
+<https://w3id.org/timebank#sickness> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#sickness> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#CareAndSupport> .
+<https://w3id.org/timebank#sickness> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for sick people." .
+<https://w3id.org/timebank#sickness> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#sickness> <http://www.w3.org/2000/01/rdf-schema#label> "Care for Sick People" .
 # 
 # 
 # 

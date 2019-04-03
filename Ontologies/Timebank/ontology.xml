@@ -1307,6 +1307,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
         <rdfs:comment>Ingredients (like food) can be provided.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Ingredients Available</rdfs:label>
     </owl:Class>
     
 

@@ -855,7 +855,8 @@
 :IngredientsAvailable rdf:type owl:Class ;
                       rdfs:subClassOf :SuppliesAvailable ;
                       rdfs:comment "Ingredients (like food) can be provided." ;
-                      rdfs:isDefinedBy <https://w3id.org/timebank> .
+                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                      rdfs:label "Ingredients Available" .
 
 
 ###  https://w3id.org/timebank#InternetAvailable

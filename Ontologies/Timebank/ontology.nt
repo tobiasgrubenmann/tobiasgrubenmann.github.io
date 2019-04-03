@@ -771,6 +771,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
 <https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Ingredients (like food) can be provided." .
 <https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Ingredients Available" .
 # 
 # https://w3id.org/timebank#InternetAvailable
 <https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

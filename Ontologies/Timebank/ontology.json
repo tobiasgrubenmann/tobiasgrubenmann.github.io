@@ -349,21 +349,6 @@
     "@id" : "https://w3id.org/timebank#Maintenance"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#CleaningUtensilsAvailable",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Cleaning utensils can be provided."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Cleaning Utensils Available"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#SuppliesAvailable"
-  } ]
-}, {
   "@id" : "https://w3id.org/timebank#ClimbingStairsDifficulty",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -799,7 +784,7 @@
     "@id" : "https://w3id.org/timebank#CareAndSupport"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#ElectricityAvailable",
+  "@id" : "https://w3id.org/timebank#Electricity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Electric outlet available."
@@ -808,10 +793,10 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Electricity Available"
+    "@value" : "Electricity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#SuppliesAvailable"
+    "@id" : "https://w3id.org/timebank#Supplies"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#ElectronicRepair",
@@ -1156,7 +1141,7 @@
     "@id" : "https://w3id.org/timebank#CommonDisease"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#IngredientsAvailable",
+  "@id" : "https://w3id.org/timebank#Ingredients",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Ingredients (like food) can be provided."
@@ -1165,13 +1150,13 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Ingredients Available"
+    "@value" : "Ingredients"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#SuppliesAvailable"
+    "@id" : "https://w3id.org/timebank#Supplies"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#InternetAvailable",
+  "@id" : "https://w3id.org/timebank#Internet",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Internet is available."
@@ -1180,10 +1165,10 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Internet Available"
+    "@value" : "Internet"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#SuppliesAvailable"
+    "@id" : "https://w3id.org/timebank#Supplies"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#InventoryManagement",
@@ -1911,7 +1896,7 @@
     "@id" : "https://w3id.org/timebank#CommonDisease"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#SuppliesAvailable",
+  "@id" : "https://w3id.org/timebank#Supplies",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Availability of specific supplies to complete a task."
@@ -1920,7 +1905,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Supplies Available"
+    "@value" : "Supplies"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Environment"
@@ -1971,7 +1956,7 @@
     "@id" : "https://w3id.org/timebank#MobilityProblems"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#ToolsAvailable",
+  "@id" : "https://w3id.org/timebank#Tools",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Tools can be provided."
@@ -1980,10 +1965,10 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Tools Available"
+    "@value" : "Tools"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#SuppliesAvailable"
+    "@id" : "https://w3id.org/timebank#Supplies"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Transportation",
@@ -2074,6 +2059,21 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#MobilityProblems"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#WaterSupply",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Water outlet is available."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Watter Supply"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/timebank#Supplies"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#WeatherConstraint",

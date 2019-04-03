@@ -653,18 +653,6 @@
     
 
 
-    <!-- https://w3id.org/timebank#CleaningUtensilsAvailable -->
-
-
-    <owl:Class rdf:about="https://w3id.org/timebank#CleaningUtensilsAvailable">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
-        <rdfs:comment>Cleaning utensils can be provided.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Cleaning Utensils Available</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/timebank#ClimbingStairsDifficulty -->
 
 
@@ -1013,14 +1001,14 @@
     
 
 
-    <!-- https://w3id.org/timebank#ElectricityAvailable -->
+    <!-- https://w3id.org/timebank#Electricity -->
 
 
-    <owl:Class rdf:about="https://w3id.org/timebank#ElectricityAvailable">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
+    <owl:Class rdf:about="https://w3id.org/timebank#Electricity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Supplies"/>
         <rdfs:comment>Electric outlet available.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Electricity Available</rdfs:label>
+        <rdfs:label>Electricity</rdfs:label>
     </owl:Class>
     
 
@@ -1300,26 +1288,26 @@
     
 
 
-    <!-- https://w3id.org/timebank#IngredientsAvailable -->
+    <!-- https://w3id.org/timebank#Ingredients -->
 
 
-    <owl:Class rdf:about="https://w3id.org/timebank#IngredientsAvailable">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
+    <owl:Class rdf:about="https://w3id.org/timebank#Ingredients">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Supplies"/>
         <rdfs:comment>Ingredients (like food) can be provided.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Ingredients Available</rdfs:label>
+        <rdfs:label>Ingredients</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://w3id.org/timebank#InternetAvailable -->
+    <!-- https://w3id.org/timebank#Internet -->
 
 
-    <owl:Class rdf:about="https://w3id.org/timebank#InternetAvailable">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
+    <owl:Class rdf:about="https://w3id.org/timebank#Internet">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Supplies"/>
         <rdfs:comment>Internet is available.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Internet Available</rdfs:label>
+        <rdfs:label>Internet</rdfs:label>
     </owl:Class>
     
 
@@ -1865,14 +1853,14 @@
     
 
 
-    <!-- https://w3id.org/timebank#SuppliesAvailable -->
+    <!-- https://w3id.org/timebank#Supplies -->
 
 
-    <owl:Class rdf:about="https://w3id.org/timebank#SuppliesAvailable">
+    <owl:Class rdf:about="https://w3id.org/timebank#Supplies">
         <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Environment"/>
         <rdfs:comment>Availability of specific supplies to complete a task.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Supplies Available</rdfs:label>
+        <rdfs:label>Supplies</rdfs:label>
     </owl:Class>
     
 
@@ -1913,14 +1901,14 @@
     
 
 
-    <!-- https://w3id.org/timebank#ToolsAvailable -->
+    <!-- https://w3id.org/timebank#Tools -->
 
 
-    <owl:Class rdf:about="https://w3id.org/timebank#ToolsAvailable">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SuppliesAvailable"/>
+    <owl:Class rdf:about="https://w3id.org/timebank#Tools">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Supplies"/>
         <rdfs:comment>Tools can be provided.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Tools Available</rdfs:label>
+        <rdfs:label>Tools</rdfs:label>
     </owl:Class>
     
 
@@ -1993,6 +1981,18 @@
         <rdfs:comment>The person has difficulties walking.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Walking Problems</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#WaterSupply -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#WaterSupply">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Supplies"/>
+        <rdfs:comment>Water outlet is available.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Watter Supply</rdfs:label>
     </owl:Class>
     
 

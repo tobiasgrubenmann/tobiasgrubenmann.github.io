@@ -389,13 +389,6 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#Cleaning> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Cleaning> <http://www.w3.org/2000/01/rdf-schema#label> "Cleaning" .
 # 
-# https://w3id.org/timebank#CleaningUtensilsAvailable
-<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
-<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Cleaning utensils can be provided." .
-<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#CleaningUtensilsAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Cleaning Utensils Available" .
-# 
 # https://w3id.org/timebank#ClimbingStairsDifficulty
 <https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblems> .
@@ -599,12 +592,12 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care for Elderly" .
 # 
-# https://w3id.org/timebank#ElectricityAvailable
-<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
-<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Electric outlet available." .
-<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#ElectricityAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Electricity Available" .
+# https://w3id.org/timebank#Electricity
+<https://w3id.org/timebank#Electricity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Electricity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Supplies> .
+<https://w3id.org/timebank#Electricity> <http://www.w3.org/2000/01/rdf-schema#comment> "Electric outlet available." .
+<https://w3id.org/timebank#Electricity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Electricity> <http://www.w3.org/2000/01/rdf-schema#label> "Electricity" .
 # 
 # https://w3id.org/timebank#ElectronicRepair
 <https://w3id.org/timebank#ElectronicRepair> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -766,19 +759,19 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#Hypotension> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Hypotension> <http://www.w3.org/2000/01/rdf-schema#label> "Hypotension" .
 # 
-# https://w3id.org/timebank#IngredientsAvailable
-<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
-<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Ingredients (like food) can be provided." .
-<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#IngredientsAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Ingredients Available" .
+# https://w3id.org/timebank#Ingredients
+<https://w3id.org/timebank#Ingredients> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Ingredients> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Supplies> .
+<https://w3id.org/timebank#Ingredients> <http://www.w3.org/2000/01/rdf-schema#comment> "Ingredients (like food) can be provided." .
+<https://w3id.org/timebank#Ingredients> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Ingredients> <http://www.w3.org/2000/01/rdf-schema#label> "Ingredients" .
 # 
-# https://w3id.org/timebank#InternetAvailable
-<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
-<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Internet is available." .
-<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#InternetAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Internet Available" .
+# https://w3id.org/timebank#Internet
+<https://w3id.org/timebank#Internet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Internet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Supplies> .
+<https://w3id.org/timebank#Internet> <http://www.w3.org/2000/01/rdf-schema#comment> "Internet is available." .
+<https://w3id.org/timebank#Internet> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Internet> <http://www.w3.org/2000/01/rdf-schema#label> "Internet" .
 # 
 # https://w3id.org/timebank#InventoryManagement
 <https://w3id.org/timebank#InventoryManagement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1096,12 +1089,12 @@ _:genid13 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 <https://w3id.org/timebank#StrokeHistory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#StrokeHistory> <http://www.w3.org/2000/01/rdf-schema#label> "History of Strokes" .
 # 
-# https://w3id.org/timebank#SuppliesAvailable
-<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Environment> .
-<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Availability of specific supplies to complete a task." .
-<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#SuppliesAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Supplies Available" .
+# https://w3id.org/timebank#Supplies
+<https://w3id.org/timebank#Supplies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Supplies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Environment> .
+<https://w3id.org/timebank#Supplies> <http://www.w3.org/2000/01/rdf-schema#comment> "Availability of specific supplies to complete a task." .
+<https://w3id.org/timebank#Supplies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Supplies> <http://www.w3.org/2000/01/rdf-schema#label> "Supplies" .
 # 
 # https://w3id.org/timebank#Surroundings
 <https://w3id.org/timebank#Surroundings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1124,12 +1117,12 @@ _:genid13 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 <https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Toilet Using Problems" .
 # 
-# https://w3id.org/timebank#ToolsAvailable
-<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SuppliesAvailable> .
-<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/2000/01/rdf-schema#comment> "Tools can be provided." .
-<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#ToolsAvailable> <http://www.w3.org/2000/01/rdf-schema#label> "Tools Available" .
+# https://w3id.org/timebank#Tools
+<https://w3id.org/timebank#Tools> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Tools> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Supplies> .
+<https://w3id.org/timebank#Tools> <http://www.w3.org/2000/01/rdf-schema#comment> "Tools can be provided." .
+<https://w3id.org/timebank#Tools> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Tools> <http://www.w3.org/2000/01/rdf-schema#label> "Tools" .
 # 
 # https://w3id.org/timebank#Transportation
 <https://w3id.org/timebank#Transportation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1172,6 +1165,13 @@ _:genid13 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 <https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulties walking." .
 <https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Walking Problems" .
+# 
+# https://w3id.org/timebank#WaterSupply
+<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Supplies> .
+<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/2000/01/rdf-schema#comment> "Water outlet is available." .
+<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/2000/01/rdf-schema#label> "Watter Supply" .
 # 
 # https://w3id.org/timebank#WeatherConstraint
 <https://w3id.org/timebank#WeatherConstraint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

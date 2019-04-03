@@ -1,6 +1,10 @@
 <html>
 <h2 id="desc" class="list">Timebank Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+The two most central concepts are the <a href="#User">users</a> and <a href="#User">requests</a>. A user can request help and help fellow users. The property <a href="#isOriginatorOf">isOriginatorOf</a> is used to link a request to a user asking for help. The property <a href="#accepts">accepts</a> is used to link a helper to a request. A user can have <a href="#Skill">skills</a> and <a href="#Limitation">limitations</a>, which are linked to the user with the properties <a href="#hasSkill">hasSkill</a> and <a href="#hasLimitation">hasLimitation</a>. A request can also have skills and limitations associated to it, using the the properties <a href="#requiresSkill">requiresSkill</a> and <a href="#excludesByLimitation">excludesByLimitation</a>. A request also has an <a href="#Environment">environment</a>, which can be expressed with the property <a href="#hasEnvironment">hasEnvironment</a>.
+<br/>
+To keep track of the time-balance of a user, each request is worth a specific amount of time. The property <a href="#hasAccreditedDuration">hasAccreditedDuration</a> is used to express this amount of time. The current time-balance of a user is calculated by adding all time durations for which the user was a helper (<a href="#accepts">acceppted</a> a request) and substract all time durations for which the user was a receiver of help (<a href="#isOriginatorOf">originator</a> of a request). The initial time-balance can be expressed by the property <a href="#hasTimeBalance">hasTimeBalance</a>.
+<br/>
+</span>
 
 </html>

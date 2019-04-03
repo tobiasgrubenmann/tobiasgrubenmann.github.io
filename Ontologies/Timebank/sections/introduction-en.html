@@ -1,12 +1,8 @@
 <html><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-    The Timebank Ontology can be used to describe Timebank systems. A Timebank allows user to store virtual money, often called a Time Dollar, into a bank account [Cahn2004]. This virtual currency can be earned by helping fellow Timebank users and spend by requesting help from others.
-    <br/>
-    The two most central concepts are the <a href="#User">users</a> and <a href="#User">requests</a>. A user can request help and help fellow users. The property <a href="#isOriginatorOf">isOriginatorOf</a> is used to link a request to a user asking for help. The property <a href="#accepts">accepts</a> is used to link a helper to a request. A user can have <a href="#Skill">skills</a> and <a href="#Limitation">limitations</a>, which are linked to the user with the properties <a href="#hasSkill">hasSkill</a> and <a href="#hasLimitation">hasLimitation</a>. A request can also have skills and limitations associated to it, using the the properties <a href="#requiresSkill">requiresSkill</a> and <a href="#excludesByLimitation">excludesByLimitation</a>. A request also has an <a href="#Environment">environment</a>, which can be expressed with the property <a href="#hasEnvironment">hasEnvironment</a>.
-    <br/>
-    To keep track of the time-balance of a user, each request is worth a specific amount of time. The property <a href="#hasAccreditedDuration">hasAccreditedDuration</a> is used to express this amount of time. The current time-balance of a user is calculated by adding all time durations for which the user was a helper (<a href="#accepts">acceppted</a> a request) and substract all time durations for which the user was a receiver of help (<a href="#isOriginatorOf">originator</a> of a request). The initial time-balance can be expressed by the property <a href="#hasTimeBalance">hasTimeBalance</a>.
-    <br/>
-    The Timebank Ontology is supported by the Innovation and Technology Fund (ITF) of The Government of the Hong Kong Special Administrative Region under grant Ref: MRP/029/18.
+The Timebank Ontology can be used to describe Timebank systems. A Timebank allows user to store virtual money, often called a Time Dollar, into a bank account [Cahn2004]. This virtual currency can be earned by helping fellow Timebank users and spend by requesting help from others.
+<br/>
+The Timebank Ontology is supported by the Innovation and Technology Fund (ITF) of The Government of the Hong Kong Special Administrative Region under grant Ref: MRP/029/18.
 </span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>

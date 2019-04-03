@@ -26,9 +26,6 @@ This ontology has the following classes and properties.</span>
       <a href="#NutsAllergy" title="https://w3id.org/timebank#NutsAllergy">Allergy to Nuts</a>
    </li>
    <li>
-      <a href="#PeanutsAllergy" title="https://w3id.org/timebank#PeanutsAllergy">Allergy to Peanuts</a>
-   </li>
-   <li>
       <a href="#Assembling" title="https://w3id.org/timebank#Assembling">Assembling</a>
    </li>
    <li>
@@ -38,7 +35,7 @@ This ontology has the following classes and properties.</span>
       <a href="#Baking" title="https://w3id.org/timebank#Baking">Baking</a>
    </li>
    <li>
-      <a href="#CareAndSupport" title="https://w3id.org/timebank#CareAndSupport">Care and Support</a>
+      <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
    </li>
    <li>
       <a href="#ElderlyCare" title="https://w3id.org/timebank#ElderlyCare">Care for Elderly</a>
@@ -48,7 +45,7 @@ This ontology has the following classes and properties.</span>
          title="https://w3id.org/timebank#PhysicallyDisabledCare">Care for Physically Disabled</a>
    </li>
    <li>
-      <a href="#sickness" title="https://w3id.org/timebank#sickness">Care for Sick People</a>
+      <a href="#SickCare" title="https://w3id.org/timebank#SickCare">Care for Sick People</a>
    </li>
    <li>
       <a href="#MentallyIllCare" title="https://w3id.org/timebank#MentallyIllCare">Care Mentally Ill People</a>
@@ -102,6 +99,9 @@ This ontology has the following classes and properties.</span>
       <a href="#DarkPlace" title="https://w3id.org/timebank#DarkPlace">Dark Place</a>
    </li>
    <li>
+      <a href="#http://www.w3.org/2006/time#DayOfWeek" title="http://www.w3.org/2006/time#DayOfWeek">Day of week</a>
+   </li>
+   <li>
       <a href="#Depression" title="https://w3id.org/timebank#Depression">Depression</a>
    </li>
    <li>
@@ -149,6 +149,9 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#DrugAllergies" title="https://w3id.org/timebank#DrugAllergies">Drug Allergies</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#DurationDescription" title="http://www.w3.org/2006/time#DurationDescription">Duration description</a>
    </li>
    <li>
       <a href="#Electricity" title="https://w3id.org/timebank#Electricity">Electricity</a>
@@ -270,6 +273,9 @@ This ontology has the following classes and properties.</span>
       <a href="#PerformingMusic" title="https://w3id.org/timebank#PerformingMusic">Performing Music</a>
    </li>
    <li>
+      <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">Person</a>
+   </li>
+   <li>
       <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
    </li>
    <li>
@@ -289,6 +295,9 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#PoorHearing" title="https://w3id.org/timebank#PoorHearing">Poor Hearing</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#ProperInterval" title="http://www.w3.org/2006/time#ProperInterval">Proper interval</a>
    </li>
    <li>
       <a href="#Pruning" title="https://w3id.org/timebank#Pruning">Pruning</a>
@@ -345,10 +354,10 @@ This ontology has the following classes and properties.</span>
       <a href="#Supplies" title="https://w3id.org/timebank#Supplies">Supplies</a>
    </li>
    <li>
-      <a href="#Surroundings" title="https://w3id.org/timebank#Surroundings">Surroundings</a>
+      <a href="#Tailoring" title="https://w3id.org/timebank#Tailoring">Tailoring</a>
    </li>
    <li>
-      <a href="#Tailoring" title="https://w3id.org/timebank#Tailoring">Tailoring</a>
+      <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a>
    </li>
    <li>
       <a href="#ToiletUsingProblem" title="https://w3id.org/timebank#ToiletUsingProblem">Toilet Using Problems</a>
@@ -371,6 +380,9 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#User" title="https://w3id.org/timebank#User">User</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/vcard/ns#VCard" title="http://www.w3.org/2006/vcard/ns#VCard">VCard</a>
    </li>
    <li>
       <a href="#WalkingProblem" title="https://w3id.org/timebank#WalkingProblem">Walking Problems</a>
@@ -398,7 +410,11 @@ This ontology has the following classes and properties.</span>
       <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">end repeating on</a>
    </li>
    <li>
-      <a href="#excludesByLimitation" title="https://w3id.org/timebank#excludesByLimitation">excludes by limitation</a>
+      <a href="#excludesUserByLimitation"
+         title="https://w3id.org/timebank#excludesUserByLimitation">excludes user by limitation</a>
+   </li>
+   <li>
+      <a href="#excludesUserFrom" title="https://w3id.org/timebank#excludesUserFrom">excludes user from</a>
    </li>
    <li>
       <a href="#hasAccreditedDuration" title="https://w3id.org/timebank#hasAccreditedDuration">has accredited duration</a>
@@ -434,10 +450,22 @@ This ontology has the following classes and properties.</span>
       <a href="#hasTimeBalance" title="https://w3id.org/timebank#hasTimeBalance">has time-balance</a>
    </li>
    <li>
+      <a href="#isAcceptanceDateOf" title="https://w3id.org/timebank#isAcceptanceDateOf">is acceptance date of</a>
+   </li>
+   <li>
       <a href="#isAcceptedBy" title="https://w3id.org/timebank#isAcceptedBy">is accepted by</a>
    </li>
    <li>
       <a href="#isAcceptedOn" title="https://w3id.org/timebank#isAcceptedOn">is accepted on</a>
+   </li>
+   <li>
+      <a href="#isAccreditedTo" title="https://w3id.org/timebank#isAccreditedTo">is accredited to</a>
+   </li>
+   <li>
+      <a href="#isAddressOf" title="https://w3id.org/timebank#isAddressOf">is address of</a>
+   </li>
+   <li>
+      <a href="#isAvailabilityOf" title="https://w3id.org/timebank#isAvailabilityOf">is availability of</a>
    </li>
    <li>
       <a href="#isAvailableOn" title="https://w3id.org/timebank#isAvailableOn">is available on</a>
@@ -446,10 +474,49 @@ This ontology has the following classes and properties.</span>
       <a href="#isCompletedOn" title="https://w3id.org/timebank#isCompletedOn">is completed on</a>
    </li>
    <li>
+      <a href="#isCompletionDateOf" title="https://w3id.org/timebank#isCompletionDateOf">is completion date of</a>
+   </li>
+   <li>
+      <a href="#isEnvironmentOf" title="https://w3id.org/timebank#isEnvironmentOf">is environment of</a>
+   </li>
+   <li>
+      <a href="#isExpectedDurationOf" title="https://w3id.org/timebank#isExpectedDurationOf">is expected duration of</a>
+   </li>
+   <li>
+      <a href="#isLimitationOf" title="https://w3id.org/timebank#isLimitationOf">is limitation of</a>
+   </li>
+   <li>
       <a href="#isOriginatorOf" title="https://w3id.org/timebank#isOriginatorOf">is originator of</a>
    </li>
    <li>
+      <a href="#isPublicationDateOf" title="https://w3id.org/timebank#isPublicationDateOf">is publication date of</a>
+   </li>
+   <li>
       <a href="#isPublishedOn" title="https://w3id.org/timebank#isPublishedOn">is published on</a>
+   </li>
+   <li>
+      <a href="#isRepeatingEndpointOf" title="https://w3id.org/timebank#isRepeatingEndpointOf">is repeating endpoint of</a>
+   </li>
+   <li>
+      <a href="#isRepetitionDayOf" title="https://w3id.org/timebank#isRepetitionDayOf">is repetition date of</a>
+   </li>
+   <li>
+      <a href="#isRequiredBy" title="https://w3id.org/timebank#isRequiredBy">is required by</a>
+   </li>
+   <li>
+      <a href="#isSeverityOf" title="https://w3id.org/timebank#isSeverityOf">is severity of</a>
+   </li>
+   <li>
+      <a href="#isSkillLevelOf" title="https://w3id.org/timebank#isSkillLevelOf">is skill level of</a>
+   </li>
+   <li>
+      <a href="#isSkillOf" title="https://w3id.org/timebank#isSkillOf">is skill of</a>
+   </li>
+   <li>
+      <a href="#isStatusOf" title="https://w3id.org/timebank#isStatusOf">is status of</a>
+   </li>
+   <li>
+      <a href="#isTimeBalanceOf" title="https://w3id.org/timebank#isTimeBalanceOf">is time-balance of</a>
    </li>
    <li>
       <a href="#repeatsOn" title="https://w3id.org/timebank#repeatsOn">repeats on</a>

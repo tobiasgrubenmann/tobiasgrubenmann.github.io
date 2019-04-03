@@ -74,6 +74,7 @@
 
 ###  https://w3id.org/timebank#endsRepeatingOn
 :endsRepeatingOn rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :isRepeatingEndpointOf ;
                  rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
                  rdfs:range <http://www.w3.org/2006/time#Instant> ;
                  rdfs:comment "Indicates that a time-interval is repeating until this time and date." ;
@@ -81,17 +82,28 @@
                  rdfs:label "end repeating on" .
 
 
-###  https://w3id.org/timebank#excludesByLimitation
-:excludesByLimitation rdf:type owl:ObjectProperty ;
-                      rdfs:domain :Request ;
-                      rdfs:range :Limitation ;
-                      rdfs:comment "This predicate is used to describe that a request exludes helpers having a certain limitation." ;
-                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                      rdfs:label "excludes by limitation" .
+###  https://w3id.org/timebank#excludesUserByLimitation
+:excludesUserByLimitation rdf:type owl:ObjectProperty ;
+                          owl:inverseOf :excludesUserFrom ;
+                          rdfs:domain :Request ;
+                          rdfs:range :Limitation ;
+                          rdfs:comment "This property is used to describe that a request exludes helpers having a certain limitation." ;
+                          rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                          rdfs:label "excludes user by limitation" .
+
+
+###  https://w3id.org/timebank#excludesUserFrom
+:excludesUserFrom rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Limitation ;
+                  rdfs:range :Request ;
+                  rdfs:comment "This property is used to describe that a certain limitation excludes certain helpers from the request." ;
+                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                  rdfs:label "excludes user from" .
 
 
 ###  https://w3id.org/timebank#hasAccreditedDuration
 :hasAccreditedDuration rdf:type owl:ObjectProperty ;
+                       owl:inverseOf :isAccreditedTo ;
                        rdfs:domain :Request ;
                        rdfs:range <http://www.w3.org/2006/time#DurationDescription> ;
                        rdfs:comment "The accredited duration of the request. This is the amount of time which will be transferred from the originator the the assigned helper of the request. Do not use this property to indicate the estimated duration of the task. Use hasExpectedDuration instead." ;
@@ -101,6 +113,7 @@
 
 ###  https://w3id.org/timebank#hasAddress
 :hasAddress rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isAddressOf ;
             rdfs:domain [ rdf:type owl:Class ;
                           owl:unionOf ( <http://xmlns.com/foaf/0.1/Person>
                                         :Request
@@ -114,6 +127,7 @@
 
 ###  https://w3id.org/timebank#hasEnvironment
 :hasEnvironment rdf:type owl:ObjectProperty ;
+                owl:inverseOf :isEnvironmentOf ;
                 rdfs:domain :Request ;
                 rdfs:range :Environment ;
                 rdfs:comment "The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location." ;
@@ -123,6 +137,7 @@
 
 ###  https://w3id.org/timebank#hasExpectedDuration
 :hasExpectedDuration rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :isExpectedDurationOf ;
                      rdfs:domain :Request ;
                      rdfs:range <http://www.w3.org/2006/time#DurationDescription> ;
                      rdfs:comment "The expected duration indicates the duraction of the request estimated by the originator of the request. Do not use this property to assert the actual time credits associated to this request. Use hasAccreditedDuration instead." ;
@@ -132,6 +147,7 @@
 
 ###  https://w3id.org/timebank#hasLimitation
 :hasLimitation rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isLimitationOf ;
                rdfs:domain :User ;
                rdfs:range :Limitation ;
                rdfs:comment "Indicates that a Timebank user suffers from a certain limitation." ;
@@ -151,6 +167,7 @@
 
 ###  https://w3id.org/timebank#hasSeverity
 :hasSeverity rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isSeverityOf ;
              rdfs:domain :Limitation ;
              rdfs:range :Level ;
              rdfs:comment "Indicates the severity of a limitation." ;
@@ -160,6 +177,7 @@
 
 ###  https://w3id.org/timebank#hasSkill
 :hasSkill rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isSkillOf ;
           rdfs:domain :User ;
           rdfs:range :Skill ;
           rdfs:comment "Describes the Skill of a certain Timebank user." ;
@@ -169,6 +187,7 @@
 
 ###  https://w3id.org/timebank#hasSkillLevel
 :hasSkillLevel rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isSkillLevelOf ;
                rdfs:domain :Skill ;
                rdfs:range :Level ;
                rdfs:comment "Describes the proficiency level of a skill." ;
@@ -178,6 +197,7 @@
 
 ###  https://w3id.org/timebank#hasStatus
 :hasStatus rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isStatusOf ;
            rdfs:domain :Request ;
            rdfs:range :Status ;
            rdfs:comment "Every request can have at most one status assigned to it." ;
@@ -187,11 +207,22 @@
 
 ###  https://w3id.org/timebank#hasTimeBalance
 :hasTimeBalance rdf:type owl:ObjectProperty ;
+                owl:inverseOf :isTimeBalanceOf ;
                 rdfs:domain :User ;
                 rdfs:range <http://www.w3.org/2006/time#DurationDescription> ;
-                rdfs:comment "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used when the time-balance cannot be inferred from the individual requests using the hasAccreditedDuration property." ;
+                rdfs:comment "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "has time-balance" .
+
+
+###  https://w3id.org/timebank#isAcceptanceDateOf
+:isAcceptanceDateOf rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :isAcceptedOn ;
+                    rdfs:domain <http://www.w3.org/2006/time#Instant> ;
+                    rdfs:range :Request ;
+                    rdfs:comment "Indicates the time and date when the Timebank request was accepted by the assigned helper." ;
+                    rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                    rdfs:label "is acceptance date of" .
 
 
 ###  https://w3id.org/timebank#isAcceptedBy
@@ -212,6 +243,38 @@
               rdfs:label "is accepted on" .
 
 
+###  https://w3id.org/timebank#isAccreditedTo
+:isAccreditedTo rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://www.w3.org/2006/time#DurationDescription> ;
+                rdfs:range :Request ;
+                rdfs:comment "The accredited duration of the request. This is the amount of time which will be transferred from the originator the the assigned helper of the request. Do not use this property to indicate the estimated duration of the task. Use hasExpectedDuration instead." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "is accredited to" .
+
+
+###  https://w3id.org/timebank#isAddressOf
+:isAddressOf rdf:type owl:ObjectProperty ;
+             rdfs:domain <http://www.w3.org/2006/vcard/ns#VCard> ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( <http://xmlns.com/foaf/0.1/Person>
+                                        :Request
+                                      )
+                        ] ;
+             rdfs:comment "Indicates the address of a person or request. The address is specified as a vcard." ;
+             rdfs:isDefinedBy <https://w3id.org/timebank> ;
+             rdfs:label "is address of" .
+
+
+###  https://w3id.org/timebank#isAvailabilityOf
+:isAvailabilityOf rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :isAvailableOn ;
+                  rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                  rdfs:range :User ;
+                  rdfs:comment "Indicates the availability of a Timebank user to act as a helper for a Timebank request." ;
+                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                  rdfs:label "is availability of" .
+
+
 ###  https://w3id.org/timebank#isAvailableOn
 :isAvailableOn rdf:type owl:ObjectProperty ;
                rdfs:domain :User ;
@@ -223,11 +286,48 @@
 
 ###  https://w3id.org/timebank#isCompletedOn
 :isCompletedOn rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isCompletionDateOf ;
                rdfs:domain :Request ;
                rdfs:range <http://www.w3.org/2006/time#Instant> ;
                rdfs:comment "Indicates the time and date of the completion of a Timebank request." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
                rdfs:label "is completed on" .
+
+
+###  https://w3id.org/timebank#isCompletionDateOf
+:isCompletionDateOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain <http://www.w3.org/2006/time#Instant> ;
+                    rdfs:range :Request ;
+                    rdfs:comment "Indicates the time and date of the completion of a Timebank request." ;
+                    rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                    rdfs:label "is completion date of" .
+
+
+###  https://w3id.org/timebank#isEnvironmentOf
+:isEnvironmentOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Environment ;
+                 rdfs:range :Request ;
+                 rdfs:comment "The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location." ;
+                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                 rdfs:label "is environment of" .
+
+
+###  https://w3id.org/timebank#isExpectedDurationOf
+:isExpectedDurationOf rdf:type owl:ObjectProperty ;
+                      rdfs:domain <http://www.w3.org/2006/time#DurationDescription> ;
+                      rdfs:range :Request ;
+                      rdfs:comment "The expected duration indicates the duraction of the request estimated by the originator of the request. Do not use this property to assert the actual time credits associated to this request. Use hasAccreditedDuration instead." ;
+                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                      rdfs:label "is expected duration of" .
+
+
+###  https://w3id.org/timebank#isLimitationOf
+:isLimitationOf rdf:type owl:ObjectProperty ;
+                rdfs:domain :Limitation ;
+                rdfs:range :User ;
+                rdfs:comment "Indicates that a certain limitation applies to the Timebank user." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "is limitation of" .
 
 
 ###  https://w3id.org/timebank#isOriginatorOf
@@ -239,6 +339,16 @@
                 rdfs:label "is originator of" .
 
 
+###  https://w3id.org/timebank#isPublicationDateOf
+:isPublicationDateOf rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :isPublishedOn ;
+                     rdfs:domain <http://www.w3.org/2006/time#Instant> ;
+                     rdfs:range :Request ;
+                     rdfs:comment "Indicates the time and date of the publication of a Timebank request." ;
+                     rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                     rdfs:label "is publication date of" .
+
+
 ###  https://w3id.org/timebank#isPublishedOn
 :isPublishedOn rdf:type owl:ObjectProperty ;
                rdfs:domain :Request ;
@@ -246,6 +356,80 @@
                rdfs:comment "Indicates the time and date of the publication of a Timebank request." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
                rdfs:label "is published on" .
+
+
+###  https://w3id.org/timebank#isRepeatingEndpointOf
+:isRepeatingEndpointOf rdf:type owl:ObjectProperty ;
+                       rdfs:domain <http://www.w3.org/2006/time#Instant> ;
+                       rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                       rdfs:comment "Indicates that a specific time and date marks the end of a repetition of a time-interval." ;
+                       rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                       rdfs:label "is repeating endpoint of" .
+
+
+###  https://w3id.org/timebank#isRepetitionDayOf
+:isRepetitionDayOf rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :repeatsOn ;
+                   rdfs:domain <http://www.w3.org/2006/time#DayOfWeek> ;
+                   rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+                   rdfs:comment "Indicates that a time interval repeats on the specified weekdays." ;
+                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                   rdfs:label "is repetition date of" .
+
+
+###  https://w3id.org/timebank#isRequiredBy
+:isRequiredBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :requiresSkill ;
+              rdfs:domain :Skill ;
+              rdfs:range :Request ;
+              rdfs:comment "The skill associated with a Timebank request." ;
+              rdfs:isDefinedBy <https://w3id.org/timebank> ;
+              rdfs:label "is required by" .
+
+
+###  https://w3id.org/timebank#isSeverityOf
+:isSeverityOf rdf:type owl:ObjectProperty ;
+              rdfs:domain :Level ;
+              rdfs:range :Limitation ;
+              rdfs:comment "Indicates the severity of a limitation." ;
+              rdfs:isDefinedBy <https://w3id.org/timebank> ;
+              rdfs:label "is severity of" .
+
+
+###  https://w3id.org/timebank#isSkillLevelOf
+:isSkillLevelOf rdf:type owl:ObjectProperty ;
+                rdfs:domain :Level ;
+                rdfs:range :Skill ;
+                rdfs:comment "Describes the proficiency level of a skill." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "is skill level of" .
+
+
+###  https://w3id.org/timebank#isSkillOf
+:isSkillOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :Skill ;
+           rdfs:range :User ;
+           rdfs:comment "Describes the Skill of a certain Timebank user." ;
+           rdfs:isDefinedBy <https://w3id.org/timebank> ;
+           rdfs:label "is skill of" .
+
+
+###  https://w3id.org/timebank#isStatusOf
+:isStatusOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :Status ;
+            rdfs:range :Request ;
+            rdfs:comment "Every request can have at most one status assigned to it." ;
+            rdfs:isDefinedBy <https://w3id.org/timebank> ;
+            rdfs:label "is status of" .
+
+
+###  https://w3id.org/timebank#isTimeBalanceOf
+:isTimeBalanceOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://www.w3.org/2006/time#DurationDescription> ;
+                 rdfs:range :User ;
+                 rdfs:comment "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance." ;
+                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                 rdfs:label "is time-balance of" .
 
 
 ###  https://w3id.org/timebank#repeatsOn
@@ -301,32 +485,50 @@
 #################################################################
 
 ###  http://www.w3.org/2006/time#DayOfWeek
-<http://www.w3.org/2006/time#DayOfWeek> rdf:type owl:Class .
+<http://www.w3.org/2006/time#DayOfWeek> rdf:type owl:Class ;
+                                        rdfs:comment "Seven individual members of :DayOfWeek are included in the ontology, corresponding to the seven days used in the Gregorian calendar, and using the English names :Sunday, :Monday, :Tuesday, :Wednesday, :Thursday, :Friday, :Saturday." ;
+                                        rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+                                        rdfs:label "Day of week" .
 
 
 ###  http://www.w3.org/2006/time#DurationDescription
-<http://www.w3.org/2006/time#DurationDescription> rdf:type owl:Class .
+<http://www.w3.org/2006/time#DurationDescription> rdf:type owl:Class ;
+                                                  rdfs:comment "Description of temporal extent structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal" ;
+                                                  rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+                                                  rdfs:label "Duration description" .
 
 
 ###  http://www.w3.org/2006/time#Instant
-<http://www.w3.org/2006/time#Instant> rdf:type owl:Class .
+<http://www.w3.org/2006/time#Instant> rdf:type owl:Class ;
+                                      rdfs:comment "Seven properties, :inXSDDate, :inXSDDateTime (deprecated), :inXSDDateTimeStamp, :inXSDgYear, :inXSDgYearMonth, :inTimePosition, and :inDateTime provide alternative ways to describe the temporal position of an :Instant." ;
+                                      rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+                                      rdfs:label "Time instant" .
 
 
 ###  http://www.w3.org/2006/time#ProperInterval
-<http://www.w3.org/2006/time#ProperInterval> rdf:type owl:Class .
+<http://www.w3.org/2006/time#ProperInterval> rdf:type owl:Class ;
+                                             rdfs:comment "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different" ;
+                                             rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+                                             rdfs:label "Proper interval" .
 
 
 ###  http://www.w3.org/2006/vcard/ns#VCard
-<http://www.w3.org/2006/vcard/ns#VCard> rdf:type owl:Class .
+<http://www.w3.org/2006/vcard/ns#VCard> rdf:type owl:Class ;
+                                        rdfs:comment "The vCard class is equivalent to the new Kind class, which is the parent for the four explicit types of vCards (Individual, Organization, Location, Group)" ;
+                                        rdfs:isDefinedBy <http://www.w3.org/2006/vcard/ns> ;
+                                        rdfs:label "VCard" .
 
 
 ###  http://xmlns.com/foaf/0.1/Person
-<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:comment "A person." ;
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                   rdfs:label "Person" .
 
 
 ###  https://w3id.org/timebank#AccessibleByPublicTransport
 :AccessibleByPublicTransport rdf:type owl:Class ;
-                             rdfs:subClassOf :Surroundings ;
+                             rdfs:subClassOf :Environment ;
                              rdfs:comment "The location is accessible by public transport." ;
                              rdfs:isDefinedBy <https://w3id.org/timebank> ;
                              rdfs:label "Accessible by Public Transport" .
@@ -372,17 +574,18 @@
         rdfs:label "Baking" .
 
 
-###  https://w3id.org/timebank#CareAndSupport
-:CareAndSupport rdf:type owl:Class ;
-                rdfs:subClassOf :Skill ;
-                rdfs:comment "The skill to provide care and support." ;
-                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Care and Support" .
+###  https://w3id.org/timebank#Care
+:Care rdf:type owl:Class ;
+      rdfs:subClassOf :Skill ;
+      rdfs:comment "The skill to provide care for people." ;
+      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+      rdfs:label "Care" .
 
 
 ###  https://w3id.org/timebank#Carpeting
 :Carpeting rdf:type owl:Class ;
            rdfs:subClassOf :WoodCrafting ;
+           owl:disjointWith :WoodCarving ;
            rdfs:comment "The skill to do carpenting." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
            rdfs:label "Carpenting" .
@@ -406,7 +609,7 @@
 
 ###  https://w3id.org/timebank#ChildCare
 :ChildCare rdf:type owl:Class ;
-           rdfs:subClassOf :CareAndSupport ;
+           rdfs:subClassOf :Care ;
            rdfs:comment "The skill to provide care for children." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
            rdfs:label "Child Care" .
@@ -431,6 +634,7 @@
 ###  https://w3id.org/timebank#ClothesWashing
 :ClothesWashing rdf:type owl:Class ;
                 rdfs:subClassOf :Cleaning ;
+                owl:disjointWith :Mopping ;
                 rdfs:comment "The skill to assist with washing clothes." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "Clothes Washing" .
@@ -510,7 +714,7 @@
 
 ###  https://w3id.org/timebank#DarkPlace
 :DarkPlace rdf:type owl:Class ;
-           rdfs:subClassOf :Surroundings ;
+           rdfs:subClassOf :Environment ;
            rdfs:comment "Place with limited lighting." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
            rdfs:label "Dark Place" .
@@ -534,7 +738,7 @@
 
 ###  https://w3id.org/timebank#DifficultToAccess
 :DifficultToAccess rdf:type owl:Class ;
-                   rdfs:subClassOf :Surroundings ;
+                   rdfs:subClassOf :Environment ;
                    rdfs:comment "The place is difficult to access." ;
                    rdfs:isDefinedBy <https://w3id.org/timebank> ;
                    rdfs:label "Difficult to Access" .
@@ -575,6 +779,7 @@
 ###  https://w3id.org/timebank#DrivingCars
 :DrivingCars rdf:type owl:Class ;
              rdfs:subClassOf :DrivingLightVehicles ;
+             owl:disjointWith :DrivingVans ;
              rdfs:comment "Experience in driving cars." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
              rdfs:label "Driving Cars" .
@@ -583,6 +788,7 @@
 ###  https://w3id.org/timebank#DrivingHeavyVehicles
 :DrivingHeavyVehicles rdf:type owl:Class ;
                       rdfs:subClassOf :Transportation ;
+                      owl:disjointWith :DrivingLightVehicles ;
                       rdfs:comment "Experience in driving heavy vehicles." ;
                       rdfs:isDefinedBy <https://w3id.org/timebank> ;
                       rdfs:label "Driving Heavy Vehicles" .
@@ -646,7 +852,7 @@
 
 ###  https://w3id.org/timebank#ElderlyCare
 :ElderlyCare rdf:type owl:Class ;
-             rdfs:subClassOf :CareAndSupport ;
+             rdfs:subClassOf :Care ;
              rdfs:comment "The skill to provide care and support for the elderly." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
              rdfs:label "Care for Elderly" .
@@ -670,7 +876,7 @@
 
 ###  https://w3id.org/timebank#ElevatedPlace
 :ElevatedPlace rdf:type owl:Class ;
-               rdfs:subClassOf :Surroundings ;
+               rdfs:subClassOf :Environment ;
                rdfs:comment "Some high/elevated place is involved. This might trigger fear of heights for some people." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
                rdfs:label "Elevated Place" .
@@ -678,6 +884,11 @@
 
 ###  https://w3id.org/timebank#Environment
 :Environment rdf:type owl:Class ;
+             owl:disjointWith :Level ,
+                              :Limitation ,
+                              :Request ,
+                              :Skill ,
+                              :Status ;
              rdfs:comment "The environment describes relevant factors for matching requesters and helpers which are not described by Skill or Limitation." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
              rdfs:label "Environment" .
@@ -710,6 +921,7 @@
 ###  https://w3id.org/timebank#FearOfCat
 :FearOfCat rdf:type owl:Class ;
            rdfs:subClassOf :FearOfAnimals ;
+           owl:disjointWith :FearOfDogs ;
            rdfs:comment "Fear of cats." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
            rdfs:label "Fear of Cats" .
@@ -790,6 +1002,7 @@
 ###  https://w3id.org/timebank#Groceries
 :Groceries rdf:type owl:Class ;
            rdfs:subClassOf :SalesServices ;
+           owl:disjointWith :OnlineShopping ;
            rdfs:comment "The skill to help buying groceries." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
            rdfs:label "Groceries" .
@@ -885,6 +1098,10 @@
 
 ###  https://w3id.org/timebank#Level
 :Level rdf:type owl:Class ;
+       owl:disjointWith :Limitation ,
+                        :Request ,
+                        :Skill ,
+                        :Status ;
        rdfs:comment "The level can be low, medium, or high." ;
        rdfs:isDefinedBy <https://w3id.org/timebank> ;
        rdfs:label "Level" .
@@ -892,6 +1109,9 @@
 
 ###  https://w3id.org/timebank#Limitation
 :Limitation rdf:type owl:Class ;
+            owl:disjointWith :Request ,
+                             :Skill ,
+                             :Status ;
             rdfs:comment "Limitations can be anything which prevents or limits the extent to which a user can help somebody else." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
             rdfs:label "Limitation" .
@@ -915,7 +1135,7 @@
 
 ###  https://w3id.org/timebank#MentallyIllCare
 :MentallyIllCare rdf:type owl:Class ;
-                 rdfs:subClassOf :CareAndSupport ;
+                 rdfs:subClassOf :Care ;
                  rdfs:comment "The skill to provide care for the mentally ill." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
                  rdfs:label "Care Mentally Ill People" .
@@ -956,7 +1176,7 @@
 ###  https://w3id.org/timebank#NutsAllergy
 :NutsAllergy rdf:type owl:Class ;
              rdfs:subClassOf :FoodAllergies ;
-             rdfs:comment "Allergy to nuts such as almonds, walnuts and pecans." ;
+             rdfs:comment "Allergy to nuts such as almonds, walnuts, pecans, and peanuts." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
              rdfs:label "Allergy to Nuts" .
 
@@ -977,14 +1197,6 @@
                 rdfs:label "Online Shopping" .
 
 
-###  https://w3id.org/timebank#PeanutsAllergy
-:PeanutsAllergy rdf:type owl:Class ;
-                rdfs:subClassOf :FoodAllergies ;
-                rdfs:comment "Allergy to peanuts" ;
-                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Allergy to Peanuts" .
-
-
 ###  https://w3id.org/timebank#PerformingMusic
 :PerformingMusic rdf:type owl:Class ;
                  rdfs:subClassOf :Recreation ;
@@ -1003,7 +1215,7 @@
 
 ###  https://w3id.org/timebank#PetInvolved
 :PetInvolved rdf:type owl:Class ;
-             rdfs:subClassOf :Surroundings ;
+             rdfs:subClassOf :Environment ;
              rdfs:comment "Pets may be encountered when helping for the request." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
              rdfs:label "Pet Involved" .
@@ -1027,7 +1239,7 @@
 
 ###  https://w3id.org/timebank#PhysicallyDisabledCare
 :PhysicallyDisabledCare rdf:type owl:Class ;
-                        rdfs:subClassOf :CareAndSupport ;
+                        rdfs:subClassOf :Care ;
                         rdfs:comment "The skill to provide care for the physically disabled." ;
                         rdfs:isDefinedBy <https://w3id.org/timebank> ;
                         rdfs:label "Care for Physically Disabled" .
@@ -1119,6 +1331,8 @@
                            owl:onProperty :rating ;
                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ;
+         owl:disjointWith :Skill ,
+                          :Status ;
          rdfs:comment "A request for help from a Timebank user." ;
          rdfs:isDefinedBy <https://w3id.org/timebank> ;
          rdfs:label "Request" .
@@ -1156,8 +1370,17 @@
         rdfs:label "Sewing" .
 
 
+###  https://w3id.org/timebank#SickCare
+:SickCare rdf:type owl:Class ;
+          rdfs:subClassOf :Care ;
+          rdfs:comment "The skill to provide care for sick people." ;
+          rdfs:isDefinedBy <https://w3id.org/timebank> ;
+          rdfs:label "Care for Sick People" .
+
+
 ###  https://w3id.org/timebank#Skill
 :Skill rdf:type owl:Class ;
+       owl:disjointWith :Status ;
        rdfs:comment "Skills define the capabilities of a user. Users and Timebank requests can be associated to a certain skill (or multiple skills) to facilitate the matching of helper and requester." ;
        rdfs:isDefinedBy <https://w3id.org/timebank> ;
        rdfs:label "Skill" .
@@ -1226,14 +1449,6 @@
           rdfs:label "Supplies" .
 
 
-###  https://w3id.org/timebank#Surroundings
-:Surroundings rdf:type owl:Class ;
-              rdfs:subClassOf :Environment ;
-              rdfs:comment "Surroundings of a request." ;
-              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-              rdfs:label "Surroundings" .
-
-
 ###  https://w3id.org/timebank#Tailoring
 :Tailoring rdf:type owl:Class ;
            rdfs:subClassOf :CraftingClothes ;
@@ -1268,7 +1483,7 @@
 
 ###  https://w3id.org/timebank#TransportationAvailable
 :TransportationAvailable rdf:type owl:Class ;
-                         rdfs:subClassOf :Surroundings ;
+                         rdfs:subClassOf :PetInvolved ;
                          rdfs:comment "Transportation necessary to complete the task can be provided." ;
                          rdfs:isDefinedBy <https://w3id.org/timebank> ;
                          rdfs:label "Transportation Available" .
@@ -1346,14 +1561,6 @@
          rdfs:label "Writing" .
 
 
-###  https://w3id.org/timebank#sickness
-:sickness rdf:type owl:Class ;
-          rdfs:subClassOf :CareAndSupport ;
-          rdfs:comment "The skill to provide care for sick people." ;
-          rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Care for Sick People" .
-
-
 #################################################################
 #    Individuals
 #################################################################
@@ -1412,6 +1619,236 @@
             rdfs:comment "Indicates that a request is open and no helper is assigned to it." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
             rdfs:label "Status: Open" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AccessibleByPublicTransport
+                :DarkPlace
+                :DifficultToAccess
+                :ElevatedPlace
+                :PetInvolved
+                :Supplies
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Advice
+                :Care
+                :Crafting
+                :FoodService
+                :Maintenance
+                :OfficeWork
+                :PersonalServices
+                :Recreation
+                :Repair
+                :SalesServices
+                :Transportation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Allergy
+                :CommonDisease
+                :MentalDisorder
+                :PhysicalInconvenience
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Assembling
+                :CraftingClothes
+                :WoodCrafting
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AutomobileRepair
+                :ComputerRepair
+                :ElectronicRepair
+                :HouseholdEquipmentRepair
+                :Plumbing
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Baking
+                :Catering
+                :Cooking
+                :Dishwashing
+                :FoodPreparation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CatInvolved
+                :DogInvolved
+                :TransportationAvailable
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ChildCare
+                :ElderlyCare
+                :MentallyIllCare
+                :PhysicallyDisabledCare
+                :SickCare
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Cleaning
+                :Mowing
+                :Pruning
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ClimbingStairsDifficulty
+                :DressingProblem
+                :ToiletUsingProblem
+                :WalkingProblem
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CognitiveImpairment
+                :Depression
+                :PsychoticEpisode
+                :SpecificPhobia
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ComputerProcessing
+                :InventoryManagement
+                :PhoneCalls
+                :RecordingNotes
+                :Writing
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Counseling
+                :FinancialAdvice
+                :LegalAdvice
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DancingCompanion
+                :EventPlanning
+                :Games
+                :PerformingMusic
+                :Sports
+                :TravelCompanion
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Diabetes
+                :HeartDisease
+                :Hypertension
+                :Hypotension
+                :Rheumatism
+                :StrokeHistory
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DressingAssistance
+                :HairCutting
+                :HygieneAssitance
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DrivingTractors
+                :DrivingTrucks
+                :DrivingWithTrailers
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DrugAllergies
+                :EnvironmentalAllergies
+                :FoodAllergies
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :EggAllergy
+                :GlutenAllergy
+                :MilkAllergy
+                :NutsAllergy
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Electricity
+                :Ingredients
+                :Internet
+                :Tools
+                :WaterSupply
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :FearOfAnimals
+                :FearOfDark
+                :FearOfHeights
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Knitting
+                :Sewing
+                :Tailoring
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :MobilityProblems
+                :PoorEyesight
+                :PoorHearing
+                :SensitiveSkin
+                :SpeakingProblem
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :SlipperyFloor
+                :Stairs
+                :UnevenTerrain
+                :WeatherConstraint
+              )
+] .
 
 
 ###  Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/

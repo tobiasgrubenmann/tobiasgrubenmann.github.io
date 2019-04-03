@@ -9,24 +9,60 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid10",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/timebank#hasOriginator"
+  "@id" : "_:genid105",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#DressingAssistance"
+    }, {
+      "@id" : "https://w3id.org/timebank#HairCutting"
+    }, {
+      "@id" : "https://w3id.org/timebank#HygieneAssitance"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid109",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#DrivingTractors"
+    }, {
+      "@id" : "https://w3id.org/timebank#DrivingTrucks"
+    }, {
+      "@id" : "https://w3id.org/timebank#DrivingWithTrailers"
+    } ]
   } ]
 }, {
   "@id" : "_:genid11",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
     "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/timebank#hasStatus"
+  } ]
+}, {
+  "@id" : "_:genid113",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#DrugAllergies"
+    }, {
+      "@id" : "https://w3id.org/timebank#EnvironmentalAllergies"
+    }, {
+      "@id" : "https://w3id.org/timebank#FoodAllergies"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid117",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#EggAllergy"
+    }, {
+      "@id" : "https://w3id.org/timebank#GlutenAllergy"
+    }, {
+      "@id" : "https://w3id.org/timebank#MilkAllergy"
+    }, {
+      "@id" : "https://w3id.org/timebank#NutsAllergy"
+    } ]
   } ]
 }, {
   "@id" : "_:genid12",
@@ -36,7 +72,35 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/timebank#isOriginatorOf"
+    "@id" : "https://w3id.org/timebank#hasAccreditedDuration"
+  } ]
+}, {
+  "@id" : "_:genid122",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#Electricity"
+    }, {
+      "@id" : "https://w3id.org/timebank#Ingredients"
+    }, {
+      "@id" : "https://w3id.org/timebank#Internet"
+    }, {
+      "@id" : "https://w3id.org/timebank#Tools"
+    }, {
+      "@id" : "https://w3id.org/timebank#WaterSupply"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid128",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#FearOfAnimals"
+    }, {
+      "@id" : "https://w3id.org/timebank#FearOfDark"
+    }, {
+      "@id" : "https://w3id.org/timebank#FearOfHeights"
+    } ]
   } ]
 }, {
   "@id" : "_:genid13",
@@ -46,42 +110,344 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/timebank#rating"
+    "@id" : "https://w3id.org/timebank#hasOriginator"
   } ]
 }, {
-  "@id" : "_:genid4",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
-  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
-  } ],
-  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+  "@id" : "_:genid132",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
-      "@id" : "_:genid8"
+      "@id" : "https://w3id.org/timebank#Knitting"
     }, {
-      "@id" : "_:genid6"
+      "@id" : "https://w3id.org/timebank#Sewing"
+    }, {
+      "@id" : "https://w3id.org/timebank#Tailoring"
     } ]
   } ]
 }, {
-  "@id" : "_:genid6",
-  "http://www.w3.org/2001/XMLSchema#maxInclusive" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "5"
+  "@id" : "_:genid136",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#MobilityProblems"
+    }, {
+      "@id" : "https://w3id.org/timebank#PoorEyesight"
+    }, {
+      "@id" : "https://w3id.org/timebank#PoorHearing"
+    }, {
+      "@id" : "https://w3id.org/timebank#SensitiveSkin"
+    }, {
+      "@id" : "https://w3id.org/timebank#SpeakingProblem"
+    } ]
   } ]
 }, {
-  "@id" : "_:genid8",
-  "http://www.w3.org/2001/XMLSchema#minInclusive" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid9",
+  "@id" : "_:genid14",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/timebank#hasAccreditedDuration"
+    "@id" : "https://w3id.org/timebank#hasStatus"
+  } ]
+}, {
+  "@id" : "_:genid142",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#SlipperyFloor"
+    }, {
+      "@id" : "https://w3id.org/timebank#Stairs"
+    }, {
+      "@id" : "https://w3id.org/timebank#UnevenTerrain"
+    }, {
+      "@id" : "https://w3id.org/timebank#WeatherConstraint"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid15",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/timebank#isOriginatorOf"
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/timebank#rating"
+  } ]
+}, {
+  "@id" : "_:genid17",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#AccessibleByPublicTransport"
+    }, {
+      "@id" : "https://w3id.org/timebank#DarkPlace"
+    }, {
+      "@id" : "https://w3id.org/timebank#DifficultToAccess"
+    }, {
+      "@id" : "https://w3id.org/timebank#ElevatedPlace"
+    }, {
+      "@id" : "https://w3id.org/timebank#PetInvolved"
+    }, {
+      "@id" : "https://w3id.org/timebank#Supplies"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid24",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#Advice"
+    }, {
+      "@id" : "https://w3id.org/timebank#Care"
+    }, {
+      "@id" : "https://w3id.org/timebank#Crafting"
+    }, {
+      "@id" : "https://w3id.org/timebank#FoodService"
+    }, {
+      "@id" : "https://w3id.org/timebank#Maintenance"
+    }, {
+      "@id" : "https://w3id.org/timebank#OfficeWork"
+    }, {
+      "@id" : "https://w3id.org/timebank#PersonalServices"
+    }, {
+      "@id" : "https://w3id.org/timebank#Recreation"
+    }, {
+      "@id" : "https://w3id.org/timebank#Repair"
+    }, {
+      "@id" : "https://w3id.org/timebank#SalesServices"
+    }, {
+      "@id" : "https://w3id.org/timebank#Transportation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid36",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#Allergy"
+    }, {
+      "@id" : "https://w3id.org/timebank#CommonDisease"
+    }, {
+      "@id" : "https://w3id.org/timebank#MentalDisorder"
+    }, {
+      "@id" : "https://w3id.org/timebank#PhysicalInconvenience"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://xmlns.com/foaf/0.1/Person"
+    }, {
+      "@id" : "https://w3id.org/timebank#Request"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid41",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#Assembling"
+    }, {
+      "@id" : "https://w3id.org/timebank#CraftingClothes"
+    }, {
+      "@id" : "https://w3id.org/timebank#WoodCrafting"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid45",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#AutomobileRepair"
+    }, {
+      "@id" : "https://w3id.org/timebank#ComputerRepair"
+    }, {
+      "@id" : "https://w3id.org/timebank#ElectronicRepair"
+    }, {
+      "@id" : "https://w3id.org/timebank#HouseholdEquipmentRepair"
+    }, {
+      "@id" : "https://w3id.org/timebank#Plumbing"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid51",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#Baking"
+    }, {
+      "@id" : "https://w3id.org/timebank#Catering"
+    }, {
+      "@id" : "https://w3id.org/timebank#Cooking"
+    }, {
+      "@id" : "https://w3id.org/timebank#Dishwashing"
+    }, {
+      "@id" : "https://w3id.org/timebank#FoodPreparation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid57",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#CatInvolved"
+    }, {
+      "@id" : "https://w3id.org/timebank#DogInvolved"
+    }, {
+      "@id" : "https://w3id.org/timebank#TransportationAvailable"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid61",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#ChildCare"
+    }, {
+      "@id" : "https://w3id.org/timebank#ElderlyCare"
+    }, {
+      "@id" : "https://w3id.org/timebank#MentallyIllCare"
+    }, {
+      "@id" : "https://w3id.org/timebank#PhysicallyDisabledCare"
+    }, {
+      "@id" : "https://w3id.org/timebank#SickCare"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid67",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#Cleaning"
+    }, {
+      "@id" : "https://w3id.org/timebank#Mowing"
+    }, {
+      "@id" : "https://w3id.org/timebank#Pruning"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid7",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://www.w3.org/2002/07/owl#onDatatype" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2002/07/owl#withRestrictions" : [ {
+    "@list" : [ {
+      "@id" : "_:genid11"
+    }, {
+      "@id" : "_:genid9"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid71",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#ClimbingStairsDifficulty"
+    }, {
+      "@id" : "https://w3id.org/timebank#DressingProblem"
+    }, {
+      "@id" : "https://w3id.org/timebank#ToiletUsingProblem"
+    }, {
+      "@id" : "https://w3id.org/timebank#WalkingProblem"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid76",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#CognitiveImpairment"
+    }, {
+      "@id" : "https://w3id.org/timebank#Depression"
+    }, {
+      "@id" : "https://w3id.org/timebank#PsychoticEpisode"
+    }, {
+      "@id" : "https://w3id.org/timebank#SpecificPhobia"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid81",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#ComputerProcessing"
+    }, {
+      "@id" : "https://w3id.org/timebank#InventoryManagement"
+    }, {
+      "@id" : "https://w3id.org/timebank#PhoneCalls"
+    }, {
+      "@id" : "https://w3id.org/timebank#RecordingNotes"
+    }, {
+      "@id" : "https://w3id.org/timebank#Writing"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid87",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#Counseling"
+    }, {
+      "@id" : "https://w3id.org/timebank#FinancialAdvice"
+    }, {
+      "@id" : "https://w3id.org/timebank#LegalAdvice"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "http://www.w3.org/2001/XMLSchema#maxInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "5"
+  } ]
+}, {
+  "@id" : "_:genid91",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#DancingCompanion"
+    }, {
+      "@id" : "https://w3id.org/timebank#EventPlanning"
+    }, {
+      "@id" : "https://w3id.org/timebank#Games"
+    }, {
+      "@id" : "https://w3id.org/timebank#PerformingMusic"
+    }, {
+      "@id" : "https://w3id.org/timebank#Sports"
+    }, {
+      "@id" : "https://w3id.org/timebank#TravelCompanion"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid98",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#Diabetes"
+    }, {
+      "@id" : "https://w3id.org/timebank#HeartDisease"
+    }, {
+      "@id" : "https://w3id.org/timebank#Hypertension"
+    }, {
+      "@id" : "https://w3id.org/timebank#Hypotension"
+    }, {
+      "@id" : "https://w3id.org/timebank#Rheumatism"
+    }, {
+      "@id" : "https://w3id.org/timebank#StrokeHistory"
+    } ]
   } ]
 }, {
   "@id" : "http://purl.org/dc/elements/1.1/title",
@@ -106,22 +472,76 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2006/time#DayOfWeek",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Seven individual members of :DayOfWeek are included in the ontology, corresponding to the seven days used in the Gregorian calendar, and using the English names :Sunday, :Monday, :Tuesday, :Wednesday, :Thursday, :Friday, :Saturday."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/2006/time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Day of week"
+  } ]
 }, {
   "@id" : "http://www.w3.org/2006/time#DurationDescription",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Description of temporal extent structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/2006/time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Duration description"
+  } ]
 }, {
   "@id" : "http://www.w3.org/2006/time#Instant",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Seven properties, :inXSDDate, :inXSDDateTime (deprecated), :inXSDDateTimeStamp, :inXSDgYear, :inXSDgYearMonth, :inTimePosition, and :inDateTime provide alternative ways to describe the temporal position of an :Instant."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/2006/time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Time instant"
+  } ]
 }, {
   "@id" : "http://www.w3.org/2006/time#ProperInterval",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/2006/time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Proper interval"
+  } ]
 }, {
   "@id" : "http://www.w3.org/2006/vcard/ns#VCard",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The vCard class is equivalent to the new Kind class, which is the parent for the four explicit types of vCards (Individual, Organization, Location, Group)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.w3.org/2006/vcard/ns"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "VCard"
+  } ]
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/Person",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A person."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Person"
+  } ]
 }, {
   "@id" : "https://creativecommons.org/ns#license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -181,7 +601,7 @@
     "@value" : "Accessible by Public Transport"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Surroundings"
+    "@id" : "https://w3id.org/timebank#Environment"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Advice",
@@ -259,16 +679,16 @@
     "@id" : "https://w3id.org/timebank#FoodService"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#CareAndSupport",
+  "@id" : "https://w3id.org/timebank#Care",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The skill to provide care and support."
+    "@value" : "The skill to provide care for people."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Care and Support"
+    "@value" : "Care"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Skill"
@@ -287,6 +707,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#WoodCrafting"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#WoodCarving"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#CatInvolved",
@@ -331,7 +754,7 @@
     "@value" : "Child Care"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#CareAndSupport"
+    "@id" : "https://w3id.org/timebank#Care"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Cleaning",
@@ -377,6 +800,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Cleaning"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#Mopping"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#CognitiveImpairment",
@@ -526,7 +952,7 @@
     "@value" : "Dark Place"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Surroundings"
+    "@id" : "https://w3id.org/timebank#Environment"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Depression",
@@ -571,7 +997,7 @@
     "@value" : "Difficult to Access"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Surroundings"
+    "@id" : "https://w3id.org/timebank#Environment"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Dishwashing",
@@ -647,6 +1073,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#DrivingLightVehicles"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#DrivingVans"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#DrivingHeavyVehicles",
@@ -662,6 +1091,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Transportation"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#DrivingLightVehicles"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#DrivingLightVehicles",
@@ -781,7 +1213,7 @@
     "@value" : "Care for Elderly"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#CareAndSupport"
+    "@id" : "https://w3id.org/timebank#Care"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Electricity",
@@ -826,7 +1258,7 @@
     "@value" : "Elevated Place"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Surroundings"
+    "@id" : "https://w3id.org/timebank#Environment"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Environment",
@@ -839,6 +1271,17 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Environment"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#Level"
+  }, {
+    "@id" : "https://w3id.org/timebank#Limitation"
+  }, {
+    "@id" : "https://w3id.org/timebank#Request"
+  }, {
+    "@id" : "https://w3id.org/timebank#Skill"
+  }, {
+    "@id" : "https://w3id.org/timebank#Status"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#EnvironmentalAllergies",
@@ -899,6 +1342,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#FearOfAnimals"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#FearOfDogs"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#FearOfDark",
@@ -1049,6 +1495,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#SalesServices"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#OnlineShopping"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#HairCutting",
@@ -1226,6 +1675,15 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Level"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#Limitation"
+  }, {
+    "@id" : "https://w3id.org/timebank#Request"
+  }, {
+    "@id" : "https://w3id.org/timebank#Skill"
+  }, {
+    "@id" : "https://w3id.org/timebank#Status"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#LevelHigh",
@@ -1274,6 +1732,13 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Limitation"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  }, {
+    "@id" : "https://w3id.org/timebank#Skill"
+  }, {
+    "@id" : "https://w3id.org/timebank#Status"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Maintenance",
@@ -1318,7 +1783,7 @@
     "@value" : "Care Mentally Ill People"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#CareAndSupport"
+    "@id" : "https://w3id.org/timebank#Care"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#MilkAllergy",
@@ -1384,7 +1849,7 @@
   "@id" : "https://w3id.org/timebank#NutsAllergy",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Allergy to nuts such as almonds, walnuts and pecans."
+    "@value" : "Allergy to nuts such as almonds, walnuts, pecans, and peanuts."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/timebank"
@@ -1424,21 +1889,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#SalesServices"
-  } ]
-}, {
-  "@id" : "https://w3id.org/timebank#PeanutsAllergy",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Allergy to peanuts"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Allergy to Peanuts"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#FoodAllergies"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#PerformingMusic",
@@ -1483,7 +1933,7 @@
     "@value" : "Pet Involved"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Surroundings"
+    "@id" : "https://w3id.org/timebank#Environment"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#PhoneCalls",
@@ -1528,7 +1978,7 @@
     "@value" : "Care for Physically Disabled"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#CareAndSupport"
+    "@id" : "https://w3id.org/timebank#Care"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Plumbing",
@@ -1663,15 +2113,20 @@
     "@value" : "Request"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid9"
-  }, {
-    "@id" : "_:genid10"
-  }, {
-    "@id" : "_:genid11"
-  }, {
     "@id" : "_:genid12"
   }, {
     "@id" : "_:genid13"
+  }, {
+    "@id" : "_:genid14"
+  }, {
+    "@id" : "_:genid15"
+  }, {
+    "@id" : "_:genid16"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#Skill"
+  }, {
+    "@id" : "https://w3id.org/timebank#Status"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Rheumatism",
@@ -1734,6 +2189,21 @@
     "@id" : "https://w3id.org/timebank#CraftingClothes"
   } ]
 }, {
+  "@id" : "https://w3id.org/timebank#SickCare",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The skill to provide care for sick people."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Care for Sick People"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/timebank#Care"
+  } ]
+}, {
   "@id" : "https://w3id.org/timebank#Skill",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1744,6 +2214,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Skill"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#Status"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#SlipperyFloor",
@@ -1911,21 +2384,6 @@
     "@id" : "https://w3id.org/timebank#Environment"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#Surroundings",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Surroundings of a request."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Surroundings"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Environment"
-  } ]
-}, {
   "@id" : "https://w3id.org/timebank#Tailoring",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1998,7 +2456,7 @@
     "@value" : "Transportation Available"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Surroundings"
+    "@id" : "https://w3id.org/timebank#PetInvolved"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#TravelCompanion",
@@ -2173,12 +2631,15 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2006/time#Instant"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isRepeatingEndpointOf"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#excludesByLimitation",
+  "@id" : "https://w3id.org/timebank#excludesUserByLimitation",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "This predicate is used to describe that a request exludes helpers having a certain limitation."
+    "@value" : "This property is used to describe that a request exludes helpers having a certain limitation."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/timebank#Request"
@@ -2187,10 +2648,31 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "excludes by limitation"
+    "@value" : "excludes user by limitation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/timebank#Limitation"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#excludesUserFrom"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#excludesUserFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "This property is used to describe that a certain limitation excludes certain helpers from the request."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/timebank#Limitation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "excludes user from"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasAccreditedDuration",
@@ -2209,6 +2691,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2006/time#DurationDescription"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isAccreditedTo"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasAddress",
@@ -2227,6 +2712,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2006/vcard/ns#VCard"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isAddressOf"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasEnvironment",
@@ -2245,6 +2733,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/timebank#Environment"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isEnvironmentOf"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasExpectedDuration",
@@ -2263,6 +2754,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2006/time#DurationDescription"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isExpectedDurationOf"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasLimitation",
@@ -2281,6 +2775,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/timebank#Limitation"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isLimitationOf"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasOriginator",
@@ -2320,6 +2817,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/timebank#Level"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isSeverityOf"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasSkill",
@@ -2338,6 +2838,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/timebank#Skill"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isSkillOf"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasSkillLevel",
@@ -2356,6 +2859,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/timebank#Level"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isSkillLevelOf"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasStatus",
@@ -2374,12 +2880,15 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/timebank#Status"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isStatusOf"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#hasTimeBalance",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used when the time-balance cannot be inferred from the individual requests using the hasAccreditedDuration property."
+    "@value" : "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/timebank#User"
@@ -2392,6 +2901,30 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2006/time#DurationDescription"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isTimeBalanceOf"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isAcceptanceDateOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates the time and date when the Timebank request was accepted by the assigned helper."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#Instant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is acceptance date of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isAcceptedOn"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#isAcceptedBy",
@@ -2430,6 +2963,63 @@
     "@id" : "http://www.w3.org/2006/time#Instant"
   } ]
 }, {
+  "@id" : "https://w3id.org/timebank#isAccreditedTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The accredited duration of the request. This is the amount of time which will be transferred from the originator the the assigned helper of the request. Do not use this property to indicate the estimated duration of the task. Use hasExpectedDuration instead."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#DurationDescription"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is accredited to"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isAddressOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates the address of a person or request. The address is specified as a vcard."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/vcard/ns#VCard"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is address of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid4"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isAvailabilityOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates the availability of a Timebank user to act as a helper for a Timebank request."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#ProperInterval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is availability of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#User"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isAvailableOn"
+  } ]
+}, {
   "@id" : "https://w3id.org/timebank#isAvailableOn",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2464,6 +3054,81 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2006/time#Instant"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isCompletionDateOf"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isCompletionDateOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates the time and date of the completion of a Timebank request."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#Instant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is completion date of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isEnvironmentOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/timebank#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is environment of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isExpectedDurationOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The expected duration indicates the duraction of the request estimated by the originator of the request. Do not use this property to assert the actual time credits associated to this request. Use hasAccreditedDuration instead."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#DurationDescription"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is expected duration of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isLimitationOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates that a certain limitation applies to the Timebank user."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/timebank#Limitation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is limitation of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#User"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#isOriginatorOf",
@@ -2484,6 +3149,27 @@
     "@id" : "https://w3id.org/timebank#Request"
   } ]
 }, {
+  "@id" : "https://w3id.org/timebank#isPublicationDateOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates the time and date of the publication of a Timebank request."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#Instant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is publication date of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isPublishedOn"
+  } ]
+}, {
   "@id" : "https://w3id.org/timebank#isPublishedOn",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2500,6 +3186,156 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2006/time#Instant"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isRepeatingEndpointOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates that a specific time and date marks the end of a repetition of a time-interval."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#Instant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is repeating endpoint of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2006/time#ProperInterval"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isRepetitionDayOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates that a time interval repeats on the specified weekdays."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#DayOfWeek"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is repetition date of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2006/time#ProperInterval"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#repeatsOn"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isRequiredBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The skill associated with a Timebank request."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/timebank#Skill"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is required by"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#requiresSkill"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isSeverityOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates the severity of a limitation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/timebank#Level"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is severity of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Limitation"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isSkillLevelOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Describes the proficiency level of a skill."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/timebank#Level"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is skill level of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Skill"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isSkillOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Describes the Skill of a certain Timebank user."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/timebank#Skill"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is skill of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#User"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isStatusOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Every request can have at most one status assigned to it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/timebank#Status"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is status of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isTimeBalanceOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#DurationDescription"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is time-balance of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#User"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#rating",
@@ -2534,7 +3370,7 @@
     "@value" : "rating: 1 to 5"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid4"
+    "@id" : "_:genid7"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/timebank#rating"
@@ -2574,20 +3410,5 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/timebank#Skill"
-  } ]
-}, {
-  "@id" : "https://w3id.org/timebank#sickness",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The skill to provide care for sick people."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Care for Sick People"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#CareAndSupport"
   } ]
 } ]

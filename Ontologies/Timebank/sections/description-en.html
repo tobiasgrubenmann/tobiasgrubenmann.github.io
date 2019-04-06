@@ -11,8 +11,72 @@ To keep track of the time-balance of a user, each request is worth a specific am
 
 <p>
 The following figure illustrates the basic concept of the Timebank ontology.
-<img src="resources/Overview.png" alt="Overview of the Timebank concepts">
 </p>
+<img src="resources/Overview.png" alt="Overview of the Timebank concepts">
+<p>
+In the following, we proivide some examples on how to use our timebank ontology.
+</p>
+
+<p>
+First, we will create a new user, Alice. We will reuse the <a href="http://xmlns.com/foaf/0.1/">FOAF</a> vocabulary the indicate the name of the user. The user's address is expressed using the <a href="http://www.w3.org/2006/vcard/ns">VCard</a> ontology.
+</p>
+
+<pre>
+<code class="language-RDF/Turtle">
+ex:Alice a tb:User ;
+    foaf:familyName "Owl" ;
+    foaf:firstName "Alice" ;
+    tb:hasAddress ex:VCardA .
+ex:VCardA a v:VCard .
+</code>
+</pre>
+
+<p>
+Next, we link the skill <a href="#ComputerRepair">tb:ComputerRepair</a> with Alice and the limitation <a href="#PoorHearing">tb:PoorHearing</a>.
+</p>
+
+<pre>
+<code class="language-RDF/Turtle">
+ex:Alice tb:hasSkill [a tb:ComputerRepair ;
+    tb:hasSkillLevel tb:LevelHigh ;
+    rdfs:comment "30 years experience with computers." ] .
+ex:Alice tb:hasLimitation [a tb:PoorHearing ;
+    tb:hasSeverity tb:LevelLow ;
+    rdfs:comment "Preferrably, speak into my left ear." ] .
+</code>
+</pre>
+
+<p>
+Alice is available every Saturday and Sunday from 1pm until 6pm, starting from 2019-03-30. We use the <a href="http://www.w3.org/2006/time">Time</a> vocabulary to express this.
+</p>
+
+<pre>
+<code class="language-RDF/Turtle">
+ex:Alice tb:isAvailableOn [
+    a time:ProperInterval ;
+    time:hasBeginning [time:inXSDDateTimeStamp
+        "2019-03-30T13:00:00+08:00"^^xsd:dateTimeStamp ] ;
+    time:hasEnd [time:inXSDDateTimeStamp
+        "2019-03-30T18:00:00+08:00"^^xsd:dateTimeStamp ] ;
+    tb:repeatsOn time:Saturday ;
+    tb:repeatsOn time:Sunday ] .
+</code>
+</pre>
+
+Bob wants to create a new  <a href="#Request">request</a> to ask for help to <a href="#ComputerRepair">fix his computer</a>. Since Alice is available and qualified to help, she <a href="#isAcceptedBy">accepts</a> the request.
+
+Next, we create a new request by Bob (\url{ex:Bob}) requesting somebody to fix his computer. Naturally, this requires some computer skills. As Bob owns a dog, we attach the environmental factor to the request. Luckily, Alice is not afraid of dogs and hence, can help Bob with his computer problem (\Cref{lst:request}).
+
+<pre>
+<code class="language-RDF/Turtle">
+ex:Request a tb:Request ;
+    rdfs:comment "My email client fails to synchronize." ;
+    tb:requiresSkill tb:ComputerRepair ;
+    tb:hasOriginator ex:Bob ;
+    tb:isAcceptedBy ex:Alice ] .
+</code>
+</pre>
+
 <!--</span>-->
 
 </html>

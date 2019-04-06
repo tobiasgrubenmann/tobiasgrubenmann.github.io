@@ -9,7 +9,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid105",
+  "@id" : "_:genid101",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -21,7 +21,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid109",
+  "@id" : "_:genid105",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -30,6 +30,18 @@
       "@id" : "https://w3id.org/timebank#DrivingTrucks"
     }, {
       "@id" : "https://w3id.org/timebank#DrivingWithTrailers"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid109",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#DrugAllergies"
+    }, {
+      "@id" : "https://w3id.org/timebank#EnvironmentalAllergies"
+    }, {
+      "@id" : "https://w3id.org/timebank#FoodAllergies"
     } ]
   } ]
 }, {
@@ -43,18 +55,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/timebank#DrugAllergies"
-    }, {
-      "@id" : "https://w3id.org/timebank#EnvironmentalAllergies"
-    }, {
-      "@id" : "https://w3id.org/timebank#FoodAllergies"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid117",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
       "@id" : "https://w3id.org/timebank#EggAllergy"
     }, {
       "@id" : "https://w3id.org/timebank#GlutenAllergy"
@@ -65,17 +65,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid12",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/timebank#hasAccreditedDuration"
-  } ]
-}, {
-  "@id" : "_:genid122",
+  "@id" : "_:genid118",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -91,7 +81,17 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid128",
+  "@id" : "_:genid12",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/timebank#hasAccreditedDuration"
+  } ]
+}, {
+  "@id" : "_:genid124",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -100,6 +100,18 @@
       "@id" : "https://w3id.org/timebank#FearOfDark"
     }, {
       "@id" : "https://w3id.org/timebank#FearOfHeights"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid128",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#Knitting"
+    }, {
+      "@id" : "https://w3id.org/timebank#Sewing"
+    }, {
+      "@id" : "https://w3id.org/timebank#Tailoring"
     } ]
   } ]
 }, {
@@ -114,18 +126,6 @@
   } ]
 }, {
   "@id" : "_:genid132",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/timebank#Knitting"
-    }, {
-      "@id" : "https://w3id.org/timebank#Sewing"
-    }, {
-      "@id" : "https://w3id.org/timebank#Tailoring"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid136",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -149,20 +149,6 @@
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/timebank#hasStatus"
-  } ]
-}, {
-  "@id" : "_:genid142",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/timebank#SlipperyFloor"
-    }, {
-      "@id" : "https://w3id.org/timebank#Stairs"
-    }, {
-      "@id" : "https://w3id.org/timebank#UnevenTerrain"
-    }, {
-      "@id" : "https://w3id.org/timebank#WeatherConstraint"
-    } ]
   } ]
 }, {
   "@id" : "_:genid15",
@@ -191,15 +177,15 @@
     "@list" : [ {
       "@id" : "https://w3id.org/timebank#AccessibleByPublicTransport"
     }, {
-      "@id" : "https://w3id.org/timebank#DarkPlace"
+      "@id" : "https://w3id.org/timebank#SlipperyFloor"
     }, {
-      "@id" : "https://w3id.org/timebank#DifficultToAccess"
+      "@id" : "https://w3id.org/timebank#Stairs"
     }, {
-      "@id" : "https://w3id.org/timebank#ElevatedPlace"
+      "@id" : "https://w3id.org/timebank#TransportationAvailable"
     }, {
-      "@id" : "https://w3id.org/timebank#PetInvolved"
+      "@id" : "https://w3id.org/timebank#UnevenTerrain"
     }, {
-      "@id" : "https://w3id.org/timebank#Supplies"
+      "@id" : "https://w3id.org/timebank#WeatherConstraint"
     } ]
   } ]
 }, {
@@ -303,18 +289,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/timebank#CatInvolved"
-    }, {
-      "@id" : "https://w3id.org/timebank#DogInvolved"
-    }, {
-      "@id" : "https://w3id.org/timebank#TransportationAvailable"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid61",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
       "@id" : "https://w3id.org/timebank#ChildCare"
     }, {
       "@id" : "https://w3id.org/timebank#ElderlyCare"
@@ -327,7 +301,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid67",
+  "@id" : "_:genid63",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -336,6 +310,20 @@
       "@id" : "https://w3id.org/timebank#Mowing"
     }, {
       "@id" : "https://w3id.org/timebank#Pruning"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid67",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#ClimbingStairsDifficulty"
+    }, {
+      "@id" : "https://w3id.org/timebank#DressingProblem"
+    }, {
+      "@id" : "https://w3id.org/timebank#ToiletUsingProblem"
+    }, {
+      "@id" : "https://w3id.org/timebank#WalkingProblem"
     } ]
   } ]
 }, {
@@ -352,21 +340,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid71",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/timebank#ClimbingStairsDifficulty"
-    }, {
-      "@id" : "https://w3id.org/timebank#DressingProblem"
-    }, {
-      "@id" : "https://w3id.org/timebank#ToiletUsingProblem"
-    }, {
-      "@id" : "https://w3id.org/timebank#WalkingProblem"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid76",
+  "@id" : "_:genid72",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -380,7 +354,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid81",
+  "@id" : "_:genid77",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -396,7 +370,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid87",
+  "@id" : "_:genid83",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -408,13 +382,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid9",
-  "http://www.w3.org/2001/XMLSchema#maxInclusive" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "5"
-  } ]
-}, {
-  "@id" : "_:genid91",
+  "@id" : "_:genid87",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -432,7 +400,13 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid98",
+  "@id" : "_:genid9",
+  "http://www.w3.org/2001/XMLSchema#maxInclusive" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "5"
+  } ]
+}, {
+  "@id" : "_:genid94",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -589,6 +563,24 @@
     "@id" : "https://creativecommons.org/licenses/by/4.0/"
   } ]
 }, {
+  "@id" : "https://w3id.org/timebank#Accessibility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Describes any revelant information regarding the accessibility of a location of a request."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Accessibility"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/timebank#Environment"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#Supplies"
+  } ]
+}, {
   "@id" : "https://w3id.org/timebank#AccessibleByPublicTransport",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -601,7 +593,7 @@
     "@value" : "Accessible by Public Transport"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Environment"
+    "@id" : "https://w3id.org/timebank#Accessibility"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Advice",
@@ -710,21 +702,6 @@
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/timebank#WoodCarving"
-  } ]
-}, {
-  "@id" : "https://w3id.org/timebank#CatInvolved",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A cat is involved."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Cat Involved"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#PetInvolved"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Catering",
@@ -940,21 +917,6 @@
     "@id" : "https://w3id.org/timebank#Recreation"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#DarkPlace",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Place with limited lighting."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Dark Place"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Environment"
-  } ]
-}, {
   "@id" : "https://w3id.org/timebank#Depression",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -985,21 +947,6 @@
     "@id" : "https://w3id.org/timebank#CommonDisease"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#DifficultToAccess",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The place is difficult to access."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Difficult to Access"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Environment"
-  } ]
-}, {
   "@id" : "https://w3id.org/timebank#Dishwashing",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1013,21 +960,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#FoodService"
-  } ]
-}, {
-  "@id" : "https://w3id.org/timebank#DogInvolved",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Dogs are involved."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Dog Involved"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#PetInvolved"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#DressingAssistance",
@@ -1246,21 +1178,6 @@
     "@id" : "https://w3id.org/timebank#Repair"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#ElevatedPlace",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Some high/elevated place is involved. This might trigger fear of heights for some people."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Elevated Place"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Environment"
-  } ]
-}, {
   "@id" : "https://w3id.org/timebank#Environment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1287,7 +1204,7 @@
   "@id" : "https://w3id.org/timebank#EnvironmentalAllergies",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "An allergy to something in environment such as dust mites, pollen, pet hair and cigarette smoke."
+    "@value" : "An allergy to something in the environment such as dust mites, pollen, pet hair and cigarette smoke."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/timebank"
@@ -1921,21 +1838,6 @@
     "@id" : "https://w3id.org/timebank#Skill"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#PetInvolved",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Pets may be encountered when helping for the request."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Pet Involved"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Environment"
-  } ]
-}, {
   "@id" : "https://w3id.org/timebank#PhoneCalls",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2231,7 +2133,7 @@
     "@value" : "Splippery Floor"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#DifficultToAccess"
+    "@id" : "https://w3id.org/timebank#Accessibility"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#SpeakingProblem",
@@ -2291,7 +2193,7 @@
     "@value" : "Stairs"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#DifficultToAccess"
+    "@id" : "https://w3id.org/timebank#Accessibility"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Status",
@@ -2456,7 +2358,7 @@
     "@value" : "Transportation Available"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#PetInvolved"
+    "@id" : "https://w3id.org/timebank#Accessibility"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#TravelCompanion",
@@ -2486,7 +2388,7 @@
     "@value" : "Uneven Terrain"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#DifficultToAccess"
+    "@id" : "https://w3id.org/timebank#Accessibility"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#User",
@@ -2546,7 +2448,7 @@
     "@value" : "Weather Constraint"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#DifficultToAccess"
+    "@id" : "https://w3id.org/timebank#Accessibility"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#WoodCarving",

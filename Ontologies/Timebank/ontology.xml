@@ -792,11 +792,24 @@
     
 
 
+    <!-- https://w3id.org/timebank#Accessibility -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#Accessibility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Environment"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Supplies"/>
+        <rdfs:comment>Describes any revelant information regarding the accessibility of a location of a request.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Accessibility</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/timebank#AccessibleByPublicTransport -->
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#AccessibleByPublicTransport">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Environment"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Accessibility"/>
         <rdfs:comment>The location is accessible by public transport.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Accessible by Public Transport</rdfs:label>
@@ -885,18 +898,6 @@
         <rdfs:comment>The skill to do carpenting.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Carpenting</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/timebank#CatInvolved -->
-
-
-    <owl:Class rdf:about="https://w3id.org/timebank#CatInvolved">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PetInvolved"/>
-        <rdfs:comment>A cat is involved.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Cat Involved</rdfs:label>
     </owl:Class>
     
 
@@ -1070,18 +1071,6 @@
     
 
 
-    <!-- https://w3id.org/timebank#DarkPlace -->
-
-
-    <owl:Class rdf:about="https://w3id.org/timebank#DarkPlace">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Environment"/>
-        <rdfs:comment>Place with limited lighting.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Dark Place</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/timebank#Depression -->
 
 
@@ -1106,18 +1095,6 @@
     
 
 
-    <!-- https://w3id.org/timebank#DifficultToAccess -->
-
-
-    <owl:Class rdf:about="https://w3id.org/timebank#DifficultToAccess">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Environment"/>
-        <rdfs:comment>The place is difficult to access.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Difficult to Access</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/timebank#Dishwashing -->
 
 
@@ -1126,18 +1103,6 @@
         <rdfs:comment>The skill to assist with washing dishes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Dishwashing</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/timebank#DogInvolved -->
-
-
-    <owl:Class rdf:about="https://w3id.org/timebank#DogInvolved">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PetInvolved"/>
-        <rdfs:comment>Dogs are involved.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Dog Involved</rdfs:label>
     </owl:Class>
     
 
@@ -1312,18 +1277,6 @@
     
 
 
-    <!-- https://w3id.org/timebank#ElevatedPlace -->
-
-
-    <owl:Class rdf:about="https://w3id.org/timebank#ElevatedPlace">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Environment"/>
-        <rdfs:comment>Some high/elevated place is involved. This might trigger fear of heights for some people.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Elevated Place</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/timebank#Environment -->
 
 
@@ -1345,7 +1298,7 @@
 
     <owl:Class rdf:about="https://w3id.org/timebank#EnvironmentalAllergies">
         <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Allergy"/>
-        <rdfs:comment>An allergy to something in environment such as dust mites, pollen, pet hair and cigarette smoke.</rdfs:comment>
+        <rdfs:comment>An allergy to something in the environment such as dust mites, pollen, pet hair and cigarette smoke.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Environmental Allergies</rdfs:label>
     </owl:Class>
@@ -1815,18 +1768,6 @@
     
 
 
-    <!-- https://w3id.org/timebank#PetInvolved -->
-
-
-    <owl:Class rdf:about="https://w3id.org/timebank#PetInvolved">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Environment"/>
-        <rdfs:comment>Pets may be encountered when helping for the request.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Pet Involved</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/timebank#PhoneCalls -->
 
 
@@ -2078,7 +2019,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#SlipperyFloor">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DifficultToAccess"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Accessibility"/>
         <rdfs:comment>The person needs to be aware of slippery floor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Splippery Floor</rdfs:label>
@@ -2126,7 +2067,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#Stairs">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DifficultToAccess"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Accessibility"/>
         <rdfs:comment>The person has to climb stairs to complete the task.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Stairs</rdfs:label>
@@ -2221,7 +2162,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#TransportationAvailable">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PetInvolved"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Accessibility"/>
         <rdfs:comment>Transportation necessary to complete the task can be provided.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Transportation Available</rdfs:label>
@@ -2245,7 +2186,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#UnevenTerrain">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DifficultToAccess"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Accessibility"/>
         <rdfs:comment>The person needs equipment (e.g. shoes) suitable for uneven terrain.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Uneven Terrain</rdfs:label>
@@ -2293,7 +2234,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#WeatherConstraint">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#DifficultToAccess"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Accessibility"/>
         <rdfs:comment>The place is difficult to access during bad weather (e.g. snow).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Weather Constraint</rdfs:label>
@@ -2446,11 +2387,11 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="https://w3id.org/timebank#AccessibleByPublicTransport"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#DarkPlace"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#DifficultToAccess"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#ElevatedPlace"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#PetInvolved"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#Supplies"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#SlipperyFloor"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#Stairs"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#TransportationAvailable"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#UnevenTerrain"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#WeatherConstraint"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2504,14 +2445,6 @@
             <rdf:Description rdf:about="https://w3id.org/timebank#Cooking"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Dishwashing"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#FoodPreparation"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/timebank#CatInvolved"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#DogInvolved"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#TransportationAvailable"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2657,15 +2590,6 @@
             <rdf:Description rdf:about="https://w3id.org/timebank#PoorHearing"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#SensitiveSkin"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#SpeakingProblem"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/timebank#SlipperyFloor"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#Stairs"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#UnevenTerrain"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#WeatherConstraint"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

@@ -63,15 +63,14 @@ ex:Alice tb:isAvailableOn [
 </code>
 </pre>
 
-Bob wants to create a new  <a href="#Request">request</a> to ask for help to <a href="#ComputerRepair">fix his computer</a>. Since Alice is available and qualified to help, she <a href="#isAcceptedBy">accepts</a> the request.
-
-Next, we create a new request by Bob (\url{ex:Bob}) requesting somebody to fix his computer. Naturally, this requires some computer skills. As Bob owns a dog, we attach the environmental factor to the request. Luckily, Alice is not afraid of dogs and hence, can help Bob with his computer problem (\Cref{lst:request}).
+Bob wants to create a new  <a href="#Request">request</a> to ask for help to <a href="#ComputerRepair">fix his computer</a>. As Bob owns a dog, he <a href="#excludesUserByLimitation">excludes users</a> who have a fear of dogs from the request. Since Alice is available, qualified to help, and not afraid of dogs, she <a href="#isAcceptedBy">accepts</a> the request.
 
 <pre>
 <code class="language-RDF/Turtle">
 ex:Request a tb:Request ;
     rdfs:comment "My email client fails to synchronize." ;
     tb:requiresSkill tb:ComputerRepair ;
+    tb:excludesUserByLimitation tb:FearOfDogs ;
     tb:hasOriginator ex:Bob ;
     tb:isAcceptedBy ex:Alice ] .
 </code>

@@ -1766,7 +1766,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
         <rdfs:comment>The skill to provide care for people.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Care for people</rdfs:label>
+        <rdfs:label>Care for People</rdfs:label>
     </owl:Class>
     
 

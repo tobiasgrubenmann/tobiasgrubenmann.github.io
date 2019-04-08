@@ -1801,7 +1801,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Care for people"
+    "@value" : "Care for People"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Skill"

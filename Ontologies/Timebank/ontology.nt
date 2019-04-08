@@ -1070,7 +1070,7 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#PeopleCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
 <https://w3id.org/timebank#PeopleCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for people." .
 <https://w3id.org/timebank#PeopleCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#PeopleCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care for people" .
+<https://w3id.org/timebank#PeopleCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care for People" .
 # 
 # https://w3id.org/timebank#PerformingMusic
 <https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

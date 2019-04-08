@@ -210,7 +210,7 @@
                 owl:inverseOf :isTimeBalanceOf ;
                 rdfs:domain :User ;
                 rdfs:range <http://www.w3.org/2006/time#DurationDescription> ;
-                rdfs:comment "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance." ;
+                rdfs:comment "Indicates the current time-balance of a Timebank user." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "has time-balance" .
 
@@ -427,7 +427,7 @@
 :isTimeBalanceOf rdf:type owl:ObjectProperty ;
                  rdfs:domain <http://www.w3.org/2006/time#DurationDescription> ;
                  rdfs:range :User ;
-                 rdfs:comment "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance." ;
+                 rdfs:comment "Indicates the current time-balance of a Timebank user." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
                  rdfs:label "is time-balance of" .
 

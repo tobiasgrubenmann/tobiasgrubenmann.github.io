@@ -318,7 +318,7 @@
         <owl:inverseOf rdf:resource="https://w3id.org/timebank#isTimeBalanceOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/timebank#User"/>
         <rdfs:range rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
-        <rdfs:comment>Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance.</rdfs:comment>
+        <rdfs:comment>Indicates the current time-balance of a Timebank user.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>has time-balance</rdfs:label>
     </owl:ObjectProperty>
@@ -630,7 +630,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/timebank#isTimeBalanceOf">
         <rdfs:domain rdf:resource="http://www.w3.org/2006/time#DurationDescription"/>
         <rdfs:range rdf:resource="https://w3id.org/timebank#User"/>
-        <rdfs:comment>Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance.</rdfs:comment>
+        <rdfs:comment>Indicates the current time-balance of a Timebank user.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>is time-balance of</rdfs:label>
     </owl:ObjectProperty>

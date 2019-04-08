@@ -2790,7 +2790,7 @@
   "@id" : "https://w3id.org/timebank#hasTimeBalance",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance."
+    "@value" : "Indicates the current time-balance of a Timebank user."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/timebank#User"
@@ -3225,7 +3225,7 @@
   "@id" : "https://w3id.org/timebank#isTimeBalanceOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance."
+    "@value" : "Indicates the current time-balance of a Timebank user."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://www.w3.org/2006/time#DurationDescription"

@@ -193,7 +193,7 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/timebank#isTimeBalanceOf> .
 <https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#User> .
 <https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#DurationDescription> .
-<https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance." .
+<https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the current time-balance of a Timebank user." .
 <https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#label> "has time-balance" .
 # 
@@ -391,7 +391,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#DurationDescription> .
 <https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#User> .
-<https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used to indicate an intial time-balance." .
+<https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the current time-balance of a Timebank user." .
 <https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/2000/01/rdf-schema#label> "is time-balance of" .
 # 

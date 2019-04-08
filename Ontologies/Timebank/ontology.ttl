@@ -215,6 +215,16 @@
                 rdfs:label "has time-balance" .
 
 
+###  https://w3id.org/timebank#hasTimeWindow
+:hasTimeWindow rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isTimeWindowOf ;
+               rdfs:domain :Request ;
+               rdfs:range <http://www.w3.org/2006/time#ProperInterval> ;
+               rdfs:comment "Indicates the time window in which the request can/should be completed." ;
+               rdfs:isDefinedBy <https://w3id.org/timebank> ;
+               rdfs:label "has time window" .
+
+
 ###  https://w3id.org/timebank#isAcceptanceDateOf
 :isAcceptanceDateOf rdf:type owl:ObjectProperty ;
                     owl:inverseOf :isAcceptedOn ;
@@ -430,6 +440,15 @@
                  rdfs:comment "Indicates the current time-balance of a Timebank user." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
                  rdfs:label "is time-balance of" .
+
+
+###  https://w3id.org/timebank#isTimeWindowOf
+:isTimeWindowOf rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://www.w3.org/2006/time#ProperInterval> ;
+                rdfs:range :Request ;
+                rdfs:comment "Indicates the time window in which the request can/should be completed." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "is time window of" .
 
 
 ###  https://w3id.org/timebank#repeatsOn
@@ -1285,10 +1304,6 @@
                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ,
                          [ rdf:type owl:Restriction ;
-                           owl:onProperty :isOriginatorOf ;
-                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                         ] ,
-                         [ rdf:type owl:Restriction ;
                            owl:onProperty :rating ;
                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
                          ] ;
@@ -1468,7 +1483,11 @@
 
 ###  https://w3id.org/timebank#User
 :User rdf:type owl:Class ;
-      rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
+      rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasTimeBalance ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
       rdfs:comment "A user of the Timebank." ;
       rdfs:isDefinedBy <https://w3id.org/timebank> ;
       rdfs:label "User" .

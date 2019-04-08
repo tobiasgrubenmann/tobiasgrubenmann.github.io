@@ -2,19 +2,7 @@
 <h2 id="desc" class="list">Timebank Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <!--<span class="markdown">-->
 <p>
-The two most central concepts are the <a href="#User">users</a> and <a href="#Request">requests</a>. A user can request help and help fellow users. The property <a href="#isOriginatorOf">isOriginatorOf</a> is used to link a request to a user asking for help. The property <a href="#accepts">accepts</a> is used to link a helper to a request. A user can have <a href="#Skill">skills</a> and <a href="#Limitation">limitations</a>, which are linked to the user with the properties <a href="#hasSkill">hasSkill</a> and <a href="#hasLimitation">hasLimitation</a>. A request can also have skills and limitations associated to it, using the properties <a href="#requiresSkill">requiresSkill</a> and <a href="#excludesByLimitation">excludesByLimitation</a>. A request also has an <a href="#Environment">environment</a>, which can be expressed with the property <a href="#hasEnvironment">hasEnvironment</a>.
-</p>
-
-<p>
-To keep track of the time-balance of a user, each request is worth a specific amount of time. The property <a href="#hasAccreditedDuration">hasAccreditedDuration</a> is used to express this amount of time. The current time-balance of a user is calculated by adding all time durations for which the user was a helper (<a href="#accepts">acceppted</a> a request) and subtract all time durations for which the user was a receiver of help (<a href="#isOriginatorOf">originator</a> of a request). The initial time-balance can be expressed by the property <a href="#hasTimeBalance">hasTimeBalance</a>.
-</p>
-
-<p>
-The following figure illustrates the basic concept of the Timebank ontology.
-</p>
-<img src="resources/Overview.png" alt="Overview of the Timebank concepts">
-<p>
-In the following, we proivide some examples on how to use our timebank ontology.
+In the following, we provide some examples on how to use our timebank ontology.
 </p>
 
 <p>
@@ -63,7 +51,7 @@ ex:Alice tb:isAvailableOn [
 </code>
 </pre>
 
-Bob wants to create a new  <a href="#Request">request</a> to ask for help to <a href="#ComputerRepair">fix his computer</a>. As Bob owns a dog, he <a href="#excludesUserByLimitation">excludes users</a> who have a <a href="#FearOfDogs">fear of dogs</a> from the request. Since Alice is available, qualified to help, and not afraid of dogs, she <a href="#isAcceptedBy">accepts</a> the request.
+Bob wants to create a new <a href="#Request">request</a> to ask for help to <a href="#ComputerRepair">fix his computer</a>. As Bob owns a dog, he <a href="#excludesUserByLimitation">excludes users</a> who have a <a href="#FearOfDogs">fear of dogs</a> from the request. Bob offers two <a href="#hasTimeWindow">time windows</a> where he would be available to receive the help.
 
 <pre>
 <code class="language-RDF/Turtle">
@@ -72,7 +60,45 @@ ex:Request a tb:Request ;
     tb:requiresSkill tb:ComputerRepair ;
     tb:excludesUserByLimitation tb:FearOfDogs ;
     tb:hasOriginator ex:Bob ;
-    tb:isAcceptedBy ex:Alice ] .
+    tb:hasTimeWindow [
+        a time:ProperInterval ;
+        time:hasBeginning [time:inXSDDateTimeStamp
+            "2019-04-06T14:00:00+08:00"^^xsd:dateTimeStamp ] ;
+        time:hasEnd [time:inXSDDateTimeStamp
+            "2019-04-06T16:00:00+08:00"^^xsd:dateTimeStamp ] ] ;
+    tb:hasTimeWindow [
+        a time:ProperInterval ;
+        time:hasBeginning [time:inXSDDateTimeStamp
+            "2019-04-07T10:00:00+08:00"^^xsd:dateTimeStamp ] ;
+        time:hasEnd [time:inXSDDateTimeStamp
+            "2019-04-07T12:00:00+08:00"^^xsd:dateTimeStamp ] ] .
+</code>
+</pre>
+
+Since Alice is available, qualified to help, and not afraid of dogs, she <a href="#isAcceptedBy">accepts</a> the request.
+
+<pre>
+<code class="language-RDF/Turtle">
+ex:Request tb:isAcceptedBy ex:Alice .
+</code>
+</pre>
+
+Alice spent 1 hour and 30 minutes fixing Bob's computer. This is the <a href="#hasAccreditedDuration">accredited duration</a> of the request. Neither Alice nor Bob accumulated any time in the Timebank before, which means that Alice has now a positive time-balance of 1 hour and 30 minutes and Bob has a negative time-balance of 1 hour and 30 minutes (note the minus sign for both hours and minutes of the duration).
+
+<pre>
+<code class="language-RDF/Turtle">
+ex:Request tb:hasAccreditedDuration [
+    a time:DurationDescription ;
+    time:hours 1 ;
+    time:minutes 30 ] .
+ex:Alice tb:hasTimeBalance [
+    a time:DurationDescription ;
+    time:hours 1 ;
+    time:minutes 30 ] .
+ex:Bob tb:hasTimeBalance [
+    a time:DurationDescription ;
+    time:hours -1 ;
+    time:minutes -30 ] .
 </code>
 </pre>
 

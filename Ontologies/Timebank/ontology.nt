@@ -197,6 +197,15 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#label> "has time-balance" .
 # 
+# https://w3id.org/timebank#hasTimeWindow
+<https://w3id.org/timebank#hasTimeWindow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasTimeWindow> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/timebank#isTimeWindowOf> .
+<https://w3id.org/timebank#hasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#hasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#ProperInterval> .
+<https://w3id.org/timebank#hasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the time window in which the request can/should be completed." .
+<https://w3id.org/timebank#hasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasTimeWindow> <http://www.w3.org/2000/01/rdf-schema#label> "has time window" .
+# 
 # https://w3id.org/timebank#isAcceptanceDateOf
 <https://w3id.org/timebank#isAcceptanceDateOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/timebank#isAcceptanceDateOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/timebank#isAcceptedOn> .
@@ -394,6 +403,14 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the current time-balance of a Timebank user." .
 <https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#isTimeBalanceOf> <http://www.w3.org/2000/01/rdf-schema#label> "is time-balance of" .
+# 
+# https://w3id.org/timebank#isTimeWindowOf
+<https://w3id.org/timebank#isTimeWindowOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#isTimeWindowOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#ProperInterval> .
+<https://w3id.org/timebank#isTimeWindowOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#isTimeWindowOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the time window in which the request can/should be completed." .
+<https://w3id.org/timebank#isTimeWindowOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#isTimeWindowOf> <http://www.w3.org/2000/01/rdf-schema#label> "is time window of" .
 # 
 # https://w3id.org/timebank#repeatsOn
 <https://w3id.org/timebank#repeatsOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -1162,12 +1179,8 @@ _:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#
 _:genid14 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 <https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
 _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#isOriginatorOf> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#rating> .
 _:genid15 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#rating> .
-_:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 <https://w3id.org/timebank#Request> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/timebank#Skill> .
 <https://w3id.org/timebank#Request> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/timebank#Status> .
 <https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#comment> "A request for help from a Timebank user." .
@@ -1323,6 +1336,10 @@ _:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 # https://w3id.org/timebank#User
 <https://w3id.org/timebank#User> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasTimeBalance> .
+_:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 <https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#comment> "A user of the Timebank." .
 <https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#label> "User" .

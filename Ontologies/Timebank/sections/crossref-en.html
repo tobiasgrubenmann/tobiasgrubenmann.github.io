@@ -3485,12 +3485,14 @@ This section provides details for each class and property defined by Timebank On
          <dd>
             <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">end repeating on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isAvailabilityOf" title="https://w3id.org/timebank#isAvailabilityOf">is availability of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isTimeWindowOf" title="https://w3id.org/timebank#isTimeWindowOf">is time window of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#repeatsOn" title="https://w3id.org/timebank#repeatsOn">repeats on</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#isAvailableOn" title="https://w3id.org/timebank#isAvailableOn">is available on</a>
+            <a href="#hasTimeWindow" title="https://w3id.org/timebank#hasTimeWindow">has time window</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isAvailableOn" title="https://w3id.org/timebank#isAvailableOn">is available on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isRepeatingEndpointOf" title="https://w3id.org/timebank#isRepeatingEndpointOf">is repeating endpoint of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isRepetitionDayOf" title="https://w3id.org/timebank#isRepetitionDayOf">is repetition date of</a>
             <sup class="type-op" title="object property">op</sup>
@@ -3717,10 +3719,6 @@ This section provides details for each class and property defined by Timebank On
             <sup class="type-op" title="object property">op</sup> 
             <span class="logic">max</span> 1</dd>
          <dd>
-            <a href="#isOriginatorOf" title="https://w3id.org/timebank#isOriginatorOf">is originator of</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">max</span> 1</dd>
-         <dd>
             <a href="#rating" title="https://w3id.org/timebank#rating">rating</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="logic">max</span> 1</dd>
@@ -3733,6 +3731,7 @@ This section provides details for each class and property defined by Timebank On
             <sup class="type-op" title="object property">op</sup>, <a href="#hasExpectedDuration" title="https://w3id.org/timebank#hasExpectedDuration">has expected duration</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasOriginator" title="https://w3id.org/timebank#hasOriginator">has originator</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasStatus" title="https://w3id.org/timebank#hasStatus">has status</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasTimeWindow" title="https://w3id.org/timebank#hasTimeWindow">has time window</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isAcceptedBy" title="https://w3id.org/timebank#isAcceptedBy">is accepted by</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isAcceptedOn" title="https://w3id.org/timebank#isAcceptedOn">is accepted on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isCompletedOn" title="https://w3id.org/timebank#isCompletedOn">is completed on</a>
@@ -3755,6 +3754,7 @@ This section provides details for each class and property defined by Timebank On
             <sup class="type-op" title="object property">op</sup>, <a href="#isPublicationDateOf" title="https://w3id.org/timebank#isPublicationDateOf">is publication date of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isRequiredBy" title="https://w3id.org/timebank#isRequiredBy">is required by</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isStatusOf" title="https://w3id.org/timebank#isStatusOf">is status of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isTimeWindowOf" title="https://w3id.org/timebank#isTimeWindowOf">is time window of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is disjoint with</dt>
@@ -4518,6 +4518,10 @@ This section provides details for each class and property defined by Timebank On
             <a href="#http://xmlns.com/foaf/0.1/Person" title="http://xmlns.com/foaf/0.1/Person">Person</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dd>
+            <a href="#hasTimeBalance" title="https://w3id.org/timebank#hasTimeBalance">has time-balance</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">max</span> 1</dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#accepts" title="https://w3id.org/timebank#accepts">accepts</a>
@@ -4812,6 +4816,9 @@ This section provides details for each class and property defined by Timebank On
          <a href="#hasStatus" title="https://w3id.org/timebank#hasStatus">has status</a>
       </li>
       <li>
+         <a href="#hasTimeWindow" title="https://w3id.org/timebank#hasTimeWindow">has time window</a>
+      </li>
+      <li>
          <a href="#hasTimeBalance" title="https://w3id.org/timebank#hasTimeBalance">has time-balance</a>
       </li>
       <li>
@@ -4879,6 +4886,9 @@ This section provides details for each class and property defined by Timebank On
       </li>
       <li>
          <a href="#isStatusOf" title="https://w3id.org/timebank#isStatusOf">is status of</a>
+      </li>
+      <li>
+         <a href="#isTimeWindowOf" title="https://w3id.org/timebank#isTimeWindowOf">is time window of</a>
       </li>
       <li>
          <a href="#isTimeBalanceOf" title="https://w3id.org/timebank#isTimeBalanceOf">is time-balance of</a>
@@ -5393,6 +5403,42 @@ This section provides details for each class and property defined by Timebank On
             <dt>is inverse of</dt>
             <dd>
                <a href="#isStatusOf" title="https://w3id.org/timebank#isStatusOf">is status of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasTimeWindow">
+      <h3>has time window<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/timebank#hasTimeWindow</p>
+      <div class="comment">
+         <span class="markdown">Indicates the time window in which the request can/should be completed.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/timebank">https://w3id.org/timebank</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Request" title="https://w3id.org/timebank#Request">Request</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#ProperInterval" title="http://www.w3.org/2006/time#ProperInterval">Proper interval</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isTimeWindowOf" title="https://w3id.org/timebank#isTimeWindowOf">is time window of</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -6224,6 +6270,42 @@ This section provides details for each class and property defined by Timebank On
             <dt>is inverse of</dt>
             <dd>
                <a href="#hasStatus" title="https://w3id.org/timebank#hasStatus">has status</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isTimeWindowOf">
+      <h3>is time window of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/timebank#isTimeWindowOf</p>
+      <div class="comment">
+         <span class="markdown">Indicates the time window in which the request can/should be completed.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/timebank">https://w3id.org/timebank</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#ProperInterval" title="http://www.w3.org/2006/time#ProperInterval">Proper interval</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Request" title="https://w3id.org/timebank#Request">Request</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasTimeWindow" title="https://w3id.org/timebank#hasTimeWindow">has time window</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>

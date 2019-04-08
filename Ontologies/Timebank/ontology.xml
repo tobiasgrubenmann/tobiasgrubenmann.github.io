@@ -325,6 +325,20 @@
     
 
 
+    <!-- https://w3id.org/timebank#hasTimeWindow -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#hasTimeWindow">
+        <owl:inverseOf rdf:resource="https://w3id.org/timebank#isTimeWindowOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#Request"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:comment>Indicates the time window in which the request can/should be completed.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>has time window</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/timebank#isAcceptanceDateOf -->
 
 
@@ -633,6 +647,19 @@
         <rdfs:comment>Indicates the current time-balance of a Timebank user.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>is time-balance of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/timebank#isTimeWindowOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#isTimeWindowOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:range rdf:resource="https://w3id.org/timebank#Request"/>
+        <rdfs:comment>Indicates the time window in which the request can/should be completed.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>is time window of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1924,12 +1951,6 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/timebank#isOriginatorOf"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/timebank#rating"/>
                 <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
             </owl:Restriction>
@@ -2199,6 +2220,12 @@
 
     <owl:Class rdf:about="https://w3id.org/timebank#User">
         <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/timebank#hasTimeBalance"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>A user of the Timebank.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>User</rdfs:label>

@@ -158,7 +158,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/timebank#isOriginatorOf"
+    "@id" : "https://w3id.org/timebank#rating"
   } ]
 }, {
   "@id" : "_:genid16",
@@ -168,7 +168,7 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/timebank#rating"
+    "@id" : "https://w3id.org/timebank#hasTimeBalance"
   } ]
 }, {
   "@id" : "_:genid17",
@@ -2022,8 +2022,6 @@
     "@id" : "_:genid14"
   }, {
     "@id" : "_:genid15"
-  }, {
-    "@id" : "_:genid16"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/timebank#Skill"
@@ -2404,6 +2402,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://xmlns.com/foaf/0.1/Person"
+  }, {
+    "@id" : "_:genid16"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#WalkingProblem",
@@ -2806,6 +2806,27 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/timebank#isTimeBalanceOf"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#hasTimeWindow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates the time window in which the request can/should be completed."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "has time window"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2006/time#ProperInterval"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/timebank#isTimeWindowOf"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#isAcceptanceDateOf",
@@ -3238,6 +3259,24 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/timebank#User"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#isTimeWindowOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Indicates the time window in which the request can/should be completed."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.w3.org/2006/time#ProperInterval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "is time window of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/timebank#Request"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#rating",

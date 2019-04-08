@@ -1,7 +1,32 @@
 <html><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 <p>
-The Timebank Ontology can be used to describe Timebank systems. A Timebank allows user to store virtual money, often called a Time Dollar, into a bank account [Cahn2004]. This virtual currency can be earned by helping fellow Timebank users and spend by requesting help from others. The Timebank Ontology helps Timebanks to describe the context of its users and requests. To describe the context of a user and its request, the ontology provides classes for skills, limitations, and the environment. Skills define what a person can do. Limitations define what how a person cannot do. This includes health related problems, disabilities, and phobias. Finally, the environment describes the available supplies and the accessibility of a request.
+The Timebank Ontology is used to capture all relevant context of users and requests of a Timebank system. A Timebank allows user to accumulate and store virtual money, often called a Time Dollar, into a bank account [Cahn2004]. Whenever a user helps a fellow user with some request, a certain amount of this virtual money is transferred from the originator of the request to the helper. The amount of virtual money that is transferred equals exactly the amount of time needed to complete the request.
+</p>
+
+<p>
+To decide whether a user is suitable to help one of its fellow user, we need to know:
+<ul>
+    <li>What are the skills of the Timebank users?</li>
+    <li>What are the required skills for a specific request?</li>
+    <li>What are the limitations of the Timebank users?</li>
+    <li>What limitations exclude a user from accepting a request?</li>
+    <li>What are the environmental factors of a request?</li>
+    <li>When is a user available for helping others?</li>
+</ul>
+
+<p>
+The following figure illustrates the basic concept of the Timebank ontology.
+</p>
+
+<img src="resources/Overview.png" alt="Overview of the Timebank concepts">
+
+<p>
+The two most central concepts are the <a href="#User">users</a> and <a href="#Request">requests</a>. A user can request help and help fellow users. The property <a href="#isOriginatorOf">isOriginatorOf</a> is used to link a request to a user asking for help. The property <a href="#accepts">accepts</a> is used to link a helper to a request. A user can have <a href="#Skill">skills</a> and <a href="#Limitation">limitations</a>, which are linked to the user with the properties <a href="#hasSkill">hasSkill</a> and <a href="#hasLimitation">hasLimitation</a>. A request can also have skills and limitations associated to it, using the properties <a href="#requiresSkill">requiresSkill</a> and <a href="#excludesByLimitation">excludesByLimitation</a>. A request also has an <a href="#Environment">environment</a>, which can be expressed with the property <a href="#hasEnvironment">hasEnvironment</a>.
+</p>
+
+<p>
+To keep track of the time-balance of a user, each request is worth a specific amount of time. The property <a href="#hasAccreditedDuration">hasAccreditedDuration</a> is used to express this amount of time. The current time-balance of a user is expressed by the property <a href="#hasTimeBalance">hasTimeBalance</a>.
 </p>
 </span>
 <div id="namespacedeclarations">

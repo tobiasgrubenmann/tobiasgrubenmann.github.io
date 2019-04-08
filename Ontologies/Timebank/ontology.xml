@@ -708,35 +708,9 @@
     <owl:DatatypeProperty rdf:about="https://w3id.org/timebank#rating">
         <rdfs:domain rdf:resource="https://w3id.org/timebank#Request"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-        <rdfs:comment rdf:resource="https://w3id.org/timebank"/>
         <rdfs:comment>The rating given by the originator of a request to the assigned helper for completing the specific request.</rdfs:comment>
-        <rdfs:label>rating</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/timebank#rating1to5 -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/timebank#rating1to5">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/timebank#rating"/>
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Request"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                    <rdf:Description>
-                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</xsd:maxInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:comment>The rating given by the originator of a request to the assigned helper for completing the specific request. Ratings can be a decimal in the range of 1 (star) and 5 (stars).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>rating: 1 to 5</rdfs:label>
+        <rdfs:label>rating</rdfs:label>
     </owl:DatatypeProperty>
     
 

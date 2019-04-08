@@ -477,26 +477,9 @@
 :rating rdf:type owl:DatatypeProperty ;
         rdfs:domain :Request ;
         rdfs:range xsd:decimal ;
-        rdfs:comment <https://w3id.org/timebank> ,
-                     "The rating given by the originator of a request to the assigned helper for completing the specific request." ;
+        rdfs:comment "The rating given by the originator of a request to the assigned helper for completing the specific request." ;
+        rdfs:isDefinedBy <https://w3id.org/timebank> ;
         rdfs:label "rating" .
-
-
-###  https://w3id.org/timebank#rating1to5
-:rating1to5 rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf :rating ;
-            rdfs:domain :Request ;
-            rdfs:range [ rdf:type rdfs:Datatype ;
-                         owl:onDatatype xsd:decimal ;
-                         owl:withRestrictions ( [ xsd:minInclusive 1
-                                                ]
-                                                [ xsd:maxInclusive 5
-                                                ]
-                                              )
-                       ] ;
-            rdfs:comment "The rating given by the originator of a request to the assigned helper for completing the specific request. Ratings can be a decimal in the range of 1 (star) and 5 (stars)." ;
-            rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "rating: 1 to 5" .
 
 
 #################################################################

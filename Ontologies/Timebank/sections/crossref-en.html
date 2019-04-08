@@ -3737,7 +3737,6 @@ This section provides details for each class and property defined by Timebank On
             <sup class="type-op" title="object property">op</sup>, <a href="#isCompletedOn" title="https://w3id.org/timebank#isCompletedOn">is completed on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPublishedOn" title="https://w3id.org/timebank#isPublishedOn">is published on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#rating" title="https://w3id.org/timebank#rating">rating</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#rating1to5" title="https://w3id.org/timebank#rating1to5">rating: 1 to 5</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#requiresSkill" title="https://w3id.org/timebank#requiresSkill">requires skill</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -6425,9 +6424,6 @@ This section provides details for each class and property defined by Timebank On
       <li>
          <a href="#rating" title="https://w3id.org/timebank#rating">rating</a>
       </li>
-      <li>
-         <a href="#rating1to5" title="https://w3id.org/timebank#rating1to5">rating: 1 to 5</a>
-      </li>
    </ul>
    <div class="entity" id="rating">
       <h3>rating<sup class="type-dp" title="data property">dp</sup>
@@ -6437,36 +6433,7 @@ This section provides details for each class and property defined by Timebank On
       <p>
          <strong>IRI:</strong> https://w3id.org/timebank#rating</p>
       <div class="comment">
-         <span class="markdown"/>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has sub-properties</dt>
-            <dd>
-               <a href="#rating1to5" title="https://w3id.org/timebank#rating1to5">rating: 1 to 5</a>
-               <sup class="type-dp" title="data property">dp</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Request" title="https://w3id.org/timebank#Request">Request</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="rating1to5">
-      <h3>rating: 1 to 5<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/timebank#rating1to5</p>
-      <div class="comment">
-         <span class="markdown">The rating given by the originator of a request to the assigned helper for completing the specific request. Ratings can be a decimal in the range of 1 (star) and 5 (stars).</span>
+         <span class="markdown">The rating given by the originator of a request to the assigned helper for completing the specific request.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -6476,18 +6443,15 @@ This section provides details for each class and property defined by Timebank On
       </dl>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#rating" title="https://w3id.org/timebank#rating">rating</a>
-               <sup class="type-dp" title="data property">dp</sup>
-            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#Request" title="https://w3id.org/timebank#Request">Request</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
-            <dd/>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</span>
+            </dd>
          </dl>
       </div>
    </div>

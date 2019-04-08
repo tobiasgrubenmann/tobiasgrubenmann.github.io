@@ -38,10 +38,10 @@ This section provides details for each class and property defined by Timebank On
          <a href="#Baking" title="https://w3id.org/timebank#Baking">Baking</a>
       </li>
       <li>
-         <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
+         <a href="#ElderlyCare" title="https://w3id.org/timebank#ElderlyCare">Care for Elderly</a>
       </li>
       <li>
-         <a href="#ElderlyCare" title="https://w3id.org/timebank#ElderlyCare">Care for Elderly</a>
+         <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
       </li>
       <li>
          <a href="#PhysicallyDisabledCare"
@@ -494,11 +494,11 @@ This section provides details for each class and property defined by Timebank On
          </dd>
          <dt>is disjoint with</dt>
          <dd>
-            <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
+            <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OfficeWork" title="https://w3id.org/timebank#OfficeWork">Office Work</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Recreation" title="https://w3id.org/timebank#Recreation">Recreation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Repair" title="https://w3id.org/timebank#Repair">Repair</a>
@@ -766,13 +766,46 @@ This section provides details for each class and property defined by Timebank On
          </dd>
       </dl>
    </div>
-   <div class="entity" id="Care">
-      <h3>Care<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="ElderlyCare">
+      <h3>Care for Elderly<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/timebank#Care</p>
+         <strong>IRI:</strong> https://w3id.org/timebank#ElderlyCare</p>
+      <div class="comment">
+         <span class="markdown">The skill to provide care and support for the elderly.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/timebank">https://w3id.org/timebank</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#ChildCare" title="https://w3id.org/timebank#ChildCare">Child Care</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MentallyIllCare" title="https://w3id.org/timebank#MentallyIllCare">Care Mentally Ill People</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PhysicallyDisabledCare"
+               title="https://w3id.org/timebank#PhysicallyDisabledCare">Care for Physically Disabled</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SickCare" title="https://w3id.org/timebank#SickCare">Care for Sick People</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PeopleCare">
+      <h3>Care for people<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/timebank#PeopleCare</p>
       <div class="comment">
          <span class="markdown">The skill to provide care for people.</span>
       </div>
@@ -814,39 +847,6 @@ This section provides details for each class and property defined by Timebank On
          </dd>
       </dl>
    </div>
-   <div class="entity" id="ElderlyCare">
-      <h3>Care for Elderly<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/timebank#ElderlyCare</p>
-      <div class="comment">
-         <span class="markdown">The skill to provide care and support for the elderly.</span>
-      </div>
-      <dl class="definedBy">
-         <dt>Is defined by</dt>
-         <dd>
-            <a href="https://w3id.org/timebank">https://w3id.org/timebank</a>
-         </dd>
-      </dl>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#ChildCare" title="https://w3id.org/timebank#ChildCare">Child Care</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#MentallyIllCare" title="https://w3id.org/timebank#MentallyIllCare">Care Mentally Ill People</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#PhysicallyDisabledCare"
-               title="https://w3id.org/timebank#PhysicallyDisabledCare">Care for Physically Disabled</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#SickCare" title="https://w3id.org/timebank#SickCare">Care for Sick People</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="PhysicallyDisabledCare">
       <h3>Care for Physically Disabled<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -866,7 +866,7 @@ This section provides details for each class and property defined by Timebank On
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
+            <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is disjoint with</dt>
@@ -898,7 +898,7 @@ This section provides details for each class and property defined by Timebank On
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
+            <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is disjoint with</dt>
@@ -931,7 +931,7 @@ This section provides details for each class and property defined by Timebank On
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
+            <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is disjoint with</dt>
@@ -1025,7 +1025,7 @@ This section provides details for each class and property defined by Timebank On
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
+            <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is disjoint with</dt>
@@ -1335,10 +1335,10 @@ This section provides details for each class and property defined by Timebank On
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OfficeWork" title="https://w3id.org/timebank#OfficeWork">Office Work</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Recreation" title="https://w3id.org/timebank#Recreation">Recreation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Repair" title="https://w3id.org/timebank#Repair">Repair</a>
@@ -2380,10 +2380,10 @@ This section provides details for each class and property defined by Timebank On
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OfficeWork" title="https://w3id.org/timebank#OfficeWork">Office Work</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Recreation" title="https://w3id.org/timebank#Recreation">Recreation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Repair" title="https://w3id.org/timebank#Repair">Repair</a>
@@ -2965,10 +2965,10 @@ This section provides details for each class and property defined by Timebank On
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OfficeWork" title="https://w3id.org/timebank#OfficeWork">Office Work</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Recreation" title="https://w3id.org/timebank#Recreation">Recreation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Repair" title="https://w3id.org/timebank#Repair">Repair</a>
@@ -3151,10 +3151,10 @@ This section provides details for each class and property defined by Timebank On
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Recreation" title="https://w3id.org/timebank#Recreation">Recreation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Repair" title="https://w3id.org/timebank#Repair">Repair</a>
@@ -3282,11 +3282,11 @@ This section provides details for each class and property defined by Timebank On
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OfficeWork" title="https://w3id.org/timebank#OfficeWork">Office Work</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Recreation" title="https://w3id.org/timebank#Recreation">Recreation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Repair" title="https://w3id.org/timebank#Repair">Repair</a>
             <sup class="type-c" title="class">c</sup>, <a href="#SalesServices" title="https://w3id.org/timebank#SalesServices">Sales Services</a>
@@ -3627,11 +3627,11 @@ This section provides details for each class and property defined by Timebank On
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OfficeWork" title="https://w3id.org/timebank#OfficeWork">Office Work</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Repair" title="https://w3id.org/timebank#Repair">Repair</a>
             <sup class="type-c" title="class">c</sup>, <a href="#SalesServices" title="https://w3id.org/timebank#SalesServices">Sales Services</a>
@@ -3675,11 +3675,11 @@ This section provides details for each class and property defined by Timebank On
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OfficeWork" title="https://w3id.org/timebank#OfficeWork">Office Work</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Recreation" title="https://w3id.org/timebank#Recreation">Recreation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#SalesServices" title="https://w3id.org/timebank#SalesServices">Sales Services</a>
@@ -3832,11 +3832,11 @@ This section provides details for each class and property defined by Timebank On
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OfficeWork" title="https://w3id.org/timebank#OfficeWork">Office Work</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Recreation" title="https://w3id.org/timebank#Recreation">Recreation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Repair" title="https://w3id.org/timebank#Repair">Repair</a>
@@ -3927,7 +3927,7 @@ This section provides details for each class and property defined by Timebank On
          <dt>has sub-classes</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
@@ -4415,11 +4415,11 @@ This section provides details for each class and property defined by Timebank On
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Advice" title="https://w3id.org/timebank#Advice">Advice</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Care" title="https://w3id.org/timebank#Care">Care</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Crafting" title="https://w3id.org/timebank#Crafting">Crafting</a>
             <sup class="type-c" title="class">c</sup>, <a href="#FoodService" title="https://w3id.org/timebank#FoodService">Food Service</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Maintenance" title="https://w3id.org/timebank#Maintenance">Maintenance</a>
             <sup class="type-c" title="class">c</sup>, <a href="#OfficeWork" title="https://w3id.org/timebank#OfficeWork">Office Work</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PeopleCare" title="https://w3id.org/timebank#PeopleCare">Care for people</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PersonalServices" title="https://w3id.org/timebank#PersonalServices">Personal Services</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Recreation" title="https://w3id.org/timebank#Recreation">Recreation</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Repair" title="https://w3id.org/timebank#Repair">Repair</a>

@@ -195,8 +195,6 @@
     "@list" : [ {
       "@id" : "https://w3id.org/timebank#Advice"
     }, {
-      "@id" : "https://w3id.org/timebank#Care"
-    }, {
       "@id" : "https://w3id.org/timebank#Crafting"
     }, {
       "@id" : "https://w3id.org/timebank#FoodService"
@@ -204,6 +202,8 @@
       "@id" : "https://w3id.org/timebank#Maintenance"
     }, {
       "@id" : "https://w3id.org/timebank#OfficeWork"
+    }, {
+      "@id" : "https://w3id.org/timebank#PeopleCare"
     }, {
       "@id" : "https://w3id.org/timebank#PersonalServices"
     }, {
@@ -526,8 +526,7 @@
     "@value" : "Timebank Ontology"
   } ],
   "http://purl.org/dc/terms/created" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2019-03-14"
+    "@value" : "2019-04-10"
   } ],
   "http://purl.org/dc/terms/creator" : [ {
     "@value" : "Ankit Tibrewal"
@@ -671,21 +670,6 @@
     "@id" : "https://w3id.org/timebank#FoodService"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#Care",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The skill to provide care for people."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "https://w3id.org/timebank"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Care"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Skill"
-  } ]
-}, {
   "@id" : "https://w3id.org/timebank#Carpeting",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -731,7 +715,7 @@
     "@value" : "Child Care"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Care"
+    "@id" : "https://w3id.org/timebank#PeopleCare"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Cleaning",
@@ -1145,7 +1129,7 @@
     "@value" : "Care for Elderly"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Care"
+    "@id" : "https://w3id.org/timebank#PeopleCare"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Electricity",
@@ -1700,7 +1684,7 @@
     "@value" : "Care Mentally Ill People"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Care"
+    "@id" : "https://w3id.org/timebank#PeopleCare"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#MilkAllergy",
@@ -1808,6 +1792,21 @@
     "@id" : "https://w3id.org/timebank#SalesServices"
   } ]
 }, {
+  "@id" : "https://w3id.org/timebank#PeopleCare",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The skill to provide care for people."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Care for people"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/timebank#Skill"
+  } ]
+}, {
   "@id" : "https://w3id.org/timebank#PerformingMusic",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1880,7 +1879,7 @@
     "@value" : "Care for Physically Disabled"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Care"
+    "@id" : "https://w3id.org/timebank#PeopleCare"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Plumbing",
@@ -2101,7 +2100,7 @@
     "@value" : "Care for Sick People"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#Care"
+    "@id" : "https://w3id.org/timebank#PeopleCare"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Skill",

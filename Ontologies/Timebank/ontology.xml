@@ -13,7 +13,7 @@
     <owl:Ontology rdf:about="https://w3id.org/timebank">
         <owl:versionIRI rdf:resource="https://w3id.org/timebank/0.1"/>
         <dc:title>Timebank Ontology</dc:title>
-        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-03-14</terms:created>
+        <terms:created>2019-04-10</terms:created>
         <terms:creator>Ankit Tibrewal</terms:creator>
         <terms:creator>Subhayan Roy</terms:creator>
         <terms:creator>Tobias Grubenmann</terms:creator>
@@ -904,18 +904,6 @@
     
 
 
-    <!-- https://w3id.org/timebank#Care -->
-
-
-    <owl:Class rdf:about="https://w3id.org/timebank#Care">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
-        <rdfs:comment>The skill to provide care for people.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Care</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/timebank#Carpeting -->
 
 
@@ -945,7 +933,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#ChildCare">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Care"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PeopleCare"/>
         <rdfs:comment>The skill to provide care for children.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Child Care</rdfs:label>
@@ -1272,7 +1260,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#ElderlyCare">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Care"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PeopleCare"/>
         <rdfs:comment>The skill to provide care and support for the elderly.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Care for Elderly</rdfs:label>
@@ -1679,7 +1667,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#MentallyIllCare">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Care"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PeopleCare"/>
         <rdfs:comment>The skill to provide care for the mentally ill.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Care Mentally Ill People</rdfs:label>
@@ -1771,6 +1759,18 @@
     
 
 
+    <!-- https://w3id.org/timebank#PeopleCare -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#PeopleCare">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
+        <rdfs:comment>The skill to provide care for people.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Care for people</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/timebank#PerformingMusic -->
 
 
@@ -1823,7 +1823,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#PhysicallyDisabledCare">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Care"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PeopleCare"/>
         <rdfs:comment>The skill to provide care for the physically disabled.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Care for Physically Disabled</rdfs:label>
@@ -2016,7 +2016,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#SickCare">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Care"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PeopleCare"/>
         <rdfs:comment>The skill to provide care for sick people.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Care for Sick People</rdfs:label>
@@ -2425,11 +2425,11 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="https://w3id.org/timebank#Advice"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#Care"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Crafting"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#FoodService"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Maintenance"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#OfficeWork"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#PeopleCare"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#PersonalServices"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Recreation"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Repair"/>

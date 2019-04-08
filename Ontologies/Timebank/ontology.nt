@@ -1,7 +1,7 @@
 <https://w3id.org/timebank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/timebank/0.1> .
 <https://w3id.org/timebank> <http://purl.org/dc/elements/1.1/title> "Timebank Ontology" .
-<https://w3id.org/timebank> <http://purl.org/dc/terms/created> "2019-03-14"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/timebank> <http://purl.org/dc/terms/created> "2019-04-10" .
 <https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Ankit Tibrewal" .
 <https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Subhayan Roy" .
 <https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Tobias Grubenmann" .
@@ -560,13 +560,6 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#Baking> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Baking> <http://www.w3.org/2000/01/rdf-schema#label> "Baking" .
 # 
-# https://w3id.org/timebank#Care
-<https://w3id.org/timebank#Care> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#Care> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
-<https://w3id.org/timebank#Care> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for people." .
-<https://w3id.org/timebank#Care> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#Care> <http://www.w3.org/2000/01/rdf-schema#label> "Care" .
-# 
 # https://w3id.org/timebank#Carpeting
 <https://w3id.org/timebank#Carpeting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/timebank#Carpeting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#WoodCrafting> .
@@ -584,7 +577,7 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#ChildCare
 <https://w3id.org/timebank#ChildCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#ChildCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Care> .
+<https://w3id.org/timebank#ChildCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PeopleCare> .
 <https://w3id.org/timebank#ChildCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for children." .
 <https://w3id.org/timebank#ChildCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#ChildCare> <http://www.w3.org/2000/01/rdf-schema#label> "Child Care" .
@@ -776,7 +769,7 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#ElderlyCare
 <https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Care> .
+<https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PeopleCare> .
 <https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care and support for the elderly." .
 <https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care for Elderly" .
@@ -1018,7 +1011,7 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#MentallyIllCare
 <https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Care> .
+<https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PeopleCare> .
 <https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for the mentally ill." .
 <https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#MentallyIllCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care Mentally Ill People" .
@@ -1072,6 +1065,13 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#label> "Online Shopping" .
 # 
+# https://w3id.org/timebank#PeopleCare
+<https://w3id.org/timebank#PeopleCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PeopleCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#PeopleCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for people." .
+<https://w3id.org/timebank#PeopleCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PeopleCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care for people" .
+# 
 # https://w3id.org/timebank#PerformingMusic
 <https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Recreation> .
@@ -1102,7 +1102,7 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#PhysicallyDisabledCare
 <https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Care> .
+<https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PeopleCare> .
 <https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for the physically disabled." .
 <https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#PhysicallyDisabledCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care for Physically Disabled" .
@@ -1217,7 +1217,7 @@ _:genid15 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 # 
 # https://w3id.org/timebank#SickCare
 <https://w3id.org/timebank#SickCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#SickCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Care> .
+<https://w3id.org/timebank#SickCare> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PeopleCare> .
 <https://w3id.org/timebank#SickCare> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to provide care for sick people." .
 <https://w3id.org/timebank#SickCare> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#SickCare> <http://www.w3.org/2000/01/rdf-schema#label> "Care for Sick People" .
@@ -1480,19 +1480,19 @@ _:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 _:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Advice> .
 _:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
 _:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Care> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Crafting> .
 _:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
 _:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Crafting> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FoodService> .
 _:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
 _:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FoodService> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Maintenance> .
 _:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
 _:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Maintenance> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#OfficeWork> .
 _:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
 _:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#OfficeWork> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#PeopleCare> .
 _:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
 _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#PersonalServices> .

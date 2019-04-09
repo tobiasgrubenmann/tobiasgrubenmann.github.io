@@ -19,7 +19,7 @@ To decide whether a user is suitable to help one of its fellow user, we need to 
 The following figure illustrates the basic concept of the Timebank ontology.
 </p>
 
-<img src="resources/Overview.png" alt="Overview of the Timebank concepts">
+<img src="resources/Overview.png" alt="Overview of the Timebank concepts" width="1500">
 
 <p>
 The two most central concepts are the <a href="#User">users</a> and <a href="#Request">requests</a>. A user can request help and offer help to fellow users. The property <a href="#isOriginatorOf">isOriginatorOf</a> is used to link a request to a user asking for help. The property <a href="#accepts">accepts</a> is used to link a helper to a request. A user can have <a href="#Skill">skills</a> and <a href="#Limitation">limitations</a>, which are linked to the user with the properties <a href="#hasSkill">hasSkill</a> and <a href="#hasLimitation">hasLimitation</a>. A request can also have skills and limitations associated to it, using the properties <a href="#requiresSkill">requiresSkill</a> and <a href="#excludesByLimitation">excludesByLimitation</a>. A request also has an <a href="#Environment">environment</a>, which can be expressed with the property <a href="#hasEnvironment">hasEnvironment</a>.

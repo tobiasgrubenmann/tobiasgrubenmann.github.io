@@ -2,11 +2,11 @@
 <h2 id="desc" class="list">Timebank Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <!--<span class="markdown">-->
 <p>
-In the following, we provide some examples on how to use our timebank ontology.
+In the following, we provide some examples on how to use our timebank ontology. All examples use the <a href="https://www.w3.org/TR/turtle/">Turtle syntax</a>.
 </p>
 
 <p>
-First, we will create a new user, Alice. We will reuse the <a href="http://xmlns.com/foaf/0.1/">FOAF</a> vocabulary the indicate the name of the user. The user's address is expressed using the <a href="http://www.w3.org/2006/vcard/ns">VCard</a> ontology.
+First, we will create a new user, Alice. We will reuse the <a href="http://xmlns.com/foaf/0.1/">FOAF</a> vocabulary to indicate the name of the user. The user's address is expressed using the <a href="http://www.w3.org/2006/vcard/ns">VCard</a> ontology.
 </p>
 
 <pre>
@@ -27,15 +27,15 @@ Next, we link the skill <a href="#ComputerRepair">tb:ComputerRepair</a> and the 
 <code class="language-RDF/Turtle">
 ex:Alice tb:hasSkill [a tb:ComputerRepair ;
     tb:hasSkillLevel tb:LevelHigh ;
-    rdfs:comment "30 years experience with computers." ] .
+    rdfs:comment "30 years of experience with computers." ] .
 ex:Alice tb:hasLimitation [a tb:PoorHearing ;
     tb:hasSeverity tb:LevelLow ;
-    rdfs:comment "Preferrably, speak into my left ear." ] .
+    rdfs:comment "Preferably, speak into my left ear." ] .
 </code>
 </pre>
 
 <p>
-Alice is available every Saturday and Sunday from 1pm until 6pm, starting from 2019-03-30. We use the <a href="http://www.w3.org/2006/time">Time</a> vocabulary to express this.
+Alice is available <a href="#repeatsOn">every</a> Saturday and Sunday from 1pm until 6pm, starting from 2019-03-30 <a href="#endsRepeatingOn">until</a> 2019-04-28. We use the <a href="http://www.w3.org/2006/time">Time</a> vocabulary to express time intervals and time instants.
 </p>
 
 <pre>
@@ -47,11 +47,16 @@ ex:Alice tb:isAvailableOn [
     time:hasEnd [time:inXSDDateTimeStamp
         "2019-03-30T18:00:00+08:00"^^xsd:dateTimeStamp ] ;
     tb:repeatsOn time:Saturday ;
-    tb:repeatsOn time:Sunday ] .
+    tb:repeatsOn time:Sunday ;
+    tb:endsRepeatingOn [
+        time:inXSDDateTimeStamp "2019-04-04T18:00:00+08:00"^^xsd:dateTimeStamp ] ] .
 </code>
 </pre>
 
+<p>
 Bob wants to create a new <a href="#Request">request</a> to ask for help to <a href="#ComputerRepair">fix his computer</a>. As Bob owns a dog, he <a href="#excludesUserByLimitation">excludes users</a> who have a <a href="#FearOfDogs">fear of dogs</a> from the request. Bob offers two <a href="#hasTimeWindow">time windows</a> where he would be available to receive the help.
+</p>
+
 
 <pre>
 <code class="language-RDF/Turtle">
@@ -69,28 +74,53 @@ ex:Request a tb:Request ;
     tb:hasTimeWindow [
         a time:ProperInterval ;
         time:hasBeginning [time:inXSDDateTimeStamp
-            "2019-04-07T10:00:00+08:00"^^xsd:dateTimeStamp ] ;
+            "2019-04-10T10:00:00+08:00"^^xsd:dateTimeStamp ] ;
         time:hasEnd [time:inXSDDateTimeStamp
-            "2019-04-07T12:00:00+08:00"^^xsd:dateTimeStamp ] ] .
+            "2019-04-10T12:00:00+08:00"^^xsd:dateTimeStamp ] ] .
 </code>
 </pre>
 
-Since Alice is available, qualified to help, and not afraid of dogs, she <a href="#isAcceptedBy">accepts</a> the request.
+<p>
+Next, we will add some more details about the request. First, the request has an <a href="#hasExpectedDuration">expected duration</a> of 2 hours. Next, we also want to set the <a href="#hasStatus">status</a> of the request to <a href="#StatusOpen">open</a>. Finally, we also add a <a href="#isPublishedOn">publication date</a>.
+</p>
 
 <pre>
 <code class="language-RDF/Turtle">
-ex:Request tb:isAcceptedBy ex:Alice .
+ex:Request tb:hasExpectedDuration [
+    a time:DurationDescription ;
+    time:hours 2 ] ;
+    tb:hasStatus tb:StatusOpen ;
+    tb:isPublishedOn [time:inXSDDateTimeStamp
+        "2019-03-14T12:00:00+08:00"^^xsd:dateTimeStamp ] .
 </code>
 </pre>
 
-Alice spent 1 hour and 30 minutes fixing Bob's computer. This is the <a href="#hasAccreditedDuration">accredited duration</a> of the request. Neither Alice nor Bob accumulated any time in the Timebank before, which means that Alice has now a positive <a href="#hasTimeBalance">time-balance</a> of 1 hour and 30 minutes and Bob has a negative <a href="#hasTimeBalance">time-balance</a> of 1 hour and 30 minutes (note the negative sign for both hours and minutes of the duration).
+<p>
+Since Alice is available on one of the two time windows, is qualified to help, and not afraid of dogs, she <a href="#isAcceptedBy">accepts</a> the request. We change the <a href="#hasStatus">status</a> to <a href="#StatusAssigned">assigned</a> and add the <a href="#isAcceptedOn">date of acceptance</a>.
+</p>
+
+
+<pre>
+<code class="language-RDF/Turtle">
+ex:Request tb:isAcceptedBy ex:Alice ;
+    tb:hasStatus tb:StatusAssigned ;
+    tb:isAcceptedOn [time:inXSDDateTimeStamp
+        "2019-03-28T12:00:00+08:00"^^xsd:dateTimeStamp ] .
+</code>
+</pre>
+
+<p>
+Alice spent 1 hour and 30 minutes fixing Bob's computer. This is the <a href="#hasAccreditedDuration">accredited duration</a> of the request. Neither Alice nor Bob accumulated any time in the Timebank before, which means that Alice has now a positive <a href="#hasTimeBalance">time-balance</a> of 1 hour and 30 minutes and Bob has a negative <a href="#hasTimeBalance">time-balance</a> of 1 hour and 30 minutes (note the negative sign for both hours and minutes of the duration). We also add a <a href="#isCompletedOn">completion date</a>.
+</p>
 
 <pre>
 <code class="language-RDF/Turtle">
 ex:Request tb:hasAccreditedDuration [
     a time:DurationDescription ;
     time:hours 1 ;
-    time:minutes 30 ] .
+    time:minutes 30 ] ;
+    tb:isCompletedOn [time:inXSDDateTimeStamp
+    "2019-04-06T15:30:00+08:00"^^xsd:dateTimeStamp ] .
 ex:Alice tb:hasTimeBalance [
     a time:DurationDescription ;
     time:hours 1 ;
@@ -101,6 +131,24 @@ ex:Bob tb:hasTimeBalance [
     time:minutes -30 ] .
 </code>
 </pre>
+
+<p>
+For the skills, limitations, and the environment, we created different subclasses to further specify the type. The following figure shows all the <a href="#Skill">skill</a> classes. An arrow indicates that a class is a subclass of another class.
+</p>
+    
+<img src="resources/SkillClasses.png" alt="Hierarchy of the skill class and its subclasses.">
+
+<p>
+The following figure shows all the <a href="#Limitation">limitation</a> classes. An arrow indicates that a class is a subclass of another class.
+</p>
+    
+<img src="resources/LimitationClasses.png" alt="Hierarchy of the limitation class and its subclasses.">
+
+<p>
+Finally, the following figure shows all the <a href="#Environment">environment</a> classes. An arrow indicates that a class is a subclass of another class.
+</p>
+    
+<img src="resources/EnvironmentClasses.png" alt="Hierarchy of the environment class and its subclasses.">
 
 <!--</span>-->
 

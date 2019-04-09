@@ -1992,7 +1992,7 @@ This section provides details for each class and property defined by Timebank On
       <p>
          <strong>IRI:</strong> https://w3id.org/timebank#Environment</p>
       <div class="comment">
-         <span class="markdown">The environment describes relevant factors for matching requesters and helpers which are not described by Skill or Limitation.</span>
+         <span class="markdown">The environment describes relevant environmental factors of a request.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -3483,7 +3483,7 @@ This section provides details for each class and property defined by Timebank On
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">end repeating on</a>
+            <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">ends repeating on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isAvailabilityOf" title="https://w3id.org/timebank#isAvailabilityOf">is availability of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isTimeWindowOf" title="https://w3id.org/timebank#isTimeWindowOf">is time window of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#repeatsOn" title="https://w3id.org/timebank#repeatsOn">repeats on</a>
@@ -3734,6 +3734,7 @@ This section provides details for each class and property defined by Timebank On
             <sup class="type-op" title="object property">op</sup>, <a href="#hasTimeWindow" title="https://w3id.org/timebank#hasTimeWindow">has time window</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isAcceptedBy" title="https://w3id.org/timebank#isAcceptedBy">is accepted by</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isAcceptedOn" title="https://w3id.org/timebank#isAcceptedOn">is accepted on</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isCancelledOn" title="https://w3id.org/timebank#isCancelledOn">is cancelled on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isCompletedOn" title="https://w3id.org/timebank#isCompletedOn">is completed on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPublishedOn" title="https://w3id.org/timebank#isPublishedOn">is published on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#rating" title="https://w3id.org/timebank#rating">rating</a>
@@ -3746,6 +3747,7 @@ This section provides details for each class and property defined by Timebank On
             <sup class="type-op" title="object property">op</sup>, <a href="#excludesUserFrom" title="https://w3id.org/timebank#excludesUserFrom">excludes user from</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isAcceptanceDateOf" title="https://w3id.org/timebank#isAcceptanceDateOf">is acceptance date of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isAccreditedTo" title="https://w3id.org/timebank#isAccreditedTo">is accredited to</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isCancellationDateOf" title="https://w3id.org/timebank#isCancellationDateOf">is cancellation date of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isCompletionDateOf" title="https://w3id.org/timebank#isCompletionDateOf">is completion date of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isEnvironmentOf" title="https://w3id.org/timebank#isEnvironmentOf">is environment of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isExpectedDurationOf" title="https://w3id.org/timebank#isExpectedDurationOf">is expected duration of</a>
@@ -4270,6 +4272,7 @@ This section provides details for each class and property defined by Timebank On
          <dt>is in domain of</dt>
          <dd>
             <a href="#isAcceptanceDateOf" title="https://w3id.org/timebank#isAcceptanceDateOf">is acceptance date of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isCancellationDateOf" title="https://w3id.org/timebank#isCancellationDateOf">is cancellation date of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isCompletionDateOf" title="https://w3id.org/timebank#isCompletionDateOf">is completion date of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPublicationDateOf" title="https://w3id.org/timebank#isPublicationDateOf">is publication date of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isRepeatingEndpointOf" title="https://w3id.org/timebank#isRepeatingEndpointOf">is repeating endpoint of</a>
@@ -4277,8 +4280,9 @@ This section provides details for each class and property defined by Timebank On
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">end repeating on</a>
+            <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">ends repeating on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isAcceptedOn" title="https://w3id.org/timebank#isAcceptedOn">is accepted on</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isCancelledOn" title="https://w3id.org/timebank#isCancelledOn">is cancelled on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isCompletedOn" title="https://w3id.org/timebank#isCompletedOn">is completed on</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isPublishedOn" title="https://w3id.org/timebank#isPublishedOn">is published on</a>
             <sup class="type-op" title="object property">op</sup>
@@ -4775,7 +4779,7 @@ This section provides details for each class and property defined by Timebank On
          <a href="#accepts" title="https://w3id.org/timebank#accepts">accepts</a>
       </li>
       <li>
-         <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">end repeating on</a>
+         <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">ends repeating on</a>
       </li>
       <li>
          <a href="#excludesUserByLimitation"
@@ -4840,6 +4844,12 @@ This section provides details for each class and property defined by Timebank On
       </li>
       <li>
          <a href="#isAvailableOn" title="https://w3id.org/timebank#isAvailableOn">is available on</a>
+      </li>
+      <li>
+         <a href="#isCancellationDateOf" title="https://w3id.org/timebank#isCancellationDateOf">is cancellation date of</a>
+      </li>
+      <li>
+         <a href="#isCancelledOn" title="https://w3id.org/timebank#isCancelledOn">is cancelled on</a>
       </li>
       <li>
          <a href="#isCompletedOn" title="https://w3id.org/timebank#isCompletedOn">is completed on</a>
@@ -4936,7 +4946,7 @@ This section provides details for each class and property defined by Timebank On
       </div>
    </div>
    <div class="entity" id="endsRepeatingOn">
-      <h3>end repeating on<sup class="type-op" title="object property">op</sup>
+      <h3>ends repeating on<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
@@ -5127,7 +5137,7 @@ This section provides details for each class and property defined by Timebank On
       <p>
          <strong>IRI:</strong> https://w3id.org/timebank#hasEnvironment</p>
       <div class="comment">
-         <span class="markdown">The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location.</span>
+         <span class="markdown">The environment of a user or request. The environment of a request describes specific environmental factors of a request.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -5734,6 +5744,78 @@ This section provides details for each class and property defined by Timebank On
          </dl>
       </div>
    </div>
+   <div class="entity" id="isCancellationDateOf">
+      <h3>is cancellation date of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/timebank#isCancellationDateOf</p>
+      <div class="comment">
+         <span class="markdown">Indicates the time and date when the Timebank request was cancelled.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/timebank">https://w3id.org/timebank</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Request" title="https://w3id.org/timebank#Request">Request</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isCancelledOn" title="https://w3id.org/timebank#isCancelledOn">is cancelled on</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isCancelledOn">
+      <h3>is cancelled on<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/timebank#isCancelledOn</p>
+      <div class="comment">
+         <span class="markdown">Indicates the time and date when the Timebank request was cancelled.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/timebank">https://w3id.org/timebank</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Request" title="https://w3id.org/timebank#Request">Request</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isCancellationDateOf" title="https://w3id.org/timebank#isCancellationDateOf">is cancellation date of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="isCompletedOn">
       <h3>is completed on<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -6052,7 +6134,7 @@ This section provides details for each class and property defined by Timebank On
             </dd>
             <dt>is inverse of</dt>
             <dd>
-               <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">end repeating on</a>
+               <a href="#endsRepeatingOn" title="https://w3id.org/timebank#endsRepeatingOn">ends repeating on</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>

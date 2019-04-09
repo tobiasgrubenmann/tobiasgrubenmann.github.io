@@ -79,7 +79,7 @@
                  rdfs:range <http://www.w3.org/2006/time#Instant> ;
                  rdfs:comment "Indicates that a time-interval is repeating until this time and date." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "end repeating on" .
+                 rdfs:label "ends repeating on" .
 
 
 ###  https://w3id.org/timebank#excludesUserByLimitation
@@ -130,7 +130,7 @@
                 owl:inverseOf :isEnvironmentOf ;
                 rdfs:domain :Request ;
                 rdfs:range :Environment ;
-                rdfs:comment "The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location." ;
+                rdfs:comment "The environment of a user or request. The environment of a request describes specific environmental factors of a request." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "has environment" .
 
@@ -292,6 +292,25 @@
                rdfs:comment "Indicates the availability of a Timebank user to act as a helper for a Timebank request." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
                rdfs:label "is available on" .
+
+
+###  https://w3id.org/timebank#isCancellationDateOf
+:isCancellationDateOf rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :isCancelledOn ;
+                      rdfs:domain <http://www.w3.org/2006/time#Instant> ;
+                      rdfs:range :Request ;
+                      rdfs:comment "Indicates the time and date when the Timebank request was cancelled." ;
+                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                      rdfs:label "is cancellation date of" .
+
+
+###  https://w3id.org/timebank#isCancelledOn
+:isCancelledOn rdf:type owl:ObjectProperty ;
+               rdfs:domain :Request ;
+               rdfs:range <http://www.w3.org/2006/time#Instant> ;
+               rdfs:comment "Indicates the time and date when the Timebank request was cancelled." ;
+               rdfs:isDefinedBy <https://w3id.org/timebank> ;
+               rdfs:label "is cancelled on" .
 
 
 ###  https://w3id.org/timebank#isCompletedOn
@@ -852,7 +871,7 @@
                               :Request ,
                               :Skill ,
                               :Status ;
-             rdfs:comment "The environment describes relevant factors for matching requesters and helpers which are not described by Skill or Limitation." ;
+             rdfs:comment "The environment describes relevant environmental factors of a request." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
              rdfs:label "Environment" .
 

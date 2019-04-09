@@ -71,7 +71,7 @@
 <https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
 <https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a time-interval is repeating until this time and date." .
 <https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#label> "end repeating on" .
+<https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#label> "ends repeating on" .
 # 
 # https://w3id.org/timebank#excludesUserByLimitation
 <https://w3id.org/timebank#excludesUserByLimitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -121,7 +121,7 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/timebank#isEnvironmentOf> .
 <https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
 <https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Environment> .
-<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#comment> "The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location." .
+<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#comment> "The environment of a user or request. The environment of a request describes specific environmental factors of a request." .
 <https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#label> "has environment" .
 # 
@@ -271,6 +271,23 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#isAvailableOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the availability of a Timebank user to act as a helper for a Timebank request." .
 <https://w3id.org/timebank#isAvailableOn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#isAvailableOn> <http://www.w3.org/2000/01/rdf-schema#label> "is available on" .
+# 
+# https://w3id.org/timebank#isCancellationDateOf
+<https://w3id.org/timebank#isCancellationDateOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#isCancellationDateOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/timebank#isCancelledOn> .
+<https://w3id.org/timebank#isCancellationDateOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#Instant> .
+<https://w3id.org/timebank#isCancellationDateOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#isCancellationDateOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the time and date when the Timebank request was cancelled." .
+<https://w3id.org/timebank#isCancellationDateOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#isCancellationDateOf> <http://www.w3.org/2000/01/rdf-schema#label> "is cancellation date of" .
+# 
+# https://w3id.org/timebank#isCancelledOn
+<https://w3id.org/timebank#isCancelledOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#isCancelledOn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#isCancelledOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+<https://w3id.org/timebank#isCancelledOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the time and date when the Timebank request was cancelled." .
+<https://w3id.org/timebank#isCancelledOn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#isCancelledOn> <http://www.w3.org/2000/01/rdf-schema#label> "is cancelled on" .
 # 
 # https://w3id.org/timebank#isCompletedOn
 <https://w3id.org/timebank#isCompletedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -775,7 +792,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/timebank#Request> .
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/timebank#Skill> .
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/timebank#Status> .
-<https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#comment> "The environment describes relevant factors for matching requesters and helpers which are not described by Skill or Limitation." .
+<https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#comment> "The environment describes relevant environmental factors of a request." .
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#label> "Environment" .
 # 

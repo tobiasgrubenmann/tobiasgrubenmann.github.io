@@ -1,0 +1,43 @@
+digraph ar2dtool_diagram { 
+rankdir=RL;
+size="1000"
+splines=false;
+outputorder="edgesfirst";
+node [style=filled, shape="box", fontname="Arial Bold", fillcolor=white] ;
+
+"tb:FoodAllergies" -> "tb:Allergy" ;
+"tb:NutsAllergy" -> "tb:FoodAllergies" ;
+"tb:DrugAllergies" -> "tb:Allergy" ;
+"tb:Hypotension" -> "tb:CommonDisease" ;
+"tb:Allergy" -> "tb:Limitation" ;
+"tb:Depression" -> "tb:MentalDisorder" ;
+"tb:FearOfAnimals" -> "tb:SpecificPhobia" ;
+"tb:FearOfCat" -> "tb:FearOfAnimals" ;
+"tb:ToiletUsingProblem" -> "tb:MobilityProblems" ;
+"tb:FearOfDark" -> "tb:SpecificPhobia" ;
+"tb:FearOfDogs" -> "tb:FearOfAnimals" ;
+"tb:EggAllergy" -> "tb:FoodAllergies" ;
+"tb:PsychoticEpisode" -> "tb:MentalDisorder" ;
+"tb:SensitiveSkin" -> "tb:PhysicalInconvenience" ;
+"tb:DressingProblem" -> "tb:MobilityProblems" ;
+"tb:Hypertension" -> "tb:CommonDisease" ;
+"tb:MobilityProblems" -> "tb:PhysicalInconvenience" ;
+"tb:CognitiveImpairment" -> "tb:MentalDisorder" ;
+"tb:EnvironmentalAllergies" -> "tb:Allergy" ;
+"tb:PoorHearing" -> "tb:PhysicalInconvenience" ;
+"tb:SpeakingProblem" -> "tb:PhysicalInconvenience" ;
+"tb:Diabetes" -> "tb:CommonDisease" ;
+"tb:MilkAllergy" -> "tb:FoodAllergies" ;
+"tb:SpecificPhobia" -> "tb:MentalDisorder" ;
+"tb:FearOfHeights" -> "tb:SpecificPhobia" ;
+"tb:MentalDisorder" -> "tb:Limitation" ;
+"tb:WalkingProblem" -> "tb:MobilityProblems" ;
+"tb:Rheumatism" -> "tb:CommonDisease" ;
+"tb:PhysicalInconvenience" -> "tb:Limitation" ;
+"tb:StrokeHistory" -> "tb:CommonDisease" ;
+"tb:HeartDisease" -> "tb:CommonDisease" ;
+"tb:ClimbingStairsDifficulty" -> "tb:MobilityProblems" ;
+"tb:CommonDisease" -> "tb:Limitation" ;
+"tb:PoorEyesight" -> "tb:PhysicalInconvenience" ;
+"tb:GlutenAllergy" -> "tb:FoodAllergies" ;
+}

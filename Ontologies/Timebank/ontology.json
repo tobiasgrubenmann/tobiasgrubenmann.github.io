@@ -79,7 +79,7 @@
     }, {
       "@id" : "https://w3id.org/timebank#Tools"
     }, {
-      "@id" : "https://w3id.org/timebank#WaterSupply"
+      "@id" : "https://w3id.org/timebank#Water"
     } ]
   } ]
 }, {
@@ -1617,6 +1617,39 @@
     "@id" : "https://w3id.org/timebank#Status"
   } ]
 }, {
+  "@id" : "https://w3id.org/timebank#LimitedAccessibilityRain",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The place is difficult to access during rainfall."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Limited Accessibility: Rain"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/timebank#WeatherConstraint"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#LimitedAccessibilitySnow"
+  } ]
+}, {
+  "@id" : "https://w3id.org/timebank#LimitedAccessibilitySnow",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The place is difficult to access during snowfall."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Limited Accessibility: Snow"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/timebank#WeatherConstraint"
+  } ]
+}, {
   "@id" : "https://w3id.org/timebank#Maintenance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2126,7 +2159,7 @@
   "@id" : "https://w3id.org/timebank#SpecificPhobia",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Fear of specific objects such as dogs, cats, water, lightning, dark and so on."
+    "@value" : "Fear of specific objects such as dogs, cats, heights, dark places, and so on."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/timebank"
@@ -2395,7 +2428,7 @@
     "@id" : "https://w3id.org/timebank#MobilityProblems"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#WaterSupply",
+  "@id" : "https://w3id.org/timebank#Water",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Water outlet is available."
@@ -2404,7 +2437,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Watter Supply"
+    "@value" : "Water"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Supplies"

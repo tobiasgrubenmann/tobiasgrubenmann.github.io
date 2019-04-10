@@ -1099,6 +1099,23 @@
             rdfs:label "Limitation" .
 
 
+###  https://w3id.org/timebank#LimitedAccessibilityRain
+:LimitedAccessibilityRain rdf:type owl:Class ;
+                          rdfs:subClassOf :WeatherConstraint ;
+                          owl:disjointWith :LimitedAccessibilitySnow ;
+                          rdfs:comment "The place is difficult to access during rainfall." ;
+                          rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                          rdfs:label "Limited Accessibility: Rain" .
+
+
+###  https://w3id.org/timebank#LimitedAccessibilitySnow
+:LimitedAccessibilitySnow rdf:type owl:Class ;
+                          rdfs:subClassOf :WeatherConstraint ;
+                          rdfs:comment "The place is difficult to access during snowfall." ;
+                          rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                          rdfs:label "Limited Accessibility: Snow" .
+
+
 ###  https://w3id.org/timebank#Maintenance
 :Maintenance rdf:type owl:Class ;
              rdfs:subClassOf :Skill ;
@@ -1383,7 +1400,7 @@
 ###  https://w3id.org/timebank#SpecificPhobia
 :SpecificPhobia rdf:type owl:Class ;
                 rdfs:subClassOf :MentalDisorder ;
-                rdfs:comment "Fear of specific objects such as dogs, cats, water, lightning, dark and so on." ;
+                rdfs:comment "Fear of specific objects such as dogs, cats, heights, dark places, and so on." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "Specific Phobia" .
 
@@ -1503,12 +1520,12 @@
                 rdfs:label "Walking Problems" .
 
 
-###  https://w3id.org/timebank#WaterSupply
-:WaterSupply rdf:type owl:Class ;
-             rdfs:subClassOf :Supplies ;
-             rdfs:comment "Water outlet is available." ;
-             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Watter Supply" .
+###  https://w3id.org/timebank#Water
+:Water rdf:type owl:Class ;
+       rdfs:subClassOf :Supplies ;
+       rdfs:comment "Water outlet is available." ;
+       rdfs:isDefinedBy <https://w3id.org/timebank> ;
+       rdfs:label "Water" .
 
 
 ###  https://w3id.org/timebank#WeatherConstraint
@@ -1785,7 +1802,7 @@
                 :Ingredients
                 :Internet
                 :Tools
-                :WaterSupply
+                :Water
               )
 ] .
 

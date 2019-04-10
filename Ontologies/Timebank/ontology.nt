@@ -992,6 +992,21 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#Limitation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Limitation> <http://www.w3.org/2000/01/rdf-schema#label> "Limitation" .
 # 
+# https://w3id.org/timebank#LimitedAccessibilityRain
+<https://w3id.org/timebank#LimitedAccessibilityRain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#LimitedAccessibilityRain> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#WeatherConstraint> .
+<https://w3id.org/timebank#LimitedAccessibilityRain> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/timebank#LimitedAccessibilitySnow> .
+<https://w3id.org/timebank#LimitedAccessibilityRain> <http://www.w3.org/2000/01/rdf-schema#comment> "The place is difficult to access during rainfall." .
+<https://w3id.org/timebank#LimitedAccessibilityRain> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#LimitedAccessibilityRain> <http://www.w3.org/2000/01/rdf-schema#label> "Limited Accessibility: Rain" .
+# 
+# https://w3id.org/timebank#LimitedAccessibilitySnow
+<https://w3id.org/timebank#LimitedAccessibilitySnow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#LimitedAccessibilitySnow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#WeatherConstraint> .
+<https://w3id.org/timebank#LimitedAccessibilitySnow> <http://www.w3.org/2000/01/rdf-schema#comment> "The place is difficult to access during snowfall." .
+<https://w3id.org/timebank#LimitedAccessibilitySnow> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#LimitedAccessibilitySnow> <http://www.w3.org/2000/01/rdf-schema#label> "Limited Accessibility: Snow" .
+# 
 # https://w3id.org/timebank#Maintenance
 <https://w3id.org/timebank#Maintenance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/timebank#Maintenance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
@@ -1243,7 +1258,7 @@ _:genid10 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 # https://w3id.org/timebank#SpecificPhobia
 <https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MentalDisorder> .
-<https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear of specific objects such as dogs, cats, water, lightning, dark and so on." .
+<https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear of specific objects such as dogs, cats, heights, dark places, and so on." .
 <https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/2000/01/rdf-schema#label> "Specific Phobia" .
 # 
@@ -1348,12 +1363,12 @@ _:genid11 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 <https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Walking Problems" .
 # 
-# https://w3id.org/timebank#WaterSupply
-<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Supplies> .
-<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/2000/01/rdf-schema#comment> "Water outlet is available." .
-<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#WaterSupply> <http://www.w3.org/2000/01/rdf-schema#label> "Watter Supply" .
+# https://w3id.org/timebank#Water
+<https://w3id.org/timebank#Water> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Water> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Supplies> .
+<https://w3id.org/timebank#Water> <http://www.w3.org/2000/01/rdf-schema#comment> "Water outlet is available." .
+<https://w3id.org/timebank#Water> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Water> <http://www.w3.org/2000/01/rdf-schema#label> "Water" .
 # 
 # https://w3id.org/timebank#WeatherConstraint
 <https://w3id.org/timebank#WeatherConstraint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1768,7 +1783,7 @@ _:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/
 _:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Tools> .
 _:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid114 .
 _:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#WaterSupply> .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Water> .
 _:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
 _:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .

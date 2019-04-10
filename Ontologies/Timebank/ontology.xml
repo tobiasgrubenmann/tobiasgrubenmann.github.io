@@ -1640,6 +1640,31 @@
     
 
 
+    <!-- https://w3id.org/timebank#LimitedAccessibilityRain -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#LimitedAccessibilityRain">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#WeatherConstraint"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/timebank#LimitedAccessibilitySnow"/>
+        <rdfs:comment>The place is difficult to access during rainfall.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Limited Accessibility: Rain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#LimitedAccessibilitySnow -->
+
+
+    <owl:Class rdf:about="https://w3id.org/timebank#LimitedAccessibilitySnow">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#WeatherConstraint"/>
+        <rdfs:comment>The place is difficult to access during snowfall.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Limited Accessibility: Snow</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/timebank#Maintenance -->
 
 
@@ -2066,7 +2091,7 @@
 
     <owl:Class rdf:about="https://w3id.org/timebank#SpecificPhobia">
         <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#MentalDisorder"/>
-        <rdfs:comment>Fear of specific objects such as dogs, cats, water, lightning, dark and so on.</rdfs:comment>
+        <rdfs:comment>Fear of specific objects such as dogs, cats, heights, dark places, and so on.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Specific Phobia</rdfs:label>
     </owl:Class>
@@ -2246,14 +2271,14 @@
     
 
 
-    <!-- https://w3id.org/timebank#WaterSupply -->
+    <!-- https://w3id.org/timebank#Water -->
 
 
-    <owl:Class rdf:about="https://w3id.org/timebank#WaterSupply">
+    <owl:Class rdf:about="https://w3id.org/timebank#Water">
         <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Supplies"/>
         <rdfs:comment>Water outlet is available.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Watter Supply</rdfs:label>
+        <rdfs:label>Water</rdfs:label>
     </owl:Class>
     
 
@@ -2591,7 +2616,7 @@
             <rdf:Description rdf:about="https://w3id.org/timebank#Ingredients"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Internet"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Tools"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#WaterSupply"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#Water"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>

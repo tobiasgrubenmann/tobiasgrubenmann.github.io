@@ -11,11 +11,11 @@ First, we will create a new user, Alice. We will reuse the <a href="http://xmlns
 
 <pre>
 <code class="language-RDF/Turtle">
-ex:Alice a tb:User ;
+ex:Alice rdf:type tb:User ;
     foaf:familyName "Owl" ;
     foaf:firstName "Alice" ;
-    tb:hasAddress ex:VCardA .
-ex:VCardA a v:VCard .
+    tb:hasAddress ex:VCardAlice .
+ex:VCardAlice rdf:type v:VCard .
 </code>
 </pre>
 
@@ -25,10 +25,10 @@ Next, we link the skill <a href="#ComputerRepair">tb:ComputerRepair</a> and the 
 
 <pre>
 <code class="language-RDF/Turtle">
-ex:Alice tb:hasSkill [a tb:ComputerRepair ;
+ex:Alice tb:hasSkill [rdf:type tb:ComputerRepair ;
     tb:hasSkillLevel tb:LevelHigh ;
     rdfs:comment "30 years of experience with computers." ] .
-ex:Alice tb:hasLimitation [a tb:PoorHearing ;
+ex:Alice tb:hasLimitation [rdf:type tb:PoorHearing ;
     tb:hasSeverity tb:LevelLow ;
     rdfs:comment "Preferably, speak into my left ear." ] .
 </code>
@@ -41,15 +41,18 @@ Alice is available <a href="#repeatsOn">every</a> Saturday and Sunday from 1pm u
 <pre>
 <code class="language-RDF/Turtle">
 ex:Alice tb:isAvailableOn [
-    a time:ProperInterval ;
-    time:hasBeginning [time:inXSDDateTimeStamp
+    rdf:type time:ProperInterval ;
+    time:hasBeginning [rdf:type time:Instant;
+        time:inXSDDateTimeStamp
         "2019-03-30T13:00:00+08:00"^^xsd:dateTimeStamp ] ;
-    time:hasEnd [time:inXSDDateTimeStamp
+    time:hasEnd [rdf:type time:Instant;
+        time:inXSDDateTimeStamp
         "2019-03-30T18:00:00+08:00"^^xsd:dateTimeStamp ] ;
     tb:repeatsOn time:Saturday ;
     tb:repeatsOn time:Sunday ;
-    tb:endsRepeatingOn [
-        time:inXSDDateTimeStamp "2019-04-04T18:00:00+08:00"^^xsd:dateTimeStamp ] ] .
+    tb:endsRepeatingOn [rdf:type time:Instant ;
+        time:inXSDDateTimeStamp "2019-04-04T18:00:00+08:00"^^xsd:dateTimeStamp ]
+    ] .
 </code>
 </pre>
 
@@ -60,22 +63,24 @@ Bob wants to create a new <a href="#Request">request</a> to ask for help to <a h
 
 <pre>
 <code class="language-RDF/Turtle">
-ex:Request a tb:Request ;
+ex:Request rdf:type tb:Request ;
     rdfs:comment "My email client fails to synchronize." ;
     tb:requiresSkill tb:ComputerRepair ;
     tb:excludesUserByLimitation tb:FearOfDogs ;
     tb:hasOriginator ex:Bob ;
-    tb:hasTimeWindow [
-        a time:ProperInterval ;
-        time:hasBeginning [time:inXSDDateTimeStamp
+    tb:hasTimeWindow [rdf:type time:ProperInterval ;
+        time:hasBeginning [rdf:type time:Instant ;
+            time:inXSDDateTimeStamp
             "2019-04-06T14:00:00+08:00"^^xsd:dateTimeStamp ] ;
-        time:hasEnd [time:inXSDDateTimeStamp
+        time:hasEnd [rdf:type time:Instant ;
+            time:inXSDDateTimeStamp
             "2019-04-06T16:00:00+08:00"^^xsd:dateTimeStamp ] ] ;
-    tb:hasTimeWindow [
-        a time:ProperInterval ;
-        time:hasBeginning [time:inXSDDateTimeStamp
+    tb:hasTimeWindow [rdf:type time:ProperInterval ;
+        time:hasBeginning [rdf:type time:Instant ;
+            time:inXSDDateTimeStamp
             "2019-04-10T10:00:00+08:00"^^xsd:dateTimeStamp ] ;
-        time:hasEnd [time:inXSDDateTimeStamp
+        time:hasEnd [rdf:type time:Instant ;
+            time:inXSDDateTimeStamp
             "2019-04-10T12:00:00+08:00"^^xsd:dateTimeStamp ] ] .
 </code>
 </pre>
@@ -87,10 +92,11 @@ Next, we will add some more details about the request. First, the request has an
 <pre>
 <code class="language-RDF/Turtle">
 ex:Request tb:hasExpectedDuration [
-    a time:DurationDescription ;
+    rdf:type time:DurationDescription ;
     time:hours 2 ] ;
     tb:hasStatus tb:StatusOpen ;
-    tb:isPublishedOn [time:inXSDDateTimeStamp
+    tb:isPublishedOn [rdf:type time:Instant ;
+        time:inXSDDateTimeStamp
         "2019-03-14T12:00:00+08:00"^^xsd:dateTimeStamp ] .
 </code>
 </pre>
@@ -104,7 +110,8 @@ Since Alice is available on one of the two time windows, is qualified to help, a
 <code class="language-RDF/Turtle">
 ex:Request tb:isAcceptedBy ex:Alice ;
     tb:hasStatus tb:StatusAssigned ;
-    tb:isAcceptedOn [time:inXSDDateTimeStamp
+    tb:isAcceptedOn [rdf:type time:Instant ;
+        time:inXSDDateTimeStamp
         "2019-03-28T12:00:00+08:00"^^xsd:dateTimeStamp ] .
 </code>
 </pre>
@@ -116,17 +123,18 @@ Alice spent 1 hour and 30 minutes fixing Bob's computer. This is the <a href="#h
 <pre>
 <code class="language-RDF/Turtle">
 ex:Request tb:hasAccreditedDuration [
-    a time:DurationDescription ;
+    rdf:type time:DurationDescription ;
     time:hours 1 ;
     time:minutes 30 ] ;
-    tb:isCompletedOn [time:inXSDDateTimeStamp
-    "2019-04-06T15:30:00+08:00"^^xsd:dateTimeStamp ] .
+    tb:isCompletedOn [rdf:type time:Instant ;
+        time:inXSDDateTimeStamp
+        "2019-04-06T15:30:00+08:00"^^xsd:dateTimeStamp ] .
 ex:Alice tb:hasTimeBalance [
-    a time:DurationDescription ;
-    time:hours 1 ;
-    time:minutes 30 ] .
+    rdf:type time:DurationDescription ;
+    time:hours -3 ;
+    time:minutes -30 ] .
 ex:Bob tb:hasTimeBalance [
-    a time:DurationDescription ;
+    rdf:type time:DurationDescription ;
     time:hours -1 ;
     time:minutes -30 ] .
 </code>

@@ -588,7 +588,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#ClimbingStairsDifficulty
 <https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblems> .
+<https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblem> .
 <https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulty in climbing up stairs." .
 <https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#ClimbingStairsDifficulty> <http://www.w3.org/2000/01/rdf-schema#label> "Difficulty in Climbing Stairs" .
@@ -694,10 +694,10 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#DressingProblem
 <https://w3id.org/timebank#DressingProblem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblems> .
+<https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblem> .
 <https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulties dressing himself." .
 <https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Dressing Problems" .
+<https://w3id.org/timebank#DressingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Dressing Problem" .
 # 
 # https://w3id.org/timebank#DrivingCars
 <https://w3id.org/timebank#DrivingCars> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -750,19 +750,19 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#DrivingWithTrailers> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#DrivingWithTrailers> <http://www.w3.org/2000/01/rdf-schema#label> "Driving with Trailers" .
 # 
-# https://w3id.org/timebank#DrugAllergies
-<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Allergy> .
-<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/2000/01/rdf-schema#comment> "An allergy to drugs." .
-<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#DrugAllergies> <http://www.w3.org/2000/01/rdf-schema#label> "Drug Allergies" .
+# https://w3id.org/timebank#DrugAllergy
+<https://w3id.org/timebank#DrugAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#DrugAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Allergy> .
+<https://w3id.org/timebank#DrugAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "An allergy to drugs." .
+<https://w3id.org/timebank#DrugAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#DrugAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Drug Allergy" .
 # 
 # https://w3id.org/timebank#EggAllergy
 <https://w3id.org/timebank#EggAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergies> .
-<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergy to egg." .
+<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergy> .
+<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergy to eggs." .
 <https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy to Egg" .
+<https://w3id.org/timebank#EggAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Egg Allergy" .
 # 
 # https://w3id.org/timebank#ElderlyCare
 <https://w3id.org/timebank#ElderlyCare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -796,12 +796,12 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#label> "Environment" .
 # 
-# https://w3id.org/timebank#EnvironmentalAllergies
-<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Allergy> .
-<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/2000/01/rdf-schema#comment> "An allergy to something in the environment such as dust mites, pollen, pet hair and cigarette smoke." .
-<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#EnvironmentalAllergies> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Allergies" .
+# https://w3id.org/timebank#EnvironmentalAllergy
+<https://w3id.org/timebank#EnvironmentalAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#EnvironmentalAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Allergy> .
+<https://w3id.org/timebank#EnvironmentalAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "An allergy to something in the environment such as dust mites, pollen, pet hair and cigarette smoke." .
+<https://w3id.org/timebank#EnvironmentalAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#EnvironmentalAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Allergy" .
 # 
 # https://w3id.org/timebank#EventPlanning
 <https://w3id.org/timebank#EventPlanning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -817,13 +817,13 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#FearOfAnimals> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#FearOfAnimals> <http://www.w3.org/2000/01/rdf-schema#label> "Fear of Animals" .
 # 
-# https://w3id.org/timebank#FearOfCat
-<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FearOfAnimals> .
-<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/timebank#FearOfDogs> .
-<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear of cats." .
-<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#FearOfCat> <http://www.w3.org/2000/01/rdf-schema#label> "Fear of Cats" .
+# https://w3id.org/timebank#FearOfCats
+<https://w3id.org/timebank#FearOfCats> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FearOfCats> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FearOfAnimals> .
+<https://w3id.org/timebank#FearOfCats> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/timebank#FearOfDogs> .
+<https://w3id.org/timebank#FearOfCats> <http://www.w3.org/2000/01/rdf-schema#comment> "Fear of cats." .
+<https://w3id.org/timebank#FearOfCats> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FearOfCats> <http://www.w3.org/2000/01/rdf-schema#label> "Fear of Cats" .
 # 
 # https://w3id.org/timebank#FearOfDark
 <https://w3id.org/timebank#FearOfDark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -853,12 +853,12 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#FinancialAdvice> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#FinancialAdvice> <http://www.w3.org/2000/01/rdf-schema#label> "Financial Advice" .
 # 
-# https://w3id.org/timebank#FoodAllergies
-<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Allergy> .
-<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/2000/01/rdf-schema#comment> "An allergy to food such as milk, peanuts, eggs, fish, tree nuts, and fruit." .
-<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#FoodAllergies> <http://www.w3.org/2000/01/rdf-schema#label> "Food Allergies" .
+# https://w3id.org/timebank#FoodAllergy
+<https://w3id.org/timebank#FoodAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#FoodAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Allergy> .
+<https://w3id.org/timebank#FoodAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "An allergy to food such as milk, peanuts, eggs, fish, tree nuts, and fruit." .
+<https://w3id.org/timebank#FoodAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#FoodAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Food Allergy" .
 # 
 # https://w3id.org/timebank#FoodPreparation
 <https://w3id.org/timebank#FoodPreparation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -883,10 +883,10 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#GlutenAllergy
 <https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergies> .
+<https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergy> .
 <https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergies to grains with gluten such as wheat, barley, rye, and oats." .
 <https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy to Gluten" .
+<https://w3id.org/timebank#GlutenAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Gluten Allergy" .
 # 
 # https://w3id.org/timebank#Groceries
 <https://w3id.org/timebank#Groceries> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1030,17 +1030,17 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#MilkAllergy
 <https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergies> .
+<https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergy> .
 <https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergy to milk." .
 <https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy to Milk" .
+<https://w3id.org/timebank#MilkAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Milk Allergy" .
 # 
-# https://w3id.org/timebank#MobilityProblems
-<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PhysicalInconvenience> .
-<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/2000/01/rdf-schema#comment> "Difficulties with moving around physically such as having difficulties using toliet, dressing, walking and so on." .
-<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#MobilityProblems> <http://www.w3.org/2000/01/rdf-schema#label> "Mobility Problems" .
+# https://w3id.org/timebank#MobilityProblem
+<https://w3id.org/timebank#MobilityProblem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#MobilityProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PhysicalInconvenience> .
+<https://w3id.org/timebank#MobilityProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "Difficulties with moving around physically such as having difficulties using toliet, dressing, walking and so on." .
+<https://w3id.org/timebank#MobilityProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#MobilityProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Mobility Problem" .
 # 
 # https://w3id.org/timebank#Mopping
 <https://w3id.org/timebank#Mopping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1058,10 +1058,10 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#NutsAllergy
 <https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergies> .
+<https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergy> .
 <https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergy to nuts such as almonds, walnuts, pecans, and peanuts." .
 <https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Allergy to Nuts" .
+<https://w3id.org/timebank#NutsAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Nuts Allergy" .
 # 
 # https://w3id.org/timebank#OfficeWork
 <https://w3id.org/timebank#OfficeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1213,6 +1213,13 @@ _:genid10 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 <https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#label> "Sales Services" .
 # 
+# https://w3id.org/timebank#SeafoodAllergy
+<https://w3id.org/timebank#SeafoodAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#SeafoodAllergy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#FoodAllergy> .
+<https://w3id.org/timebank#SeafoodAllergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Allergy to any kind of seafood." .
+<https://w3id.org/timebank#SeafoodAllergy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#SeafoodAllergy> <http://www.w3.org/2000/01/rdf-schema#label> "Seafood Allergy" .
+# 
 # https://w3id.org/timebank#SensitiveSkin
 <https://w3id.org/timebank#SensitiveSkin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/timebank#SensitiveSkin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PhysicalInconvenience> .
@@ -1253,7 +1260,7 @@ _:genid10 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 <https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PhysicalInconvenience> .
 <https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulties speaking clearly due to body function problems such as injuries to the brain, mouth or throat." .
 <https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Speaking Problems" .
+<https://w3id.org/timebank#SpeakingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Speaking Problem" .
 # 
 # https://w3id.org/timebank#SpecificPhobia
 <https://w3id.org/timebank#SpecificPhobia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1305,10 +1312,10 @@ _:genid10 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 # 
 # https://w3id.org/timebank#ToiletUsingProblem
 <https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblems> .
+<https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblem> .
 <https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulties using toilet." .
 <https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Toilet Using Problems" .
+<https://w3id.org/timebank#ToiletUsingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Toilet Using Problem" .
 # 
 # https://w3id.org/timebank#Tools
 <https://w3id.org/timebank#Tools> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1358,10 +1365,10 @@ _:genid11 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 # 
 # https://w3id.org/timebank#WalkingProblem
 <https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblems> .
+<https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#MobilityProblem> .
 <https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#comment> "The person has difficulties walking." .
 <https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Walking Problems" .
+<https://w3id.org/timebank#WalkingProblem> <http://www.w3.org/2000/01/rdf-schema#label> "Walking Problem" .
 # 
 # https://w3id.org/timebank#Water
 <https://w3id.org/timebank#Water> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1744,88 +1751,91 @@ _:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/
 _:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
 _:genid104 <http://www.w3.org/2002/07/owl#members> _:genid107 .
 _:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#DrugAllergies> .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#DrugAllergy> .
 _:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid106 .
 _:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#EnvironmentalAllergies> .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#EnvironmentalAllergy> .
 _:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid105 .
 _:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FoodAllergies> .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FoodAllergy> .
 _:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
 _:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid108 <http://www.w3.org/2002/07/owl#members> _:genid112 .
+_:genid108 <http://www.w3.org/2002/07/owl#members> _:genid113 .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#EggAllergy> .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid112 .
 _:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#EggAllergy> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#GlutenAllergy> .
 _:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid111 .
 _:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#GlutenAllergy> .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#MilkAllergy> .
 _:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid110 .
 _:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#MilkAllergy> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#NutsAllergy> .
 _:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid109 .
 _:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#NutsAllergy> .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#SeafoodAllergy> .
 _:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
-_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid113 <http://www.w3.org/2002/07/owl#members> _:genid118 .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid114 <http://www.w3.org/2002/07/owl#members> _:genid119 .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Electricity> .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid118 .
 _:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Electricity> .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Ingredients> .
 _:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid117 .
 _:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Ingredients> .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Internet> .
 _:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid116 .
 _:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Internet> .
+_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Tools> .
 _:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid115 .
 _:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Tools> .
-_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid114 .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Water> .
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Water> .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
-_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid119 <http://www.w3.org/2002/07/owl#members> _:genid122 .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid120 <http://www.w3.org/2002/07/owl#members> _:genid123 .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FearOfAnimals> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid122 .
 _:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FearOfAnimals> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FearOfDark> .
 _:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid121 .
 _:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FearOfDark> .
-_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid120 .
-_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FearOfHeights> .
-_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#FearOfHeights> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
-_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid123 <http://www.w3.org/2002/07/owl#members> _:genid126 .
+_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid124 <http://www.w3.org/2002/07/owl#members> _:genid127 .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Knitting> .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid126 .
 _:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Knitting> .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Sewing> .
 _:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid125 .
 _:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Sewing> .
-_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid124 .
-_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Tailoring> .
-_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Tailoring> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
-_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid127 <http://www.w3.org/2002/07/owl#members> _:genid132 .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid128 <http://www.w3.org/2002/07/owl#members> _:genid133 .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#MobilityProblem> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid132 .
 _:genid132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#MobilityProblems> .
+_:genid132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#PoorEyesight> .
 _:genid132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid131 .
 _:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#PoorEyesight> .
+_:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#PoorHearing> .
 _:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid130 .
 _:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#PoorHearing> .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#SensitiveSkin> .
 _:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid129 .
 _:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#SensitiveSkin> .
-_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid128 .
-_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#SpeakingProblem> .
-_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#SpeakingProblem> .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
 # Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/

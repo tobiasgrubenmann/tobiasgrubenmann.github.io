@@ -35,11 +35,11 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/timebank#DrugAllergies"
+      "@id" : "https://w3id.org/timebank#DrugAllergy"
     }, {
-      "@id" : "https://w3id.org/timebank#EnvironmentalAllergies"
+      "@id" : "https://w3id.org/timebank#EnvironmentalAllergy"
     }, {
-      "@id" : "https://w3id.org/timebank#FoodAllergies"
+      "@id" : "https://w3id.org/timebank#FoodAllergy"
     } ]
   } ]
 }, {
@@ -54,6 +54,8 @@
       "@id" : "https://w3id.org/timebank#MilkAllergy"
     }, {
       "@id" : "https://w3id.org/timebank#NutsAllergy"
+    }, {
+      "@id" : "https://w3id.org/timebank#SeafoodAllergy"
     } ]
   } ]
 }, {
@@ -67,7 +69,7 @@
     "@id" : "https://w3id.org/timebank#hasTimeBalance"
   } ]
 }, {
-  "@id" : "_:genid113",
+  "@id" : "_:genid114",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -80,18 +82,6 @@
       "@id" : "https://w3id.org/timebank#Tools"
     }, {
       "@id" : "https://w3id.org/timebank#Water"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid119",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/timebank#FearOfAnimals"
-    }, {
-      "@id" : "https://w3id.org/timebank#FearOfDark"
-    }, {
-      "@id" : "https://w3id.org/timebank#FearOfHeights"
     } ]
   } ]
 }, {
@@ -113,7 +103,19 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid123",
+  "@id" : "_:genid120",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/timebank#FearOfAnimals"
+    }, {
+      "@id" : "https://w3id.org/timebank#FearOfDark"
+    }, {
+      "@id" : "https://w3id.org/timebank#FearOfHeights"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid124",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -125,11 +127,11 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid127",
+  "@id" : "_:genid128",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/timebank#MobilityProblems"
+      "@id" : "https://w3id.org/timebank#MobilityProblem"
     }, {
       "@id" : "https://w3id.org/timebank#PoorEyesight"
     }, {
@@ -720,7 +722,7 @@
     "@value" : "Difficulty in Climbing Stairs"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#MobilityProblems"
+    "@id" : "https://w3id.org/timebank#MobilityProblem"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#ClothesWashing",
@@ -945,10 +947,10 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Dressing Problems"
+    "@value" : "Dressing Problem"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#MobilityProblems"
+    "@id" : "https://w3id.org/timebank#MobilityProblem"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#DrivingCars",
@@ -1062,7 +1064,7 @@
     "@id" : "https://w3id.org/timebank#DrivingHeavyVehicles"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#DrugAllergies",
+  "@id" : "https://w3id.org/timebank#DrugAllergy",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "An allergy to drugs."
@@ -1071,7 +1073,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Drug Allergies"
+    "@value" : "Drug Allergy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Allergy"
@@ -1080,16 +1082,16 @@
   "@id" : "https://w3id.org/timebank#EggAllergy",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Allergy to egg."
+    "@value" : "Allergy to eggs."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Allergy to Egg"
+    "@value" : "Egg Allergy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#FoodAllergies"
+    "@id" : "https://w3id.org/timebank#FoodAllergy"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#ElderlyCare",
@@ -1160,7 +1162,7 @@
     "@id" : "https://w3id.org/timebank#Status"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#EnvironmentalAllergies",
+  "@id" : "https://w3id.org/timebank#EnvironmentalAllergy",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "An allergy to something in the environment such as dust mites, pollen, pet hair and cigarette smoke."
@@ -1169,7 +1171,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Environmental Allergies"
+    "@value" : "Environmental Allergy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Allergy"
@@ -1205,7 +1207,7 @@
     "@id" : "https://w3id.org/timebank#SpecificPhobia"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#FearOfCat",
+  "@id" : "https://w3id.org/timebank#FearOfCats",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Fear of cats."
@@ -1283,7 +1285,7 @@
     "@id" : "https://w3id.org/timebank#Advice"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#FoodAllergies",
+  "@id" : "https://w3id.org/timebank#FoodAllergy",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "An allergy to food such as milk, peanuts, eggs, fish, tree nuts, and fruit."
@@ -1292,7 +1294,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Food Allergies"
+    "@value" : "Food Allergy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Allergy"
@@ -1352,10 +1354,10 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Allergy to Gluten"
+    "@value" : "Gluten Allergy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#FoodAllergies"
+    "@id" : "https://w3id.org/timebank#FoodAllergy"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Groceries",
@@ -1704,13 +1706,13 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Allergy to Milk"
+    "@value" : "Milk Allergy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#FoodAllergies"
+    "@id" : "https://w3id.org/timebank#FoodAllergy"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#MobilityProblems",
+  "@id" : "https://w3id.org/timebank#MobilityProblem",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Difficulties with moving around physically such as having difficulties using toliet, dressing, walking and so on."
@@ -1719,7 +1721,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Mobility Problems"
+    "@value" : "Mobility Problem"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#PhysicalInconvenience"
@@ -1764,10 +1766,10 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Allergy to Nuts"
+    "@value" : "Nuts Allergy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#FoodAllergies"
+    "@id" : "https://w3id.org/timebank#FoodAllergy"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#OfficeWork",
@@ -2066,6 +2068,21 @@
     "@id" : "https://w3id.org/timebank#Skill"
   } ]
 }, {
+  "@id" : "https://w3id.org/timebank#SeafoodAllergy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Allergy to any kind of seafood."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/timebank"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Seafood Allergy"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/timebank#FoodAllergy"
+  } ]
+}, {
   "@id" : "https://w3id.org/timebank#SensitiveSkin",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2150,7 +2167,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Speaking Problems"
+    "@value" : "Speaking Problem"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#PhysicalInconvenience"
@@ -2315,10 +2332,10 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Toilet Using Problems"
+    "@value" : "Toilet Using Problem"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#MobilityProblems"
+    "@id" : "https://w3id.org/timebank#MobilityProblem"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Tools",
@@ -2422,10 +2439,10 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Walking Problems"
+    "@value" : "Walking Problem"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#MobilityProblems"
+    "@id" : "https://w3id.org/timebank#MobilityProblem"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Water",

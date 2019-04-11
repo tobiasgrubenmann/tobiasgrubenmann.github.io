@@ -639,7 +639,7 @@
 
 ###  https://w3id.org/timebank#ClimbingStairsDifficulty
 :ClimbingStairsDifficulty rdf:type owl:Class ;
-                          rdfs:subClassOf :MobilityProblems ;
+                          rdfs:subClassOf :MobilityProblem ;
                           rdfs:comment "The person has difficulty in climbing up stairs." ;
                           rdfs:isDefinedBy <https://w3id.org/timebank> ;
                           rdfs:label "Difficulty in Climbing Stairs" .
@@ -760,10 +760,10 @@
 
 ###  https://w3id.org/timebank#DressingProblem
 :DressingProblem rdf:type owl:Class ;
-                 rdfs:subClassOf :MobilityProblems ;
+                 rdfs:subClassOf :MobilityProblem ;
                  rdfs:comment "The person has difficulties dressing himself." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Dressing Problems" .
+                 rdfs:label "Dressing Problem" .
 
 
 ###  https://w3id.org/timebank#DrivingCars
@@ -824,20 +824,20 @@
                      rdfs:label "Driving with Trailers" .
 
 
-###  https://w3id.org/timebank#DrugAllergies
-:DrugAllergies rdf:type owl:Class ;
-               rdfs:subClassOf :Allergy ;
-               rdfs:comment "An allergy to drugs." ;
-               rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Drug Allergies" .
+###  https://w3id.org/timebank#DrugAllergy
+:DrugAllergy rdf:type owl:Class ;
+             rdfs:subClassOf :Allergy ;
+             rdfs:comment "An allergy to drugs." ;
+             rdfs:isDefinedBy <https://w3id.org/timebank> ;
+             rdfs:label "Drug Allergy" .
 
 
 ###  https://w3id.org/timebank#EggAllergy
 :EggAllergy rdf:type owl:Class ;
-            rdfs:subClassOf :FoodAllergies ;
-            rdfs:comment "Allergy to egg." ;
+            rdfs:subClassOf :FoodAllergy ;
+            rdfs:comment "Allergy to eggs." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Allergy to Egg" .
+            rdfs:label "Egg Allergy" .
 
 
 ###  https://w3id.org/timebank#ElderlyCare
@@ -876,12 +876,12 @@
              rdfs:label "Environment" .
 
 
-###  https://w3id.org/timebank#EnvironmentalAllergies
-:EnvironmentalAllergies rdf:type owl:Class ;
-                        rdfs:subClassOf :Allergy ;
-                        rdfs:comment "An allergy to something in the environment such as dust mites, pollen, pet hair and cigarette smoke." ;
-                        rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                        rdfs:label "Environmental Allergies" .
+###  https://w3id.org/timebank#EnvironmentalAllergy
+:EnvironmentalAllergy rdf:type owl:Class ;
+                      rdfs:subClassOf :Allergy ;
+                      rdfs:comment "An allergy to something in the environment such as dust mites, pollen, pet hair and cigarette smoke." ;
+                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                      rdfs:label "Environmental Allergy" .
 
 
 ###  https://w3id.org/timebank#EventPlanning
@@ -900,13 +900,13 @@
                rdfs:label "Fear of Animals" .
 
 
-###  https://w3id.org/timebank#FearOfCat
-:FearOfCat rdf:type owl:Class ;
-           rdfs:subClassOf :FearOfAnimals ;
-           owl:disjointWith :FearOfDogs ;
-           rdfs:comment "Fear of cats." ;
-           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-           rdfs:label "Fear of Cats" .
+###  https://w3id.org/timebank#FearOfCats
+:FearOfCats rdf:type owl:Class ;
+            rdfs:subClassOf :FearOfAnimals ;
+            owl:disjointWith :FearOfDogs ;
+            rdfs:comment "Fear of cats." ;
+            rdfs:isDefinedBy <https://w3id.org/timebank> ;
+            rdfs:label "Fear of Cats" .
 
 
 ###  https://w3id.org/timebank#FearOfDark
@@ -941,12 +941,12 @@
                  rdfs:label "Financial Advice" .
 
 
-###  https://w3id.org/timebank#FoodAllergies
-:FoodAllergies rdf:type owl:Class ;
-               rdfs:subClassOf :Allergy ;
-               rdfs:comment "An allergy to food such as milk, peanuts, eggs, fish, tree nuts, and fruit." ;
-               rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Food Allergies" .
+###  https://w3id.org/timebank#FoodAllergy
+:FoodAllergy rdf:type owl:Class ;
+             rdfs:subClassOf :Allergy ;
+             rdfs:comment "An allergy to food such as milk, peanuts, eggs, fish, tree nuts, and fruit." ;
+             rdfs:isDefinedBy <https://w3id.org/timebank> ;
+             rdfs:label "Food Allergy" .
 
 
 ###  https://w3id.org/timebank#FoodPreparation
@@ -975,10 +975,10 @@
 
 ###  https://w3id.org/timebank#GlutenAllergy
 :GlutenAllergy rdf:type owl:Class ;
-               rdfs:subClassOf :FoodAllergies ;
+               rdfs:subClassOf :FoodAllergy ;
                rdfs:comment "Allergies to grains with gluten such as wheat, barley, rye, and oats." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Allergy to Gluten" .
+               rdfs:label "Gluten Allergy" .
 
 
 ###  https://w3id.org/timebank#Groceries
@@ -1142,18 +1142,18 @@
 
 ###  https://w3id.org/timebank#MilkAllergy
 :MilkAllergy rdf:type owl:Class ;
-             rdfs:subClassOf :FoodAllergies ;
+             rdfs:subClassOf :FoodAllergy ;
              rdfs:comment "Allergy to milk." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Allergy to Milk" .
+             rdfs:label "Milk Allergy" .
 
 
-###  https://w3id.org/timebank#MobilityProblems
-:MobilityProblems rdf:type owl:Class ;
-                  rdfs:subClassOf :PhysicalInconvenience ;
-                  rdfs:comment "Difficulties with moving around physically such as having difficulties using toliet, dressing, walking and so on." ;
-                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                  rdfs:label "Mobility Problems" .
+###  https://w3id.org/timebank#MobilityProblem
+:MobilityProblem rdf:type owl:Class ;
+                 rdfs:subClassOf :PhysicalInconvenience ;
+                 rdfs:comment "Difficulties with moving around physically such as having difficulties using toliet, dressing, walking and so on." ;
+                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                 rdfs:label "Mobility Problem" .
 
 
 ###  https://w3id.org/timebank#Mopping
@@ -1174,10 +1174,10 @@
 
 ###  https://w3id.org/timebank#NutsAllergy
 :NutsAllergy rdf:type owl:Class ;
-             rdfs:subClassOf :FoodAllergies ;
+             rdfs:subClassOf :FoodAllergy ;
              rdfs:comment "Allergy to nuts such as almonds, walnuts, pecans, and peanuts." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Allergy to Nuts" .
+             rdfs:label "Nuts Allergy" .
 
 
 ###  https://w3id.org/timebank#OfficeWork
@@ -1349,6 +1349,14 @@
                rdfs:label "Sales Services" .
 
 
+###  https://w3id.org/timebank#SeafoodAllergy
+:SeafoodAllergy rdf:type owl:Class ;
+                rdfs:subClassOf :FoodAllergy ;
+                rdfs:comment "Allergy to any kind of seafood." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "Seafood Allergy" .
+
+
 ###  https://w3id.org/timebank#SensitiveSkin
 :SensitiveSkin rdf:type owl:Class ;
                rdfs:subClassOf :PhysicalInconvenience ;
@@ -1394,7 +1402,7 @@
                  rdfs:subClassOf :PhysicalInconvenience ;
                  rdfs:comment "The person has difficulties speaking clearly due to body function problems such as injuries to the brain, mouth or throat." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Speaking Problems" .
+                 rdfs:label "Speaking Problem" .
 
 
 ###  https://w3id.org/timebank#SpecificPhobia
@@ -1454,10 +1462,10 @@
 
 ###  https://w3id.org/timebank#ToiletUsingProblem
 :ToiletUsingProblem rdf:type owl:Class ;
-                    rdfs:subClassOf :MobilityProblems ;
+                    rdfs:subClassOf :MobilityProblem ;
                     rdfs:comment "The person has difficulties using toilet." ;
                     rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                    rdfs:label "Toilet Using Problems" .
+                    rdfs:label "Toilet Using Problem" .
 
 
 ###  https://w3id.org/timebank#Tools
@@ -1514,10 +1522,10 @@
 
 ###  https://w3id.org/timebank#WalkingProblem
 :WalkingProblem rdf:type owl:Class ;
-                rdfs:subClassOf :MobilityProblems ;
+                rdfs:subClassOf :MobilityProblem ;
                 rdfs:comment "The person has difficulties walking." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Walking Problems" .
+                rdfs:label "Walking Problem" .
 
 
 ###  https://w3id.org/timebank#Water
@@ -1781,9 +1789,9 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :DrugAllergies
-                :EnvironmentalAllergies
-                :FoodAllergies
+  owl:members ( :DrugAllergy
+                :EnvironmentalAllergy
+                :FoodAllergy
               )
 ] .
 
@@ -1793,6 +1801,7 @@
                 :GlutenAllergy
                 :MilkAllergy
                 :NutsAllergy
+                :SeafoodAllergy
               )
 ] .
 
@@ -1824,7 +1833,7 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :MobilityProblems
+  owl:members ( :MobilityProblem
                 :PoorEyesight
                 :PoorHearing
                 :SensitiveSkin

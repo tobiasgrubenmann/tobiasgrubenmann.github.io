@@ -1103,7 +1103,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#DressingAssistance">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PersonalServices"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PersonalService"/>
         <rdfs:comment>The skill to assist someone with dressing.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Dressing Assistance</rdfs:label>
@@ -1447,7 +1447,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#Groceries">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SalesServices"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SalesService"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#OnlineShopping"/>
         <rdfs:comment>The skill to help buying groceries.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
@@ -1460,7 +1460,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#HairCutting">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PersonalServices"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PersonalService"/>
         <rdfs:comment>Ability to cut someone else&apos;s hair.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Hair Cutting</rdfs:label>
@@ -1496,7 +1496,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#HygieneAssitance">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PersonalServices"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#PersonalService"/>
         <rdfs:comment>The skill to assist someone on hygienical matters.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Hygiene Assitance</rdfs:label>
@@ -1756,7 +1756,7 @@
 
 
     <owl:Class rdf:about="https://w3id.org/timebank#OnlineShopping">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SalesServices"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#SalesService"/>
         <rdfs:comment>The skill to assist in buying things online.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Online Shopping</rdfs:label>
@@ -1788,14 +1788,14 @@
     
 
 
-    <!-- https://w3id.org/timebank#PersonalServices -->
+    <!-- https://w3id.org/timebank#PersonalService -->
 
 
-    <owl:Class rdf:about="https://w3id.org/timebank#PersonalServices">
+    <owl:Class rdf:about="https://w3id.org/timebank#PersonalService">
         <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
         <rdfs:comment>Personal services which include hygiene and daily care.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Personal Services</rdfs:label>
+        <rdfs:label>Personal Service</rdfs:label>
     </owl:Class>
     
 
@@ -1982,14 +1982,14 @@
     
 
 
-    <!-- https://w3id.org/timebank#SalesServices -->
+    <!-- https://w3id.org/timebank#SalesService -->
 
 
-    <owl:Class rdf:about="https://w3id.org/timebank#SalesServices">
+    <owl:Class rdf:about="https://w3id.org/timebank#SalesService">
         <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Skill"/>
         <rdfs:comment>The skill to help with selling and buying products.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Sales Services</rdfs:label>
+        <rdfs:label>Sales Service</rdfs:label>
     </owl:Class>
     
 
@@ -2450,10 +2450,10 @@
             <rdf:Description rdf:about="https://w3id.org/timebank#Maintenance"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#OfficeWork"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#PeopleCare"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#PersonalServices"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#PersonalService"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Recreation"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Repair"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#SalesServices"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#SalesService"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#Transportation"/>
         </owl:members>
     </rdf:Description>

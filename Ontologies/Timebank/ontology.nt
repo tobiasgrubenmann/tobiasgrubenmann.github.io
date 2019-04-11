@@ -669,7 +669,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#DressingAssistance
 <https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PersonalServices> .
+<https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PersonalService> .
 <https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist someone with dressing." .
 <https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#DressingAssistance> <http://www.w3.org/2000/01/rdf-schema#label> "Dressing Assistance" .
@@ -873,7 +873,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#Groceries
 <https://w3id.org/timebank#Groceries> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#Groceries> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SalesServices> .
+<https://w3id.org/timebank#Groceries> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SalesService> .
 <https://w3id.org/timebank#Groceries> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/timebank#OnlineShopping> .
 <https://w3id.org/timebank#Groceries> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to help buying groceries." .
 <https://w3id.org/timebank#Groceries> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
@@ -881,7 +881,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#HairCutting
 <https://w3id.org/timebank#HairCutting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#HairCutting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PersonalServices> .
+<https://w3id.org/timebank#HairCutting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PersonalService> .
 <https://w3id.org/timebank#HairCutting> <http://www.w3.org/2000/01/rdf-schema#comment> "Ability to cut someone else's hair." .
 <https://w3id.org/timebank#HairCutting> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#HairCutting> <http://www.w3.org/2000/01/rdf-schema#label> "Hair Cutting" .
@@ -902,7 +902,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#HygieneAssitance
 <https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PersonalServices> .
+<https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#PersonalService> .
 <https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist someone on hygienical matters." .
 <https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#HygieneAssitance> <http://www.w3.org/2000/01/rdf-schema#label> "Hygiene Assitance" .
@@ -1057,7 +1057,7 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # https://w3id.org/timebank#OnlineShopping
 <https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SalesServices> .
+<https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#SalesService> .
 <https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to assist in buying things online." .
 <https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#OnlineShopping> <http://www.w3.org/2000/01/rdf-schema#label> "Online Shopping" .
@@ -1076,12 +1076,12 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#PerformingMusic> <http://www.w3.org/2000/01/rdf-schema#label> "Performing Music" .
 # 
-# https://w3id.org/timebank#PersonalServices
-<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
-<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/2000/01/rdf-schema#comment> "Personal services which include hygiene and daily care." .
-<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#PersonalServices> <http://www.w3.org/2000/01/rdf-schema#label> "Personal Services" .
+# https://w3id.org/timebank#PersonalService
+<https://w3id.org/timebank#PersonalService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#PersonalService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#PersonalService> <http://www.w3.org/2000/01/rdf-schema#comment> "Personal services which include hygiene and daily care." .
+<https://w3id.org/timebank#PersonalService> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#PersonalService> <http://www.w3.org/2000/01/rdf-schema#label> "Personal Service" .
 # 
 # https://w3id.org/timebank#PhoneCalls
 <https://w3id.org/timebank#PhoneCalls> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1192,12 +1192,12 @@ _:genid10 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org
 <https://w3id.org/timebank#Rheumatism> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
 <https://w3id.org/timebank#Rheumatism> <http://www.w3.org/2000/01/rdf-schema#label> "Rheumatism" .
 # 
-# https://w3id.org/timebank#SalesServices
-<https://w3id.org/timebank#SalesServices> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
-<https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to help with selling and buying products." .
-<https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
-<https://w3id.org/timebank#SalesServices> <http://www.w3.org/2000/01/rdf-schema#label> "Sales Services" .
+# https://w3id.org/timebank#SalesService
+<https://w3id.org/timebank#SalesService> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#SalesService> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#SalesService> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill to help with selling and buying products." .
+<https://w3id.org/timebank#SalesService> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#SalesService> <http://www.w3.org/2000/01/rdf-schema#label> "Sales Service" .
 # 
 # https://w3id.org/timebank#SeafoodAllergy
 <https://w3id.org/timebank#SeafoodAllergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1502,7 +1502,7 @@ _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#PeopleCare> .
 _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
 _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#PersonalServices> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#PersonalService> .
 _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
 _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Recreation> .
@@ -1511,7 +1511,7 @@ _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Repair> .
 _:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
 _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#SalesServices> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#SalesService> .
 _:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Transportation> .

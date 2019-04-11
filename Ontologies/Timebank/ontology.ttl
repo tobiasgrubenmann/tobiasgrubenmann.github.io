@@ -734,7 +734,7 @@
 
 ###  https://w3id.org/timebank#DressingAssistance
 :DressingAssistance rdf:type owl:Class ;
-                    rdfs:subClassOf :PersonalServices ;
+                    rdfs:subClassOf :PersonalService ;
                     rdfs:comment "The skill to assist someone with dressing." ;
                     rdfs:isDefinedBy <https://w3id.org/timebank> ;
                     rdfs:label "Dressing Assistance" .
@@ -966,7 +966,7 @@
 
 ###  https://w3id.org/timebank#Groceries
 :Groceries rdf:type owl:Class ;
-           rdfs:subClassOf :SalesServices ;
+           rdfs:subClassOf :SalesService ;
            owl:disjointWith :OnlineShopping ;
            rdfs:comment "The skill to help buying groceries." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
@@ -975,7 +975,7 @@
 
 ###  https://w3id.org/timebank#HairCutting
 :HairCutting rdf:type owl:Class ;
-             rdfs:subClassOf :PersonalServices ;
+             rdfs:subClassOf :PersonalService ;
              rdfs:comment "Ability to cut someone else's hair." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
              rdfs:label "Hair Cutting" .
@@ -999,7 +999,7 @@
 
 ###  https://w3id.org/timebank#HygieneAssitance
 :HygieneAssitance rdf:type owl:Class ;
-                  rdfs:subClassOf :PersonalServices ;
+                  rdfs:subClassOf :PersonalService ;
                   rdfs:comment "The skill to assist someone on hygienical matters." ;
                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
                   rdfs:label "Hygiene Assitance" .
@@ -1175,7 +1175,7 @@
 
 ###  https://w3id.org/timebank#OnlineShopping
 :OnlineShopping rdf:type owl:Class ;
-                rdfs:subClassOf :SalesServices ;
+                rdfs:subClassOf :SalesService ;
                 rdfs:comment "The skill to assist in buying things online." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "Online Shopping" .
@@ -1197,12 +1197,12 @@
                  rdfs:label "Performing Music" .
 
 
-###  https://w3id.org/timebank#PersonalServices
-:PersonalServices rdf:type owl:Class ;
-                  rdfs:subClassOf :Skill ;
-                  rdfs:comment "Personal services which include hygiene and daily care." ;
-                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                  rdfs:label "Personal Services" .
+###  https://w3id.org/timebank#PersonalService
+:PersonalService rdf:type owl:Class ;
+                 rdfs:subClassOf :Skill ;
+                 rdfs:comment "Personal services which include hygiene and daily care." ;
+                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                 rdfs:label "Personal Service" .
 
 
 ###  https://w3id.org/timebank#PhoneCalls
@@ -1327,12 +1327,12 @@
             rdfs:label "Rheumatism" .
 
 
-###  https://w3id.org/timebank#SalesServices
-:SalesServices rdf:type owl:Class ;
-               rdfs:subClassOf :Skill ;
-               rdfs:comment "The skill to help with selling and buying products." ;
-               rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Sales Services" .
+###  https://w3id.org/timebank#SalesService
+:SalesService rdf:type owl:Class ;
+              rdfs:subClassOf :Skill ;
+              rdfs:comment "The skill to help with selling and buying products." ;
+              rdfs:isDefinedBy <https://w3id.org/timebank> ;
+              rdfs:label "Sales Service" .
 
 
 ###  https://w3id.org/timebank#SeafoodAllergy
@@ -1638,10 +1638,10 @@
                 :Maintenance
                 :OfficeWork
                 :PeopleCare
-                :PersonalServices
+                :PersonalService
                 :Recreation
                 :Repair
-                :SalesServices
+                :SalesService
                 :Transportation
               )
 ] .

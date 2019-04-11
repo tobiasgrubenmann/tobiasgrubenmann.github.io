@@ -159,13 +159,13 @@
     }, {
       "@id" : "https://w3id.org/timebank#PeopleCare"
     }, {
-      "@id" : "https://w3id.org/timebank#PersonalServices"
+      "@id" : "https://w3id.org/timebank#PersonalService"
     }, {
       "@id" : "https://w3id.org/timebank#Recreation"
     }, {
       "@id" : "https://w3id.org/timebank#Repair"
     }, {
-      "@id" : "https://w3id.org/timebank#SalesServices"
+      "@id" : "https://w3id.org/timebank#SalesService"
     }, {
       "@id" : "https://w3id.org/timebank#Transportation"
     } ]
@@ -881,7 +881,7 @@
     "@value" : "Dressing Assistance"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#PersonalServices"
+    "@id" : "https://w3id.org/timebank#PersonalService"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#DressingProblem",
@@ -1320,7 +1320,7 @@
     "@value" : "Groceries"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#SalesServices"
+    "@id" : "https://w3id.org/timebank#SalesService"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/timebank#OnlineShopping"
@@ -1338,7 +1338,7 @@
     "@value" : "Hair Cutting"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#PersonalServices"
+    "@id" : "https://w3id.org/timebank#PersonalService"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#HeartDisease",
@@ -1383,7 +1383,7 @@
     "@value" : "Hygiene Assitance"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#PersonalServices"
+    "@id" : "https://w3id.org/timebank#PersonalService"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Hypertension",
@@ -1751,7 +1751,7 @@
     "@value" : "Online Shopping"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/timebank#SalesServices"
+    "@id" : "https://w3id.org/timebank#SalesService"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#PeopleCare",
@@ -1784,7 +1784,7 @@
     "@id" : "https://w3id.org/timebank#Recreation"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#PersonalServices",
+  "@id" : "https://w3id.org/timebank#PersonalService",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "Personal services which include hygiene and daily care."
@@ -1793,7 +1793,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Personal Services"
+    "@value" : "Personal Service"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Skill"
@@ -2007,7 +2007,7 @@
     "@id" : "https://w3id.org/timebank#CommonDisease"
   } ]
 }, {
-  "@id" : "https://w3id.org/timebank#SalesServices",
+  "@id" : "https://w3id.org/timebank#SalesService",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "The skill to help with selling and buying products."
@@ -2016,7 +2016,7 @@
     "@id" : "https://w3id.org/timebank"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Sales Services"
+    "@value" : "Sales Service"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/timebank#Skill"

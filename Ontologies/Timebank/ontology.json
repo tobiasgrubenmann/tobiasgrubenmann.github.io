@@ -423,76 +423,22 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2006/time#DayOfWeek",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Seven individual members of :DayOfWeek are included in the ontology, corresponding to the seven days used in the Gregorian calendar, and using the English names :Sunday, :Monday, :Tuesday, :Wednesday, :Thursday, :Friday, :Saturday."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://www.w3.org/2006/time"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Day of week"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://www.w3.org/2006/time#DurationDescription",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Description of temporal extent structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://www.w3.org/2006/time"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Duration description"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://www.w3.org/2006/time#Instant",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "Seven properties, :inXSDDate, :inXSDDateTime (deprecated), :inXSDDateTimeStamp, :inXSDgYear, :inXSDgYearMonth, :inTimePosition, and :inDateTime provide alternative ways to describe the temporal position of an :Instant."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://www.w3.org/2006/time"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Time instant"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://www.w3.org/2006/time#ProperInterval",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://www.w3.org/2006/time"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Proper interval"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://www.w3.org/2006/vcard/ns#VCard",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The vCard class is equivalent to the new Kind class, which is the parent for the four explicit types of vCards (Individual, Organization, Location, Group)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://www.w3.org/2006/vcard/ns"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "VCard"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/Person",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A person."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://xmlns.com/foaf/0.1/"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Person"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "https://creativecommons.org/ns#license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -1160,6 +1106,8 @@
     "@id" : "https://w3id.org/timebank#Skill"
   }, {
     "@id" : "https://w3id.org/timebank#Status"
+  }, {
+    "@id" : "https://w3id.org/timebank#User"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#EnvironmentalAllergy",
@@ -1562,6 +1510,8 @@
     "@id" : "https://w3id.org/timebank#Skill"
   }, {
     "@id" : "https://w3id.org/timebank#Status"
+  }, {
+    "@id" : "https://w3id.org/timebank#User"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#LevelHigh",
@@ -1617,6 +1567,8 @@
     "@id" : "https://w3id.org/timebank#Skill"
   }, {
     "@id" : "https://w3id.org/timebank#Status"
+  }, {
+    "@id" : "https://w3id.org/timebank#User"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#LimitedAccessibilityRain",
@@ -2036,6 +1988,8 @@
     "@id" : "https://w3id.org/timebank#Skill"
   }, {
     "@id" : "https://w3id.org/timebank#Status"
+  }, {
+    "@id" : "https://w3id.org/timebank#User"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#Rheumatism",
@@ -2141,6 +2095,8 @@
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/timebank#Status"
+  }, {
+    "@id" : "https://w3id.org/timebank#User"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#SlipperyFloor",
@@ -2228,6 +2184,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Status"
+  } ],
+  "http://www.w3.org/2002/07/owl#disjointWith" : [ {
+    "@id" : "https://w3id.org/timebank#User"
   } ]
 }, {
   "@id" : "https://w3id.org/timebank#StatusAssigned",

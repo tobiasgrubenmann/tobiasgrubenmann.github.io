@@ -65,8 +65,8 @@ Bob wants to create a new <a href="#Request">request</a> to ask for help to <a h
 <code class="language-RDF/Turtle">
 ex:Request rdf:type tb:Request ;
     rdfs:comment "My email client fails to synchronize." ;
-    tb:requiresSkill tb:ComputerRepair ;
-    tb:excludesUserByLimitation tb:FearOfDogs ;
+    tb:requiresSkill [rdf:type tb:ComputerRepair ] ;
+    tb:excludesUserByLimitation [rdf:type tb:FearOfDogs ] ;
     tb:hasOriginator ex:Bob ;
     tb:hasTimeWindow [rdf:type time:ProperInterval ;
         time:hasBeginning [rdf:type time:Instant ;

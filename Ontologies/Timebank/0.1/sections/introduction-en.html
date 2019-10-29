@@ -1,0 +1,51 @@
+<html><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<!--<span class="markdown">-->
+<p>
+The Timebank Ontology is used to capture all relevant context of users and requests of a Timebank system. A Timebank allows user to accumulate and store virtual money, often called a Time Dollar, into a bank account [Cahn2004]. Whenever a user helps a fellow user with some request, a certain amount of this virtual money is transferred from the originator of the request to the helper. The amount of virtual money that is transferred equals exactly the amount of time needed to complete the request.
+</p>
+
+<p>
+To decide whether a user is suitable to help one of its fellow user, we need to know:
+<ul>
+    <li>What are the skills of the Timebank users?</li>
+    <li>What are the required skills for a specific request?</li>
+    <li>What are the limitations of the Timebank users?</li>
+    <li>What limitations exclude a user from accepting a request?</li>
+    <li>What are the environmental factors of a request?</li>
+    <li>When is a user available for helping others?</li>
+</ul>
+
+<p>
+The following figure illustrates the basic concept of the Timebank ontology.
+</p>
+
+<img src="resources/Overview.png" alt="Overview of the Timebank concepts" width="1000">
+
+<p>
+The two most central concepts are the <a href="#User">users</a> and <a href="#Request">requests</a>. A user can request help and offer help to fellow users. The property <a href="#isOriginatorOf">isOriginatorOf</a> is used to link a request to a user asking for help. The property <a href="#accepts">accepts</a> is used to link a helper to a request. A user can have <a href="#Skill">skills</a> and <a href="#Limitation">limitations</a>, which are linked to the user with the properties <a href="#hasSkill">hasSkill</a> and <a href="#hasLimitation">hasLimitation</a>. A request can also have skills and limitations associated to it, using the properties <a href="#requiresSkill">requiresSkill</a> and <a href="#excludesByLimitation">excludesByLimitation</a>. A request also has an <a href="#Environment">environment</a>, which can be expressed with the property <a href="#hasEnvironment">hasEnvironment</a>.
+</p>
+
+<p>
+To keep track of the time-balance of a user, each request is worth a specific amount of time. The property <a href="#hasAccreditedDuration">hasAccreditedDuration</a> is used to express this amount of time. The current time-balance of a user is expressed by the property <a href="#hasTimeBalance">hasTimeBalance</a>.
+</p>
+<!--</span>-->
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>tb</b></td><td>&lt;https://w3id.org/timebank#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>v</b></td><td>&lt;http://www.w3.org/2006/vcard#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>time</b></td><td>&lt;http://www.w3.org/2006/time#&gt;</td></tr>
+<tr><td><b>foaf</b></td><td>&lt;http://xmlns.com/foaf/0.1/&gt;</td></tr>
+<tr><td><b>ex</b></td><td>&lt;http://example.com/&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</html>

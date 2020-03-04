@@ -5,6 +5,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lgdo: <http://linkedgeodata.org/ontology/> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
@@ -20,7 +21,7 @@
                                              "Tobias Grubenmann" ,
                                              "Xueer Li" ;
                              dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-                             dcterms:rights "Copyright © 2019 The University of Hong Kong" ;
+                             dcterms:rights "Copyright © 2020 The University of Hong Kong" ;
                              <http://purl.org/vocab/vann/preferredNamespacePrefix> "tb"^^xsd:string ;
                              <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/timebank"^^xsd:string ;
                              rdfs:comment "An ontology to describe poeple and requests for timebanks. This includes the poeple's skills, limitations, and environment." ;
@@ -133,9 +134,9 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/timebank#hasEnvironment
 :hasEnvironment rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isEnvironmentOf ;
-                rdfs:domain dcterms:Location ;
+                rdfs:domain :LocationSpecifier ;
                 rdfs:range :Environment ;
-                rdfs:comment "The environment of a user or request. The environment of a request describes specific environmental factors of a request." ;
+                rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "has environment" .
 
@@ -168,6 +169,24 @@ dcterms:rights rdf:type owl:AnnotationProperty .
              rdfs:comment "The location of a request." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
              rdfs:label "has location" .
+
+
+###  https://w3id.org/timebank#hasLocationSpecifier
+:hasLocationSpecifier rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :isLocationSpecifierOf ;
+                      rdfs:comment "The location specifier indicates specifics of the location like address, region, city, etc. If two locations share the same location specifier, they also share the same environmental factors." ;
+                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                      rdfs:label "has location specifier" .
+
+
+###  https://w3id.org/timebank#hasNotEnvironment
+:hasNotEnvironment rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :is_not_environment_of ;
+                   rdfs:domain :LocationSpecifier ;
+                   rdfs:range :Environment ;
+                   rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
+                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                   rdfs:label "has not environment" .
 
 
 ###  https://w3id.org/timebank#hasOriginator
@@ -350,8 +369,8 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/timebank#isEnvironmentOf
 :isEnvironmentOf rdf:type owl:ObjectProperty ;
                  rdfs:domain :Environment ;
-                 rdfs:range dcterms:Location ;
-                 rdfs:comment "The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location." ;
+                 rdfs:range :LocationSpecifier ;
+                 rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
                  rdfs:label "is environment of" .
 
@@ -381,6 +400,13 @@ dcterms:rights rdf:type owl:AnnotationProperty .
               rdfs:comment "The location of a request." ;
               rdfs:isDefinedBy <https://w3id.org/timebank> ;
               rdfs:label "is location of" .
+
+
+###  https://w3id.org/timebank#isLocationSpecifierOf
+:isLocationSpecifierOf rdf:type owl:ObjectProperty ;
+                       rdfs:comment "The location specifier indicates specifics of the location like address, region, city, etc. If two locations share the same location specifier, they also share the same environmental factors." ;
+                       rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                       rdfs:label "is location specifier of" .
 
 
 ###  https://w3id.org/timebank#isOriginatorOf
@@ -494,6 +520,16 @@ dcterms:rights rdf:type owl:AnnotationProperty .
                 rdfs:label "is time window of" .
 
 
+###  https://w3id.org/timebank#is_not_environment_of
+:is_not_environment_of rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain :Environment ;
+                       rdfs:range :LocationSpecifier ;
+                       rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
+                       rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                       rdfs:label "is not environment of" .
+
+
 ###  https://w3id.org/timebank#repeatsOn
 :repeatsOn rdf:type owl:ObjectProperty ;
            rdfs:domain time:ProperInterval ;
@@ -531,6 +567,14 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/Location
 dcterms:Location rdf:type owl:Class ;
+                 owl:disjointWith :Environment ,
+                                  :Level ,
+                                  :Limitation ,
+                                  :LocationSpecifier ,
+                                  :Request ,
+                                  :Skill ,
+                                  :Status ;
+                 rdfs:comment "The location describes the geographical vicinity of a request or meeting point for a request." ;
                  rdfs:isDefinedBy <http://dublincore.org/documents/dcmi-terms/#terms-location> ;
                  rdfs:label "Location" .
 
@@ -631,6 +675,14 @@ foaf:Person rdf:type owl:Class .
           rdfs:comment "The skill to assist with catering requirements." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
           rdfs:label "Catering" .
+
+
+###  https://w3id.org/timebank#Cats
+:Cats rdf:type owl:Class ;
+      rdfs:subClassOf :Pets ;
+      rdfs:comment "Indicates that cats might be present." ;
+      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+      rdfs:label "Cats" .
 
 
 ###  https://w3id.org/timebank#ChildCare
@@ -762,6 +814,14 @@ foaf:Person rdf:type owl:Class .
              rdfs:label "Dishwashing" .
 
 
+###  https://w3id.org/timebank#Dogs
+:Dogs rdf:type owl:Class ;
+      rdfs:subClassOf :Pets ;
+      rdfs:comment "Indicates that dogs might be present." ;
+      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+      rdfs:label "Dogs" .
+
+
 ###  https://w3id.org/timebank#DressingAssistance
 :DressingAssistance rdf:type owl:Class ;
                     rdfs:subClassOf :PersonalService ;
@@ -880,6 +940,7 @@ foaf:Person rdf:type owl:Class .
 :Environment rdf:type owl:Class ;
              owl:disjointWith :Level ,
                               :Limitation ,
+                              :LocationSpecifier ,
                               :Request ,
                               :Skill ,
                               :Status ,
@@ -1094,6 +1155,7 @@ foaf:Person rdf:type owl:Class .
 ###  https://w3id.org/timebank#Level
 :Level rdf:type owl:Class ;
        owl:disjointWith :Limitation ,
+                        :LocationSpecifier ,
                         :Request ,
                         :Skill ,
                         :Status ,
@@ -1103,9 +1165,18 @@ foaf:Person rdf:type owl:Class .
        rdfs:label "Level" .
 
 
+###  https://w3id.org/timebank#Lift
+:Lift rdf:type owl:Class ;
+      rdfs:subClassOf :Accessibility ;
+      rdfs:comment "A lift/elevator is available." ;
+      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+      rdfs:label <https://w3id.org/Lift> .
+
+
 ###  https://w3id.org/timebank#Limitation
 :Limitation rdf:type owl:Class ;
-            owl:disjointWith :Request ,
+            owl:disjointWith :LocationSpecifier ,
+                             :Request ,
                              :Skill ,
                              :Status ,
                              :User ;
@@ -1129,6 +1200,16 @@ foaf:Person rdf:type owl:Class .
                           rdfs:comment "The place is difficult to access during snowfall." ;
                           rdfs:isDefinedBy <https://w3id.org/timebank> ;
                           rdfs:label "Limited Accessibility: Snow" .
+
+
+###  https://w3id.org/timebank#LocationSpecifier
+:LocationSpecifier rdf:type owl:Class ;
+                   owl:disjointWith :Request ,
+                                    :Skill ,
+                                    :Status ;
+                   rdfs:comment "The location specifier indicates specifics of the location like address, region, city, etc. If two locations share the same location specifier, they also share the same environmental factors." ;
+                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                   rdfs:label "Location Specifier" .
 
 
 ###  https://w3id.org/timebank#Maintenance
@@ -1233,6 +1314,14 @@ foaf:Person rdf:type owl:Class .
                  rdfs:comment "Personal services which include hygiene and daily care." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
                  rdfs:label "Personal Service" .
+
+
+###  https://w3id.org/timebank#Pets
+:Pets rdf:type owl:Class ;
+      rdfs:subClassOf :Environment ;
+      rdfs:comment "Indicates that pets might be present." ;
+      rdfs:isDefinedBy <https://w3id.org/timebank> ;
+      rdfs:label "Pets" .
 
 
 ###  https://w3id.org/timebank#PhoneCalls
@@ -1441,7 +1530,7 @@ foaf:Person rdf:type owl:Class .
 ###  https://w3id.org/timebank#Stairs
 :Stairs rdf:type owl:Class ;
         rdfs:subClassOf :Accessibility ;
-        rdfs:comment "The person has to climb stairs to complete the task." ;
+        rdfs:comment "The person might have to climb stairs to complete the task." ;
         rdfs:isDefinedBy <https://w3id.org/timebank> ;
         rdfs:label "Stairs" .
 
@@ -1652,6 +1741,7 @@ foaf:Person rdf:type owl:Class .
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :AccessibleByPublicTransport
+                :Lift
                 :SlipperyFloor
                 :Stairs
                 :TransportationAvailable

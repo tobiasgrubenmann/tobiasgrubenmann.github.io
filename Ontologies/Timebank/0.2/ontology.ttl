@@ -117,24 +117,10 @@ dcterms:rights rdf:type owl:AnnotationProperty .
                        rdfs:label "has accredited duration" .
 
 
-###  https://w3id.org/timebank#hasAddress
-:hasAddress rdf:type owl:ObjectProperty ;
-            owl:inverseOf :isAddressOf ;
-            rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( foaf:Person
-                                        :Request
-                                      )
-                        ] ;
-            rdfs:range <http://www.w3.org/2006/vcard/ns#VCard> ;
-            rdfs:comment "Indicates the address of a person or request. The address is specified as a vcard." ;
-            rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "has address" .
-
-
 ###  https://w3id.org/timebank#hasEnvironment
 :hasEnvironment rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isEnvironmentOf ;
-                rdfs:domain :LocationSpecifier ;
+                rdfs:domain :Location ;
                 rdfs:range :Environment ;
                 rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
@@ -165,24 +151,16 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 :hasLocation rdf:type owl:ObjectProperty ;
              owl:inverseOf :isLocationOf ;
              rdfs:domain :Request ;
-             rdfs:range dcterms:Location ;
+             rdfs:range :Location ;
              rdfs:comment "The location of a request." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
              rdfs:label "has location" .
 
 
-###  https://w3id.org/timebank#hasLocationSpecifier
-:hasLocationSpecifier rdf:type owl:ObjectProperty ;
-                      owl:inverseOf :isLocationSpecifierOf ;
-                      rdfs:comment "The location specifier indicates specifics of the location like address, region, city, etc. If two locations share the same location specifier, they also share the same environmental factors." ;
-                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                      rdfs:label "has location specifier" .
-
-
 ###  https://w3id.org/timebank#hasNotEnvironment
 :hasNotEnvironment rdf:type owl:ObjectProperty ;
                    owl:inverseOf :is_not_environment_of ;
-                   rdfs:domain :LocationSpecifier ;
+                   rdfs:domain :Location ;
                    rdfs:range :Environment ;
                    rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                    rdfs:isDefinedBy <https://w3id.org/timebank> ;
@@ -237,6 +215,14 @@ dcterms:rights rdf:type owl:AnnotationProperty .
            rdfs:comment "Every request can have at most one status assigned to it." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
            rdfs:label "has status" .
+
+
+###  https://w3id.org/timebank#hasSubLocation
+:hasSubLocation rdf:type owl:ObjectProperty ;
+                owl:inverseOf :isSubLocationOf ;
+                rdfs:comment <https://w3id.org/timebank> ,
+                             "Indicates that the location is a sub-location of another. A sub-location defines a place more precisely. A sub-location is always in the context of its super-location. For example, a streetnumber is a sub-location of the street." ;
+                rdfs:label "has sub-location" .
 
 
 ###  https://w3id.org/timebank#hasTimeBalance
@@ -294,19 +280,6 @@ dcterms:rights rdf:type owl:AnnotationProperty .
                 rdfs:comment "The accredited duration of the request. This is the amount of time which will be transferred from the originator the the assigned helper of the request. Do not use this property to indicate the estimated duration of the task. Use hasExpectedDuration instead." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "is accredited to" .
-
-
-###  https://w3id.org/timebank#isAddressOf
-:isAddressOf rdf:type owl:ObjectProperty ;
-             rdfs:domain <http://www.w3.org/2006/vcard/ns#VCard> ;
-             rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( foaf:Person
-                                        :Request
-                                      )
-                        ] ;
-             rdfs:comment "Indicates the address of a person or request. The address is specified as a vcard." ;
-             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "is address of" .
 
 
 ###  https://w3id.org/timebank#isAvailabilityOf
@@ -369,7 +342,7 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/timebank#isEnvironmentOf
 :isEnvironmentOf rdf:type owl:ObjectProperty ;
                  rdfs:domain :Environment ;
-                 rdfs:range :LocationSpecifier ;
+                 rdfs:range :Location ;
                  rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
                  rdfs:label "is environment of" .
@@ -395,18 +368,11 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/timebank#isLocationOf
 :isLocationOf rdf:type owl:ObjectProperty ;
-              rdfs:domain dcterms:Location ;
+              rdfs:domain :Location ;
               rdfs:range :Request ;
               rdfs:comment "The location of a request." ;
               rdfs:isDefinedBy <https://w3id.org/timebank> ;
               rdfs:label "is location of" .
-
-
-###  https://w3id.org/timebank#isLocationSpecifierOf
-:isLocationSpecifierOf rdf:type owl:ObjectProperty ;
-                       rdfs:comment "The location specifier indicates specifics of the location like address, region, city, etc. If two locations share the same location specifier, they also share the same environmental factors." ;
-                       rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                       rdfs:label "is location specifier of" .
 
 
 ###  https://w3id.org/timebank#isOriginatorOf
@@ -502,6 +468,14 @@ dcterms:rights rdf:type owl:AnnotationProperty .
             rdfs:label "is status of" .
 
 
+###  https://w3id.org/timebank#isSubLocationOf
+:isSubLocationOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:comment <https://w3id.org/timebank> ,
+                              "Indicates that the location is a sub-location of another. A sub-location defines a place more precisely. A sub-location is always in the context of its super-location. For example, a streetnumber is a sub-location of the street." ;
+                 rdfs:label "is sub-location of" .
+
+
 ###  https://w3id.org/timebank#isTimeBalanceOf
 :isTimeBalanceOf rdf:type owl:ObjectProperty ;
                  rdfs:domain time:DurationDescription ;
@@ -524,7 +498,7 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 :is_not_environment_of rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty ;
                        rdfs:domain :Environment ;
-                       rdfs:range :LocationSpecifier ;
+                       rdfs:range :Location ;
                        rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                        rdfs:isDefinedBy <https://w3id.org/timebank> ;
                        rdfs:label "is not environment of" .
@@ -552,6 +526,173 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
+###  http://linkedgeodata.org/ontology/addr%3Acity
+<http://linkedgeodata.org/ontology/addr%3Acity> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain :Location ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment """May not be required if boundary=administrative is used correctly. May or may not be a clone of is_in:city=* (in some places the city in the address corresponds to the post office that serves the area rather than the actual city, if any, in which the building is located)! The name of the city as given in postal addresses of the building/area.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                rdfs:label "addr:city" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Aconscriptionnumber
+<http://linkedgeodata.org/ontology/addr%3Aconscriptionnumber> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:domain :Location ;
+                                                              rdfs:range xsd:string ;
+                                                              rdfs:comment """This special kind of housenumber relates to a settlement instead of a street. Conscription numbers were introduced in the Austrio-Hungarian Empire and are still in use in some parts of Europe, sometimes together with street-related housenumbers which are also called orientation numbers.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                              rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                              rdfs:label "addr:conscriptionnumber" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Acountry
+<http://linkedgeodata.org/ontology/addr%3Acountry> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain :Location ;
+                                                   rdfs:range xsd:string ;
+                                                   rdfs:comment """May not be required if boundary=administrative is used correctly. The ISO 3166-1 alpha-2 two letter country code in upper case.
+Example: \"DE\" for Germany, \"CH\" for Switzerland, \"AT\" for Austria, \"FR\" for France, \"IT\" for Italy.
+Caveat: The ISO 3166-1 code for Great Britain is \"GB\" and not \"UK\". See also: is_in:country=*
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                   rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                   rdfs:label "addr:country" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Adistrict
+<http://linkedgeodata.org/ontology/addr%3Adistrict> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain :Location ;
+                                                    rdfs:range xsd:string ;
+                                                    rdfs:comment """The district of the object.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                    rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                    rdfs:label "addr:district" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Aflats
+<http://linkedgeodata.org/ontology/addr%3Aflats> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain :Location ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment """The house numbers (range or list) of flats behind a door.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                 rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                 rdfs:label "addr:flats" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Afull
+<http://linkedgeodata.org/ontology/addr%3Afull> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain :Location ;
+                                                rdfs:range xsd:string ;
+                                                rdfs:comment """Use this for a full-text, often multi-line, address if you find the structured address fields unsuitable for denoting the address of this particular location. Examples: \"Fifth house on the left after the village oak, Smalltown, Smallcountry\", or addresses using special delivery names or codes (possibly via an unrelated city name and post code), or PO Boxes.
+Beware that these strings can hardly be parsed by software: \"1200 West Sunset Boulevard Suite 110A\" is still better represented as addr:housenumber=1200 + addr:street=West Sunset Boulevard + addr:flats=Suite 110A.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                rdfs:label "addr:full" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Ahamlet
+<http://linkedgeodata.org/ontology/addr%3Ahamlet> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain :Location ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment """The hamlet of the object.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                  rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                  rdfs:label "addr:hamlet" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Ahousename
+<http://linkedgeodata.org/ontology/addr%3Ahousename> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain :Location ;
+                                                     rdfs:range xsd:string ;
+                                                     rdfs:comment """The name of a house.
+This is sometimes used in some countries like England instead of (or in addition to) a house number.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                     rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                     rdfs:label "addr:housename" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Ahousenumber
+<http://linkedgeodata.org/ontology/addr%3Ahousenumber> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain :Location ;
+                                                       rdfs:range xsd:string ;
+                                                       rdfs:comment """The house number (may contain letters, dashes or other characters).
+Addresses describes ways to tag a single building with multiple addresses.
+Please do not only tag addr:housenumber=*, but also add at least addr:street=* or addr:place=* for places without streets (or map the belonging to a street with a relation using associatedStreet relation or street relation.)
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                       rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                       rdfs:label "addr:housenumber" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Aplace
+<http://linkedgeodata.org/ontology/addr%3Aplace> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain :Location ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment """This is part of an address which refers to the name of some territorial zone (usually a place=* like island, square or very small village) instead of a street (highway=*). Should not be used together with addr:street=*.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                 rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                 rdfs:label "addr:place" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Apostcode
+<http://linkedgeodata.org/ontology/addr%3Apostcode> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain :Location ;
+                                                    rdfs:range xsd:string ;
+                                                    rdfs:comment """The postal code of the building/area. Some mappers prefer to use boundary=postal_code
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                    rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                    rdfs:label "addr:postcode" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Aprovince
+<http://linkedgeodata.org/ontology/addr%3Aprovince> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain :Location ;
+                                                    rdfs:range xsd:string ;
+                                                    rdfs:comment """The province of the object. For Canada, uppercase two-letter postal abbreviations (BC, AB, ON, QC, etc.) are used. In Russia a synonym addr:region is widely used
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                    rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                    rdfs:label "addr:province" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Astate
+<http://linkedgeodata.org/ontology/addr%3Astate> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain :Location ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment """The state of the object. For the US, uppercase two-letter postal abbreviations (AK, CA, HI, NY, TX, WY, etc.) are used.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                 rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                 rdfs:label "addr:state" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Astreet
+<http://linkedgeodata.org/ontology/addr%3Astreet> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain :Location ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment """The name of the respective street.
+A way with highway=* or a square with place=square and the corresponding name should be found nearby. The belonging to a street can alternatively be represented by a associatedStreet relation or street relation. The keys addr:housenumber=* and addr:street=* in principle are the only necessary ones if there are valid border polygons. If you are not sure if it is so, just add addr:city=*, addr:postcode=* and addr:country=*.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                  rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                  rdfs:label "addr:street" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Asubdistrict
+<http://linkedgeodata.org/ontology/addr%3Asubdistrict> rdf:type owl:DatatypeProperty ;
+                                                       rdfs:domain :Location ;
+                                                       rdfs:range xsd:string ;
+                                                       rdfs:comment """The subdistrict of the object.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                       rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                       rdfs:label "addr:subdistrict" .
+
+
+###  http://linkedgeodata.org/ontology/addr%3Asuburb
+<http://linkedgeodata.org/ontology/addr%3Asuburb> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain :Location ;
+                                                  rdfs:range xsd:string ;
+                                                  rdfs:comment """If an address exists several times in a city. You have to add the name of the settlement. See Australian definition of suburb.
+(Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
+                                                  rdfs:isDefinedBy <http://linkedgeodata.org/> ;
+                                                  rdfs:label "addr:suburb" .
+
+
 ###  https://w3id.org/timebank#rating
 :rating rdf:type owl:DatatypeProperty ;
         rdfs:domain :Request ;
@@ -564,20 +705,6 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 #################################################################
 #    Classes
 #################################################################
-
-###  http://purl.org/dc/terms/Location
-dcterms:Location rdf:type owl:Class ;
-                 owl:disjointWith :Environment ,
-                                  :Level ,
-                                  :Limitation ,
-                                  :LocationSpecifier ,
-                                  :Request ,
-                                  :Skill ,
-                                  :Status ;
-                 rdfs:comment "The location describes the geographical vicinity of a request or meeting point for a request." ;
-                 rdfs:isDefinedBy <http://dublincore.org/documents/dcmi-terms/#terms-location> ;
-                 rdfs:label "Location" .
-
 
 ###  http://www.w3.org/2006/time#DayOfWeek
 time:DayOfWeek rdf:type owl:Class .
@@ -940,7 +1067,7 @@ foaf:Person rdf:type owl:Class .
 :Environment rdf:type owl:Class ;
              owl:disjointWith :Level ,
                               :Limitation ,
-                              :LocationSpecifier ,
+                              :Location ,
                               :Request ,
                               :Skill ,
                               :Status ,
@@ -1155,7 +1282,7 @@ foaf:Person rdf:type owl:Class .
 ###  https://w3id.org/timebank#Level
 :Level rdf:type owl:Class ;
        owl:disjointWith :Limitation ,
-                        :LocationSpecifier ,
+                        :Location ,
                         :Request ,
                         :Skill ,
                         :Status ,
@@ -1175,7 +1302,7 @@ foaf:Person rdf:type owl:Class .
 
 ###  https://w3id.org/timebank#Limitation
 :Limitation rdf:type owl:Class ;
-            owl:disjointWith :LocationSpecifier ,
+            owl:disjointWith :Location ,
                              :Request ,
                              :Skill ,
                              :Status ,
@@ -1202,14 +1329,14 @@ foaf:Person rdf:type owl:Class .
                           rdfs:label "Limited Accessibility: Snow" .
 
 
-###  https://w3id.org/timebank#LocationSpecifier
-:LocationSpecifier rdf:type owl:Class ;
-                   owl:disjointWith :Request ,
-                                    :Skill ,
-                                    :Status ;
-                   rdfs:comment "The location specifier indicates specifics of the location like address, region, city, etc. If two locations share the same location specifier, they also share the same environmental factors." ;
-                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                   rdfs:label "Location Specifier" .
+###  https://w3id.org/timebank#Location
+:Location rdf:type owl:Class ;
+          owl:disjointWith :Request ,
+                           :Skill ,
+                           :Status ;
+          rdfs:comment "The location indicates specifics of a place like address, region, city, etc. If two palces share the same location, they also share the same environmental factors." ;
+          rdfs:isDefinedBy <https://w3id.org/timebank> ;
+          rdfs:label "Location" .
 
 
 ###  https://w3id.org/timebank#Maintenance

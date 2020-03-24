@@ -1,19 +1,22 @@
 @prefix : <https://w3id.org/timebank#> .
+@prefix dbc: <http://dbpedia.org/resource/Category:> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix lgdo: <http://linkedgeodata.org/ontology/> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <https://w3id.org/timebank> .
 
 <https://w3id.org/timebank> rdf:type owl:Ontology ;
                              owl:versionIRI <https://w3id.org/timebank/0.2> ;
+                             owl:imports <http://www.w3.org/2006/time#2016> ;
                              <http://purl.org/dc/elements/1.1/title> "Timebank Ontology" ;
                              dcterms:created "2019-10-19" ;
                              dcterms:creator "Ankit Tibrewal" ,
@@ -58,6 +61,30 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
 <http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broadMatch
+skos:broadMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broaderTransitive
+skos:broaderTransitive rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+skos:closeMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrowMatch
+skos:narrowMatch rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#relatedMatch
+skos:relatedMatch rdf:type owl:AnnotationProperty .
 
 
 ###  https://creativecommons.org/ns#license
@@ -117,10 +144,23 @@ dcterms:rights rdf:type owl:AnnotationProperty .
                        rdfs:label "has accredited duration" .
 
 
+###  https://w3id.org/timebank#hasAddressPart
+:hasAddressPart rdf:type owl:ObjectProperty ;
+                owl:inverseOf :isAdressPartOf ;
+                rdfs:domain :Request ;
+                rdfs:range :AddressPart ;
+                owl:propertyChainAxiom ( :isSubPartOf
+                                         :hasAddressPart
+                                       ) ;
+                rdfs:comment "An address part that describes the location of a specific request." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "has address part" .
+
+
 ###  https://w3id.org/timebank#hasEnvironment
 :hasEnvironment rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isEnvironmentOf ;
-                rdfs:domain :Location ;
+                rdfs:domain :AddressPart ;
                 rdfs:range :Environment ;
                 rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
@@ -147,20 +187,10 @@ dcterms:rights rdf:type owl:AnnotationProperty .
                rdfs:label "has limitation" .
 
 
-###  https://w3id.org/timebank#hasLocation
-:hasLocation rdf:type owl:ObjectProperty ;
-             owl:inverseOf :isLocationOf ;
-             rdfs:domain :Request ;
-             rdfs:range :Location ;
-             rdfs:comment "The location of a request." ;
-             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "has location" .
-
-
 ###  https://w3id.org/timebank#hasNotEnvironment
 :hasNotEnvironment rdf:type owl:ObjectProperty ;
                    owl:inverseOf :is_not_environment_of ;
-                   rdfs:domain :Location ;
+                   rdfs:domain :AddressPart ;
                    rdfs:range :Environment ;
                    rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                    rdfs:isDefinedBy <https://w3id.org/timebank> ;
@@ -217,12 +247,12 @@ dcterms:rights rdf:type owl:AnnotationProperty .
            rdfs:label "has status" .
 
 
-###  https://w3id.org/timebank#hasSubLocation
-:hasSubLocation rdf:type owl:ObjectProperty ;
-                owl:inverseOf :isSubLocationOf ;
-                rdfs:comment <https://w3id.org/timebank> ,
-                             "Indicates that the location is a sub-location of another. A sub-location defines a place more precisely. A sub-location is always in the context of its super-location. For example, a streetnumber is a sub-location of the street." ;
-                rdfs:label "has sub-location" .
+###  https://w3id.org/timebank#hasSubPart
+:hasSubPart rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isSubPartOf ;
+            rdfs:comment <https://w3id.org/timebank> ,
+                         "Indicates that the address part is a sub-part of another. A sub-part defines a place more precisely. A sub-part is always in the context of its super-part. For example, a streetnumber is a sub- part of the street." ;
+            rdfs:label "has sub-part" .
 
 
 ###  https://w3id.org/timebank#hasTimeBalance
@@ -280,6 +310,15 @@ dcterms:rights rdf:type owl:AnnotationProperty .
                 rdfs:comment "The accredited duration of the request. This is the amount of time which will be transferred from the originator the the assigned helper of the request. Do not use this property to indicate the estimated duration of the task. Use hasExpectedDuration instead." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "is accredited to" .
+
+
+###  https://w3id.org/timebank#isAdressPartOf
+:isAdressPartOf rdf:type owl:ObjectProperty ;
+                rdfs:domain :AddressPart ;
+                rdfs:range :Request ;
+                rdfs:comment "An address part that describes the location of a specific request." ;
+                rdfs:isDefinedBy <https://w3id.org/timebank> ;
+                rdfs:label "is adress part of" .
 
 
 ###  https://w3id.org/timebank#isAvailabilityOf
@@ -342,7 +381,7 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/timebank#isEnvironmentOf
 :isEnvironmentOf rdf:type owl:ObjectProperty ;
                  rdfs:domain :Environment ;
-                 rdfs:range :Location ;
+                 rdfs:range :AddressPart ;
                  rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
                  rdfs:label "is environment of" .
@@ -364,15 +403,6 @@ dcterms:rights rdf:type owl:AnnotationProperty .
                 rdfs:comment "Indicates that a certain limitation applies to the Timebank user." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
                 rdfs:label "is limitation of" .
-
-
-###  https://w3id.org/timebank#isLocationOf
-:isLocationOf rdf:type owl:ObjectProperty ;
-              rdfs:domain :Location ;
-              rdfs:range :Request ;
-              rdfs:comment "The location of a request." ;
-              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-              rdfs:label "is location of" .
 
 
 ###  https://w3id.org/timebank#isOriginatorOf
@@ -468,12 +498,12 @@ dcterms:rights rdf:type owl:AnnotationProperty .
             rdfs:label "is status of" .
 
 
-###  https://w3id.org/timebank#isSubLocationOf
-:isSubLocationOf rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
-                 rdfs:comment <https://w3id.org/timebank> ,
-                              "Indicates that the location is a sub-location of another. A sub-location defines a place more precisely. A sub-location is always in the context of its super-location. For example, a streetnumber is a sub-location of the street." ;
-                 rdfs:label "is sub-location of" .
+###  https://w3id.org/timebank#isSubPartOf
+:isSubPartOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:comment <https://w3id.org/timebank> ,
+                          "Indicates that the address part is a sub-part of another. A sub-part defines a place more precisely. A sub-part is always in the context of its super-part. For example, a streetnumber is a sub- part of the street." ;
+             rdfs:label "is sub-part of" .
 
 
 ###  https://w3id.org/timebank#isTimeBalanceOf
@@ -498,7 +528,7 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 :is_not_environment_of rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty ;
                        rdfs:domain :Environment ;
-                       rdfs:range :Location ;
+                       rdfs:range :AddressPart ;
                        rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
                        rdfs:isDefinedBy <https://w3id.org/timebank> ;
                        rdfs:label "is not environment of" .
@@ -528,7 +558,8 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 
 ###  http://linkedgeodata.org/ontology/addr%3Acity
 <http://linkedgeodata.org/ontology/addr%3Acity> rdf:type owl:DatatypeProperty ;
-                                                rdfs:domain :Location ;
+                                                rdfs:subPropertyOf owl:topDataProperty ;
+                                                rdfs:domain :AddressPart ;
                                                 rdfs:range xsd:string ;
                                                 rdfs:comment """May not be required if boundary=administrative is used correctly. May or may not be a clone of is_in:city=* (in some places the city in the address corresponds to the post office that serves the area rather than the actual city, if any, in which the building is located)! The name of the city as given in postal addresses of the building/area.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -538,7 +569,8 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 
 ###  http://linkedgeodata.org/ontology/addr%3Aconscriptionnumber
 <http://linkedgeodata.org/ontology/addr%3Aconscriptionnumber> rdf:type owl:DatatypeProperty ;
-                                                              rdfs:domain :Location ;
+                                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                                              rdfs:domain :AddressPart ;
                                                               rdfs:range xsd:string ;
                                                               rdfs:comment """This special kind of housenumber relates to a settlement instead of a street. Conscription numbers were introduced in the Austrio-Hungarian Empire and are still in use in some parts of Europe, sometimes together with street-related housenumbers which are also called orientation numbers.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -548,7 +580,8 @@ dcterms:rights rdf:type owl:AnnotationProperty .
 
 ###  http://linkedgeodata.org/ontology/addr%3Acountry
 <http://linkedgeodata.org/ontology/addr%3Acountry> rdf:type owl:DatatypeProperty ;
-                                                   rdfs:domain :Location ;
+                                                   rdfs:subPropertyOf owl:topDataProperty ;
+                                                   rdfs:domain :AddressPart ;
                                                    rdfs:range xsd:string ;
                                                    rdfs:comment """May not be required if boundary=administrative is used correctly. The ISO 3166-1 alpha-2 two letter country code in upper case.
 Example: \"DE\" for Germany, \"CH\" for Switzerland, \"AT\" for Austria, \"FR\" for France, \"IT\" for Italy.
@@ -560,7 +593,8 @@ Caveat: The ISO 3166-1 code for Great Britain is \"GB\" and not \"UK\". See also
 
 ###  http://linkedgeodata.org/ontology/addr%3Adistrict
 <http://linkedgeodata.org/ontology/addr%3Adistrict> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain :Location ;
+                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                    rdfs:domain :AddressPart ;
                                                     rdfs:range xsd:string ;
                                                     rdfs:comment """The district of the object.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -570,7 +604,8 @@ Caveat: The ISO 3166-1 code for Great Britain is \"GB\" and not \"UK\". See also
 
 ###  http://linkedgeodata.org/ontology/addr%3Aflats
 <http://linkedgeodata.org/ontology/addr%3Aflats> rdf:type owl:DatatypeProperty ;
-                                                 rdfs:domain :Location ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdfs:domain :AddressPart ;
                                                  rdfs:range xsd:string ;
                                                  rdfs:comment """The house numbers (range or list) of flats behind a door.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -580,7 +615,8 @@ Caveat: The ISO 3166-1 code for Great Britain is \"GB\" and not \"UK\". See also
 
 ###  http://linkedgeodata.org/ontology/addr%3Afull
 <http://linkedgeodata.org/ontology/addr%3Afull> rdf:type owl:DatatypeProperty ;
-                                                rdfs:domain :Location ;
+                                                rdfs:subPropertyOf owl:topDataProperty ;
+                                                rdfs:domain :AddressPart ;
                                                 rdfs:range xsd:string ;
                                                 rdfs:comment """Use this for a full-text, often multi-line, address if you find the structured address fields unsuitable for denoting the address of this particular location. Examples: \"Fifth house on the left after the village oak, Smalltown, Smallcountry\", or addresses using special delivery names or codes (possibly via an unrelated city name and post code), or PO Boxes.
 Beware that these strings can hardly be parsed by software: \"1200 West Sunset Boulevard Suite 110A\" is still better represented as addr:housenumber=1200 + addr:street=West Sunset Boulevard + addr:flats=Suite 110A.
@@ -591,7 +627,8 @@ Beware that these strings can hardly be parsed by software: \"1200 West Sunset B
 
 ###  http://linkedgeodata.org/ontology/addr%3Ahamlet
 <http://linkedgeodata.org/ontology/addr%3Ahamlet> rdf:type owl:DatatypeProperty ;
-                                                  rdfs:domain :Location ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain :AddressPart ;
                                                   rdfs:range xsd:string ;
                                                   rdfs:comment """The hamlet of the object.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -601,7 +638,8 @@ Beware that these strings can hardly be parsed by software: \"1200 West Sunset B
 
 ###  http://linkedgeodata.org/ontology/addr%3Ahousename
 <http://linkedgeodata.org/ontology/addr%3Ahousename> rdf:type owl:DatatypeProperty ;
-                                                     rdfs:domain :Location ;
+                                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                                     rdfs:domain :AddressPart ;
                                                      rdfs:range xsd:string ;
                                                      rdfs:comment """The name of a house.
 This is sometimes used in some countries like England instead of (or in addition to) a house number.
@@ -612,7 +650,8 @@ This is sometimes used in some countries like England instead of (or in addition
 
 ###  http://linkedgeodata.org/ontology/addr%3Ahousenumber
 <http://linkedgeodata.org/ontology/addr%3Ahousenumber> rdf:type owl:DatatypeProperty ;
-                                                       rdfs:domain :Location ;
+                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                       rdfs:domain :AddressPart ;
                                                        rdfs:range xsd:string ;
                                                        rdfs:comment """The house number (may contain letters, dashes or other characters).
 Addresses describes ways to tag a single building with multiple addresses.
@@ -624,7 +663,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
 
 ###  http://linkedgeodata.org/ontology/addr%3Aplace
 <http://linkedgeodata.org/ontology/addr%3Aplace> rdf:type owl:DatatypeProperty ;
-                                                 rdfs:domain :Location ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdfs:domain :AddressPart ;
                                                  rdfs:range xsd:string ;
                                                  rdfs:comment """This is part of an address which refers to the name of some territorial zone (usually a place=* like island, square or very small village) instead of a street (highway=*). Should not be used together with addr:street=*.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -634,7 +674,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
 
 ###  http://linkedgeodata.org/ontology/addr%3Apostcode
 <http://linkedgeodata.org/ontology/addr%3Apostcode> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain :Location ;
+                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                    rdfs:domain :AddressPart ;
                                                     rdfs:range xsd:string ;
                                                     rdfs:comment """The postal code of the building/area. Some mappers prefer to use boundary=postal_code
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -644,7 +685,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
 
 ###  http://linkedgeodata.org/ontology/addr%3Aprovince
 <http://linkedgeodata.org/ontology/addr%3Aprovince> rdf:type owl:DatatypeProperty ;
-                                                    rdfs:domain :Location ;
+                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                    rdfs:domain :AddressPart ;
                                                     rdfs:range xsd:string ;
                                                     rdfs:comment """The province of the object. For Canada, uppercase two-letter postal abbreviations (BC, AB, ON, QC, etc.) are used. In Russia a synonym addr:region is widely used
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -654,7 +696,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
 
 ###  http://linkedgeodata.org/ontology/addr%3Astate
 <http://linkedgeodata.org/ontology/addr%3Astate> rdf:type owl:DatatypeProperty ;
-                                                 rdfs:domain :Location ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdfs:domain :AddressPart ;
                                                  rdfs:range xsd:string ;
                                                  rdfs:comment """The state of the object. For the US, uppercase two-letter postal abbreviations (AK, CA, HI, NY, TX, WY, etc.) are used.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -664,7 +707,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
 
 ###  http://linkedgeodata.org/ontology/addr%3Astreet
 <http://linkedgeodata.org/ontology/addr%3Astreet> rdf:type owl:DatatypeProperty ;
-                                                  rdfs:domain :Location ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain :AddressPart ;
                                                   rdfs:range xsd:string ;
                                                   rdfs:comment """The name of the respective street.
 A way with highway=* or a square with place=square and the corresponding name should be found nearby. The belonging to a street can alternatively be represented by a associatedStreet relation or street relation. The keys addr:housenumber=* and addr:street=* in principle are the only necessary ones if there are valid border polygons. If you are not sure if it is so, just add addr:city=*, addr:postcode=* and addr:country=*.
@@ -675,7 +719,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
 
 ###  http://linkedgeodata.org/ontology/addr%3Asubdistrict
 <http://linkedgeodata.org/ontology/addr%3Asubdistrict> rdf:type owl:DatatypeProperty ;
-                                                       rdfs:domain :Location ;
+                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                       rdfs:domain :AddressPart ;
                                                        rdfs:range xsd:string ;
                                                        rdfs:comment """The subdistrict of the object.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -685,7 +730,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
 
 ###  http://linkedgeodata.org/ontology/addr%3Asuburb
 <http://linkedgeodata.org/ontology/addr%3Asuburb> rdf:type owl:DatatypeProperty ;
-                                                  rdfs:domain :Location ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdfs:domain :AddressPart ;
                                                   rdfs:range xsd:string ;
                                                   rdfs:comment """If an address exists several times in a city. You have to add the name of the settlement. See Australian definition of suburb.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)""" ;
@@ -722,10 +768,6 @@ time:Instant rdf:type owl:Class .
 time:ProperInterval rdf:type owl:Class .
 
 
-###  http://www.w3.org/2006/vcard/ns#VCard
-<http://www.w3.org/2006/vcard/ns#VCard> rdf:type owl:Class .
-
-
 ###  http://xmlns.com/foaf/0.1/Person
 foaf:Person rdf:type owl:Class .
 
@@ -736,7 +778,9 @@ foaf:Person rdf:type owl:Class .
                owl:disjointWith :Supplies ;
                rdfs:comment "Describes any revelant information regarding the accessibility of a location of a request." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Accessibility" .
+               rdfs:label "Accessibility" ;
+               skos:broaderTransitive :Environment ;
+               skos:exactMatch dbr:Accessibility .
 
 
 ###  https://w3id.org/timebank#AccessibleByPublicTransport
@@ -744,7 +788,22 @@ foaf:Person rdf:type owl:Class .
                              rdfs:subClassOf :Accessibility ;
                              rdfs:comment "The location is accessible by public transport." ;
                              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                             rdfs:label "Accessible by Public Transport" .
+                             rdfs:label "Accessible by Public Transport" ;
+                             skos:broaderTransitive :Accessibility ;
+                             skos:relatedMatch dbr:Public_transport .
+
+
+###  https://w3id.org/timebank#AddressPart
+:AddressPart rdf:type owl:Class ;
+             owl:disjointWith :Environment ,
+                              :Level ,
+                              :Limitation ,
+                              :Request ,
+                              :Skill ,
+                              :Status ;
+             rdfs:comment "An address part indicates part of an address like region, city, etc. If two places share the same address part, they also share the same environmental factors." ;
+             rdfs:isDefinedBy <https://w3id.org/timebank> ;
+             rdfs:label "Address Part" .
 
 
 ###  https://w3id.org/timebank#Advice
@@ -752,7 +811,9 @@ foaf:Person rdf:type owl:Class .
         rdfs:subClassOf :Skill ;
         rdfs:comment "Skills to provide particular services which requires some sort of education or training." ;
         rdfs:isDefinedBy <https://w3id.org/timebank> ;
-        rdfs:label "Advice" .
+        rdfs:label "Advice" ;
+        skos:broaderTransitive :Skill ;
+        skos:closeMatch dbc:Consulting .
 
 
 ###  https://w3id.org/timebank#Allergy
@@ -760,7 +821,10 @@ foaf:Person rdf:type owl:Class .
          rdfs:subClassOf :Limitation ;
          rdfs:comment "A collection of allergies, which is caused by hypersensitivity of the immune system." ;
          rdfs:isDefinedBy <https://w3id.org/timebank> ;
-         rdfs:label "Allergy" .
+         rdfs:label "Allergy" ;
+         skos:broaderTransitive :Limitation ;
+         skos:exactMatch dbr:Allergy ;
+         skos:relatedMatch <http://purl.bioontology.org/ontology/ICD10/T78.4> .
 
 
 ###  https://w3id.org/timebank#Assembling
@@ -768,7 +832,8 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :Crafting ;
             rdfs:comment "The skill to assemble items like furniture and other things." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Assembling" .
+            rdfs:label "Assembling" ;
+            skos:broaderTransitive :Crafting .
 
 
 ###  https://w3id.org/timebank#AutomobileRepair
@@ -776,7 +841,9 @@ foaf:Person rdf:type owl:Class .
                   rdfs:subClassOf :Repair ;
                   rdfs:comment "The skill to repair automobiles." ;
                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                  rdfs:label "Automobile Repair" .
+                  rdfs:label "Automobile Repair" ;
+                  skos:broaderTransitive :Repair ;
+                  skos:relatedMatch dbr:Auto_mechanic .
 
 
 ###  https://w3id.org/timebank#Baking
@@ -784,7 +851,9 @@ foaf:Person rdf:type owl:Class .
         rdfs:subClassOf :FoodService ;
         rdfs:comment "The skill to assist with baking." ;
         rdfs:isDefinedBy <https://w3id.org/timebank> ;
-        rdfs:label "Baking" .
+        rdfs:label "Baking" ;
+        skos:broaderTransitive :FoodService ;
+        skos:exactMatch dbr:Baking .
 
 
 ###  https://w3id.org/timebank#Carpeting
@@ -793,7 +862,9 @@ foaf:Person rdf:type owl:Class .
            owl:disjointWith :WoodCarving ;
            rdfs:comment "The skill to do carpenting." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
-           rdfs:label "Carpenting" .
+           rdfs:label "Carpenting" ;
+           skos:broaderTransitive :WoodCrafting ;
+           skos:exactMatch <http://dbpedia.org/resource/:Carpentry> .
 
 
 ###  https://w3id.org/timebank#Catering
@@ -801,7 +872,9 @@ foaf:Person rdf:type owl:Class .
           rdfs:subClassOf :FoodService ;
           rdfs:comment "The skill to assist with catering requirements." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Catering" .
+          rdfs:label "Catering" ;
+          skos:broaderTransitive :FoodService ;
+          skos:exactMatch dbr:Catering .
 
 
 ###  https://w3id.org/timebank#Cats
@@ -809,7 +882,9 @@ foaf:Person rdf:type owl:Class .
       rdfs:subClassOf :Pets ;
       rdfs:comment "Indicates that cats might be present." ;
       rdfs:isDefinedBy <https://w3id.org/timebank> ;
-      rdfs:label "Cats" .
+      rdfs:label "Cats" ;
+      skos:broaderTransitive :Pets ;
+      skos:exactMatch dbr:Cat .
 
 
 ###  https://w3id.org/timebank#ChildCare
@@ -817,7 +892,9 @@ foaf:Person rdf:type owl:Class .
            rdfs:subClassOf :PeopleCare ;
            rdfs:comment "The skill to provide care for children." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
-           rdfs:label "Child Care" .
+           rdfs:label "Child Care" ;
+           skos:broaderTransitive :PeopleCare ;
+           skos:exactMatch dbr:Child_care .
 
 
 ###  https://w3id.org/timebank#Cleaning
@@ -825,7 +902,9 @@ foaf:Person rdf:type owl:Class .
           rdfs:subClassOf :Maintenance ;
           rdfs:comment "The skill to assist with general cleaning tasks." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Cleaning" .
+          rdfs:label "Cleaning" ;
+          skos:broaderTransitive :Maintenance ;
+          skos:exactMatch dbc:Cleaning .
 
 
 ###  https://w3id.org/timebank#ClimbingStairsDifficulty
@@ -833,7 +912,10 @@ foaf:Person rdf:type owl:Class .
                           rdfs:subClassOf :MobilityProblem ;
                           rdfs:comment "The person has difficulty in climbing up stairs." ;
                           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                          rdfs:label "Difficulty in Climbing Stairs" .
+                          rdfs:label "Difficulty in Climbing Stairs" ;
+                          skos:broaderTransitive :MobilityProblem ;
+                          skos:relatedMatch <http://snomed.info/id/129016000> ,
+                                            <http://who.int/icf#d450-d469> .
 
 
 ###  https://w3id.org/timebank#ClothesWashing
@@ -842,7 +924,9 @@ foaf:Person rdf:type owl:Class .
                 owl:disjointWith :Mopping ;
                 rdfs:comment "The skill to assist with washing clothes." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Clothes Washing" .
+                rdfs:label "Clothes Washing" ;
+                skos:broaderTransitive :Cleaning ;
+                skos:closeMatch dbr:Washing .
 
 
 ###  https://w3id.org/timebank#CognitiveImpairment
@@ -850,7 +934,12 @@ foaf:Person rdf:type owl:Class .
                      rdfs:subClassOf :MentalDisorder ;
                      rdfs:comment "A person with cognitive impairment can't think and remember things clearly." ;
                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                     rdfs:label "Cognitive Impairment" .
+                     rdfs:label "Cognitive Impairment" ;
+                     skos:broaderTransitive :MentalDisorder ;
+                     skos:exactMatch dbr:Cognitive_deficit ;
+                     skos:relatedMatch <http://purl.bioontology.org/ontology/ICD10/F06.7> ,
+                                       <http://snomed.info/id/110352000> ,
+                                       <http://who.int/icf#b164> .
 
 
 ###  https://w3id.org/timebank#CommonDisease
@@ -858,7 +947,8 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :Limitation ;
                rdfs:comment "A collection of diseases that are common, especially for elderly people" ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Common Disease" .
+               rdfs:label "Common Disease" ;
+               skos:broaderTransitive :Limitation .
 
 
 ###  https://w3id.org/timebank#ComputerProcessing
@@ -866,7 +956,9 @@ foaf:Person rdf:type owl:Class .
                     rdfs:subClassOf :OfficeWork ;
                     rdfs:comment "The skill to assist with processing data computers." ;
                     rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                    rdfs:label "Computer Processing" .
+                    rdfs:label "Computer Processing" ;
+                    skos:broaderTransitive :OfficeWork ;
+                    skos:exactMatch dbr:Computer_skills .
 
 
 ###  https://w3id.org/timebank#ComputerRepair
@@ -874,7 +966,9 @@ foaf:Person rdf:type owl:Class .
                 rdfs:subClassOf :Repair ;
                 rdfs:comment "The skill to fix problems with computers." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Computer Repair" .
+                rdfs:label "Computer Repair" ;
+                skos:broaderTransitive :Repair ;
+                skos:relatedMatch dbr:Computer_repair_technician .
 
 
 ###  https://w3id.org/timebank#Cooking
@@ -882,7 +976,9 @@ foaf:Person rdf:type owl:Class .
          rdfs:subClassOf :FoodService ;
          rdfs:comment "The skill to assist with cooking in general." ;
          rdfs:isDefinedBy <https://w3id.org/timebank> ;
-         rdfs:label "Cooking" .
+         rdfs:label "Cooking" ;
+         skos:broaderTransitive :FoodService ;
+         skos:exactMatch dbr:Cooking .
 
 
 ###  https://w3id.org/timebank#Counseling
@@ -890,7 +986,9 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :Advice ;
             rdfs:comment "The skill to advice people on psychological matters." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Counseling" .
+            rdfs:label "Counseling" ;
+            skos:broaderTransitive :Advice ;
+            skos:exactMatch dbc:Counseling .
 
 
 ###  https://w3id.org/timebank#Crafting
@@ -898,7 +996,9 @@ foaf:Person rdf:type owl:Class .
           rdfs:subClassOf :Skill ;
           rdfs:comment "Crafting skills." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Crafting" .
+          rdfs:label "Crafting" ;
+          skos:broaderTransitive :Skill ;
+          skos:closeMatch dbr:Craft .
 
 
 ###  https://w3id.org/timebank#CraftingClothes
@@ -906,7 +1006,8 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :Crafting ;
                  rdfs:comment "The ability to craft any kind of clothes." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Crafting Clothes" .
+                 rdfs:label "Crafting Clothes" ;
+                 skos:broaderTransitive :Crafting .
 
 
 ###  https://w3id.org/timebank#DancingCompanion
@@ -914,7 +1015,9 @@ foaf:Person rdf:type owl:Class .
                   rdfs:subClassOf :Recreation ;
                   rdfs:comment "The ability to act as a dancing companion." ;
                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                  rdfs:label "Dancing Companion" .
+                  rdfs:label "Dancing Companion" ;
+                  skos:broaderTransitive :Recreation ;
+                  skos:relatedMatch dbr:Dance .
 
 
 ###  https://w3id.org/timebank#Depression
@@ -922,7 +1025,13 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :MentalDisorder ;
             rdfs:comment "A person with depression has a depressed mood over a long period and may even have thoughts of suicide." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Depression" .
+            rdfs:label "Depression" ;
+            skos:broaderTransitive :MentalDisorder ;
+            skos:closeMatch <http://purl.bioontology.org/ontology/ICD10/F32> ;
+            skos:exactMatch <http://dbpedia.org/resource/Depression_(mood)> ;
+            skos:narrowMatch <http://snomed.info/id/154965008> ,
+                             <http://snomed.info/id/154966009> ,
+                             <http://snomed.info/id/154967000> .
 
 
 ###  https://w3id.org/timebank#Diabetes
@@ -930,7 +1039,11 @@ foaf:Person rdf:type owl:Class .
           rdfs:subClassOf :CommonDisease ;
           rdfs:comment "A disorder characterized by high blood sugar levels during a long period." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Diabetes Mellitus" .
+          rdfs:label "Diabetes Mellitus" ;
+          skos:broaderTransitive :CommonDisease ;
+          skos:exactMatch dbr:Diabetes_mellitus ,
+                          <http://purl.bioontology.org/ontology/ICD10/E10-E14.9> ,
+                          <http://snomed.info/id/191044006> .
 
 
 ###  https://w3id.org/timebank#Dishwashing
@@ -938,7 +1051,9 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :FoodService ;
              rdfs:comment "The skill to assist with washing dishes." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Dishwashing" .
+             rdfs:label "Dishwashing" ;
+             skos:broaderTransitive :FoodService ;
+             skos:exactMatch dbr:Dishwashing .
 
 
 ###  https://w3id.org/timebank#Dogs
@@ -946,7 +1061,9 @@ foaf:Person rdf:type owl:Class .
       rdfs:subClassOf :Pets ;
       rdfs:comment "Indicates that dogs might be present." ;
       rdfs:isDefinedBy <https://w3id.org/timebank> ;
-      rdfs:label "Dogs" .
+      rdfs:label "Dogs" ;
+      skos:broaderTransitive :Dogs ;
+      skos:exactMatch dbr:Dog .
 
 
 ###  https://w3id.org/timebank#DressingAssistance
@@ -954,7 +1071,8 @@ foaf:Person rdf:type owl:Class .
                     rdfs:subClassOf :PersonalService ;
                     rdfs:comment "The skill to assist someone with dressing." ;
                     rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                    rdfs:label "Dressing Assistance" .
+                    rdfs:label "Dressing Assistance" ;
+                    skos:broaderTransitive :PersonalService .
 
 
 ###  https://w3id.org/timebank#DressingProblem
@@ -962,7 +1080,10 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :MobilityProblem ;
                  rdfs:comment "The person has difficulties dressing himself." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Dressing Problem" .
+                 rdfs:label "Dressing Problem" ;
+                 skos:broaderTransitive :MobilityProblem ;
+                 skos:relatedMatch <http://snomed.info/id/129039006> ,
+                                   <http://who.int/icf#d5400> .
 
 
 ###  https://w3id.org/timebank#DrivingCars
@@ -971,7 +1092,9 @@ foaf:Person rdf:type owl:Class .
              owl:disjointWith :DrivingVans ;
              rdfs:comment "Experience in driving cars." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Driving Cars" .
+             rdfs:label "Driving Cars" ;
+             skos:broaderTransitive :DrivingLightVehicles ;
+             skos:relatedMatch dbr:Automobile .
 
 
 ###  https://w3id.org/timebank#DrivingHeavyVehicles
@@ -980,7 +1103,8 @@ foaf:Person rdf:type owl:Class .
                       owl:disjointWith :DrivingLightVehicles ;
                       rdfs:comment "Experience in driving heavy vehicles." ;
                       rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                      rdfs:label "Driving Heavy Vehicles" .
+                      rdfs:label "Driving Heavy Vehicles" ;
+                      skos:broaderTransitive :Transportation .
 
 
 ###  https://w3id.org/timebank#DrivingLightVehicles
@@ -988,7 +1112,8 @@ foaf:Person rdf:type owl:Class .
                       rdfs:subClassOf :Transportation ;
                       rdfs:comment "Experience in driving light vehicles." ;
                       rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                      rdfs:label "Driving Light Vehicles" .
+                      rdfs:label "Driving Light Vehicles" ;
+                      skos:broaderTransitive :Transportation .
 
 
 ###  https://w3id.org/timebank#DrivingTractors
@@ -996,7 +1121,9 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :DrivingHeavyVehicles ;
                  rdfs:comment "Experience in driving tractors." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Driving Tractors" .
+                 rdfs:label "Driving Tractors" ;
+                 skos:broaderTransitive :DrivingHeavyVehicles ;
+                 skos:relatedMatch dbr:Tractor .
 
 
 ###  https://w3id.org/timebank#DrivingTrucks
@@ -1004,7 +1131,9 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :DrivingHeavyVehicles ;
                rdfs:comment "Experience in driving with trucks." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Driving Trucks" .
+               rdfs:label "Driving Trucks" ;
+               skos:broaderTransitive :DrivingHeavyVehicles ;
+               skos:relatedMatch dbr:Truck .
 
 
 ###  https://w3id.org/timebank#DrivingVans
@@ -1012,7 +1141,9 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :DrivingLightVehicles ;
              rdfs:comment "Experience in driving vans." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Driving Vans" .
+             rdfs:label "Driving Vans" ;
+             skos:broaderTransitive :DrivingLightVehicles ;
+             skos:relatedMatch dbr:Automobile .
 
 
 ###  https://w3id.org/timebank#DrivingWithTrailers
@@ -1020,7 +1151,9 @@ foaf:Person rdf:type owl:Class .
                      rdfs:subClassOf :DrivingHeavyVehicles ;
                      rdfs:comment "Experience in driving with trailers." ;
                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                     rdfs:label "Driving with Trailers" .
+                     rdfs:label "Driving with Trailers" ;
+                     skos:broaderTransitive :DrivingHeavyVehicles ;
+                     skos:relatedMatch <http://dbpedia.org/resource/Trailer_(vehicle)> .
 
 
 ###  https://w3id.org/timebank#DrugAllergy
@@ -1028,7 +1161,11 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :Allergy ;
              rdfs:comment "An allergy to drugs." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Drug Allergy" .
+             rdfs:label "Drug Allergy" ;
+             skos:broaderTransitive :Allergy ;
+             skos:exactMatch dbr:Drug_allergy ,
+                             <http://snomed.info/id/93431001> ;
+             skos:relatedMatch <http://purl.bioontology.org/ontology/ICD10/Z88> .
 
 
 ###  https://w3id.org/timebank#EggAllergy
@@ -1036,7 +1173,11 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :FoodAllergy ;
             rdfs:comment "Allergy to eggs." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Egg Allergy" .
+            rdfs:label "Egg Allergy" ;
+            skos:broaderTransitive :FoodAllergy ;
+            skos:exactMatch dbr:Egg_allergy ,
+                            <http://snomed.info/id/157802003> ;
+            skos:relatedMatch <http://snomed.info/id/138050005> .
 
 
 ###  https://w3id.org/timebank#ElderlyCare
@@ -1044,7 +1185,9 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :PeopleCare ;
              rdfs:comment "The skill to provide care and support for the elderly." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Care for Elderly" .
+             rdfs:label "Care for Elderly" ;
+             skos:broaderTransitive :PeopleCare ;
+             skos:exactMatch dbr:Elderly_care .
 
 
 ###  https://w3id.org/timebank#Electricity
@@ -1052,7 +1195,9 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :Supplies ;
              rdfs:comment "Electric outlet available." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Electricity" .
+             rdfs:label "Electricity" ;
+             skos:broaderTransitive :Supplies ;
+             skos:relatedMatch dbr:Electricity .
 
 
 ###  https://w3id.org/timebank#ElectronicRepair
@@ -1060,14 +1205,14 @@ foaf:Person rdf:type owl:Class .
                   rdfs:subClassOf :Repair ;
                   rdfs:comment "The skill to repair electronic devices." ;
                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                  rdfs:label "Electronic Repair" .
+                  rdfs:label "Electronic Repair" ;
+                  skos:broaderTransitive :Repair .
 
 
 ###  https://w3id.org/timebank#Environment
 :Environment rdf:type owl:Class ;
              owl:disjointWith :Level ,
                               :Limitation ,
-                              :Location ,
                               :Request ,
                               :Skill ,
                               :Status ,
@@ -1082,7 +1227,9 @@ foaf:Person rdf:type owl:Class .
                       rdfs:subClassOf :Allergy ;
                       rdfs:comment "An allergy to something in the environment such as dust mites, pollen, pet hair and cigarette smoke." ;
                       rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                      rdfs:label "Environmental Allergy" .
+                      rdfs:label "Environmental Allergy" ;
+                      skos:broaderTransitive :Allergy ;
+                      skos:exactMatch <http://snomed.info/id/426232007> .
 
 
 ###  https://w3id.org/timebank#EventPlanning
@@ -1090,7 +1237,9 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :Recreation ;
                rdfs:comment "The skill to assist in planning and hosting events." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Event Planning" .
+               rdfs:label "Event Planning" ;
+               skos:broaderTransitive :Recreation ;
+               skos:closeMatch dbr:Event_planning .
 
 
 ###  https://w3id.org/timebank#FearOfAnimals
@@ -1098,7 +1247,10 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :SpecificPhobia ;
                rdfs:comment "Fear of animals. This can include dogs, cats, snakes, insects, etc." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Fear of Animals" .
+               rdfs:label "Fear of Animals" ;
+               skos:broaderTransitive :SpecificPhobia ;
+               skos:exactMatch dbr:Zoophobia ,
+                               <http://snomed.info/id/54307006> .
 
 
 ###  https://w3id.org/timebank#FearOfCats
@@ -1107,7 +1259,9 @@ foaf:Person rdf:type owl:Class .
             owl:disjointWith :FearOfDogs ;
             rdfs:comment "Fear of cats." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Fear of Cats" .
+            rdfs:label "Fear of Cats" ;
+            skos:broaderTransitive :FearOfAnimals ;
+            skos:exactMatch dbr:Ailurophobia .
 
 
 ###  https://w3id.org/timebank#FearOfDark
@@ -1115,7 +1269,9 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :SpecificPhobia ;
             rdfs:comment "Fear of dark places." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Fear of Dark" .
+            rdfs:label "Fear of Dark" ;
+            skos:broaderTransitive :SpecificPhobia ;
+            skos:exactMatch dbr:Fear_of_the_dark .
 
 
 ###  https://w3id.org/timebank#FearOfDogs
@@ -1123,7 +1279,9 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :FearOfAnimals ;
             rdfs:comment "Fear of dogs." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Fear of Dogs" .
+            rdfs:label "Fear of Dogs" ;
+            skos:broaderTransitive :FearOfAnimals ;
+            skos:exactMatch dbr:Cynophobia .
 
 
 ###  https://w3id.org/timebank#FearOfHeights
@@ -1131,7 +1289,10 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :SpecificPhobia ;
                rdfs:comment "Fear or phobia of heights." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Fear of Heights" .
+               rdfs:label "Fear of Heights" ;
+               skos:broaderTransitive :SpecificPhobia ;
+               skos:exactMatch dbr:Acrophobia ,
+                               <http://snomed.info/id/58963008> .
 
 
 ###  https://w3id.org/timebank#FinancialAdvice
@@ -1139,7 +1300,9 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :Advice ;
                  rdfs:comment "Specialized in providing assistance with financial services. This can include helping with taxes and book keeping." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Financial Advice" .
+                 rdfs:label "Financial Advice" ;
+                 skos:broaderTransitive :Advice ;
+                 skos:relatedMatch dbr:Financial_adviser .
 
 
 ###  https://w3id.org/timebank#FoodAllergy
@@ -1147,7 +1310,10 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :Allergy ;
              rdfs:comment "An allergy to food such as milk, peanuts, eggs, fish, tree nuts, and fruit." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Food Allergy" .
+             rdfs:label "Food Allergy" ;
+             skos:broaderTransitive :Allergy ;
+             skos:exactMatch dbr:Food_allergy ,
+                             <http://snomed.info/id/157801005> .
 
 
 ###  https://w3id.org/timebank#FoodPreparation
@@ -1155,7 +1321,8 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :FoodService ;
                  rdfs:comment "The skill to assist with food preparation like meat cutting, washing of food, etc." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Food Preparation" .
+                 rdfs:label "Food Preparation" ;
+                 skos:broaderTransitive :FoodService .
 
 
 ###  https://w3id.org/timebank#FoodService
@@ -1163,7 +1330,9 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :Skill ;
              rdfs:comment "The skill to provide services related to food products." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Food Service" .
+             rdfs:label "Food Service" ;
+             skos:broaderTransitive :Skill ;
+             skos:exactMatch dbc:Food_and_drink_preparation .
 
 
 ###  https://w3id.org/timebank#Games
@@ -1171,7 +1340,8 @@ foaf:Person rdf:type owl:Class .
        rdfs:subClassOf :Recreation ;
        rdfs:comment "The skill to participate in board games, card games, etc." ;
        rdfs:isDefinedBy <https://w3id.org/timebank> ;
-       rdfs:label "Games" .
+       rdfs:label "Games" ;
+       skos:broaderTransitive :Recreation .
 
 
 ###  https://w3id.org/timebank#GlutenAllergy
@@ -1179,7 +1349,10 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :FoodAllergy ;
                rdfs:comment "Allergies to grains with gluten such as wheat, barley, rye, and oats." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Gluten Allergy" .
+               rdfs:label "Gluten Allergy" ;
+               skos:broaderTransitive :FoodAllergy ;
+               skos:closeMatch dbr:Wheat_allergy ;
+               skos:relatedMatch <http://snomed.info/id/441831003> .
 
 
 ###  https://w3id.org/timebank#Groceries
@@ -1188,7 +1361,9 @@ foaf:Person rdf:type owl:Class .
            owl:disjointWith :OnlineShopping ;
            rdfs:comment "The skill to help buying groceries." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
-           rdfs:label "Groceries" .
+           rdfs:label "Groceries" ;
+           skos:broaderTransitive :SalesService ;
+           skos:relatedMatch dbr:Grocery_store .
 
 
 ###  https://w3id.org/timebank#HairCutting
@@ -1196,7 +1371,9 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :PersonalService ;
              rdfs:comment "Ability to cut someone else's hair." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Hair Cutting" .
+             rdfs:label "Hair Cutting" ;
+             skos:broaderTransitive :PersonalService ;
+             skos:relatedMatch dbr:Hairdresser .
 
 
 ###  https://w3id.org/timebank#HeartDisease
@@ -1204,7 +1381,12 @@ foaf:Person rdf:type owl:Class .
               rdfs:subClassOf :CommonDisease ;
               rdfs:comment "A condition of diseases that negatively affect one's heart such as blood vessel diseases and heart rhythm problems." ;
               rdfs:isDefinedBy <https://w3id.org/timebank> ;
-              rdfs:label "Heart Diseases" .
+              rdfs:label "Heart Diseases" ;
+              skos:broaderTransitive :CommonDisease ;
+              skos:exactMatch dbr:Heart_disease ,
+                              <http://snomed.info/id/56265001> ;
+              skos:relatedMatch <http://purl.bioontology.org/ontology/ICD10/I51.9> ,
+                                <http://who.int/icf#b410> .
 
 
 ###  https://w3id.org/timebank#HouseholdEquipmentRepair
@@ -1212,7 +1394,8 @@ foaf:Person rdf:type owl:Class .
                           rdfs:subClassOf :Repair ;
                           rdfs:comment "The skill to repair household equipment." ;
                           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                          rdfs:label "Houseshold Equipment Repair" .
+                          rdfs:label "Houseshold Equipment Repair" ;
+                          skos:broaderTransitive :Repair .
 
 
 ###  https://w3id.org/timebank#HygieneAssitance
@@ -1220,7 +1403,8 @@ foaf:Person rdf:type owl:Class .
                   rdfs:subClassOf :PersonalService ;
                   rdfs:comment "The skill to assist someone on hygienical matters." ;
                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                  rdfs:label "Hygiene Assitance" .
+                  rdfs:label "Hygiene Assitance" ;
+                  skos:broaderTransitive :PersonalService .
 
 
 ###  https://w3id.org/timebank#Hypertension
@@ -1228,7 +1412,10 @@ foaf:Person rdf:type owl:Class .
               rdfs:subClassOf :CommonDisease ;
               rdfs:comment "The blood pressure is high in a long period." ;
               rdfs:isDefinedBy <https://w3id.org/timebank> ;
-              rdfs:label "Hypertension" .
+              rdfs:label "Hypertension" ;
+              skos:broaderTransitive :CommonDisease ;
+              skos:exactMatch dbr:Hypertension ;
+              skos:relatedMatch <http://purl.bioontology.org/ontology/ICD10/I10-I15.9> .
 
 
 ###  https://w3id.org/timebank#Hypotension
@@ -1236,15 +1423,10 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :CommonDisease ;
              rdfs:comment "The blood pressure is low in a long period." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Hypotension" .
-
-
-###  https://w3id.org/timebank#Ingredients
-:Ingredients rdf:type owl:Class ;
-             rdfs:subClassOf :Supplies ;
-             rdfs:comment "Ingredients (like food) can be provided." ;
-             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Ingredients" .
+             rdfs:label "Hypotension" ;
+             skos:broaderTransitive :CommonDisease ;
+             skos:exactMatch dbr:Hypotension ,
+                             <http://purl.bioontology.org/ontology/ICD10/I95> .
 
 
 ###  https://w3id.org/timebank#Internet
@@ -1252,7 +1434,9 @@ foaf:Person rdf:type owl:Class .
           rdfs:subClassOf :Supplies ;
           rdfs:comment "Internet is available." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Internet" .
+          rdfs:label "Internet" ;
+          skos:broaderTransitive :Supplies ;
+          skos:exactMatch dbr:Internet .
 
 
 ###  https://w3id.org/timebank#InventoryManagement
@@ -1260,7 +1444,9 @@ foaf:Person rdf:type owl:Class .
                      rdfs:subClassOf :OfficeWork ;
                      rdfs:comment "The skill to assist with inventory management." ;
                      rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                     rdfs:label "Inventory Management" .
+                     rdfs:label "Inventory Management" ;
+                     skos:broaderTransitive :OfficeWork ;
+                     skos:relatedMatch dbr:Inventory .
 
 
 ###  https://w3id.org/timebank#Knitting
@@ -1268,7 +1454,9 @@ foaf:Person rdf:type owl:Class .
           rdfs:subClassOf :CraftingClothes ;
           rdfs:comment "Specialized in knitting clothes." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Knitting" .
+          rdfs:label "Knitting" ;
+          skos:broaderTransitive :CraftingClothes ;
+          skos:exactMatch dbr:Knitting .
 
 
 ###  https://w3id.org/timebank#LegalAdvice
@@ -1276,13 +1464,14 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :Advice ;
              rdfs:comment "Specialized in providing legal assistance." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Legal Advice" .
+             rdfs:label "Legal Advice" ;
+             skos:broaderTransitive :Advice ;
+             skos:relatedMatch dbr:Lawyer .
 
 
 ###  https://w3id.org/timebank#Level
 :Level rdf:type owl:Class ;
        owl:disjointWith :Limitation ,
-                        :Location ,
                         :Request ,
                         :Skill ,
                         :Status ,
@@ -1297,13 +1486,14 @@ foaf:Person rdf:type owl:Class .
       rdfs:subClassOf :Accessibility ;
       rdfs:comment "A lift/elevator is available." ;
       rdfs:isDefinedBy <https://w3id.org/timebank> ;
-      rdfs:label <https://w3id.org/Lift> .
+      rdfs:label <https://w3id.org/Lift> ;
+      skos:broaderTransitive :Accessibility ;
+      skos:exactMatch dbr:Elevator .
 
 
 ###  https://w3id.org/timebank#Limitation
 :Limitation rdf:type owl:Class ;
-            owl:disjointWith :Location ,
-                             :Request ,
+            owl:disjointWith :Request ,
                              :Skill ,
                              :Status ,
                              :User ;
@@ -1318,7 +1508,9 @@ foaf:Person rdf:type owl:Class .
                           owl:disjointWith :LimitedAccessibilitySnow ;
                           rdfs:comment "The place is difficult to access during rainfall." ;
                           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                          rdfs:label "Limited Accessibility: Rain" .
+                          rdfs:label "Limited Accessibility: Rain" ;
+                          skos:broaderTransitive :WeatherConstraint ;
+                          skos:relatedMatch <http://dbpedia.org/resource/Precipitation_(meteorology)> .
 
 
 ###  https://w3id.org/timebank#LimitedAccessibilitySnow
@@ -1326,17 +1518,9 @@ foaf:Person rdf:type owl:Class .
                           rdfs:subClassOf :WeatherConstraint ;
                           rdfs:comment "The place is difficult to access during snowfall." ;
                           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                          rdfs:label "Limited Accessibility: Snow" .
-
-
-###  https://w3id.org/timebank#Location
-:Location rdf:type owl:Class ;
-          owl:disjointWith :Request ,
-                           :Skill ,
-                           :Status ;
-          rdfs:comment "The location indicates specifics of a place like address, region, city, etc. If two palces share the same location, they also share the same environmental factors." ;
-          rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Location" .
+                          rdfs:label "Limited Accessibility: Snow" ;
+                          skos:broaderTransitive :WeatherConstraint ;
+                          skos:relatedMatch <http://dbpedia.org/resource/Precipitation_(meteorology)> .
 
 
 ###  https://w3id.org/timebank#Maintenance
@@ -1344,7 +1528,9 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :Skill ;
              rdfs:comment "The skill to help with maintenance of equipment." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Maintenance" .
+             rdfs:label "Maintenance" ;
+             skos:broaderTransitive :Skill ;
+             skos:exactMatch dbc:Maintenance .
 
 
 ###  https://w3id.org/timebank#MentalDisorder
@@ -1352,7 +1538,12 @@ foaf:Person rdf:type owl:Class .
                 rdfs:subClassOf :Limitation ;
                 rdfs:comment "Disorders that affect the mental states of a person." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Mental Disorder" .
+                rdfs:label "Mental Disorder" ;
+                skos:broaderTransitive :Limitation ;
+                skos:closeMatch <http://purl.bioontology.org/ontology/ICD10/F00-F99.9> ;
+                skos:exactMatch dbr:Mental_disorder ,
+                                <http://snomed.info/id/74732009> ;
+                skos:relatedMatch <http://who.int/icf#b1> .
 
 
 ###  https://w3id.org/timebank#MentallyIllCare
@@ -1360,7 +1551,9 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :PeopleCare ;
                  rdfs:comment "The skill to provide care for the mentally ill." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Care Mentally Ill People" .
+                 rdfs:label "Care Mentally Ill People" ;
+                 skos:broaderTransitive :PeopleCare ;
+                 skos:narrowMatch dbr:Caring_for_people_with_dementia .
 
 
 ###  https://w3id.org/timebank#MilkAllergy
@@ -1368,7 +1561,11 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :FoodAllergy ;
              rdfs:comment "Allergy to milk." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Milk Allergy" .
+             rdfs:label "Milk Allergy" ;
+             skos:broaderTransitive :FoodAllergy ;
+             skos:closeMatch <http://snomed.info/id/197021003> ;
+             skos:exactMatch dbr:Milk_allergy ;
+             skos:relatedMatch <http://snomed.info/id/138049005> .
 
 
 ###  https://w3id.org/timebank#MobilityProblem
@@ -1376,7 +1573,11 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :PhysicalInconvenience ;
                  rdfs:comment "Difficulties with moving around physically such as having difficulties using toliet, dressing, walking and so on." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Mobility Problem" .
+                 rdfs:label "Mobility Problem" ;
+                 skos:broaderTransitive :PhysicalInconvenience ;
+                 skos:relatedMatch <http://purl.bioontology.org/ontology/ICD10/Z74.0> ,
+                                   <http://snomed.info/id/102490005> ,
+                                   <http://who.int/icf#d4> .
 
 
 ###  https://w3id.org/timebank#Mopping
@@ -1384,7 +1585,8 @@ foaf:Person rdf:type owl:Class .
          rdfs:subClassOf :Cleaning ;
          rdfs:comment "The skill to assist with mopping floors, etc." ;
          rdfs:isDefinedBy <https://w3id.org/timebank> ;
-         rdfs:label "Mopping" .
+         rdfs:label "Mopping" ;
+         skos:broaderTransitive :Cleaning .
 
 
 ###  https://w3id.org/timebank#Mowing
@@ -1392,7 +1594,9 @@ foaf:Person rdf:type owl:Class .
         rdfs:subClassOf :Maintenance ;
         rdfs:comment "The skill to assist with mowing the grass." ;
         rdfs:isDefinedBy <https://w3id.org/timebank> ;
-        rdfs:label "Mowing" .
+        rdfs:label "Mowing" ;
+        skos:broaderTransitive :Maintenance ;
+        skos:closeMatch dbc:Lawn_care .
 
 
 ###  https://w3id.org/timebank#NutsAllergy
@@ -1400,7 +1604,10 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :FoodAllergy ;
              rdfs:comment "Allergy to nuts such as almonds, walnuts, pecans, and peanuts." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Nuts Allergy" .
+             rdfs:label "Nuts Allergy" ;
+             skos:broaderTransitive :FoodAllergy ;
+             skos:exactMatch <http://snomed.info/id/91934008> ;
+             skos:narrowMatch dbr:Tree_nut_allergy .
 
 
 ###  https://w3id.org/timebank#OfficeWork
@@ -1408,7 +1615,9 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :Skill ;
             rdfs:comment "The skill to provide help with office related work." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Office Work" .
+            rdfs:label "Office Work" ;
+            skos:broaderTransitive :Skill ;
+            skos:closeMatch dbc:Office_work .
 
 
 ###  https://w3id.org/timebank#OnlineShopping
@@ -1416,7 +1625,9 @@ foaf:Person rdf:type owl:Class .
                 rdfs:subClassOf :SalesService ;
                 rdfs:comment "The skill to assist in buying things online." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Online Shopping" .
+                rdfs:label "Online Shopping" ;
+                skos:broaderTransitive :SalesService ;
+                skos:relatedMatch dbr:Online_shopping .
 
 
 ###  https://w3id.org/timebank#PeopleCare
@@ -1424,7 +1635,9 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :Skill ;
             rdfs:comment "The skill to provide care for people." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Care for People" .
+            rdfs:label "Care for People" ;
+            skos:broaderTransitive :Skill ;
+            skos:exactMatch dbc:Caregiving .
 
 
 ###  https://w3id.org/timebank#PerformingMusic
@@ -1432,7 +1645,9 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :Recreation ;
                  rdfs:comment "The skill to entertain others by performing music." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Performing Music" .
+                 rdfs:label "Performing Music" ;
+                 skos:broaderTransitive :Recreation ;
+                 skos:closeMatch dbr:Musical_performance .
 
 
 ###  https://w3id.org/timebank#PersonalService
@@ -1440,7 +1655,9 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :Skill ;
                  rdfs:comment "Personal services which include hygiene and daily care." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Personal Service" .
+                 rdfs:label "Personal Service" ;
+                 skos:broaderTransitive :Skill ;
+                 skos:relatedMatch dbr:Personal_Care_Assistant .
 
 
 ###  https://w3id.org/timebank#Pets
@@ -1448,7 +1665,9 @@ foaf:Person rdf:type owl:Class .
       rdfs:subClassOf :Environment ;
       rdfs:comment "Indicates that pets might be present." ;
       rdfs:isDefinedBy <https://w3id.org/timebank> ;
-      rdfs:label "Pets" .
+      rdfs:label "Pets" ;
+      skos:broaderTransitive :Environment ;
+      skos:exactMatch dbr:Pet .
 
 
 ###  https://w3id.org/timebank#PhoneCalls
@@ -1456,7 +1675,9 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :OfficeWork ;
             rdfs:comment "The skill to perform phone calls." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Phone Calls" .
+            rdfs:label "Phone Calls" ;
+            skos:broaderTransitive :OfficeWork ;
+            skos:relatedMatch dbr:Telephone_call .
 
 
 ###  https://w3id.org/timebank#PhysicalInconvenience
@@ -1464,7 +1685,8 @@ foaf:Person rdf:type owl:Class .
                        rdfs:subClassOf :Limitation ;
                        rdfs:comment "This is a collection of physical disorders that negatively affect a person's daily life." ;
                        rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                       rdfs:label "Physical Inconvenience" .
+                       rdfs:label "Physical Inconvenience" ;
+                       skos:broaderTransitive :Limitation .
 
 
 ###  https://w3id.org/timebank#PhysicallyDisabledCare
@@ -1472,7 +1694,9 @@ foaf:Person rdf:type owl:Class .
                         rdfs:subClassOf :PeopleCare ;
                         rdfs:comment "The skill to provide care for the physically disabled." ;
                         rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                        rdfs:label "Care for Physically Disabled" .
+                        rdfs:label "Care for Physically Disabled" ;
+                        skos:broaderTransitive :PeopleCare ;
+                        skos:closeMatch dbr:Nursing .
 
 
 ###  https://w3id.org/timebank#Plumbing
@@ -1480,7 +1704,9 @@ foaf:Person rdf:type owl:Class .
           rdfs:subClassOf :Repair ;
           rdfs:comment "Skill to perform plumbing and repairs on pipe installation." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Plumbing" .
+          rdfs:label "Plumbing" ;
+          skos:broaderTransitive :Repair ;
+          skos:relatedMatch dbr:Plumbing .
 
 
 ###  https://w3id.org/timebank#PoorEyesight
@@ -1488,7 +1714,12 @@ foaf:Person rdf:type owl:Class .
               rdfs:subClassOf :PhysicalInconvenience ;
               rdfs:comment "Having difficulties seeing objects clearly." ;
               rdfs:isDefinedBy <https://w3id.org/timebank> ;
-              rdfs:label "Poor Eyesight" .
+              rdfs:label "Poor Eyesight" ;
+              skos:broaderTransitive :PhysicalInconvenience ;
+              skos:relatedMatch dbr:Blindness ,
+                                <http://purl.bioontology.org/ontology/ICD10/H54> ,
+                                <http://snomed.info/id/105597003> ,
+                                <http://who.int/icf#b2102> .
 
 
 ###  https://w3id.org/timebank#PoorHearing
@@ -1496,7 +1727,13 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :PhysicalInconvenience ;
              rdfs:comment "Having difficulties hearing voices clearly." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Poor Hearing" .
+             rdfs:label "Poor Hearing" ;
+             skos:broaderTransitive :PhysicalInconvenience ;
+             skos:narrowMatch <http://snomed.info/id/141258002> ,
+                              <http://snomed.info/id/141259005> ,
+                              <http://snomed.info/id/141260000> ;
+             skos:relatedMatch dbr:Deafness ,
+                               <http://who.int/icf#b230> .
 
 
 ###  https://w3id.org/timebank#Pruning
@@ -1504,7 +1741,9 @@ foaf:Person rdf:type owl:Class .
          rdfs:subClassOf :Maintenance ;
          rdfs:comment "The skill to assist with pruning shrubs and twigs." ;
          rdfs:isDefinedBy <https://w3id.org/timebank> ;
-         rdfs:label "Pruning" .
+         rdfs:label "Pruning" ;
+         skos:broaderTransitive :Maintenance ;
+         skos:exactMatch dbr:Pruning .
 
 
 ###  https://w3id.org/timebank#PsychoticEpisode
@@ -1512,7 +1751,11 @@ foaf:Person rdf:type owl:Class .
                   rdfs:subClassOf :MentalDisorder ;
                   rdfs:comment "A person with psychotic episode can not tell the difference between the reality and unreality and may have difficulty with social activities in daily life." ;
                   rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                  rdfs:label "Psychotic Episode" .
+                  rdfs:label "Psychotic Episode" ;
+                  skos:broaderTransitive :MentalDisorder ;
+                  skos:closeMatch <http://snomed.info/id/231436002> ;
+                  skos:exactMatch dbr:Psychotic_episode ;
+                  skos:relatedMatch <http://purl.bioontology.org/ontology/ICD10/F20-F29.9> .
 
 
 ###  https://w3id.org/timebank#RecordingNotes
@@ -1520,7 +1763,8 @@ foaf:Person rdf:type owl:Class .
                 rdfs:subClassOf :OfficeWork ;
                 rdfs:comment "The skill to assist with recording notes and entries." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Recording Notes" .
+                rdfs:label "Recording Notes" ;
+                skos:broaderTransitive :OfficeWork .
 
 
 ###  https://w3id.org/timebank#Recreation
@@ -1528,7 +1772,8 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :Skill ;
             rdfs:comment "The skill to provide services related to recreation." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Recreation" .
+            rdfs:label "Recreation" ;
+            skos:broaderTransitive :Skill .
 
 
 ###  https://w3id.org/timebank#Repair
@@ -1536,7 +1781,9 @@ foaf:Person rdf:type owl:Class .
         rdfs:subClassOf :Skill ;
         rdfs:comment "The Skill to repair equipment and facilities." ;
         rdfs:isDefinedBy <https://w3id.org/timebank> ;
-        rdfs:label "Repair" .
+        rdfs:label "Repair" ;
+        skos:broaderTransitive :Skill ;
+        skos:closeMatch <http://dbpedia.org/resource/Maintenance,_repair,_and_operations> .
 
 
 ###  https://w3id.org/timebank#Request
@@ -1570,7 +1817,11 @@ foaf:Person rdf:type owl:Class .
             rdfs:subClassOf :CommonDisease ;
             rdfs:comment "Diseases that causes chronic pain in joints and muscles such as back, shoulder and neck." ;
             rdfs:isDefinedBy <https://w3id.org/timebank> ;
-            rdfs:label "Rheumatism" .
+            rdfs:label "Rheumatism" ;
+            skos:broaderTransitive :CommonDisease ;
+            skos:exactMatch dbr:Rheumatism ,
+                            <http://snomed.info/id/29913006> ;
+            skos:relatedMatch <http://purl.bioontology.org/ontology/ICD10/M79.0> .
 
 
 ###  https://w3id.org/timebank#SalesService
@@ -1578,7 +1829,9 @@ foaf:Person rdf:type owl:Class .
               rdfs:subClassOf :Skill ;
               rdfs:comment "The skill to help with selling and buying products." ;
               rdfs:isDefinedBy <https://w3id.org/timebank> ;
-              rdfs:label "Sales Service" .
+              rdfs:label "Sales Service" ;
+              skos:broaderTransitive :Skill ;
+              skos:relatedMatch dbr:Sales .
 
 
 ###  https://w3id.org/timebank#SeafoodAllergy
@@ -1586,7 +1839,10 @@ foaf:Person rdf:type owl:Class .
                 rdfs:subClassOf :FoodAllergy ;
                 rdfs:comment "Allergy to any kind of seafood." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Seafood Allergy" .
+                rdfs:label "Seafood Allergy" ;
+                skos:broaderTransitive :FoodAllergy ;
+                skos:exactMatch dbr:Seafood_allergy ,
+                                <http://snomed.info/id/91937001> .
 
 
 ###  https://w3id.org/timebank#SensitiveSkin
@@ -1594,7 +1850,10 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :PhysicalInconvenience ;
                rdfs:comment "Skins are too sensitive to a wide variety of factors such as weather, pets, stress and dust." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Sensitive Skin" .
+               rdfs:label "Sensitive Skin" ;
+               skos:broaderTransitive :PhysicalInconvenience ;
+               skos:exactMatch dbr:Sensitive_skin_type ;
+               skos:relatedMatch <http://who.int/icf#b840> .
 
 
 ###  https://w3id.org/timebank#Sewing
@@ -1602,7 +1861,9 @@ foaf:Person rdf:type owl:Class .
         rdfs:subClassOf :CraftingClothes ;
         rdfs:comment "Specialized in sewing clothes." ;
         rdfs:isDefinedBy <https://w3id.org/timebank> ;
-        rdfs:label "Sewing" .
+        rdfs:label "Sewing" ;
+        skos:broaderTransitive :CraftingClothes ;
+        skos:closeMatch dbr:Sewing .
 
 
 ###  https://w3id.org/timebank#SickCare
@@ -1610,7 +1871,9 @@ foaf:Person rdf:type owl:Class .
           rdfs:subClassOf :PeopleCare ;
           rdfs:comment "The skill to provide care for sick people." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Care for Sick People" .
+          rdfs:label "Care for Sick People" ;
+          skos:broaderTransitive :PeopleCare ;
+          skos:closeMatch dbr:Nursing .
 
 
 ###  https://w3id.org/timebank#Skill
@@ -1619,7 +1882,8 @@ foaf:Person rdf:type owl:Class .
                         :User ;
        rdfs:comment "Skills define the capabilities of a user. Users and Timebank requests can be associated to a certain skill (or multiple skills) to facilitate the matching of helper and requester." ;
        rdfs:isDefinedBy <https://w3id.org/timebank> ;
-       rdfs:label "Skill" .
+       rdfs:label "Skill" ;
+       skos:closeMatch dbc:Skills .
 
 
 ###  https://w3id.org/timebank#SlipperyFloor
@@ -1627,7 +1891,8 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :Accessibility ;
                rdfs:comment "The person needs to be aware of slippery floor." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Splippery Floor" .
+               rdfs:label "Splippery Floor" ;
+               skos:broaderTransitive :Accessibility .
 
 
 ###  https://w3id.org/timebank#SpeakingProblem
@@ -1635,7 +1900,10 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :PhysicalInconvenience ;
                  rdfs:comment "The person has difficulties speaking clearly due to body function problems such as injuries to the brain, mouth or throat." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Speaking Problem" .
+                 rdfs:label "Speaking Problem" ;
+                 skos:broaderTransitive :PhysicalInconvenience ;
+                 skos:exactMatch <http://snomed.info/id/286372005> ;
+                 skos:relatedMatch <http://who.int/icf#d330> .
 
 
 ###  https://w3id.org/timebank#SpecificPhobia
@@ -1643,7 +1911,11 @@ foaf:Person rdf:type owl:Class .
                 rdfs:subClassOf :MentalDisorder ;
                 rdfs:comment "Fear of specific objects such as dogs, cats, heights, dark places, and so on." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Specific Phobia" .
+                rdfs:label "Specific Phobia" ;
+                skos:broaderTransitive :MentalDisorder ;
+                skos:exactMatch dbr:Specific_phobia ,
+                                <http://purl.bioontology.org/ontology/ICD10/F40.2> ;
+                skos:relatedMatch <http://snomed.info/id/386808001> .
 
 
 ###  https://w3id.org/timebank#Sports
@@ -1651,7 +1923,10 @@ foaf:Person rdf:type owl:Class .
         rdfs:subClassOf :Recreation ;
         rdfs:comment "The skill to participate in sport activities." ;
         rdfs:isDefinedBy <https://w3id.org/timebank> ;
-        rdfs:label "Sports" .
+        rdfs:label "Sports" ;
+        skos:broaderTransitive :Recreation ;
+        skos:relatedMatch <dbt:Game> ,
+                          dbr:Sport .
 
 
 ###  https://w3id.org/timebank#Stairs
@@ -1659,7 +1934,9 @@ foaf:Person rdf:type owl:Class .
         rdfs:subClassOf :Accessibility ;
         rdfs:comment "The person might have to climb stairs to complete the task." ;
         rdfs:isDefinedBy <https://w3id.org/timebank> ;
-        rdfs:label "Stairs" .
+        rdfs:label "Stairs" ;
+        skos:broaderTransitive :Accessibility ;
+        skos:exactMatch dbr:Stairway .
 
 
 ###  https://w3id.org/timebank#Status
@@ -1675,7 +1952,11 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :CommonDisease ;
                rdfs:comment "It indicates a person once had a storke. A stroke happens when blood flow to the brain is blocked and oxygen for the brain cells is insufficient, which could leads to cell death." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "History of Strokes" .
+               rdfs:label "History of Strokes" ;
+               skos:broaderTransitive :CommonDisease ;
+               skos:exactMatch <http://snomed.info/id/138787005> ;
+               skos:relatedMatch dbr:Stroke ,
+                                 <http://purl.bioontology.org/ontology/ICD10/I60-I69.9> .
 
 
 ###  https://w3id.org/timebank#Supplies
@@ -1683,7 +1964,8 @@ foaf:Person rdf:type owl:Class .
           rdfs:subClassOf :Environment ;
           rdfs:comment "Availability of specific supplies to complete a task." ;
           rdfs:isDefinedBy <https://w3id.org/timebank> ;
-          rdfs:label "Supplies" .
+          rdfs:label "Supplies" ;
+          skos:broaderTransitive :Environment .
 
 
 ###  https://w3id.org/timebank#Tailoring
@@ -1691,7 +1973,9 @@ foaf:Person rdf:type owl:Class .
            rdfs:subClassOf :CraftingClothes ;
            rdfs:comment "Specialized in providing tailoring services." ;
            rdfs:isDefinedBy <https://w3id.org/timebank> ;
-           rdfs:label "Tailoring" .
+           rdfs:label "Tailoring" ;
+           skos:broaderTransitive :CraftingClothes ;
+           skos:relatedMatch dbr:Tailor .
 
 
 ###  https://w3id.org/timebank#ToiletUsingProblem
@@ -1699,7 +1983,10 @@ foaf:Person rdf:type owl:Class .
                     rdfs:subClassOf :MobilityProblem ;
                     rdfs:comment "The person has difficulties using toilet." ;
                     rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                    rdfs:label "Toilet Using Problem" .
+                    rdfs:label "Toilet Using Problem" ;
+                    skos:broaderTransitive :MobilityProblem ;
+                    skos:relatedMatch <http://snomed.info/id/129045003> ,
+                                      <http://who.int/icf#d530> .
 
 
 ###  https://w3id.org/timebank#Tools
@@ -1707,7 +1994,9 @@ foaf:Person rdf:type owl:Class .
        rdfs:subClassOf :Supplies ;
        rdfs:comment "Tools can be provided." ;
        rdfs:isDefinedBy <https://w3id.org/timebank> ;
-       rdfs:label "Tools" .
+       rdfs:label "Tools" ;
+       skos:broaderTransitive :Supplies ;
+       skos:relatedMatch dbr:Tool .
 
 
 ###  https://w3id.org/timebank#Transportation
@@ -1715,7 +2004,9 @@ foaf:Person rdf:type owl:Class .
                 rdfs:subClassOf :Skill ;
                 rdfs:comment "The skill to provide services related to transportation." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "TransportationServices" .
+                rdfs:label "TransportationServices" ;
+                skos:broaderTransitive :Skill ;
+                skos:relatedMatch dbr:Transport .
 
 
 ###  https://w3id.org/timebank#TransportationAvailable
@@ -1723,7 +2014,9 @@ foaf:Person rdf:type owl:Class .
                          rdfs:subClassOf :Accessibility ;
                          rdfs:comment "Transportation necessary to complete the task can be provided." ;
                          rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                         rdfs:label "Transportation Available" .
+                         rdfs:label "Transportation Available" ;
+                         skos:broaderTransitive :Accessibility ;
+                         skos:relatedMatch dbr:Transport .
 
 
 ###  https://w3id.org/timebank#TravelCompanion
@@ -1731,7 +2024,9 @@ foaf:Person rdf:type owl:Class .
                  rdfs:subClassOf :Recreation ;
                  rdfs:comment "The ability to act as a travel companion." ;
                  rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                 rdfs:label "Travel Companion" .
+                 rdfs:label "Travel Companion" ;
+                 skos:broaderTransitive :Recreation ;
+                 skos:relatedMatch dbr:Travel .
 
 
 ###  https://w3id.org/timebank#UnevenTerrain
@@ -1739,7 +2034,8 @@ foaf:Person rdf:type owl:Class .
                rdfs:subClassOf :Accessibility ;
                rdfs:comment "The person needs equipment (e.g. shoes) suitable for uneven terrain." ;
                rdfs:isDefinedBy <https://w3id.org/timebank> ;
-               rdfs:label "Uneven Terrain" .
+               rdfs:label "Uneven Terrain" ;
+               skos:broaderTransitive :Accessibility .
 
 
 ###  https://w3id.org/timebank#User
@@ -1759,7 +2055,11 @@ foaf:Person rdf:type owl:Class .
                 rdfs:subClassOf :MobilityProblem ;
                 rdfs:comment "The person has difficulties walking." ;
                 rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                rdfs:label "Walking Problem" .
+                rdfs:label "Walking Problem" ;
+                skos:broaderTransitive :MobilityProblem ;
+                skos:exactMatch <http://snomed.info/id/156615004> ;
+                skos:relatedMatch <http://purl.bioontology.org/ontology/ICD10/R26.2> ,
+                                  <http://who.int/icf#d450-d469> .
 
 
 ###  https://w3id.org/timebank#Water
@@ -1767,7 +2067,9 @@ foaf:Person rdf:type owl:Class .
        rdfs:subClassOf :Supplies ;
        rdfs:comment "Water outlet is available." ;
        rdfs:isDefinedBy <https://w3id.org/timebank> ;
-       rdfs:label "Water" .
+       rdfs:label "Water" ;
+       skos:broaderTransitive :Supplies ;
+       skos:exactMatch dbr:Water_supply .
 
 
 ###  https://w3id.org/timebank#WeatherConstraint
@@ -1775,7 +2077,9 @@ foaf:Person rdf:type owl:Class .
                    rdfs:subClassOf :Accessibility ;
                    rdfs:comment "The place is difficult to access during bad weather (e.g. snow)." ;
                    rdfs:isDefinedBy <https://w3id.org/timebank> ;
-                   rdfs:label "Weather Constraint" .
+                   rdfs:label "Weather Constraint" ;
+                   skos:broaderTransitive :Accessibility ;
+                   skos:relatedMatch dbr:Meteorology .
 
 
 ###  https://w3id.org/timebank#WoodCarving
@@ -1783,7 +2087,9 @@ foaf:Person rdf:type owl:Class .
              rdfs:subClassOf :WoodCrafting ;
              rdfs:comment "The skill to Carve items out of wood." ;
              rdfs:isDefinedBy <https://w3id.org/timebank> ;
-             rdfs:label "Wood Carving" .
+             rdfs:label "Wood Carving" ;
+             skos:broaderTransitive :WoodCrafting ;
+             skos:exactMatch dbc:Woodcarving .
 
 
 ###  https://w3id.org/timebank#WoodCrafting
@@ -1791,7 +2097,9 @@ foaf:Person rdf:type owl:Class .
               rdfs:subClassOf :Crafting ;
               rdfs:comment "Crafting skill with wood as base material." ;
               rdfs:isDefinedBy <https://w3id.org/timebank> ;
-              rdfs:label "Wood Crafting" .
+              rdfs:label "Wood Crafting" ;
+              skos:broaderTransitive :Crafting ;
+              skos:exactMatch dbr:Woodworking .
 
 
 ###  https://w3id.org/timebank#Writing
@@ -1799,7 +2107,9 @@ foaf:Person rdf:type owl:Class .
          rdfs:subClassOf :OfficeWork ;
          rdfs:comment "The skill to assist with written work, like writing or reading a letter." ;
          rdfs:isDefinedBy <https://w3id.org/timebank> ;
-         rdfs:label "Writing" .
+         rdfs:label "Writing" ;
+         skos:broaderTransitive :OfficeWork ;
+         skos:exactMatch dbc:Writing .
 
 
 #################################################################
@@ -2037,16 +2347,6 @@ foaf:Person rdf:type owl:Class .
                 :MilkAllergy
                 :NutsAllergy
                 :SeafoodAllergy
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Electricity
-                :Ingredients
-                :Internet
-                :Tools
-                :Water
               )
 ] .
 

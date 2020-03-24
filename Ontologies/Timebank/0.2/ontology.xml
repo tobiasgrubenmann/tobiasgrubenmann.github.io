@@ -3,20 +3,23 @@
      xml:base="https://w3id.org/timebank"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ns="https://creativecommons.org/ns#"
+     xmlns:dbc="http://dbpedia.org/resource/Category:"
      xmlns:dbo="http://dbpedia.org/ontology/"
+     xmlns:dbr="http://dbpedia.org/resource/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:lgdo="http://linkedgeodata.org/ontology/"
      xmlns:obda="https://w3id.org/obda/vocabulary#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:time="http://www.w3.org/2006/time#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dcterms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/timebank">
         <owl:versionIRI rdf:resource="https://w3id.org/timebank/0.2"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
         <dc:title>Timebank Ontology</dc:title>
         <dcterms:created>2019-10-19</dcterms:created>
         <dcterms:creator>Ankit Tibrewal</dcterms:creator>
@@ -84,6 +87,42 @@
     <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broadMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#broadMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broaderTransitive -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrowMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrowMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#relatedMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch"/>
     
 
 
@@ -168,11 +207,28 @@
     
 
 
+    <!-- https://w3id.org/timebank#hasAddressPart -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#hasAddressPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/timebank#isAdressPartOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#Request"/>
+        <rdfs:range rdf:resource="https://w3id.org/timebank#AddressPart"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/timebank#isSubPartOf"/>
+            <rdf:Description rdf:about="https://w3id.org/timebank#hasAddressPart"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>An address part that describes the location of a specific request.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>has address part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/timebank#hasEnvironment -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/timebank#hasEnvironment">
         <owl:inverseOf rdf:resource="https://w3id.org/timebank#isEnvironmentOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="https://w3id.org/timebank#Environment"/>
         <rdfs:comment>Indicates that a certain Location Specifier has a specific environmental factor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
@@ -207,24 +263,11 @@
     
 
 
-    <!-- https://w3id.org/timebank#hasLocation -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#hasLocation">
-        <owl:inverseOf rdf:resource="https://w3id.org/timebank#isLocationOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Request"/>
-        <rdfs:range rdf:resource="https://w3id.org/timebank#Location"/>
-        <rdfs:comment>The location of a request.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>has location</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/timebank#hasNotEnvironment -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/timebank#hasNotEnvironment">
         <owl:inverseOf rdf:resource="https://w3id.org/timebank#is_not_environment_of"/>
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="https://w3id.org/timebank#Environment"/>
         <rdfs:comment>Indicates that a certain Location Specifier has a specific environmental factor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
@@ -298,13 +341,13 @@
     
 
 
-    <!-- https://w3id.org/timebank#hasSubLocation -->
+    <!-- https://w3id.org/timebank#hasSubPart -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#hasSubLocation">
-        <owl:inverseOf rdf:resource="https://w3id.org/timebank#isSubLocationOf"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#hasSubPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/timebank#isSubPartOf"/>
         <rdfs:comment rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:comment>Indicates that the location is a sub-location of another. A sub-location defines a place more precisely. A sub-location is always in the context of its super-location. For example, a streetnumber is a sub-location of the street.</rdfs:comment>
-        <rdfs:label>has sub-location</rdfs:label>
+        <rdfs:comment>Indicates that the address part is a sub-part of another. A sub-part defines a place more precisely. A sub-part is always in the context of its super-part. For example, a streetnumber is a sub- part of the street.</rdfs:comment>
+        <rdfs:label>has sub-part</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -380,6 +423,18 @@
         <rdfs:comment>The accredited duration of the request. This is the amount of time which will be transferred from the originator the the assigned helper of the request. Do not use this property to indicate the estimated duration of the task. Use hasExpectedDuration instead.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>is accredited to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/timebank#isAdressPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#isAdressPartOf">
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
+        <rdfs:range rdf:resource="https://w3id.org/timebank#Request"/>
+        <rdfs:comment>An address part that describes the location of a specific request.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>is adress part of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -463,7 +518,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/timebank#isEnvironmentOf">
         <rdfs:domain rdf:resource="https://w3id.org/timebank#Environment"/>
-        <rdfs:range rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:range rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:comment>Indicates that a certain Location Specifier has a specific environmental factor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>is environment of</rdfs:label>
@@ -491,18 +546,6 @@
         <rdfs:comment>Indicates that a certain limitation applies to the Timebank user.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>is limitation of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/timebank#isLocationOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#isLocationOf">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
-        <rdfs:range rdf:resource="https://w3id.org/timebank#Request"/>
-        <rdfs:comment>The location of a request.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>is location of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -630,13 +673,13 @@
     
 
 
-    <!-- https://w3id.org/timebank#isSubLocationOf -->
+    <!-- https://w3id.org/timebank#isSubPartOf -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#isSubLocationOf">
+    <owl:ObjectProperty rdf:about="https://w3id.org/timebank#isSubPartOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:comment rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:comment>Indicates that the location is a sub-location of another. A sub-location defines a place more precisely. A sub-location is always in the context of its super-location. For example, a streetnumber is a sub-location of the street.</rdfs:comment>
-        <rdfs:label>is sub-location of</rdfs:label>
+        <rdfs:comment>Indicates that the address part is a sub-part of another. A sub-part defines a place more precisely. A sub-part is always in the context of its super-part. For example, a streetnumber is a sub- part of the street.</rdfs:comment>
+        <rdfs:label>is sub-part of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -670,7 +713,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/timebank#is_not_environment_of">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/timebank#Environment"/>
-        <rdfs:range rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:range rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:comment>Indicates that a certain Location Specifier has a specific environmental factor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>is not environment of</rdfs:label>
@@ -716,7 +759,8 @@
     <!-- http://linkedgeodata.org/ontology/addr%3Acity -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Acity">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>May not be required if boundary=administrative is used correctly. May or may not be a clone of is_in:city=* (in some places the city in the address corresponds to the post office that serves the area rather than the actual city, if any, in which the building is located)! The name of the city as given in postal addresses of the building/area.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -729,7 +773,8 @@
     <!-- http://linkedgeodata.org/ontology/addr%3Aconscriptionnumber -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Aconscriptionnumber">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>This special kind of housenumber relates to a settlement instead of a street. Conscription numbers were introduced in the Austrio-Hungarian Empire and are still in use in some parts of Europe, sometimes together with street-related housenumbers which are also called orientation numbers.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -742,7 +787,8 @@
     <!-- http://linkedgeodata.org/ontology/addr%3Acountry -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Acountry">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>May not be required if boundary=administrative is used correctly. The ISO 3166-1 alpha-2 two letter country code in upper case.
 Example: &quot;DE&quot; for Germany, &quot;CH&quot; for Switzerland, &quot;AT&quot; for Austria, &quot;FR&quot; for France, &quot;IT&quot; for Italy.
@@ -757,7 +803,8 @@ Caveat: The ISO 3166-1 code for Great Britain is &quot;GB&quot; and not &quot;UK
     <!-- http://linkedgeodata.org/ontology/addr%3Adistrict -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Adistrict">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The district of the object.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -770,7 +817,8 @@ Caveat: The ISO 3166-1 code for Great Britain is &quot;GB&quot; and not &quot;UK
     <!-- http://linkedgeodata.org/ontology/addr%3Aflats -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Aflats">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The house numbers (range or list) of flats behind a door.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -783,7 +831,8 @@ Caveat: The ISO 3166-1 code for Great Britain is &quot;GB&quot; and not &quot;UK
     <!-- http://linkedgeodata.org/ontology/addr%3Afull -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Afull">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Use this for a full-text, often multi-line, address if you find the structured address fields unsuitable for denoting the address of this particular location. Examples: &quot;Fifth house on the left after the village oak, Smalltown, Smallcountry&quot;, or addresses using special delivery names or codes (possibly via an unrelated city name and post code), or PO Boxes.
 Beware that these strings can hardly be parsed by software: &quot;1200 West Sunset Boulevard Suite 110A&quot; is still better represented as addr:housenumber=1200 + addr:street=West Sunset Boulevard + addr:flats=Suite 110A.
@@ -797,7 +846,8 @@ Beware that these strings can hardly be parsed by software: &quot;1200 West Suns
     <!-- http://linkedgeodata.org/ontology/addr%3Ahamlet -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Ahamlet">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The hamlet of the object.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -810,7 +860,8 @@ Beware that these strings can hardly be parsed by software: &quot;1200 West Suns
     <!-- http://linkedgeodata.org/ontology/addr%3Ahousename -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Ahousename">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The name of a house.
 This is sometimes used in some countries like England instead of (or in addition to) a house number.
@@ -824,7 +875,8 @@ This is sometimes used in some countries like England instead of (or in addition
     <!-- http://linkedgeodata.org/ontology/addr%3Ahousenumber -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Ahousenumber">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The house number (may contain letters, dashes or other characters).
 Addresses describes ways to tag a single building with multiple addresses.
@@ -839,7 +891,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
     <!-- http://linkedgeodata.org/ontology/addr%3Aplace -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Aplace">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>This is part of an address which refers to the name of some territorial zone (usually a place=* like island, square or very small village) instead of a street (highway=*). Should not be used together with addr:street=*.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -852,7 +905,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
     <!-- http://linkedgeodata.org/ontology/addr%3Apostcode -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Apostcode">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The postal code of the building/area. Some mappers prefer to use boundary=postal_code
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -865,7 +919,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
     <!-- http://linkedgeodata.org/ontology/addr%3Aprovince -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Aprovince">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The province of the object. For Canada, uppercase two-letter postal abbreviations (BC, AB, ON, QC, etc.) are used. In Russia a synonym addr:region is widely used
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -878,7 +933,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
     <!-- http://linkedgeodata.org/ontology/addr%3Astate -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Astate">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The state of the object. For the US, uppercase two-letter postal abbreviations (AK, CA, HI, NY, TX, WY, etc.) are used.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -891,7 +947,8 @@ Please do not only tag addr:housenumber=*, but also add at least addr:street=* o
     <!-- http://linkedgeodata.org/ontology/addr%3Astreet -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Astreet">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The name of the respective street.
 A way with highway=* or a square with place=square and the corresponding name should be found nearby. The belonging to a street can alternatively be represented by a associatedStreet relation or street relation. The keys addr:housenumber=* and addr:street=* in principle are the only necessary ones if there are valid border polygons. If you are not sure if it is so, just add addr:city=*, addr:postcode=* and addr:country=*.
@@ -905,7 +962,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
     <!-- http://linkedgeodata.org/ontology/addr%3Asubdistrict -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Asubdistrict">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The subdistrict of the object.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -918,7 +976,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
     <!-- http://linkedgeodata.org/ontology/addr%3Asuburb -->
 
     <owl:DatatypeProperty rdf:about="http://linkedgeodata.org/ontology/addr%3Asuburb">
-        <rdfs:domain rdf:resource="https://w3id.org/timebank#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>If an address exists several times in a city. You have to add the name of the settlement. See Australian definition of suburb.
 (Source: https://wiki.openstreetmap.org/wiki/Map_Features, accessed on March 9, 2020)</rdfs:comment>
@@ -975,12 +1034,6 @@ A way with highway=* or a square with place=square and the corresponding name sh
     
 
 
-    <!-- http://www.w3.org/2006/vcard/ns#VCard -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/vcard/ns#VCard"/>
-    
-
-
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
@@ -995,6 +1048,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Describes any revelant information regarding the accessibility of a location of a request.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Accessibility</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Environment"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Accessibility"/>
     </owl:Class>
     
 
@@ -1006,6 +1061,24 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The location is accessible by public transport.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Accessible by Public Transport</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Accessibility"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Public_transport"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/timebank#AddressPart -->
+
+    <owl:Class rdf:about="https://w3id.org/timebank#AddressPart">
+        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Environment"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Level"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Limitation"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Request"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Skill"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Status"/>
+        <rdfs:comment>An address part indicates part of an address like region, city, etc. If two places share the same address part, they also share the same environmental factors.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
+        <rdfs:label>Address Part</rdfs:label>
     </owl:Class>
     
 
@@ -1017,6 +1090,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Skills to provide particular services which requires some sort of education or training.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Advice</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Category:Consulting"/>
     </owl:Class>
     
 
@@ -1028,6 +1103,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>A collection of allergies, which is caused by hypersensitivity of the immune system.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Allergy</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Limitation"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Allergy"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/T78.4"/>
     </owl:Class>
     
 
@@ -1039,6 +1117,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assemble items like furniture and other things.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Assembling</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Crafting"/>
     </owl:Class>
     
 
@@ -1050,6 +1129,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to repair automobiles.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Automobile Repair</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Repair"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Auto_mechanic"/>
     </owl:Class>
     
 
@@ -1061,6 +1142,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with baking.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Baking</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodService"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Baking"/>
     </owl:Class>
     
 
@@ -1073,6 +1156,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to do carpenting.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Carpenting</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#WoodCrafting"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/:Carpentry"/>
     </owl:Class>
     
 
@@ -1084,6 +1169,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with catering requirements.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Catering</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodService"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Catering"/>
     </owl:Class>
     
 
@@ -1095,6 +1182,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Indicates that cats might be present.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Cats</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Pets"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Cat"/>
     </owl:Class>
     
 
@@ -1106,6 +1195,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide care for children.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Child Care</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PeopleCare"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Child_care"/>
     </owl:Class>
     
 
@@ -1117,6 +1208,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with general cleaning tasks.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Cleaning</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Maintenance"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Category:Cleaning"/>
     </owl:Class>
     
 
@@ -1128,6 +1221,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The person has difficulty in climbing up stairs.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Difficulty in Climbing Stairs</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#MobilityProblem"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/129016000"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#d450-d469"/>
     </owl:Class>
     
 
@@ -1140,6 +1236,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with washing clothes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Clothes Washing</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Cleaning"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Washing"/>
     </owl:Class>
     
 
@@ -1151,6 +1249,11 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>A person with cognitive impairment can&apos;t think and remember things clearly.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Cognitive Impairment</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#MentalDisorder"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Cognitive_deficit"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/F06.7"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/110352000"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#b164"/>
     </owl:Class>
     
 
@@ -1162,6 +1265,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>A collection of diseases that are common, especially for elderly people</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Common Disease</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Limitation"/>
     </owl:Class>
     
 
@@ -1173,6 +1277,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with processing data computers.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Computer Processing</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#OfficeWork"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Computer_skills"/>
     </owl:Class>
     
 
@@ -1184,6 +1290,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to fix problems with computers.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Computer Repair</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Repair"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Computer_repair_technician"/>
     </owl:Class>
     
 
@@ -1195,6 +1303,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with cooking in general.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Cooking</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodService"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Cooking"/>
     </owl:Class>
     
 
@@ -1206,6 +1316,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to advice people on psychological matters.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Counseling</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Advice"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Category:Counseling"/>
     </owl:Class>
     
 
@@ -1217,6 +1329,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Crafting skills.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Crafting</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Craft"/>
     </owl:Class>
     
 
@@ -1228,6 +1342,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The ability to craft any kind of clothes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Crafting Clothes</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Crafting"/>
     </owl:Class>
     
 
@@ -1239,6 +1354,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The ability to act as a dancing companion.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Dancing Companion</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Dance"/>
     </owl:Class>
     
 
@@ -1250,6 +1367,12 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>A person with depression has a depressed mood over a long period and may even have thoughts of suicide.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Depression</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#MentalDisorder"/>
+        <skos:closeMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/F32"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Depression_(mood)"/>
+        <skos:narrowMatch rdf:resource="http://snomed.info/id/154965008"/>
+        <skos:narrowMatch rdf:resource="http://snomed.info/id/154966009"/>
+        <skos:narrowMatch rdf:resource="http://snomed.info/id/154967000"/>
     </owl:Class>
     
 
@@ -1261,6 +1384,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>A disorder characterized by high blood sugar levels during a long period.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Diabetes Mellitus</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Diabetes_mellitus"/>
+        <skos:exactMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/E10-E14.9"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/191044006"/>
     </owl:Class>
     
 
@@ -1272,6 +1399,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with washing dishes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Dishwashing</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodService"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Dishwashing"/>
     </owl:Class>
     
 
@@ -1283,6 +1412,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Indicates that dogs might be present.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Dogs</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Dogs"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Dog"/>
     </owl:Class>
     
 
@@ -1294,6 +1425,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist someone with dressing.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Dressing Assistance</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PersonalService"/>
     </owl:Class>
     
 
@@ -1305,6 +1437,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The person has difficulties dressing himself.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Dressing Problem</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#MobilityProblem"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/129039006"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#d5400"/>
     </owl:Class>
     
 
@@ -1317,6 +1452,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Experience in driving cars.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Driving Cars</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#DrivingLightVehicles"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Automobile"/>
     </owl:Class>
     
 
@@ -1329,6 +1466,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Experience in driving heavy vehicles.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Driving Heavy Vehicles</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Transportation"/>
     </owl:Class>
     
 
@@ -1340,6 +1478,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Experience in driving light vehicles.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Driving Light Vehicles</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Transportation"/>
     </owl:Class>
     
 
@@ -1351,6 +1490,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Experience in driving tractors.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Driving Tractors</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#DrivingHeavyVehicles"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Tractor"/>
     </owl:Class>
     
 
@@ -1362,6 +1503,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Experience in driving with trucks.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Driving Trucks</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#DrivingHeavyVehicles"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Truck"/>
     </owl:Class>
     
 
@@ -1373,6 +1516,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Experience in driving vans.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Driving Vans</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#DrivingLightVehicles"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Automobile"/>
     </owl:Class>
     
 
@@ -1384,6 +1529,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Experience in driving with trailers.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Driving with Trailers</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#DrivingHeavyVehicles"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Trailer_(vehicle)"/>
     </owl:Class>
     
 
@@ -1395,6 +1542,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>An allergy to drugs.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Drug Allergy</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Allergy"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Drug_allergy"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/93431001"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/Z88"/>
     </owl:Class>
     
 
@@ -1406,6 +1557,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Allergy to eggs.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Egg Allergy</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodAllergy"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Egg_allergy"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/157802003"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/138050005"/>
     </owl:Class>
     
 
@@ -1417,6 +1572,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide care and support for the elderly.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Care for Elderly</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PeopleCare"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Elderly_care"/>
     </owl:Class>
     
 
@@ -1428,6 +1585,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Electric outlet available.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Electricity</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Supplies"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Electricity"/>
     </owl:Class>
     
 
@@ -1439,6 +1598,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to repair electronic devices.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Electronic Repair</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Repair"/>
     </owl:Class>
     
 
@@ -1448,7 +1608,6 @@ A way with highway=* or a square with place=square and the corresponding name sh
     <owl:Class rdf:about="https://w3id.org/timebank#Environment">
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Level"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Limitation"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Location"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Request"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Skill"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Status"/>
@@ -1467,6 +1626,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>An allergy to something in the environment such as dust mites, pollen, pet hair and cigarette smoke.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Environmental Allergy</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Allergy"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/426232007"/>
     </owl:Class>
     
 
@@ -1478,6 +1639,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist in planning and hosting events.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Event Planning</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Event_planning"/>
     </owl:Class>
     
 
@@ -1489,6 +1652,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Fear of animals. This can include dogs, cats, snakes, insects, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Fear of Animals</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#SpecificPhobia"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Zoophobia"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/54307006"/>
     </owl:Class>
     
 
@@ -1501,6 +1667,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Fear of cats.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Fear of Cats</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FearOfAnimals"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Ailurophobia"/>
     </owl:Class>
     
 
@@ -1512,6 +1680,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Fear of dark places.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Fear of Dark</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#SpecificPhobia"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Fear_of_the_dark"/>
     </owl:Class>
     
 
@@ -1523,6 +1693,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Fear of dogs.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Fear of Dogs</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FearOfAnimals"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Cynophobia"/>
     </owl:Class>
     
 
@@ -1534,6 +1706,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Fear or phobia of heights.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Fear of Heights</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#SpecificPhobia"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Acrophobia"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/58963008"/>
     </owl:Class>
     
 
@@ -1545,6 +1720,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Specialized in providing assistance with financial services. This can include helping with taxes and book keeping.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Financial Advice</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Advice"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Financial_adviser"/>
     </owl:Class>
     
 
@@ -1556,6 +1733,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>An allergy to food such as milk, peanuts, eggs, fish, tree nuts, and fruit.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Food Allergy</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Allergy"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Food_allergy"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/157801005"/>
     </owl:Class>
     
 
@@ -1567,6 +1747,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with food preparation like meat cutting, washing of food, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Food Preparation</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodService"/>
     </owl:Class>
     
 
@@ -1578,6 +1759,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide services related to food products.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Food Service</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Category:Food_and_drink_preparation"/>
     </owl:Class>
     
 
@@ -1589,6 +1772,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to participate in board games, card games, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Games</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Recreation"/>
     </owl:Class>
     
 
@@ -1600,6 +1784,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Allergies to grains with gluten such as wheat, barley, rye, and oats.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Gluten Allergy</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodAllergy"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Wheat_allergy"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/441831003"/>
     </owl:Class>
     
 
@@ -1612,6 +1799,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to help buying groceries.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Groceries</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#SalesService"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Grocery_store"/>
     </owl:Class>
     
 
@@ -1623,6 +1812,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Ability to cut someone else&apos;s hair.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Hair Cutting</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PersonalService"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Hairdresser"/>
     </owl:Class>
     
 
@@ -1634,6 +1825,11 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>A condition of diseases that negatively affect one&apos;s heart such as blood vessel diseases and heart rhythm problems.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Heart Diseases</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Heart_disease"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/56265001"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/I51.9"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#b410"/>
     </owl:Class>
     
 
@@ -1645,6 +1841,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to repair household equipment.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Houseshold Equipment Repair</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Repair"/>
     </owl:Class>
     
 
@@ -1656,6 +1853,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist someone on hygienical matters.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Hygiene Assitance</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PersonalService"/>
     </owl:Class>
     
 
@@ -1667,6 +1865,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The blood pressure is high in a long period.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Hypertension</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Hypertension"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/I10-I15.9"/>
     </owl:Class>
     
 
@@ -1678,17 +1879,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The blood pressure is low in a long period.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Hypotension</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/timebank#Ingredients -->
-
-    <owl:Class rdf:about="https://w3id.org/timebank#Ingredients">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/timebank#Supplies"/>
-        <rdfs:comment>Ingredients (like food) can be provided.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Ingredients</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Hypotension"/>
+        <skos:exactMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/I95"/>
     </owl:Class>
     
 
@@ -1700,6 +1893,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Internet is available.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Internet</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Supplies"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Internet"/>
     </owl:Class>
     
 
@@ -1711,6 +1906,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with inventory management.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Inventory Management</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#OfficeWork"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Inventory"/>
     </owl:Class>
     
 
@@ -1722,6 +1919,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Specialized in knitting clothes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Knitting</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#CraftingClothes"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Knitting"/>
     </owl:Class>
     
 
@@ -1733,6 +1932,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Specialized in providing legal assistance.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Legal Advice</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Advice"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Lawyer"/>
     </owl:Class>
     
 
@@ -1741,7 +1942,6 @@ A way with highway=* or a square with place=square and the corresponding name sh
 
     <owl:Class rdf:about="https://w3id.org/timebank#Level">
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Limitation"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Location"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Request"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Skill"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Status"/>
@@ -1760,6 +1960,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>A lift/elevator is available.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label rdf:resource="https://w3id.org/Lift"/>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Accessibility"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Elevator"/>
     </owl:Class>
     
 
@@ -1767,7 +1969,6 @@ A way with highway=* or a square with place=square and the corresponding name sh
     <!-- https://w3id.org/timebank#Limitation -->
 
     <owl:Class rdf:about="https://w3id.org/timebank#Limitation">
-        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Location"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Request"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Skill"/>
         <owl:disjointWith rdf:resource="https://w3id.org/timebank#Status"/>
@@ -1787,6 +1988,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The place is difficult to access during rainfall.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Limited Accessibility: Rain</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#WeatherConstraint"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Precipitation_(meteorology)"/>
     </owl:Class>
     
 
@@ -1798,19 +2001,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The place is difficult to access during snowfall.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Limited Accessibility: Snow</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/timebank#Location -->
-
-    <owl:Class rdf:about="https://w3id.org/timebank#Location">
-        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Request"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Skill"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/timebank#Status"/>
-        <rdfs:comment>The location indicates specifics of a place like address, region, city, etc. If two palces share the same location, they also share the same environmental factors.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
-        <rdfs:label>Location</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#WeatherConstraint"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Precipitation_(meteorology)"/>
     </owl:Class>
     
 
@@ -1822,6 +2014,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to help with maintenance of equipment.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Maintenance</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Category:Maintenance"/>
     </owl:Class>
     
 
@@ -1833,6 +2027,11 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Disorders that affect the mental states of a person.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Mental Disorder</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Limitation"/>
+        <skos:closeMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/F00-F99.9"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Mental_disorder"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/74732009"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#b1"/>
     </owl:Class>
     
 
@@ -1844,6 +2043,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide care for the mentally ill.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Care Mentally Ill People</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PeopleCare"/>
+        <skos:narrowMatch rdf:resource="http://dbpedia.org/resource/Caring_for_people_with_dementia"/>
     </owl:Class>
     
 
@@ -1855,6 +2056,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Allergy to milk.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Milk Allergy</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodAllergy"/>
+        <skos:closeMatch rdf:resource="http://snomed.info/id/197021003"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Milk_allergy"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/138049005"/>
     </owl:Class>
     
 
@@ -1866,6 +2071,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Difficulties with moving around physically such as having difficulties using toliet, dressing, walking and so on.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Mobility Problem</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/Z74.0"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/102490005"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#d4"/>
     </owl:Class>
     
 
@@ -1877,6 +2086,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with mopping floors, etc.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Mopping</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Cleaning"/>
     </owl:Class>
     
 
@@ -1888,6 +2098,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with mowing the grass.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Mowing</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Maintenance"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Category:Lawn_care"/>
     </owl:Class>
     
 
@@ -1899,6 +2111,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Allergy to nuts such as almonds, walnuts, pecans, and peanuts.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Nuts Allergy</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodAllergy"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/91934008"/>
+        <skos:narrowMatch rdf:resource="http://dbpedia.org/resource/Tree_nut_allergy"/>
     </owl:Class>
     
 
@@ -1910,6 +2125,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide help with office related work.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Office Work</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Category:Office_work"/>
     </owl:Class>
     
 
@@ -1921,6 +2138,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist in buying things online.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Online Shopping</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#SalesService"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Online_shopping"/>
     </owl:Class>
     
 
@@ -1932,6 +2151,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide care for people.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Care for People</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Category:Caregiving"/>
     </owl:Class>
     
 
@@ -1943,6 +2164,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to entertain others by performing music.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Performing Music</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Musical_performance"/>
     </owl:Class>
     
 
@@ -1954,6 +2177,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Personal services which include hygiene and daily care.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Personal Service</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Personal_Care_Assistant"/>
     </owl:Class>
     
 
@@ -1965,6 +2190,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Indicates that pets might be present.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Pets</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Environment"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Pet"/>
     </owl:Class>
     
 
@@ -1976,6 +2203,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to perform phone calls.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Phone Calls</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#OfficeWork"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Telephone_call"/>
     </owl:Class>
     
 
@@ -1987,6 +2216,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>This is a collection of physical disorders that negatively affect a person&apos;s daily life.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Physical Inconvenience</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Limitation"/>
     </owl:Class>
     
 
@@ -1998,6 +2228,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide care for the physically disabled.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Care for Physically Disabled</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PeopleCare"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Nursing"/>
     </owl:Class>
     
 
@@ -2009,6 +2241,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Skill to perform plumbing and repairs on pipe installation.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Plumbing</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Repair"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Plumbing"/>
     </owl:Class>
     
 
@@ -2020,6 +2254,11 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Having difficulties seeing objects clearly.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Poor Eyesight</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Blindness"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/H54"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/105597003"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#b2102"/>
     </owl:Class>
     
 
@@ -2031,6 +2270,12 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Having difficulties hearing voices clearly.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Poor Hearing</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <skos:narrowMatch rdf:resource="http://snomed.info/id/141258002"/>
+        <skos:narrowMatch rdf:resource="http://snomed.info/id/141259005"/>
+        <skos:narrowMatch rdf:resource="http://snomed.info/id/141260000"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Deafness"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#b230"/>
     </owl:Class>
     
 
@@ -2042,6 +2287,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with pruning shrubs and twigs.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Pruning</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Maintenance"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Pruning"/>
     </owl:Class>
     
 
@@ -2053,6 +2300,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>A person with psychotic episode can not tell the difference between the reality and unreality and may have difficulty with social activities in daily life.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Psychotic Episode</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#MentalDisorder"/>
+        <skos:closeMatch rdf:resource="http://snomed.info/id/231436002"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Psychotic_episode"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/F20-F29.9"/>
     </owl:Class>
     
 
@@ -2064,6 +2315,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with recording notes and entries.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Recording Notes</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#OfficeWork"/>
     </owl:Class>
     
 
@@ -2075,6 +2327,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide services related to recreation.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Recreation</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
     </owl:Class>
     
 
@@ -2086,6 +2339,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The Skill to repair equipment and facilities.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Repair</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Maintenance,_repair,_and_operations"/>
     </owl:Class>
     
 
@@ -2134,6 +2389,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Diseases that causes chronic pain in joints and muscles such as back, shoulder and neck.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Rheumatism</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Rheumatism"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/29913006"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/M79.0"/>
     </owl:Class>
     
 
@@ -2145,6 +2404,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to help with selling and buying products.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Sales Service</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Sales"/>
     </owl:Class>
     
 
@@ -2156,6 +2417,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Allergy to any kind of seafood.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Seafood Allergy</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#FoodAllergy"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Seafood_allergy"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/91937001"/>
     </owl:Class>
     
 
@@ -2167,6 +2431,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Skins are too sensitive to a wide variety of factors such as weather, pets, stress and dust.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Sensitive Skin</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Sensitive_skin_type"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#b840"/>
     </owl:Class>
     
 
@@ -2178,6 +2445,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Specialized in sewing clothes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Sewing</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#CraftingClothes"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Sewing"/>
     </owl:Class>
     
 
@@ -2189,6 +2458,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide care for sick people.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Care for Sick People</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PeopleCare"/>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Nursing"/>
     </owl:Class>
     
 
@@ -2201,6 +2472,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Skills define the capabilities of a user. Users and Timebank requests can be associated to a certain skill (or multiple skills) to facilitate the matching of helper and requester.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Skill</rdfs:label>
+        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Category:Skills"/>
     </owl:Class>
     
 
@@ -2212,6 +2484,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The person needs to be aware of slippery floor.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Splippery Floor</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Accessibility"/>
     </owl:Class>
     
 
@@ -2223,6 +2496,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The person has difficulties speaking clearly due to body function problems such as injuries to the brain, mouth or throat.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Speaking Problem</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#PhysicalInconvenience"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/286372005"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#d330"/>
     </owl:Class>
     
 
@@ -2234,6 +2510,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Fear of specific objects such as dogs, cats, heights, dark places, and so on.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Specific Phobia</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#MentalDisorder"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Specific_phobia"/>
+        <skos:exactMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/F40.2"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/386808001"/>
     </owl:Class>
     
 
@@ -2245,6 +2525,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to participate in sport activities.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Sports</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <skos:relatedMatch rdf:resource="dbt:Game"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Sport"/>
     </owl:Class>
     
 
@@ -2256,6 +2539,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The person might have to climb stairs to complete the task.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Stairs</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Accessibility"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Stairway"/>
     </owl:Class>
     
 
@@ -2278,6 +2563,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>It indicates a person once had a storke. A stroke happens when blood flow to the brain is blocked and oxygen for the brain cells is insufficient, which could leads to cell death.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>History of Strokes</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#CommonDisease"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/138787005"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Stroke"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/I60-I69.9"/>
     </owl:Class>
     
 
@@ -2289,6 +2578,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Availability of specific supplies to complete a task.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Supplies</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Environment"/>
     </owl:Class>
     
 
@@ -2300,6 +2590,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Specialized in providing tailoring services.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Tailoring</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#CraftingClothes"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Tailor"/>
     </owl:Class>
     
 
@@ -2311,6 +2603,9 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The person has difficulties using toilet.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Toilet Using Problem</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#MobilityProblem"/>
+        <skos:relatedMatch rdf:resource="http://snomed.info/id/129045003"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#d530"/>
     </owl:Class>
     
 
@@ -2322,6 +2617,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Tools can be provided.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Tools</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Supplies"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Tool"/>
     </owl:Class>
     
 
@@ -2333,6 +2630,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to provide services related to transportation.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>TransportationServices</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Skill"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Transport"/>
     </owl:Class>
     
 
@@ -2344,6 +2643,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Transportation necessary to complete the task can be provided.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Transportation Available</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Accessibility"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Transport"/>
     </owl:Class>
     
 
@@ -2355,6 +2656,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The ability to act as a travel companion.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Travel Companion</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Recreation"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Travel"/>
     </owl:Class>
     
 
@@ -2366,6 +2669,7 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The person needs equipment (e.g. shoes) suitable for uneven terrain.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Uneven Terrain</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Accessibility"/>
     </owl:Class>
     
 
@@ -2394,6 +2698,10 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The person has difficulties walking.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Walking Problem</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#MobilityProblem"/>
+        <skos:exactMatch rdf:resource="http://snomed.info/id/156615004"/>
+        <skos:relatedMatch rdf:resource="http://purl.bioontology.org/ontology/ICD10/R26.2"/>
+        <skos:relatedMatch rdf:resource="http://who.int/icf#d450-d469"/>
     </owl:Class>
     
 
@@ -2405,6 +2713,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Water outlet is available.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Water</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Supplies"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Water_supply"/>
     </owl:Class>
     
 
@@ -2416,6 +2726,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The place is difficult to access during bad weather (e.g. snow).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Weather Constraint</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Accessibility"/>
+        <skos:relatedMatch rdf:resource="http://dbpedia.org/resource/Meteorology"/>
     </owl:Class>
     
 
@@ -2427,6 +2739,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to Carve items out of wood.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Wood Carving</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#WoodCrafting"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Category:Woodcarving"/>
     </owl:Class>
     
 
@@ -2438,6 +2752,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>Crafting skill with wood as base material.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Wood Crafting</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Crafting"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Woodworking"/>
     </owl:Class>
     
 
@@ -2449,6 +2765,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with written work, like writing or reading a letter.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Writing</rdfs:label>
+        <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#OfficeWork"/>
+        <skos:exactMatch rdf:resource="http://dbpedia.org/resource/Category:Writing"/>
     </owl:Class>
     
 
@@ -2722,16 +3040,6 @@ A way with highway=* or a square with place=square and the corresponding name sh
             <rdf:Description rdf:about="https://w3id.org/timebank#MilkAllergy"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#NutsAllergy"/>
             <rdf:Description rdf:about="https://w3id.org/timebank#SeafoodAllergy"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://w3id.org/timebank#Electricity"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#Ingredients"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#Internet"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#Tools"/>
-            <rdf:Description rdf:about="https://w3id.org/timebank#Water"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>

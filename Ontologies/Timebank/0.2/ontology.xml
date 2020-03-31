@@ -676,7 +676,6 @@
     <!-- https://w3id.org/timebank#isSubPartOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/timebank#isSubPartOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:comment rdf:resource="https://w3id.org/timebank"/>
         <rdfs:comment>Indicates that the address part is a sub-part of another. A sub-part defines a place more precisely. A sub-part is always in the context of its super-part. For example, a streetnumber is a sub- part of the street.</rdfs:comment>
         <rdfs:label>is sub-part of</rdfs:label>
@@ -711,7 +710,6 @@
     <!-- https://w3id.org/timebank#is_not_environment_of -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/timebank#is_not_environment_of">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/timebank#Environment"/>
         <rdfs:range rdf:resource="https://w3id.org/timebank#AddressPart"/>
         <rdfs:comment>Indicates that a certain Location Specifier has a specific environmental factor.</rdfs:comment>
@@ -2098,8 +2096,8 @@ A way with highway=* or a square with place=square and the corresponding name sh
         <rdfs:comment>The skill to assist with mowing the grass.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/timebank"/>
         <rdfs:label>Mowing</rdfs:label>
+        <skos:broadMatch rdf:resource="http://dbpedia.org/resource/Category:Lawn_care"/>
         <skos:broaderTransitive rdf:resource="https://w3id.org/timebank#Maintenance"/>
-        <skos:closeMatch rdf:resource="http://dbpedia.org/resource/Category:Lawn_care"/>
     </owl:Class>
     
 

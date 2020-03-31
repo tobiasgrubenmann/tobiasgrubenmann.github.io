@@ -500,7 +500,6 @@ skos:relatedMatch rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/timebank#isSubPartOf
 :isSubPartOf rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
              rdfs:comment <https://w3id.org/timebank> ,
                           "Indicates that the address part is a sub-part of another. A sub-part defines a place more precisely. A sub-part is always in the context of its super-part. For example, a streetnumber is a sub- part of the street." ;
              rdfs:label "is sub-part of" .
@@ -526,7 +525,6 @@ skos:relatedMatch rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/timebank#is_not_environment_of
 :is_not_environment_of rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf owl:topObjectProperty ;
                        rdfs:domain :Environment ;
                        rdfs:range :AddressPart ;
                        rdfs:comment "Indicates that a certain Location Specifier has a specific environmental factor." ;
@@ -1595,8 +1593,8 @@ foaf:Person rdf:type owl:Class .
         rdfs:comment "The skill to assist with mowing the grass." ;
         rdfs:isDefinedBy <https://w3id.org/timebank> ;
         rdfs:label "Mowing" ;
-        skos:broaderTransitive :Maintenance ;
-        skos:closeMatch dbc:Lawn_care .
+        skos:broadMatch dbc:Lawn_care ;
+        skos:broaderTransitive :Maintenance .
 
 
 ###  https://w3id.org/timebank#NutsAllergy

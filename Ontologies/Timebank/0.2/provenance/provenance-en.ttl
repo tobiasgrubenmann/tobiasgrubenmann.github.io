@@ -1,0 +1,16 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+<https://w3id.org/timebank/0.2> a prov:Entity;
+	 dc:title "Timebank Ontology";
+	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo :agent2;
+	 prov:wasAttributedTo :agent3;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasGeneratedAt "2019-10-19";
+.
+:agent0 a prov:Agent; foaf:name "Ankit Tibrewal".
+:agent1 a prov:Agent; foaf:name "Subhayan Roy".
+:agent2 a prov:Agent; foaf:name "Tobias Grubenmann".
+:agent3 a prov:Agent; foaf:name "Xueer Li".

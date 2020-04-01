@@ -1228,9 +1228,9 @@
     "@value" : "An ontology to describe poeple and requests for timebanks. This includes the poeple's skills, limitations, and environment."
   } ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "http://www.w3.org/2004/02/skos/core"
+    "@id" : "http://www.w3.org/2004/02/skos/core#"
   }, {
-    "@id" : "http://www.w3.org/2006/time#2016"
+    "@id" : "http://www.w3.org/2006/time#"
   }, {
     "@id" : "http://xmlns.com/foaf/0.1/"
   } ],

@@ -1,7 +1,7 @@
 <https://w3id.org/timebank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/timebank/0.2> .
-<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2004/02/skos/core> .
-<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time#2016> .
+<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2004/02/skos/core#> .
+<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time#> .
 <https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://xmlns.com/foaf/0.1/> .
 <https://w3id.org/timebank> <http://purl.org/dc/elements/1.1/title> "Timebank Ontology" .
 <https://w3id.org/timebank> <http://purl.org/dc/terms/created> "2020-04-01" .

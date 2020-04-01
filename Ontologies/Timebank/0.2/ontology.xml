@@ -16,8 +16,8 @@
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/timebank">
         <owl:versionIRI rdf:resource="https://w3id.org/timebank/0.2"/>
-        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
-        <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core#"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/time#"/>
         <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
         <dc:title>Timebank Ontology</dc:title>
         <terms:created>2020-04-01</terms:created>

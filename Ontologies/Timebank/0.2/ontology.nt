@@ -4,7 +4,7 @@
 <https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time#2016> .
 <https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://xmlns.com/foaf/0.1/> .
 <https://w3id.org/timebank> <http://purl.org/dc/elements/1.1/title> "Timebank Ontology" .
-<https://w3id.org/timebank> <http://purl.org/dc/terms/created> "2019-10-19" .
+<https://w3id.org/timebank> <http://purl.org/dc/terms/created> "2020-04-01" .
 <https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Ankit Tibrewal" .
 <https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Subhayan Roy" .
 <https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Tobias Grubenmann" .

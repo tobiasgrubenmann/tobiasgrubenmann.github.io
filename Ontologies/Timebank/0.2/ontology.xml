@@ -20,7 +20,7 @@
         <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
         <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
         <dc:title>Timebank Ontology</dc:title>
-        <terms:created>2019-10-19</terms:created>
+        <terms:created>2020-04-01</terms:created>
         <terms:creator>Ankit Tibrewal</terms:creator>
         <terms:creator>Subhayan Roy</terms:creator>
         <terms:creator>Tobias Grubenmann</terms:creator>

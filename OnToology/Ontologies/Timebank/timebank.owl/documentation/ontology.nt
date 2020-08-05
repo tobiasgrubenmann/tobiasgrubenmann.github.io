@@ -1,0 +1,403 @@
+<https://w3id.org/timebank> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/timebank/0.1> .
+<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time#2016> .
+<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/vcard/ns> .
+<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#imports> <http://xmlns.com/foaf/0.1/> .
+<https://w3id.org/timebank> <http://purl.org/dc/elements/1.1/title> "Timebank Ontology" .
+<https://w3id.org/timebank> <http://purl.org/dc/terms/created> "2019-03-14"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Ankit Tibrewal" .
+<https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Subhayan Roy" .
+<https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Tobias Grubenmann" .
+<https://w3id.org/timebank> <http://purl.org/dc/terms/creator> "Xueer Li" .
+<https://w3id.org/timebank> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/timebank> <http://purl.org/dc/terms/rights> "Copyright © 2019 The University of Hong Kong" .
+<https://w3id.org/timebank> <http://purl.org/vocab/vann/preferredNamespacePrefix> "tb" .
+<https://w3id.org/timebank> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/timebank" .
+<https://w3id.org/timebank> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology to describe poeple and requests for timebanks. This includes the poeple's skills, limitations, and environment." .
+<https://w3id.org/timebank> <http://www.w3.org/2002/07/owl#versionInfo> "0.1" .
+<https://w3id.org/timebank> <https://creativecommons.org/ns#license> <https://creativecommons.org/licenses/by/4.0/> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://creativecommons.org/ns#license
+<https://creativecommons.org/ns#license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/timebank#accepts
+<https://w3id.org/timebank#accepts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#accepts> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/timebank#isAcceptedBy> .
+<https://w3id.org/timebank#accepts> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#User> .
+<https://w3id.org/timebank#accepts> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#accepts> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a user who is willing to help accepted the request." .
+<https://w3id.org/timebank#accepts> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#accepts> <http://www.w3.org/2000/01/rdf-schema#label> "accepts" .
+# 
+# https://w3id.org/timebank#endsRepeatingOn
+<https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#ProperInterval> .
+<https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+<https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a time-interval is repeating until this time and date." .
+<https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#endsRepeatingOn> <http://www.w3.org/2000/01/rdf-schema#label> "end repeating on" .
+# 
+# https://w3id.org/timebank#excludesByLimitation
+<https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Limitation> .
+<https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/2000/01/rdf-schema#comment> "This predicate is used to describe that a request exludes helpers having a certain limitation." .
+<https://w3id.org/timebank#excludesByLimitation> <http://www.w3.org/2000/01/rdf-schema#label> "excludes by limitation" .
+# 
+# https://w3id.org/timebank#hasAccreditedDuration
+<https://w3id.org/timebank#hasAccreditedDuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasAccreditedDuration> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#hasAccreditedDuration> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#DurationDescription> .
+<https://w3id.org/timebank#hasAccreditedDuration> <http://www.w3.org/2000/01/rdf-schema#comment> "The accredited duration of the request. This is the amount of time which will be transferred from the originator the the assigned helper of the request. Do not use this property to indicate the estimated duration of the task. Use hasExpectedDuration instead." .
+<https://w3id.org/timebank#hasAccreditedDuration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasAccreditedDuration> <http://www.w3.org/2000/01/rdf-schema#label> "has accredited duration" .
+# 
+# https://w3id.org/timebank#hasAddress
+<https://w3id.org/timebank#hasAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasAddress> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://xmlns.com/foaf/0.1/Person> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Request> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/timebank#hasAddress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/vcard/ns#VCard> .
+<https://w3id.org/timebank#hasAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the address of a person or request. The address is specified as a vcard." .
+<https://w3id.org/timebank#hasAddress> <http://www.w3.org/2000/01/rdf-schema#label> "has address" .
+# 
+# https://w3id.org/timebank#hasEnvironment
+<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#Request> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/timebank#User> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Environment> .
+<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#comment> "The environment of a user or request. The environment of a request describes specific environmental factors of a request. The environment of a user can be used to infer environmental factors of a request if the user is the originator of the request. However, not all environmental factors of a user might apply to its request, especially if the location of the request differs from the users location." .
+<https://w3id.org/timebank#hasEnvironment> <http://www.w3.org/2000/01/rdf-schema#label> "has environment" .
+# 
+# https://w3id.org/timebank#hasExpectedDuration
+<https://w3id.org/timebank#hasExpectedDuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasExpectedDuration> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#hasExpectedDuration> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#DurationDescription> .
+<https://w3id.org/timebank#hasExpectedDuration> <http://www.w3.org/2000/01/rdf-schema#comment> "The expected duration indicates the duraction of the request estimated by the originator of the request. Do not use this property to assert the actual time credits associated to this request. Use hasAccreditedDuration instead." .
+<https://w3id.org/timebank#hasExpectedDuration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasExpectedDuration> <http://www.w3.org/2000/01/rdf-schema#label> "has expected duration" .
+# 
+# https://w3id.org/timebank#hasLimitation
+<https://w3id.org/timebank#hasLimitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasLimitation> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#User> .
+<https://w3id.org/timebank#hasLimitation> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Limitation> .
+<https://w3id.org/timebank#hasLimitation> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a Timebank user suffers from a certain limitation." .
+<https://w3id.org/timebank#hasLimitation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasLimitation> <http://www.w3.org/2000/01/rdf-schema#label> "has limitation" .
+# 
+# https://w3id.org/timebank#hasOriginator
+<https://w3id.org/timebank#hasOriginator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasOriginator> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/timebank#isOriginatorOf> .
+<https://w3id.org/timebank#hasOriginator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#hasOriginator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#User> .
+<https://w3id.org/timebank#hasOriginator> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the request has the specific originator." .
+<https://w3id.org/timebank#hasOriginator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasOriginator> <http://www.w3.org/2000/01/rdf-schema#label> "has originator" .
+# 
+# https://w3id.org/timebank#hasSeverity
+<https://w3id.org/timebank#hasSeverity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Limitation> .
+<https://w3id.org/timebank#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Level> .
+<https://w3id.org/timebank#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the severity of a limitation." .
+<https://w3id.org/timebank#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#label> "has severity" .
+# 
+# https://w3id.org/timebank#hasSkill
+<https://w3id.org/timebank#hasSkill> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasSkill> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#User> .
+<https://w3id.org/timebank#hasSkill> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#hasSkill> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the Skill of a certain Timebank user." .
+<https://w3id.org/timebank#hasSkill> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasSkill> <http://www.w3.org/2000/01/rdf-schema#label> "has skill" .
+# 
+# https://w3id.org/timebank#hasSkillLevel
+<https://w3id.org/timebank#hasSkillLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasSkillLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#hasSkillLevel> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Level> .
+<https://w3id.org/timebank#hasSkillLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the proficiency level of a skill." .
+<https://w3id.org/timebank#hasSkillLevel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasSkillLevel> <http://www.w3.org/2000/01/rdf-schema#label> "has skill level" .
+# 
+# https://w3id.org/timebank#hasStatus
+<https://w3id.org/timebank#hasStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasStatus> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#hasStatus> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Status> .
+<https://w3id.org/timebank#hasStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "Every request can have at most one status assigned to it." .
+<https://w3id.org/timebank#hasStatus> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasStatus> <http://www.w3.org/2000/01/rdf-schema#label> "has status" .
+# 
+# https://w3id.org/timebank#hasTimeBalance
+<https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#User> .
+<https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#DurationDescription> .
+<https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the current time-balance of a Timebank user. To avoid redundancy, this property should only be used when the time-balance cannot be inferred from the individual requests using the hasAccreditedDuration property." .
+<https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#hasTimeBalance> <http://www.w3.org/2000/01/rdf-schema#label> "has time-balance" .
+# 
+# https://w3id.org/timebank#isAcceptedBy
+<https://w3id.org/timebank#isAcceptedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#isAcceptedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#isAcceptedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#User> .
+<https://w3id.org/timebank#isAcceptedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a request is accepted by a user who is willing to help completing the request." .
+<https://w3id.org/timebank#isAcceptedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#isAcceptedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is accepted by" .
+# 
+# https://w3id.org/timebank#isAcceptedOn
+<https://w3id.org/timebank#isAcceptedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#isAcceptedOn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#isAcceptedOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+<https://w3id.org/timebank#isAcceptedOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the time and date when the Timebank request was accepted by the assigned helper." .
+<https://w3id.org/timebank#isAcceptedOn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#isAcceptedOn> <http://www.w3.org/2000/01/rdf-schema#label> "is accepted on" .
+# 
+# https://w3id.org/timebank#isAvailableOn
+<https://w3id.org/timebank#isAvailableOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#isAvailableOn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#User> .
+<https://w3id.org/timebank#isAvailableOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#ProperInterval> .
+<https://w3id.org/timebank#isAvailableOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the availability of a Timebank user to act as a helper for a Timebank request." .
+<https://w3id.org/timebank#isAvailableOn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#isAvailableOn> <http://www.w3.org/2000/01/rdf-schema#label> "is available on" .
+# 
+# https://w3id.org/timebank#isCompletedOn
+<https://w3id.org/timebank#isCompletedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#isCompletedOn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#isCompletedOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+<https://w3id.org/timebank#isCompletedOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the time and date of the completion of a Timebank request." .
+<https://w3id.org/timebank#isCompletedOn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#isCompletedOn> <http://www.w3.org/2000/01/rdf-schema#label> "is completed on" .
+# 
+# https://w3id.org/timebank#isOriginatorOf
+<https://w3id.org/timebank#isOriginatorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#isOriginatorOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#User> .
+<https://w3id.org/timebank#isOriginatorOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#isOriginatorOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the user is the originator of the request." .
+<https://w3id.org/timebank#isOriginatorOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#isOriginatorOf> <http://www.w3.org/2000/01/rdf-schema#label> "is originator of" .
+# 
+# https://w3id.org/timebank#isPublishedOn
+<https://w3id.org/timebank#isPublishedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#isPublishedOn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#isPublishedOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+<https://w3id.org/timebank#isPublishedOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the time and date of the publication of a Timebank request." .
+<https://w3id.org/timebank#isPublishedOn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#isPublishedOn> <http://www.w3.org/2000/01/rdf-schema#label> "is published on" .
+# 
+# https://w3id.org/timebank#repeatsOn
+<https://w3id.org/timebank#repeatsOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#repeatsOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#ProperInterval> .
+<https://w3id.org/timebank#repeatsOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#DayOfWeek> .
+<https://w3id.org/timebank#repeatsOn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a time interval repeats on the specified weekdays." .
+<https://w3id.org/timebank#repeatsOn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#repeatsOn> <http://www.w3.org/2000/01/rdf-schema#label> "repeats on" .
+# 
+# https://w3id.org/timebank#requiresSkill
+<https://w3id.org/timebank#requiresSkill> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/timebank#requiresSkill> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#requiresSkill> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/timebank#Skill> .
+<https://w3id.org/timebank#requiresSkill> <http://www.w3.org/2000/01/rdf-schema#comment> "The skill associated with a Timebank request." .
+<https://w3id.org/timebank#requiresSkill> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#requiresSkill> <http://www.w3.org/2000/01/rdf-schema#label> "requires skill" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/timebank#rating
+<https://w3id.org/timebank#rating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/timebank#rating> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#rating> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/timebank#rating> <http://www.w3.org/2000/01/rdf-schema#comment> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#rating> <http://www.w3.org/2000/01/rdf-schema#comment> "The rating given by the originator of a request to the assigned helper for completing the specific request." .
+<https://w3id.org/timebank#rating> <http://www.w3.org/2000/01/rdf-schema#label> "rating" .
+# 
+# https://w3id.org/timebank#rating1to5
+<https://w3id.org/timebank#rating1to5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/timebank#rating> .
+<https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/timebank#Request> .
+<https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#range> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+_:genid7 <http://www.w3.org/2002/07/owl#onDatatype> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid7 <http://www.w3.org/2002/07/owl#withRestrictions> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid11 .
+_:genid11 <http://www.w3.org/2001/XMLSchema#minInclusive> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid9 .
+_:genid9 <http://www.w3.org/2001/XMLSchema#maxInclusive> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#comment> "The rating given by the originator of a request to the assigned helper for completing the specific request. Ratings can be a decimal in the range of 1 (star) and 5 (stars)." .
+<https://w3id.org/timebank#rating1to5> <http://www.w3.org/2000/01/rdf-schema#label> "rating: 1 to 5" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/timebank#Environment
+<https://w3id.org/timebank#Environment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#comment> "The environment describes relevant factors for matching requesters and helpers which are not described by Skill or Limitation." .
+<https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Environment> <http://www.w3.org/2000/01/rdf-schema#label> "Environment" .
+# 
+# https://w3id.org/timebank#Level
+<https://w3id.org/timebank#Level> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Level> <http://www.w3.org/2000/01/rdf-schema#comment> "The level can be low, medium, or high." .
+<https://w3id.org/timebank#Level> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Level> <http://www.w3.org/2000/01/rdf-schema#label> "Level" .
+# 
+# https://w3id.org/timebank#Limitation
+<https://w3id.org/timebank#Limitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Limitation> <http://www.w3.org/2000/01/rdf-schema#comment> "Limitations can be anything which prevents or limits the extent to which a user can help somebody else." .
+<https://w3id.org/timebank#Limitation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Limitation> <http://www.w3.org/2000/01/rdf-schema#label> "Limitation" .
+# 
+# https://w3id.org/timebank#Request
+<https://w3id.org/timebank#Request> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasAccreditedDuration> .
+_:genid12 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasOriginator> .
+_:genid13 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#hasStatus> .
+_:genid14 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#isOriginatorOf> .
+_:genid15 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/timebank#rating> .
+_:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#comment> "A request for help from a Timebank user." .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Request> <http://www.w3.org/2000/01/rdf-schema#label> "Request" .
+# 
+# https://w3id.org/timebank#Skill
+<https://w3id.org/timebank#Skill> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Skill> <http://www.w3.org/2000/01/rdf-schema#comment> "Skills define the capabilities of a user. Users and Timebank requests can be associated to a certain skill (or multiple skills) to facilitate the matching of helper and requester." .
+<https://w3id.org/timebank#Skill> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Skill> <http://www.w3.org/2000/01/rdf-schema#label> "Skill" .
+# 
+# https://w3id.org/timebank#Status
+<https://w3id.org/timebank#Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#Status> <http://www.w3.org/2000/01/rdf-schema#comment> "The status of a request." .
+<https://w3id.org/timebank#Status> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#Status> <http://www.w3.org/2000/01/rdf-schema#label> "Status" .
+# 
+# https://w3id.org/timebank#User
+<https://w3id.org/timebank#User> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Person> .
+<https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#comment> "A user of the Timebank." .
+<https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#User> <http://www.w3.org/2000/01/rdf-schema#label> "User" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/timebank#LevelHigh
+<https://w3id.org/timebank#LevelHigh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/timebank#LevelHigh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/timebank#Level> .
+<https://w3id.org/timebank#LevelHigh> <http://www.w3.org/2000/01/rdf-schema#comment> "Used if a Limitation has a high severity or a Skill is on a high level." .
+<https://w3id.org/timebank#LevelHigh> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#LevelHigh> <http://www.w3.org/2000/01/rdf-schema#label> "Level: High" .
+# 
+# https://w3id.org/timebank#LevelLow
+<https://w3id.org/timebank#LevelLow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/timebank#LevelLow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/timebank#Level> .
+<https://w3id.org/timebank#LevelLow> <http://www.w3.org/2000/01/rdf-schema#comment> "Used if a Limitation only has a low severity or a Skill is on a low level." .
+<https://w3id.org/timebank#LevelLow> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#LevelLow> <http://www.w3.org/2000/01/rdf-schema#label> "Level: Low" .
+# 
+# https://w3id.org/timebank#LevelMedium
+<https://w3id.org/timebank#LevelMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/timebank#LevelMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/timebank#Level> .
+<https://w3id.org/timebank#LevelMedium> <http://www.w3.org/2000/01/rdf-schema#comment> "Used if a Limitation has a medium severity or a Skill is on a medium level" .
+<https://w3id.org/timebank#LevelMedium> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#LevelMedium> <http://www.w3.org/2000/01/rdf-schema#label> "Level: Medium" .
+# 
+# https://w3id.org/timebank#StatusAssigned
+<https://w3id.org/timebank#StatusAssigned> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/timebank#StatusAssigned> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/timebank#Status> .
+<https://w3id.org/timebank#StatusAssigned> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a request is assigned to a helper but not yet completed." .
+<https://w3id.org/timebank#StatusAssigned> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#StatusAssigned> <http://www.w3.org/2000/01/rdf-schema#label> "Status: Assigned" .
+# 
+# https://w3id.org/timebank#StatusCancelled
+<https://w3id.org/timebank#StatusCancelled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/timebank#StatusCancelled> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/timebank#Status> .
+<https://w3id.org/timebank#StatusCancelled> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a request is cancelled and no helper is needed anymore." .
+<https://w3id.org/timebank#StatusCancelled> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#StatusCancelled> <http://www.w3.org/2000/01/rdf-schema#label> "Status: Cancelled" .
+# 
+# https://w3id.org/timebank#StatusClosed
+<https://w3id.org/timebank#StatusClosed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/timebank#StatusClosed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/timebank#Status> .
+<https://w3id.org/timebank#StatusClosed> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a request is closed and that no helper is needed anymore." .
+<https://w3id.org/timebank#StatusClosed> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#StatusClosed> <http://www.w3.org/2000/01/rdf-schema#label> "Status: Closed" .
+# 
+# https://w3id.org/timebank#StatusOpen
+<https://w3id.org/timebank#StatusOpen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/timebank#StatusOpen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/timebank#Status> .
+<https://w3id.org/timebank#StatusOpen> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a request is open and no helper is assigned to it." .
+<https://w3id.org/timebank#StatusOpen> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/timebank> .
+<https://w3id.org/timebank#StatusOpen> <http://www.w3.org/2000/01/rdf-schema#label> "Status: Open" .
+# 
+# Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/

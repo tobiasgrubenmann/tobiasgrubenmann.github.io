@@ -5,4 +5,4 @@ Options -MultiViews
 RewriteEngine On
 
 # Rewrite rule to redirect to current version
-RewriteRule ^(.*)$ https://tobiasgrubenmann.github.io/Unity/GalaxyFleet/0.2 [R=303]
+RewriteRule ^(.*)$ https://tobiasgrubenmann.github.io/Unity/GalaxyFleet/0.2/WebGL [R=303]

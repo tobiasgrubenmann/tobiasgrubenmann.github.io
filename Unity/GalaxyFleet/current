@@ -1,8 +1,0 @@
-# Turn off MultiViews
-Options -MultiViews
-
-# Rewrite engine setup
-RewriteEngine On
-
-# Rewrite rule to redirect to current version
-RewriteRule ^(.*)$ https://tobiasgrubenmann.github.io/Unity/GalaxyFleet/0.2 [R=303]

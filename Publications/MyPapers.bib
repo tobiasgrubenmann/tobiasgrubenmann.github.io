@@ -11,13 +11,13 @@
   address = {{Cham}},
   doi = {10.1007/978-3-319-68288-4_19},
   abstract = {Federated querying, the idea to execute queries over several distributed knowledge bases, lies at the core of the semantic web vision. To accommodate this vision, SPARQL provides the SERVICE keyword that allows one to allocate sub-queries to servers. In many cases, however, data may be available from multiple sources resulting in a combinatorially growing number of alternative allocations of subqueries to sources. Running a federated query on all possible sources might not be very lucrative from a user's point of view if extensive execution times or fees are involved in accessing the sources' data. To address this shortcoming, federated join-cardinality approximation techniques have been proposed to narrow down the number of possible allocations to a few most promising (or results-yielding) ones. In this paper, we analyze the usefulness of cardinality approximation for source selection. We compare both the runtime and accuracy of Bloom Filters empirically and elaborate on their suitability and limitations for different kind of queries. As we show, the performance of cardinality approximations of federated SPARQL queries degenerates when applied to queries with multiple joins of low selectivity. We generalize our results analytically to any estimation technique exhibiting false positives. These findings argue for a renewed effort to find novel join-cardinality approximation techniques or a change of paradigm in query execution to settings, where such estimations play a less important role.},
-  file = {C\:\\Users\\Tobias\\Zotero\\storage\\2JW8A79A\\Grubenmann et al. - 2017 - Challenges of Source Selection in the WoD.pdf},
   isbn = {978-3-319-68287-7 978-3-319-68288-4},
-  language = {en}
+  langid = {english},
+  file = {C\:\\Users\\Tobias\\Zotero\\storage\\2JW8A79A\\Grubenmann et al. - 2017 - Challenges of Source Selection in the WoD.pdf}
 }
 
 @inproceedings{grubenmannCollaborativeStreamingTrust2019,
-  title = {Collaborative {{Streaming}}: {{Trust Requirements}} for {{Price Sharing}}},
+  title = {Collaborative {{Streaming}}: Trust {{Requirements}} for {{Price Sharing}}},
   shorttitle = {Collaborative {{Streaming}}},
   booktitle = {4th {{Workshop}} on {{Real}}-Time \& {{Stream Analytics}} in {{Big Data}} \& {{Stream Data Management}}, Co-Located with the 2019 {{IEEE International Conference}} in {{Big Data}}},
   author = {Grubenmann, Tobias and Dell'Aglio, Daniele and Bernstein, Abraham},
@@ -26,19 +26,35 @@
   pages = {3498--3505},
   doi = {10.1109/BigData47090.2019.9005470},
   abstract = {Stream Processing (SP) is an important Big Data technology enabling continuous querying of data streams. The stream setting offers the opportunity to exploit synergies and, theoretically, share the access and processing costs between multiple different collaborators. But what should be the monetary contribution of each consumer when they do not trust each other and have varying valuations of the differing outcomes? In this article, we present Collaborative Stream Processing (CSP), a model where the costs, which are set exogenously by providers, are shared between multiple consumers, the collaborators. For this, we identify three important requirements for CSP to establish trust between the collaborators and propose a CSP algorithm, ENCSPA, adhering to these requirements. Based on the collaborators' outcome valuations and the costs of the raw data streams, ENCSPA computes the payment for each collaborator. At the same time, ENCSPA ensures that no collaborator has an incentive to manipulate the system by providing misinformation about her/his value, budget, or time limit. We show that ENCSPA can calculate payments in a reasonable amount of time for up to one thousand collaborators.},
-  file = {C\:\\Users\\Tobias\\Zotero\\storage\\WZVV59TZ\\Grubenmann et al_2019_Collaborative Streaming.pdf;C\:\\Users\\Tobias\\Zotero\\storage\\NSMJ26U6\\9005470.html},
-  keywords = {Big Data,Big Data technology,Cloud computing,Collaboration,collaborative stream processing,Computational modeling,continuous querying,Cost Sharing,CSP algorithm,Data models,ENCSPA,price sharing,pricing,query processing,raw data streams,Runtime,Stream Processing,stream setting,Trust,trust requirements,TV}
+  keywords = {Big Data,Big Data technology,Cloud computing,Collaboration,collaborative stream processing,Computational modeling,continuous querying,Cost Sharing,CSP algorithm,Data models,ENCSPA,price sharing,pricing,query processing,raw data streams,Runtime,Stream Processing,stream setting,Trust,trust requirements,TV},
+  file = {C\:\\Users\\Tobias\\Zotero\\storage\\WZVV59TZ\\Grubenmann et al_2019_Collaborative Streaming.pdf;C\:\\Users\\Tobias\\Zotero\\storage\\NSMJ26U6\\9005470.html}
 }
 
 @inproceedings{grubenmannDecentralizingSemanticWeb2017,
-  title = {Decentralizing the {{Semantic Web}}: {{Who}} Will Pay to Realize It?},
+  title = {Decentralizing the {{Semantic Web}}: Who Will Pay to Realize It?},
   booktitle = {{{ISWC}} 2017 Workshop on {{Decentralizing}} the {{Semantic Web}}},
   author = {Grubenmann, Tobias and Dell'Aglio, Daniele and Bernstein, Abraham and Moor, Dmitry and Seuken, Sven},
   year = {2017},
   pages = {5},
   abstract = {Fueled by enthusiasm of volunteers, government subsidies, and open data legislation, the Web of Data (WoD) has enjoyed a phenomenal growth. Commercial data, however, has been stuck in proprietary silos, as the monetization strategy for sharing data in the WoD is unclear. This is in contrast to the traditional web where advertisement fueled a lot of the growth. This raises the question how the WoD can (i) maintain its success when government subsidies disappear and (ii) convince commercial entities to share their wealth of data.},
-  file = {C\:\\Users\\Tobias\\Zotero\\storage\\SDGF8DKG\\Grubenmann et al. - Decentralizing the Semantic Web Who will pay to r.pdf},
-  language = {en}
+  langid = {english},
+  file = {C\:\\Users\\Tobias\\Zotero\\storage\\SDGF8DKG\\Grubenmann et al. - Decentralizing the Semantic Web Who will pay to r.pdf}
+}
+
+@article{grubenmannFedMarkMarketplaceFederated2018,
+  title = {{{FedMark}}: A {{Marketplace}} for {{Federated Data}} on the {{Web}}},
+  shorttitle = {{{FedMark}}},
+  author = {Grubenmann, Tobias and Bernstein, Abraham and Moor, Dmitry and Seuken, Sven},
+  year = {2018},
+  month = aug,
+  journal = {arXiv:1808.06298 [cs]},
+  eprint = {1808.06298},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  abstract = {The Web of Data (WoD) has experienced a phenomenal growth in the past. This growth is mainly fueled by tireless volunteers, government subsidies, and open data legislations. The majority of commercial data has not made the transition to the WoD, yet. The problem is that it is not clear how publishers of commercial data can monetize their data in this new setting. Advertisement, which is one of the main financial engines of the World Wide Web, cannot be applied to the Web of Data as such unwanted data can easily be filtered out, automatically. This raises the question how the WoD can (i) maintain its grow when subsidies disappear and (ii) give commercial data providers financial incentives to share their wealth of data. In this paper, we propose a marketplace for the WoD as a solution for this data monetization problem. Our approach allows a customer to transparently buy data from a combination of different providers. To that end, we introduce two different approaches for deciding which data elements to buy and compare their performance. We also introduce FedMark, a prototypical implementation of our marketplace that represents a first step towards an economically viable WoD beyond subsidies.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Databases},
+  file = {C\:\\Users\\Tobias\\Zotero\\storage\\WQSWHQK9\\Grubenmann et al. - 2018 - FedMark A Marketplace for Federated Data on the W.pdf;C\:\\Users\\Tobias\\Zotero\\storage\\939KEERN\\1808.html}
 }
 
 @inproceedings{grubenmannFinancingWebData2018,
@@ -50,10 +66,28 @@
   publisher = {{ACM Press}},
   address = {{Lyon, France}},
   doi = {10.1145/3178876.3186002},
-  file = {C\:\\Users\\Tobias\\Zotero\\storage\\4HENFBNK\\Grubenmann et al_2018_Financing the Web of Data with Delayed-Answer Auctions.pdf},
   isbn = {978-1-4503-5639-8},
+  langid = {english},
   keywords = {_tablet},
-  language = {en}
+  file = {C\:\\Users\\Tobias\\Zotero\\storage\\4HENFBNK\\Grubenmann et al_2018_Financing the Web of Data with Delayed-Answer Auctions.pdf}
+}
+
+@inproceedings{grubenmannGeologScalableLogic2021,
+  title = {Geolog: Scalable {{Logic Programming}} on {{Spatial Data}}},
+  shorttitle = {Geolog},
+  booktitle = {Electronic {{Proceedings}} in {{Theoretical Computer Science}}},
+  author = {Grubenmann, Tobias and Lehmann, Jens},
+  year = {2021},
+  month = sep,
+  volume = {345},
+  eprint = {2109.08295},
+  eprinttype = {arxiv},
+  pages = {191--204},
+  doi = {10.4204/EPTCS.345.34},
+  abstract = {Spatial data is ubiquitous in our data-driven society. The Logic Programming community has been investigating the use of spatial data in different settings. Despite the success of this research, the Geographic Information System (GIS) community has rarely made use of these new approaches. This has mainly two reasons. First, there is a lack of tools that tightly integrate logical reasoning into state-of-the-art GIS software. Second, the scalability of solutions has often not been tested and hence, some solutions might work on toy examples but do not scale well to real-world settings. The two main contributions of this paper are (1) the Relation Based Programming paradigm, expressing rules on relations instead of individual entities, and (2) Geolog, a tool for spatio-logical reasoning that can be installed on top of ArcMap, which is an industry standard GIS. We evaluate our new Relation Based Programming paradigm in four real-world scenarios and show that up to two orders of magnitude in performance gain can be achieved compared to the prevalent Entity Based Programming paradigm.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Logic in Computer Science},
+  file = {C\:\\Users\\Tobias\\Zotero\\storage\\XBCADQ35\\Grubenmann and Lehmann - 2021 - Geolog Scalable Logic Programming on Spatial Data.pdf}
 }
 
 @inproceedings{grubenmannMakeRestaurantsPay2018,
@@ -77,7 +111,7 @@
 }
 
 @inproceedings{grubenmannTSATruthfulMechanism2020,
-  title = {{{TSA}}: {{A Truthful Mechanism}} for {{Social Advertising}}},
+  title = {{{TSA}}: A {{Truthful Mechanism}} for {{Social Advertising}}},
   booktitle = {The {{Thirteenth ACM International Conference}} on {{Web Search}} and {{Data Mining}} ({{WSDM}} '20)},
   author = {Grubenmann, Tobias and Cheng, Reynold C.K. and Lakshmanan, Laks V.S.},
   year = {2020},
@@ -87,26 +121,26 @@
 }
 
 @inproceedings{hanTrafficIncidentDetection2020,
-  title = {Traffic {{Incident Detection}}: {{A Trajectory}}-{{Based Approach}}},
+  title = {Traffic {{Incident Detection}}: A {{Trajectory}}-{{Based Approach}}},
   booktitle = {2020 {{IEEE}} 36th {{International Conference}} on {{Data Engineering}} ({{ICDE}})},
   author = {Han, Xiaolin and Grubenmann, Tobias and Cheng, Reynold and Wong, Sze Chun and Li, Xiaodong and Sun, Wenya},
   year = {2020},
   pages = {1866--1869},
   publisher = {{IEEE Computer Society}},
   abstract = {Incident detection (ID), or the automatic discovery of anomalies from road traffic data (e.g., road sensor and GPS data), enables emergency actions (e.g., rescuing injured people) to be carried out in a timely fashion. Existing ID solutions based on data mining or machine learning often rely on dense traffic data; for instance, sensors installed in highways provide frequent updates of road information. In this paper, we ask the question: Can ID be performed on sparse traffic data (e.g., location data obtained from GPS devices equipped on vehicles)? As these data may not be enough to describe the state of the roads involved, they can undermine the effectiveness of existing ID solutions. To tackle this challenge, we borrow an important insight from the transportation area, which uses trajectories (i.e., moving histories of vehicles) to derive incident patterns. We study how to obtain incident patterns from trajectories and devise a new solution (called Filter-Discovery-Match (FDM)) to detect anomalies in sparse traffic data. Experiments on a taxi dataset in Hong Kong and a simulated dataset show that FDM is more effective than state-of-the-art ID solutions on sparse traffic data.},
-  file = {C\:\\Users\\Tobias\\Zotero\\storage\\P7FMNTSI\\Han - Traffic Incident Detection A Trajectory-Based App.pdf},
-  language = {en}
+  langid = {english},
+  file = {C\:\\Users\\Tobias\\Zotero\\storage\\P7FMNTSI\\Han - Traffic Incident Detection A Trajectory-Based App.pdf}
 }
 
 @article{maLINCMotifCounting2019,
-  title = {{{LINC}}: {{A Motif Counting Algorithm}} for {{Uncertain Graphs}}},
+  title = {{{LINC}}: A {{Motif Counting Algorithm}} for {{Uncertain Graphs}}},
   author = {Ma, Chenhao and Cheng, Reynold and Lakshmanan, Laks V.S. and Grubenmann, Tobias and Fang, Yixiang and Li, Xiaodong},
   year = {2019},
-  volume = {13},
-  pages = {155--168},
-  file = {C\:\\Users\\Tobias\\Zotero\\storage\\S4XMV6TS\\3364324.3364330.pdf},
   journal = {Proceedings of the VLDB Endowment},
-  number = {2}
+  volume = {13},
+  number = {2},
+  pages = {155--168},
+  file = {C\:\\Users\\Tobias\\Zotero\\storage\\S4XMV6TS\\3364324.3364330.pdf}
 }
 
 @inproceedings{moorCoreselectingPaymentRules2016,
@@ -127,9 +161,9 @@
   publisher = {{ACM}},
   address = {{Chicago, United States}},
   doi = {10.4108/eai.8-8-2015.2260632},
-  file = {C\:\\Users\\Tobias\\Zotero\\storage\\KT3NKG4Z\\Moor et al. - 2015 - A Double Auction for Querying the Web of Data.pdf},
   isbn = {978-1-63190-075-4},
-  language = {en}
+  langid = {english},
+  file = {C\:\\Users\\Tobias\\Zotero\\storage\\KT3NKG4Z\\Moor et al. - 2015 - A Double Auction for Querying the Web of Data.pdf}
 }
 
 
